@@ -1,0 +1,127 @@
+Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column10
+Boom!,Sentiment,0.879009867,Other,0.060558647,Product,0.049795449,"sentiment, other",1
+"The picture quality is great, but this review is about basic safety IF you plan to use the base to mount your TV on a cabinet top or a table.",Product,0.990412099,Sentiment,0.006434279,Comparison,0.001671921,product,1
+IT IS DANGEROUS and needs to be recalled by Samsung.,Product,0.977633199,Sentiment,0.015279469,Comparison,0.004203868,product,1
+I am going to mount my (replacement TV) on the wall.,Product,0.682005952,Sentiment,0.275680149,Other,0.029718279,sentiment,1
+"When this TV came in, I set it up on a table temporarily.",Sentiment,0.802795212,Product,0.142772646,Other,0.044597335,sentiment,1
+"I noticed how small the base mounting screws were, but I assumed the engineering was sufficient not to worry about the screws being strong enough - WRONG!",Product,0.572449734,Sentiment,0.322310224,Other,0.087117466,"sentiment, product",1
+"These screws are only about 3/8"" long by about 1/8"" in diameter.",Sentiment,0.652519847,Product,0.223334282,Other,0.076439363,product,1
+"To make a long story short and to make my point to potential buyers who plan to use this TV on the supplied base, my TV fell from the table and almost onto my 2 year old grandson.",Sentiment,0.988584928,Product,0.006487163,Other,0.002794048,sentiment,1
+"Luckily, my wife was standing by and stopped it from fully falling on him, although she has some bruises, My grandson pointed at letters on the bottom of the screen and touched the screen to show us a letter he knew.",Sentiment,0.930533259,Product,0.042177223,Other,0.022419051,sentiment,1
+My wife was holding onto the edge of the screen frame to steady the TV as it appeared shaky.,Sentiment,0.716808744,Product,0.262596751,Comparison,0.011997466,sentiment,1
+It fell.,Other,0.789040875,Sentiment,0.132159416,Product,0.066501135,"sentiment, other",1
+"I intend to get the same TV as a replacement (I bought the Square Deal insurance policy, thank goodness!).",Sentiment,0.631813624,Product,0.232565639,Other,0.115288702,"sentiment, other",1
+The small screws stripped and came loose very easily.,Sentiment,0.856559544,Product,0.127717454,Other,0.009184135,"sentiment, product",1
+My TV fell to the floor and the front screen cracked.,Product,0.620605326,Sentiment,0.350959247,Other,0.01673153,sentiment,1
+"It scared us, but my grandson was OK - just shaken.",Sentiment,0.943923217,Product,0.044423767,Comparison,0.006855063,sentiment,1
+I decided to work on getting this base recalled and potential buyers warned.,Product,0.615850369,Sentiment,0.341509528,Other,0.031817101,sentiment,1
+"Now, to be fair to both Amazon and Samsung, I was very impressed by the picture quality.",Product,0.977876983,Sentiment,0.011668346,Comparison,0.007056282,product,1
+"This review is not about the quality of the screen or the electronics, it is about safety.",Product,0.50280781,Sentiment,0.381020377,Other,0.098313763,"sentiment, other",1
+Anything is probably better than Samsung.,Product,0.696626639,Comparison,0.280350143,Sentiment,0.014941443,"sentiment, other",0
+"I will be working with Amazon, Square Deal and Samsung to get these TV's recalled for the weak base design.",Product,0.976897482,Other,0.011895347,Sentiment,0.008519479,product,1
+I am even considering contacting consumer protection agencies - it appears to me to be that important.,Sentiment,0.762965919,Product,0.215500979,Other,0.012698686,sentiment,1
+PLEASE be aware of this dangerous design if you have small children in the house.,Sentiment,0.986064472,Product,0.008262365,Other,0.003946821,"sentiment, product",1
+"Actually, it's dangerous for anyone.",Other,0.58778938,Sentiment,0.364237832,Product,0.03257297,sentiment,1
+"A 65"" TV is heavy and could hurt anyone.",Product,0.959117578,Sentiment,0.019369961,Comparison,0.016471965,product,1
+"I really like Samsung products, but this design is a big disappointment to me.",Product,0.983445745,Comparison,0.007773833,Sentiment,0.005804293,"sentiment, product",1
+"So I did, and set off two weeks of being run in circles by the horrid Samsung customer service.",Sentiment,0.989942396,Product,0.004495869,Comparison,0.003468882,"product, other",0
+"The box has an obvious ""punch hole"" in the side.",Product,0.992032398,Sentiment,0.004256741,Comparison,0.003189872,product,1
+We take the screen out and sure enough it's cracked and dented.,Other,0.472272826,Product,0.267708719,Sentiment,0.241493568,product,1
+Purchased it on September 27th of this year.,Sentiment,0.922587719,Other,0.064516897,Product,0.007643236,sentiment,1
+"One month later, on October 25th, the screen stopped working.",Sentiment,0.74498893,Other,0.139908793,Product,0.101510697,product,0
+"The TV would power on and I could hear menu option clicks, but absolutely no screen.",Product,0.933321052,Sentiment,0.050416589,Other,0.010909722,product,1
+"Instead of returning it, since I had thrown away the box, I decided to call Samsung and use the warranty.",Sentiment,0.722155681,Product,0.245170142,Comparison,0.017095571,product,1
+"It took them 5 days to get a technician to my home (Technical Difficulties was the company, out of Green Bay Wisconsin).",Sentiment,0.897681845,Product,0.087655951,Other,0.009422478,sentiment,1
+The tech determined it was a defective screen and they would order another one.,Product,0.771441337,Other,0.144028296,Sentiment,0.070067867,product,1
+I am writing this now to help protect people who might not know about these weak stands.,Other,0.903324393,Sentiment,0.075186841,Product,0.015478241,"other, product",1
+"I highly recommend buying directly from Amazon because they have always treated me right when I've had a problem with a TV that I bought from them, and Samsung's policy is to not do anything if they can claim the issue happened during shipping.",Sentiment,0.962388614,Product,0.025254974,Other,0.008678068,"other, product",0
+SAFETY HAZARD WARNING!,Sentiment,0.903426302,Product,0.050956917,Other,0.035931108,Other,0
+I will write follow-up reviews on the TV itself and on Amazon/Samsung/Square Deal responses as well.,Other,0.951321675,Product,0.026437541,Sentiment,0.015609401,other,1
+"I bought this TV from Best Buy, but I figured I'd write the review here as well.",Sentiment,0.848512674,Other,0.137707823,Product,0.007140208,other,0
+That was on a Monday.,Other,0.756957711,Sentiment,0.134143709,Product,0.095286662,other,1
+"The next week, on Tuesday, after not hearing from them I called Difficulties.",Other,0.665645476,Sentiment,0.29007113,Product,0.027849234,other,1
+"They informed me the order for the screen hadn't been put in until the previous Thursday so it won't arrive until Friday, which will be over two weeks since it broke.",Sentiment,0.986710673,Other,0.006371371,Product,0.005269395,other,0
+"Friday comes, the screen arrives, the tech shows up.",Other,0.536469946,Sentiment,0.389936504,Product,0.059611394,other,1
+I help him bring the screen up to my apartment.,Sentiment,0.868575714,Product,0.101129279,Other,0.023387693,other,0
+"Tech tells me they have to order another one, which will take another two weeks.",Sentiment,0.633887546,Other,0.249389708,Product,0.102019866,other,1
+"For issues like mine they transfer you to ""executive customer service"" which is exactly the same thing except they're not off shore.",Sentiment,0.593022967,Product,0.35505311,Other,0.040008086,product,1
+The tech also told me I should just contact Samsung and see if they can just let me replace the TV at Best Buy.,Product,0.524243057,Sentiment,0.274955487,Other,0.14420891,other,0
+"Working with customer service they provided me a few different options, all of which would take two or more weeks ""maybe"" and then, they told me, I might not even get the same model I bought.",Sentiment,0.990133107,Other,0.004963047,Product,0.002832864,product,0
+I was told I may get a plasma version... After calling over and over trying to get better service I finally called yesterday and asked for a refund.,Sentiment,0.969247519,Product,0.02228461,Other,0.004586713,product,0
+"It's off shore of course, so that is what it is.",Product,0.984355858,Other,0.007129509,Sentiment,0.006483719,other,0
+Moral: you probably won't have issues with your TV.,Sentiment,0.987084873,Product,0.008706228,Other,0.002203212,sentiment,1
+But consider the deplorable customer service record of Samsung and think about other warranty options.,Sentiment,0.915178432,Product,0.065101852,Comparison,0.012956024,product,0
+The waiting period every time I called was at least 20 minutes.,Sentiment,0.937329942,Other,0.047890099,Product,0.010344169,other,0
+It's going to take almost a month to get my money back.,Product,0.729557201,Sentiment,0.194896653,Other,0.052065425,other,0
+One star and they've lost a customer for life.,Sentiment,0.816586697,Product,0.112166957,Other,0.060578441,sentiment,1
+Fantastic picture once you set the specs.,Product,0.985764295,Sentiment,0.007023111,Other,0.005247133,product,1
+Big but easy to place on stand you will need 2 people to stand it up.,Product,0.830264137,Sentiment,0.100092481,Other,0.059928075,product,1
+Excellent customer service we had a delivery issue but they took care of us.,Sentiment,0.813779904,Product,0.151793317,Other,0.026034538,product,0
+I don't recommend any since I don't have experience with any but...,Sentiment,0.527955233,Other,0.398298449,Product,0.055782031,other,1
+This is a lot of tv for your dollar.,Sentiment,0.926414329,Product,0.061272427,Other,0.0066332,product,0
+I had plasma but wanted to move up to bigger size.,Sentiment,0.719995495,Product,0.203774078,Comparison,0.057672409,sentiment,1
+I love Samsung products.,Sentiment,0.971362489,Product,0.016140534,Comparison,0.00821379,sentiment,1
+I have never had an issue with any of their products.,Sentiment,0.991933961,Other,0.00344976,Product,0.003260156,sentiment,1
+We purchased in December and just got around to putting it up a few days ago.,Sentiment,0.98212707,Other,0.009270189,Product,0.006040004,sentiment,1
+I am in Love and his name is JS7000.,Sentiment,0.99044197,Comparison,0.005574804,Other,0.003415266,sentiment,1
+First one of these I got had two blue dots that looked like a thumb print.,Sentiment,0.713350586,Product,0.263616988,Comparison,0.013624243,product,1
+I would be happy to purchase items from this seller.,Product,0.660347067,Sentiment,0.23384638,Other,0.082811195,other,0
+The second one has clouds/lights in the corners so bad it looks like I'm looking thru one of those videos replicating someone drunk.,Sentiment,0.585806572,Product,0.38968749,Other,0.015628643,product,1
+Exchange for another.,Other,0.932519409,Product,0.040628812,Sentiment,0.020962693,other,1
+Lights on the corners and blue dots.,Product,0.989760211,Comparison,0.004304316,Other,0.004259264,product,1
+Samsung must have a bad batch.,Product,0.68956453,Comparison,0.19837158,Other,0.079889925,product,1
+This tv has great reviews but starting in November same thing.,Other,0.984773652,Product,0.010242435,Sentiment,0.0028778,other,1
+I bought this tv to replace my Samsung DLP from 2006 because it was such a great TV all I wanted was Samsung.,Sentiment,0.982297101,Product,0.011469257,Comparison,0.003415094,sentiment,1
+I will now never buy another Samsung TV.,Sentiment,0.886736732,Other,0.066668379,Product,0.031274113,sentiment,1
+Two TVs bad is just unacceptable.,Product,0.621749572,Comparison,0.179683612,Sentiment,0.172165239,sentiment,0
+"I purchased this 55 inch SUHD TV over the many 4k,UHD,SUHD,Curved,OLED,1080p, etc.",Comparison,0.875586321,Product,0.097756375,Other,0.016218936,"product, comparison",1
+Beware.,Other,0.934599605,Sentiment,0.043713012,Product,0.015436171,other,1
+"I previously had a 50 inch Panasonic Plasma TV that I was very fond of, and was concerned with finding something that would be equivalent (or better?)",Product,0.935083387,Sentiment,0.031773708,Comparison,0.024918207,"comparison, sentiment",0
+"within the original price range of $1,000.00.",Sentiment,0.608142937,Product,0.356766767,Other,0.022790193,product,1
+"I was skeptical of LED(LCD) technology, and on paper, this TV appeared to match what I was looking for, with enhanced picture quality features.",Product,0.986903895,Sentiment,0.007468179,Comparison,0.003487001,product,1
+"I found that this Samsung TV was in a sweet spot with price, picture quality .",Product,0.988859207,Comparison,0.006560225,Sentiment,0.003222559,product,1
+"Regardless, I'm still very happy with this purchase when it comes to quality and price.",Product,0.983232939,Sentiment,0.00998172,Comparison,0.00411077,product,1
+"I wasn't about to blow two or three grand on a TV, but I wanted something nice and this fit the bill.",Sentiment,0.986295164,Product,0.007328881,Comparison,0.003734016,sentiment,1
+Excellent tv and at a great price.,Product,0.947899805,Sentiment,0.042773354,Comparison,0.005419521,product,1
+Screen pops nicely and upscales content well.,Sentiment,0.579530743,Product,0.350368323,Other,0.047101166,product,1
+"I am an electronic snob and the for the quality, price, and design this is an excellent value for a SUHD tv.",Product,0.991140378,Sentiment,0.005120111,Comparison,0.002607944,product,1
+The nanocrystal technology may be a gimmick but the picture tells a different story.,Sentiment,0.627550043,Product,0.344109929,Comparison,0.01485243,product,1
+options available.,Other,0.572963677,Product,0.214093391,Sentiment,0.183993654,other,1
+I also need to give a couple major kudos to Amazon.,Other,1,Sentiment,0,Product,0,other,1
+"First, they double boxed the shipment which is a service that some places charge $30-75 for and others don't even offer.",Other,1,Sentiment,0,Product,0,other,1
+"And second, they took care of me when Samsung not only extended the original sale past 6/13, but then included a free soundbar or 24"" TV with every purchase.",Other,0.991708835,Sentiment,0.0054031,Product,0.001676737,other,1
+"Not a large topic, but just note that the 48"" model (at least at the moment) does not have Enhanced Delivery.",Product,0.772972315,Other,0.147348787,Sentiment,0.05493873,other,0
+"That means that it is delivered by UPS (in my case, or some other parcel company) and not by a crew that will set it up for you.",Sentiment,0.956130728,Product,0.02446408,Other,0.01565153,other,0
+"It isn't enormously heavy with the panel probably weighing roughly 40 pounds, and I was able to lift it out of the box by myself without too much effort.",Product,0.638406403,Sentiment,0.340208836,Comparison,0.013877944,product,1
+"So, if you get the 48"" version, you (or you and your friends) are going to have to unpack it, get it on the stand, and set it up.",Sentiment,0.991063712,Other,0.004257338,Product,0.00343822,other,0
+"If you want it set up for you, consider a larger model if buying from Amazon or local delivery from a store that will bring it to your place and set it up.",Sentiment,0.637960049,Other,0.309479971,Product,0.041868229,other,1
+Two more things about having it just delivered and dropped off.,Sentiment,0.702739835,Other,0.264077044,Product,0.020209411,other,1
+"First, it is shipped in the original box.",Product,0.703864544,Sentiment,0.261809817,Other,0.024036819,other,0
+"So, if you have a signature waiver on file with the company delivering it, anyone going by your place will be able to easily see what it is if you aren't home when it is delivered.",Sentiment,0.975893549,Other,0.013808266,Product,0.007547461,other,0
+"Second, if it is defective, you'll need to schedule to have it picked back up some other day.",Sentiment,0.965230444,Other,0.016539838,Product,0.013806097,other,0
+"With Enhanced Delivery, the crew will unpack it, inspect it, set it up, and make sure it works - if there's any problems, they'll pack it back up and take it away right then and there.",Product,0.801947835,Sentiment,0.161569781,Other,0.02710759,other,0
+"If UPS delivers it, they'll be long gone before you get it out of the box.",Product,0.631044459,Sentiment,0.326329647,Other,0.032187889,other,0
+Broken TVs happen (two of my past five delivered from Amazon have been).,Other,0.855681878,Sentiment,0.102159516,Product,0.034060895,other,1
+"Overall, the hardware is designed more for a dark room than it is for rooms with windows, lamps, and other sources of ambient lighting.",Product,0.99197757,Comparison,0.004055581,Sentiment,0.002036521,product,1
+"It does have some very nice aspects, though, such as being thin and having a nice layout for the connections on the back.",Product,0.976403309,Other,0.012791042,Comparison,0.005594391,product,1
+"I think that the shiny bezel is distracting, and I wish that the power/navigation button on the back was more conveniently located.",Product,0.706130755,Sentiment,0.272011751,Comparison,0.014142494,product,1
+"I contacted Samsung about the issues to see how they'd handle it, sent them photos of the misshapen parts, and I was very clear that it was from Vine and that I didn't expect a new TV.",Sentiment,0.661115427,Product,0.308979505,Comparison,0.015286554,product,1
+"The response was pretty much a canned response that seemed typical of if the customer mentions X anywhere, push this button.",Product,0.939585599,Sentiment,0.042382636,Other,0.013481133,product,1
+I firmly believe that you'd get the same response because it had absolutely nothing to do Vine.,Sentiment,0.810401159,Other,0.163564925,Product,0.013776949,product,0
+"Here's what you need to know - their warranty doesn't cover concealed damage that might have occurred in shipping, which is what they call it if the TV is defective but the box looks fine.",Product,0.992633238,Sentiment,0.00389316,Comparison,0.001897846,product,1
+"Amazon will make it right without question, so to me, it comes down to how much hassle it is to physically get it returned.",Other,0.990710901,Sentiment,0.004258965,Product,0.003773949,other,1
+They recommend working it out with the store or shipping company.,Sentiment,0.981732703,Product,0.009376407,Other,0.006315667,other,0
+"Reasonable on the face of it, perhaps, but I doubt UPS is going to compensate someone for a defective TV when the shipping box looks fine.",Sentiment,0.946187934,Product,0.039709739,Other,0.009165751,other,0
+That sounds like a nightmare trying to prove they did anything wrong.,Sentiment,0.981116048,Other,0.009000133,Product,0.007399135,other,0
+"If I had purchased this from Amazon, I would simply ship it back and maybe ask for a replacement.",Other,0.868580307,Product,0.099400288,Sentiment,0.023937369,other,1
+"No fuss, no muss.",Other,0.923577973,Product,0.046425174,Sentiment,0.023439696,other,1
+Amazon is awesome in customer service.,Other,0.790389389,Product,0.189923333,Comparison,0.010526442,other,1
+"If you're buying this from a third party, this is just something more to think about because they might also claim that it happened in shipping and isn't their responsibility.",Sentiment,0.742077716,Product,0.232729232,Other,0.016070311,other,0
+"So, please consider that if you decide to buy.",Other,0.951283333,Product,0.023310368,Sentiment,0.020357421,other,1
+"Also consider this - Samsung was actually the store that provided this TV, but they still don't consider it something they need to deal with.",Product,0.728739442,Sentiment,0.171509608,Other,0.063484547,product,1
+"I followed up on that original response, made it clear that I understood the warranty limitations, and I got essentially the same response back again.",Sentiment,0.828987442,Other,0.103552568,Product,0.057728864,product,0
+Push this button.,Other,0.721600762,Product,0.148683257,Sentiment,0.112105242,other,1
+Plenty of connectivity.,Product,0.941927649,Sentiment,0.037520549,Other,0.014460377,product,1
+"Most connections are not on the TV itself, they are located on the mini connect box.",Product,0.970614928,Sentiment,0.020610562,Other,0.004983845,product,1
+"Very convenient, but I wish there was at least one HDMI on the TV itself.",Product,0.633052569,Sentiment,0.344858205,Comparison,0.012893841,product,1
+,,,,,,,,91

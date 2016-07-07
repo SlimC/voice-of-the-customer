@@ -1,0 +1,7 @@
+This drive failed in less than 2 months, past my amazon return date. Getting warranty service from samsung is ridiculously difficult. The existing documentation encourages the customer to use the web to open a support ticket and does not list a phone number. However, the web forms don't even list the model so you can't complete the process over the web. I wasted a lot of time trying to use their web support service.
+
+**Update 6/17/15** As a new-to-Samsung customer, after much digging to get RMA service via the web, I finally found a number to call: 800.726.7864. You need to talk to a rep to get an RMA form emailed to you. Bottom line, do not try to use the online web forms to get an RMA, as they do not list all models of SSDs in their dropdowns.
+
+***Update July 1: finally received my replacement drive today. Warranty terms clearly state that if purchased within 90 days and with proof of purchase (which I did), Samsung will replace defective unit with a new drive. I just received a REFURB drive. Emailed a request to warranty support contact (outsourced to Total Tech Solutions) to ask for a new replacement. Will update you when I get a response.
+
+I'm used to much better service from vendors like Dell, Cisco, and HP servers. During the replacement process, the Total Tech rep explained that the extended turnaround time for warranty replacement is due to their waiting for management approval (from Seagate?).

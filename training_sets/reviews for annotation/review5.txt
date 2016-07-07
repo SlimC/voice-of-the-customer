@@ -1,0 +1,40 @@
+The Epson Home Cinema 1040 is a decent projector for it's price, throws a decent picture by default, fantastic if you calibrate it, but has some build quality issues (See build quality section in lower part of review). I would suggest this for Computer use (to take advantage of the WUXGA resolution) with occasional movies and netflix/amazon instant video.
+
+Pros:
+- 3LCD - no rainbow effect that single chip DLPs have.
+- 3000 lumens - Bright, great for use in rooms with ambient light.
+- MHL (Mobile High-Definition Link) support
+- Low replacement lamp prices & Long lamp life
+- Corner Keystone & Auto vertical Keystone (for portable use, not for home cinema use, see more below)
+- 1920x1200 WUXGA native resolution - great for computer use
+- 2 year warranty with two business-day replacement with free shipping (from Epson)
+
+Cons:
+- Auto-Iris for higher contrast, audible grinding noise even on high speed setting
+- 1920x1200 WUXGA native resolution - not so great for 1080p content (Netflix, Prime Video, FireTV, etc.)
+- Negative throw offset: this is the relationship between position of projected image and projector. For ceiling mounting, you WILL need a mount with extension tube.
+- Long throw distance compared to other projectors (the projector needs to be placed further away from the screen for a bigger picture)
+- Not so great build quality - Foreign material on 3LCD - read below and see picture.
+- Speaker is weak, but you're expected to use a sound system
+- No Lens shift (which allows for flexible placement of projector), though expected at this price point
+
+Picture Quality:
+- The Epson Home Cinema 1040 has decent picture quality even in daylight. Colors look real in cinema mode, really detailed on highlights, however, lacking in shadows of the image.
+- If you calibrate the the color settings using Cinema or Game Mode as the starting point, you can get it to look fantastic, though lack of detail in shadows still exists.
+- Dynamic mode does not work well for video. On scenes like the in-car shot scenes of House of Cards where the lighting changes on the actor's face, the projector showed it struggled to maintain a color balance, causing skin tones to fluctuate between bright, lifelike and blue. Works great for computer use and web browsing though.
+- The WUXGA 1920x1200 resolution is weird for a home cinema projector. If you are mostly using this for movies or 1080p content, i'd suggest you purchase Epsons' other home cinema projector, the 2040, which is 1920x1080 in resolution. The extra 120 vertical pixels causes a letterbox whenever you're watching 1080p content, unless you dismiss the extra 120 pixels and position the image on your screen without the extra 120 pixels, but that raises an issue of light being thrown outside of your projection screen.
+
+Features - Pretty good, though some are compensations:
+- Auto-Vertical keystone & Corner keystone, if you're using this projector not as a home cinema projector, but carries it around, plops it on a table and gives presentations, this is great. This is a useless feature if you are mounting it for home use, because you do not want to use any keystone correction as keystone at all as it alters the 1:1 pixels mapping, lowering the quality of your image.
+- 3LCD, Great for people sensitive to the rainbow effect of single chip DLP projectors.
+- 3000 lumens, Great for use with ambient light. My previous BenQ W1070 gets completely washed out with lights on. The Epson Home Cinema 1040 still throws a decent picture on ECO mode with lights on.
+- LONG lamp life, Up to 10,000 hours on ECO mode, and Up to 5,000 hours on Normal mode.
+
+Build Quality - Roll the dice and see if you get a good one - feels unpolished:
+- The air filter that prevents dust from getting into the lens and LCD structure does not have any sort of seal around the filter (it's loosely seated in a slot covered by a flimsy plastic cover that doesn't sit flush with the casing), possibly allowing larger dust to enter the system as time goes on. Unfortunately, I have this issue out of the box. There's a dust blob on the blue LCD of the 3LCD system, creating a dark spot on blue images, and thus a yellow blob on full color picture. *See picture attached* (It does come with a 2 year warranty, so if dust gets into the system after Amazon's exchange & return period, Epson will fix it for you).
+- Use the built in speaker, at a decent volume (above 1), and you'll hear rattling of loose fitting parts from the vibrations of the speaker. (This isn't much of an issue because you'll have your own sound system)
+- Tap the lamp cover on top and you'll notice it's not secured by any latches and is simply held on by the side screw.
+- Fan noise is quiet on ECO mode, very very loud on Normal mode. This projector uses Epson's quick shutdown technology where the fan stops immediately after power-off, and does not do a controlled cooldown of the lamp to prolong it's life. This allows you to quickly unplug the projector and pack it up and move it somewhere else. I didn't see a setting for this and wished it was included.
+
+Overall, the Epson Home Cinema 1040 is a respectable projector with decent and bright image quality.
+Though for reasons of build quality, I would not recommend it.

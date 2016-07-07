@@ -1,0 +1,43 @@
+
+I have been using Logitech's MX Revolution for about 5 or 6 years now, unable to switch to the successors of that particular mouse because of suggested downgrades. When the MX Master was announced and Revolution fans suggested that it could be the worthy, true successor to the MX Revolution, I pre-ordered it. Well, the mouse arrived yesterday and though I've only been using it, here are my initial reactions.
+
+First, I do think that this is a worthy successor to the Revolution, though some things have changed. There aren't any major drawbacks in just ~24 hours of use (mostly doing web development, general browsing, on both a PC and Mac). I'm going to update this review as I use the mouse more, but here are my first reactions.
+
+- The mouse is slightly larger than the Revolution, about the same width but slightly taller. This is fine and it's been comfortable to use coming from the MX. The contoured edges are a nice touch and don't give me a 'sweaty hand' like other contoured mice have in the past.
+
+- The ratchet scroll / free spin scroll wheel is the single most sought after feature of this mouse, and it has a toggle button where the Revo's (useless) search button used to be. I will almost never use the ratchet click because I've gotten so used to the free spinning wheel and can't find any use for a slower scroll now that I've been using free spin for half a decade. This can also be controlled via software, so you can set it to free spin as all times and re-assign that button if you'd like. The horizontal scrolling on the scroll wheel (tilting it left/right) has been removed from the Revo. It's been replaces with another function (see 2 paragraphs down).
+
+- Which brings me to the software called "Logitech Options" which is much improved. It's obvious that Logitech invested in this area over the years, as their old Logitech Control Center software for the Revolution was really lousy, even in 2009 it felt dated and clunky. The new application is light, only took a few seconds to download, and it highlights the areas of the mouse that you can tweak. Everything was clear and made sense to me, where as the Revo's software felt like features were hidden in bizarre menus or given annoying trademarked names so you really didn't know what they did or meant without trying them out.
+
+- Back to the hardware, the jog dial has been replaced with a small north/south wheel on the left side of the mouse that has the right amount of tension. Out of the box, this is used to horizontal scroll, which I find only passingly useful. There just aren't that many applications (for me) where I regularly use horizontal scroll intentionally. The software allows you to re-assign this to cycle through your tabs or applications (similar to ctrl + tab for Chrome, or alt + tab for windows). The tab scrolling is nice and it works but it's not as immediate as the jog dial if you went through the work to re-assign that. But so far, tab scrolling works in Chrome, SublimeText, Dreamweaver CC (2014), and Photoshop CC (2014), which is much more support than the old jog dial implementation had. I haven't tried a tabbed piece of software that doesn't work yet. Even Lync client for Windows (with vertical tabs for conversations) works, so I'd imagine this is fairly universal support.
+
+- One drawback is the two tiny buttons next to the jog wheel which replaced the back/forward buttons on the old Revo. These buttons are difficult to press and feel spongy because they have this diminutive design that doesn't feel great. It's tough to differentiate between them at first. Out of the box, these control back/forward in the browser and you can't map them to too many different commands (like switching tabs for instance).
+
+- A strange new feature which I'm still undecided on is this gesture button. So, I heard this described and I wasn't sure how it would work. On the base of the mouse, say where your thumb would rest, there is a button that you can press (but it's flush with the design of the mouse) that allows you to quickly move your mouse in a particular motion to do some command. Out of the box in Windows I have it set to snap my windows left/right, and on the Mac I have it switch desktops. This works, but it's... not intuitive and honestly feels like it takes more work to feel for this button and then quickly move the mouse. One thing Logitech did well is that your mouse cursor "locks" in place while this button is held down, so it makes it more intuitive in knowing whether you're doing some gesture command. It's a nice attempt to build gestures into the mouse but it doesn't quite work like how the marketing materials want you to believe. The good thing? This can be remapped to do dozens of different commands.
+
+- The mouse can be assigned to control up to 3 devices, which is great. I use a PC at work, I have a Mac Mini for development at home, and then a MacBook Air for browsing/light use and it's nice to have this mouse work on all 3 devices with just the click of a button (a device selector is flush with the unit on the underside).
+
+- Syncing via bluetooth on OS X Yosemite was flawless. Connecting to the wireless dongle (the tiny one that Logitech has used for most of their devices) was equally intuitive.
+
+- The device charges via a 3 foot USB cable which can also send a connection over. Seems like it works, not much to report here.
+
+- Other things like precision of the pointer, etc., I'm not the best to report on... Seems fine? After years of use the MX Revolution would skip frames on me on my PC, but I think that's more related to a not-so-great work computer, rather than the mouse... but so far, so good on the MX Master. I can't comment on battery life yet, I've been using the mouse for less than 24 hours.
+
+Conclusion:
+So far, I would give this mouse 5 stars. That doesn't mean that it's perfect, for instance the gestures could be improved and I would like it if the software let you re-assign every button to do anything... As it is, some buttons can't be re-assigned to do *everything* (like switching tabs with the back/forward buttons). But, thus far, it is certainly a worthy successor to the MX Revolution and one that I have easily transitioned to.
+
+As I continue using the mouse, I'll continue to update this.
+
+** Update 48 Hours Later **
+
+So, with 48 hours of fairly heavy use, the first noteworthy adjustment I made was turning *OFF* the "Smooth Scrolling" in the Logitech Options application. I was noticing that very, very subtle movements of the wheel caused a page to scroll up or down, which was only mildly annoying on a typical scrolling website, but made using any sort of mapping site (Google Maps, etc) or applications where the wheel performs some command (photoshop) frustrating. In fact, I noticed that if I just moved the mouse rapidly, the page would slowly scroll down because the mouse wheel was so sensitive with smooth scroll turned on. I turned this off and now I am happy to report consistent, predictable scrolling and no noticeable change to how it feels when I do scroll intentionally on a page.
+
+** Update 10 business days later **
+
+Battery life is still kicking on 2 Bars after the first full charge. I also turn it off at night when I go home (and on weekends), but use the mouse heavily from 9am to 5pm. Not sure how long the final 2 bars will last, but so far, seems like strong performance.
+
+** Update 6+ months later **
+
+I have two of these mice now, one for home and one for work, and I've noticed mousewheel drifting when the mouse is set to the free spin option. It's more noticeable on OS X than on Windows probably because OS X is more sensitive to track movements. Basically, on a free spin, the wheel will rebalance itself by tilting back a fraction of a spin... This can cause a page to drift back up or down in a specific direction. It's hard to explain so I've added a video of it. Looking this problem up online, Logitech has suggested turning off the freespin if you're experiencing this, but that isn't a solution to me. Dropping a star because of this annoying problem.
+
+(Also, sorry Amazon's video compression is terrible so you can't see the details of this, but towards the end of the video the mouse wheel drifts backwards from the direction I was spinning)

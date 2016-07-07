@@ -1,0 +1,5 @@
+The Nest Cam worked for 5 minutes and then died. It was super hot when I went to check on it after the setup process, since it was saying it was offline. It sounds like other reviewers experienced this as well. My Dropcam Pro never generated heat like this.
+
+Nest also took away the feature that disables the camera when you get back home based on your GPS location. Instead, they redirect you to their other products (thermostat, smoke alarm) to get that feature back in the app. That was the one feature that made it acceptable to put an always-on cloud recording device in your home.
+
+I personally don't like the idea of supporting a company chooses to deactivate features to strengthen their portfolio sales. I don't expect them to be focused on making great products that work better together if this is the attitude. The crippled software and poor quality hardware may be just the beginning.
