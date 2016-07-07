@@ -1,0 +1,159 @@
+$container-width-x-large: 860px;
+$container-width-large: get('large');
+@mixin visibility-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+@mixin visibility-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.banner--service-icon {
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.banner--service-info {
+  padding-left: 1rem;
+}
+
+._demo--container {
+  @include breakpoint(get('x-large')) {
+    max-width: $container-width-x-large;
+  }
+}
+
+.loader {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.jeff-quote {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  // width: 50%;
+  // height: 80%;
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  padding: 10% 30%;
+  margin: auto;
+  background-color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+  transition: 0.5s;
+  z-index: 1000;
+
+  // display: none;
+
+  visibility: visible;
+  opacity: 1;
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &--1 {
+    @include visibility-hidden;
+    transition: 0.1s;
+    &_show {
+      @include visibility-show;
+    }
+  }
+  &--2 {
+    @include visibility-hidden;
+    transition: 0.1s;
+    &_show {
+      @include visibility-show;
+    }
+  }
+  &--3 {
+    @include visibility-hidden;
+    transition: 0.1s;
+    &_show {
+      @include visibility-show;
+    }
+  }
+}
+
+
+$expand-duration: 0.2s;
+
+.expand-arrow {
+  @include visibility-hidden;
+  $size: 3rem;
+  width: $size;
+  height: $size;
+  background-color: color('yellow', 30);
+  position: fixed;
+  top: 50%;
+  margin-left: - $size / 2;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0.2rem rgba(27, 27, 27, 0.55);
+  cursor: pointer;
+  transition: $expand-duration;
+  z-index: 100;
+
+  &:after {
+    $arrow-size: 0.5rem;
+    border: #{$arrow-size * 2} solid transparent;
+    border-right-color: color('yellow', 50);
+    margin-left: -0.1rem;
+    margin-top: 0.45rem;
+  }
+
+  /* rotate when .payload-column is expanded */
+  .payload-column_expanded & {
+    transform: rotateZ(180deg);
+    animation: none !important;
+  }
+
+  /* appear when .payload-column is hovered */
+  .payload-column:hover & {
+    @include visibility-show;
+    animation: expand-arrow-animation_move 3s infinite;
+  }
+
+  @include breakpoint(get('x-large')) {
+    top: 16rem;
+  }
+}
+
+@keyframes expand-arrow-animation_fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes expand-arrow-animation_move {
+  0%   { transform: translateX(0px); }
+  50%  { transform: translateX(-10px); }
+  100% { transform: translateX(0px); }
+}
+
+pre {
+  white-space: pre;
+}
+
+.parentDiv {
+  @include breakpoint(get('large')) {
+    width: $container-width-large;
+  }
+  @include breakpoint(get('x-large')) {
+    width: $container-width-x-large;
+  }
+}
+
+.payload-column {
+  transition: $expand-duration;
+}
+.payload-column_expanded {
+  width: 100%;
+}

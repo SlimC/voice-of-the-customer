@@ -1,0 +1,5 @@
+applications:
+- name: service-demo
+  command: npm start
+  path: .
+  memory: 512M

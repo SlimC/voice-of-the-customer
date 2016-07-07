@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <title>[Service Name Demo]</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- top level heading -->
+  <header class="_demo--heading">
+    <div class="_demo--container">
+      <a class="wordmark" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/" target="_blank">
+        <span class="wordmark--left">IBM</span>
+        <span class="wordmark--right">Product Intelligence</span>
+      </a>
+      <nav class="heading-nav" role="menubar">
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/services-catalog.html" target="_blank" role="menuitem">
+                    	Services
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/" target="_blank" role="menuitem">
+						Docs
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/gallery.html" target="_blank" role="menuitem">
+						App Gallery
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://developer.ibm.com/watson/" target="_blank" role="menuitem">
+                        Community
+                    </a>
+        </li>
+      </nav>
+    </div>
+  </header>
+
+  <!-- demo body -->
+  <div class="_demo--container">
+    <div class="loader">
+      <img src="images/loading.gif" alt="loading animation">
+    </div>
+    <article class="_content base--article">
+      <h2 class="base--h2">Product Intelligence Demo</h2>
+      <div class="base--h2 product-header">
+
+      </div>
+      <div class="tab-panels" role="tabpanel">
+        <ul class="tab-panels--tab-list" role="tablist">
+          <li class="tab-panels--tab-list-item base--li" role="presentation">
+            <a class="tab-panels--tab base--a active" href="#feature-panel" aria-controls="feature-panel" role="tab">Features</a>
+          </li>
+          <li class="tab-panels--tab-list-item base--li" role="presentation">
+            <a class="tab-panels--tab base--a" href="#issue-panel" aria-controls="issue-panel" role="tab">Issues</a>
+          </li>
+          <li class="tab-panels--tab-list-item base--li" role="presentation">
+            <a class="tab-panels--tab base--a" href="#customer-service-panel" aria-controls="customer-service-panel" role="tab">Customer Service</a>
+          </li>
+        </ul>
+        <div class="tab-panels--tab-content">
+          <div id="feature-panel" class="tab-panels--tab-pane active" role="tab-panel">
+
+          </div>
+          <div id="issue-panel" class="tab-panels--tab-pane" role="tab-panel">
+
+          </div>
+          <div id="customer-service-panel" class="tab-panels--tab-pane" role="tab-panel">
+
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <$ include ./underscore-templates.ejs $>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+</body>
+
+</html>

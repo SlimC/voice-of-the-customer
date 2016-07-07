@@ -1,0 +1,83 @@
+<script type="text/html" id="headerTemplate">
+    <div class="base--p">
+        <%= item.product_name %> (ID: <%= item.product_id %>)
+    </div>
+</script>
+
+<script type="text/html" id="featureTemplate">
+    <table class="base--table">
+        <thead class="base--thead">
+        <tr class="base--tr">
+            <td class="base--td">Name</td>
+            <td class="base--td">Discussion<br>Percentage</td>
+            <td class="base--td">Keywords Found</td>
+            <td class="base--td">Sentiment</td>
+        </tr>
+        </thead>
+        <tbody class="base--tbody">
+        <% _.each(items, function(item, key, list) { %>
+        <tr class="base--tr">
+            <td class="base--td">
+                <%= item.group_name %>
+            </td>
+            <td class="base--td">
+                <%= item.percentage %>%
+            </td>
+            <td>
+                <% _.each(item.keywords, function(keyword, innerKey, list) { %>
+                    "<%= keyword.name %>" <br>
+                <% }); %>
+            </td>
+            <td class="base--td">
+                Positive: <%= item.sentiments.positive %>% <br>
+                Neutral: <%= item.sentiments.neutral %>% <br>
+                Negative: <%= item.sentiments.negative %>%
+            </td>
+        </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="issueTemplate">
+    <div class="base--h3">
+        Issues/Defects were seen by <%= item.percentage %>% of your consumers.
+    </div>
+</script>
+
+<script type="text/html" id="customerServiceTemplate">
+    <table class="base--table">
+        <thead class="base--thead">
+        <tr class="base--tr">
+            <td class="base--td">Sentiment</td>
+            <td class="base--td">Percentage Found</td>
+        </tr>
+        </thead>
+        <tbody class="base--tbody">
+        <tr class="base--tr">
+            <td class="base--td">
+                Positive
+            </td>
+            <td>
+                <%= item.sentiment.positive %>%
+            </td>
+        </tr>
+        <tr class="base--tr">
+            <td class="base--td">
+                Neutral
+            </td>
+            <td>
+                <%= item.sentiment.neutral %>%
+            </td>
+        </tr>
+        <tr class="base--tr">
+            <td class="base--td">
+                Negative
+            </td>
+            <td>
+                <%= item.sentiment.negative %>%
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</script>
