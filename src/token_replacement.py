@@ -1,4 +1,4 @@
-def get_entities(review):
+def get_relations(review):
 	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=8f03f142-af7f-4487-be47-371fc3262705&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -8,10 +8,34 @@ def get_entities(review):
 
 import requests
 import ast
+<<<<<<< Updated upstream
 import pprint
 pp = pprint.PrettyPrinter(depth=6)
 def token_replacement(review):
+=======
+
+def get_entities(review)
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=8f03f142-af7f-4487-be47-371fc3262705&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
+	f = requests.get(url, params={'text':review})
+	response = f.content
+	response = ast.literal_eval(response)
+	return response
+
+def token_replacement_entities(reivew):
+>>>>>>> Stashed changes
 	review = get_entities(review)
+	if 'entities' in review:
+		entities = review['entities']
+		text = review['text']
+		for i in entities:
+			token = i['text']
+			count = i['count']
+			classification = "<" + i['type'] + ">"
+			text = text.replace(token,classification,count)
+	return text
+
+def token_replacement_relations(review):
+	review = get_relations(review)
 	if 'typedRelations' in review:
 		types = review['typedRelations']
 		text = review['text']
