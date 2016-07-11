@@ -1,36 +1,86 @@
-features_model = 
-{
-	product_id: <String>
-	features: [{
-		group_name: <String>,
-		keywords: [
-			{
-				name: <String>,
-				review_id: <String>
-			},
-			...
-		],
-		sentiment: {
-			positive: <Percentage>,
-			negative: <Percentage>,
-			neutral: <Percentage>
-		},
-	}, ...]
-}
-
-issue_model = 
-{
-	product_id: <String>,
-	issues: <Percentage>
-	review_ids: [<String> , ...]
-}
-
-customer_service_model = 
-{
-	product_id: <String>,
-	sentiment: {
-		positive: <Percentage>,
-		negative: <Percentage>,
-		neutral: <Percentage>
-	}
-}
+{ //Mock data response
+        product_name: 'Samsung Galaxy S7',
+        product_id: 100,
+        features: [
+            {
+                group_name: 'Display',
+                percentage: 12,
+                keywords: [
+                    {
+                        name: 'Screen',
+                        review_ids: [111, 3]
+                    },
+                    {
+                        name: 'Color',
+                        review_ids: [9193, 13, 83]
+                    },
+                    {
+                        name: 'Resolution',
+                        review_ids: [9374, 2134, 452]
+                    }
+                ],
+                sentiments: {
+                    positive: 81,
+                    neutral: 3,
+                    negative: 16
+                }
+            },
+            {
+                group_name: 'Battery',
+                percentage: 56,
+                keywords: [
+                    {
+                        name: 'Dies fast',
+                        review_ids: [264, 875]
+                    },
+                    {
+                        name: 'Slow charging',
+                        review_ids: [941, 836]
+                    },
+                    {
+                        name: 'short',
+                        review_ids: [634]
+                    }
+                ],
+                sentiments: {
+                    positive: 35,
+                    neutral: 2,
+                    negative: 63
+                }
+            },
+            {
+                group_name: 'Processor',
+                percentage: 32,
+                keywords: [
+                    {
+                        name: 'Fast',
+                        review_ids: [392, 120]
+                    },
+                    {
+                        name: 'No lag',
+                        review_ids: [4, 19]
+                    },
+                    {
+                        name: 'gaming',
+                        review_ids: [749]
+                    }
+                ],
+                sentiments: {
+                    positive: 75,
+                    neutral: 20,
+                    negative: 5
+                }
+            }
+        ],
+        issues: {
+            percentage: 12,
+            review_ids: [125, 932, 10]
+        },
+        customer_service: {
+            sentiment: {
+                positive: 60,
+                neutral: 21,
+                negative: 19
+            }
+        }
+    }

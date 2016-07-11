@@ -1,28 +1,6 @@
-# [SERVICE NAME] Service Demo [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs)
+# Product Intelligence Demo [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs)
 
-This is a Public Facing README.
-
-Replace me with real content!
-
-## Troubleshooting
-
-To troubleshoot your Bluemix application, use the logs. To see the logs, run:
-
-  ```sh
-  $ cf logs <application-name> --recent
-  ```
-
-## License
-
-  This sample code is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE).
-
-## Contributing
-
-  See [CONTRIBUTING](CONTRIBUTING.md).
-
-## Open Source @ IBM
-
-  Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
+[TODO: ADD README TEXT]
 
 ### Privacy Notice
 
