@@ -16,7 +16,7 @@
 
 'use strict';
 
-var src = './src';
+var src = './ui';
 var dest = './public';
 
 module.exports = {

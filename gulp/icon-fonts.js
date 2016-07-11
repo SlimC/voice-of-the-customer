@@ -14,7 +14,7 @@ var onError = require('./on-error.js');
 
 // Paths
 var watchPath = paths.src_icons + '/**/*.svg';
-var targetPath = '../../../src/scss/components/icon/_icon-fonts.scss';
+var targetPath = '../../../ui/scss/components/icon/_icon-fonts.scss';
 var fontPath = '../../fonts/icon-fonts/';
 var destPath = paths.dest_iconFonts;
 var imagesDestPath = paths.dest_icons;
