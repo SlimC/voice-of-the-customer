@@ -1,0 +1,36 @@
+features_model = 
+{
+	product_id: <String>
+	features: [{
+		group_name: <String>,
+		keywords: [
+			{
+				name: <String>,
+				review_id: <String>
+			},
+			...
+		],
+		sentiment: {
+			positive: <Percentage>,
+			negative: <Percentage>,
+			neutral: <Percentage>
+		},
+	}, ...]
+}
+
+issue_model = 
+{
+	product_id: <String>,
+	issues: <Percentage>
+	review_ids: [<String> , ...]
+}
+
+customer_service_model = 
+{
+	product_id: <String>,
+	sentiment: {
+		positive: <Percentage>,
+		negative: <Percentage>,
+		neutral: <Percentage>
+	}
+}
