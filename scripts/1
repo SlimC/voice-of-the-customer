@@ -8,8 +8,7 @@ def get_entities(review):
 
 import requests
 import ast
-import pprint
-pp = pprint.PrettyPrinter(depth=6)
+
 def token_replacement(review):
 	review = get_entities(review)
 	if 'typedRelations' in review:
@@ -21,7 +20,6 @@ def token_replacement(review):
 		review_text_mod = ""
 		flip = True
 		sentence_dict={}
-		prev_dict={}
 		if types != []:
 			count=0
 			result=[]
@@ -41,8 +39,6 @@ def token_replacement(review):
 					print dict
 					text = text.replace(previous, review_text_mod, 1)
 					count+=1
-					#if count>1:
-					result.append(prev_dict)
 				else:
 					new_sentence = False
 					dict=result[sentence_dict[review_text]]
@@ -75,18 +71,13 @@ def token_replacement(review):
 							review_text_mod = review_text_mod.replace(token,classification,1)
 							flip = True
 				dict['reversed_sentence']=review_text_mod
-				#print temp_dict
+				print temp_dict
 				print "final dict"
 				print dict
-				prev_dict=dict
-				result[sentence_dict[sentence['sentence']]]=dict
-				#result.append(dict)
-				print "new"
-				#print sentence_dict
-		pp.pprint(result)
+				result.append(dict)
+				print sentence_dict
 		text = text.replace(standard,review_text_mod,1)
 		return text
-		#pp.print(result
 	else: 
 		return review
 
