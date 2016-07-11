@@ -1,18 +1,14 @@
+import requests
+import ast
+import pprint
+pp = pprint.PrettyPrinter(depth=6)
+
 def get_relations(review):
 	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=8f03f142-af7f-4487-be47-371fc3262705&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
 	return response
-
-
-import requests
-import ast
-<<<<<<< Updated upstream
-import pprint
-pp = pprint.PrettyPrinter(depth=6)
-def token_replacement(review):
-=======
 
 def get_entities(review)
 	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=8f03f142-af7f-4487-be47-371fc3262705&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
@@ -22,7 +18,6 @@ def get_entities(review)
 	return response
 
 def token_replacement_entities(reivew):
->>>>>>> Stashed changes
 	review = get_entities(review)
 	if 'entities' in review:
 		entities = review['entities']
@@ -82,15 +77,15 @@ def token_replacement_relations(review):
 								dict[i['type']].append(temp_dict)
 							else:
 								dict[i['type']]=[]
-                                                                dict[i['type']].append(temp_dict)
+                                dict[i['type']].append(temp_dict)
 						else:
 							sec_dict={}
 							sec_dict['name']=i['text']
 							if i['type'] in dict:
-                                                                dict[i['type']].append(sec_dict)
-                                                        else:
+                                dict[i['type']].append(sec_dict)
+                            else:
 								dict[i['type']]=[]
-                                                                dict[i['type']].append(sec_dict)
+                                dict[i['type']].append(sec_dict)
 						classification = "<" + i['type'] + ">"
 						if flip:
 							review_text_mod = review_text.replace(token,classification,1)
