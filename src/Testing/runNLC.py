@@ -3,10 +3,10 @@ from cloudant.query import Query
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1
 
-DB_USERNAME = ''													#Replace with your server URL
-DB_PASSWORD = ''
-DB_SERVER = ''
-DATABASE = ''												#Replace with the name of the database
+DB_USERNAME = 'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'													#Replace with your server URL
+DB_PASSWORD = 'bfd53fe017adeea40cd4894bb29451ddff6805fc1b94a179eba4de8ef84b632f'
+DB_ACCOUNT =  'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'
+DATABASE = 'testdb'												#Replace with the name of the database
 VIEW = 		''												#Replace with the view from your database to poll, this should take the form of _design/view_file/_view/view and should return the text to classify
 
 CLF_USERNAME = 'e561bc30-d294-41f4-8b47-39fc6bc29917'												#Replace with the username from your credentials for the NLC
@@ -18,9 +18,9 @@ with open(CLASSIFIER_JSON) as classifier_ids:
     classifierTree = json.load(classifier_ids)
 print(classifierTree)
 
-#client = Cloudant(DB_USERNAME,DB_PASSWORD,url=DB_SERVER)
-#client.connect()
-#db = client[DATABASE]
+client = Cloudant(DB_USERNAME,DB_PASSWORD,account=DB_ACCOUNT)
+client.connect()
+db = client[DATABASE]
 
 data = [{
    'review_id': 137,
@@ -55,15 +55,16 @@ data = [{
 }]
 
 #TODO: need to get the data from the database still using cloudant query
-#query = Query(my_database, selector={'_id': {'$gt': 0},'type':["review"]}) 
-#data = json.loads(json.dumps(query.all()))
+query = Query(db,selector={"_id": {"$gt": 0}, "review":{"$exists": True}}) 
+data = query.result
 
 nlc = NaturalLanguageClassifierV1(username = CLF_USERNAME, password = CLF_PASSWORD)
 
-for review in data:
+for review in query.result:
 	# Run tier 1 classification
+	print(review)
 	for line in review['review']:
-		sentence = line['replaced_sentence']
+		sentence = line['reversed_sentence']
 		resp = nlc.classify(classifierTree['tier1'],sentence)
 		classification = resp["top_class"]
 		line["layer1type"] = classification

@@ -4,7 +4,7 @@ import pprint
 pp = pprint.PrettyPrinter(depth=6)
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=8f03f142-af7f-4487-be47-371fc3262705&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
+	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
