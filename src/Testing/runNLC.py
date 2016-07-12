@@ -62,7 +62,6 @@ nlc = NaturalLanguageClassifierV1(username = CLF_USERNAME, password = CLF_PASSWO
 
 for review in query.result:
 	# Run tier 1 classification
-	print(review)
 	for line in review['review']:
 		sentence = line['reversed_sentence']
 		resp = nlc.classify(classifierTree['tier1'],sentence)
