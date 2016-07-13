@@ -28,20 +28,20 @@ print temp_client
 ##########
 
 ##create
-temp_database = temp_client.create_database('testdb')
+#temp_database = temp_client.create_database('testdb')
 
 ###if exists
-#temp_database = temp_client['testdb']
+temp_database = temp_client['testdb']
 
 query = Query(my_database, selector={'_id': {'$gt': 0},'type':["review"]})
 
 
 for doc in query.result:
-	print doc
+	#print doc
 
 	text=doc['reviewText']
-	print text
-	review= token_replacement.token_replacement_relations(text);
+	#print text
+	review= token_replacement.token_replacement(text);
 
 	dict={}
 	#specify review id
