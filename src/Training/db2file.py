@@ -1,5 +1,6 @@
 import cloudant
 import csv
+import nltk
 
 SERVER = 'https://1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com'													#Replace with your server URL
 DATABASE = 'amazon_data'												#Replace with the name of the database
@@ -10,7 +11,7 @@ VIEW = 		'names/namesAndAsin'												#Replace with the view from your databa
 DESTINATION = 'out.csv'															#Replace with correct name for output file (NOTE must be *.csv)
 
 server = cloudant.client.Cloudant(USERNAME,PASSWORD,url=SERVER)
-server().connect
+server.connect()
 db = server[DATABASE]
 query = db.get_view_result(DESIGN,VIEW)
 file = open(DESTINATION, 'wb')
