@@ -20,6 +20,18 @@ def get_entities(review):
 	response = ast.literal_eval(response)
 	return response
 
+def token_replacement_entities(review):
+	processed = get_entities(review)
+	if 'statusInfo' in processed:
+		return review
+	if 'entities' in processed:
+		entities = processed['entities']
+		text = processed['text']
+		for i in entities:
+			token = i['text']
+			classification = "<" + i['type'] + ">"
+			text = re.replace(r"\b%s\b" % token, classification, text,count=1)
+	return text
 
 def token_replacement(review_text):
 	review = get_relations(review_text)
@@ -61,7 +73,8 @@ def token_replacement(review_text):
 				count=int(entity['count'])
 				classification = "<" + entity['type'] + ">"
 				
-				sentence=sentence.replace(" "+token+" "," "+classification+" ",count)
+				sentence = re.sub(r'/b%s/b' % token, classification, sentence, count=count)
+
 				dict['replaced_sentence']=sentence
 		result.append(dict)			
 	#print sentence_dict
