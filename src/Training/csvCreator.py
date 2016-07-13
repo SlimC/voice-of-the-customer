@@ -10,7 +10,7 @@ USERNAME = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'												#Replace wi
 PASSWORD = '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638'	
 DESIGN = 'names'													#replace with the name of the design document that contains the view. This should be of the form '_design/XXXX'
 VIEW = 		'asinview'												#Replace with the view from your database to poll, this should take the form of view_file/view and should return the text to classify as the value field and what you would like to call it as the key
-DESTINATION = ''															#Replace with correct name for output file (NOTE must be *.csv)
+DESTINATION = 'out1.csv'															#Replace with correct name for output file (NOTE must be *.csv)
 
 server = cloudant.client.Cloudant(USERNAME,PASSWORD,url=SERVER)
 server.connect()
@@ -26,8 +26,9 @@ else:
 	count = int(count)
 	for i in range(0,count):
 		review = query[i]
-		sentences = nltk.tokenize.sent_tokenize(review[0]['value'])
-		for sentence in sentences:
-			writer.writerow([sentence])
+		if review[0]['value'] != None:
+			sentences = nltk.tokenize.sent_tokenize(review[0]['value'])
+			for sentence in sentences:
+				writer.writerow([sentence])
 
 file.close()
