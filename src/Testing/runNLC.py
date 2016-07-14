@@ -12,6 +12,8 @@ CLF_USERNAME = 'e561bc30-d294-41f4-8b47-39fc6bc29917'												#Replace with t
 CLF_PASSWORD = 'XH8pYnsYfClv'												#Replace with the password from your credentials for the NLC
 CLASSIFIER_JSON = '../../data/classifier_ids.json'
 
+BULK_RATE = 100
+
 # Retrieve Classifier ID's
 with open(CLASSIFIER_JSON) as classifier_ids:    
     classifierTree = json.load(classifier_ids)
@@ -21,6 +23,7 @@ client = Cloudant(DB_USERNAME,DB_PASSWORD,account=DB_ACCOUNT)
 client.connect()
 db = client[DATABASE]
 
+# mock Data
 data = [{
    'review_id': 137,
    'review': [{'Descriptor': [{'name': 'good'}, {'name': 'good'}],
@@ -53,14 +56,14 @@ data = [{
 'type':'review'
 }]
 
-#TODO: need to get the data from the database still using cloudant query
 query = Query(db, selector={'_id': {'$gt': 0},'review':{ '$exists':True }}) 
 data = query.result
 
 nlc = NaturalLanguageClassifierV1(username = CLF_USERNAME, password = CLF_PASSWORD)
 
+updated_reviews = []
+print("[")
 for review in data:
-	print(review)
 	# Run tier 1 classification
 	for line in review['review']:
 		sentence = line['reversed_sentence']
@@ -81,3 +84,15 @@ for review in data:
 			line["layer2type"] = ""
 			line["layer3type"] = ""
 	print(json.dumps(review,indent=2))
+	print(",")
+	updated_reviews.append(review)
+	if(len(updated_reviews) >= BULK_RATE):
+		db.bulk_docs(updated_reviews)
+		updated_reviews = []
+print("]")
+db.bulk_docs(updated_reviews)
+
+
+
+
+

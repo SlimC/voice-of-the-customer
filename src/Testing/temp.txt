@@ -1,7 +1,6 @@
-{u'tier1': u'c115e5x71-nlc-2231', u'tier3': u'c115edx72-nlc-2199', u'tier2': u'c115edx72-nlc-2198'}
-{u'_rev': u'1-5ab87c164eb0479bdfbd6195d8158067', u'_id': u'605f07062e082f94cbcc00e5f6b99d85', u'review': [{u'seqno': 0, u'Product': [{u'second': u'1st link opens', u'hasrel': u'hasFeature', u'first': u'it'}], u'sentence': u'for example, I middle click 2 adjacent links to open them in new tabs:  the 1st link opens in a new tab, but -- even though I clicked it while the mouse cursor was over it -- the 2nd middle click is processed as if it occurred in the space between the 2 links.', u'Feature': [{u'name': u'1st link opens'}], u'reversed_sentence': u'for example, I middle click 2 adjacent links to open them in new tabs:  the <Feature> in a new tab, but -- even though I clicked <Product> while the mouse cursor was over it -- the 2nd middle click is processed as if it occurred in the space between the 2 links.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2002616'}
+[
 {
-  "_rev": "1-5ab87c164eb0479bdfbd6195d8158067", 
+  "_rev": "3-7eca362ef2a133eb25736f1263cf11bb", 
   "_id": "605f07062e082f94cbcc00e5f6b99d85", 
   "review": [
     {
@@ -27,16 +26,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2002616"
 }
-{u'_rev': u'1-be29c70a120bdd41cc4be30985faeb66', u'_id': u'605f07062e082f94cbcc00e5f6ba1d60', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20026d0'}
+,
 {
-  "_rev": "1-be29c70a120bdd41cc4be30985faeb66", 
+  "_rev": "3-02671e4704049bf1cf7b010d7aab1b82", 
   "_id": "605f07062e082f94cbcc00e5f6ba1d60", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20026d0"
 }
-{u'_rev': u'1-9b11c649fb935d372db79e03b199df92', u'_id': u'605f07062e082f94cbcc00e5f6bb688b', u'review': [{u'sentence': u'I imagine it would be useful for large spreadsheets and such.', u'seqno': 0, u'reversed_sentence': u'I imagine it would be useful for <Descriptor> <Feature> and such.', u'Feature': [{u'second': u'large', u'hasrel': u'hasQuality', u'first': u'spreadsheets'}], u'Descriptor': [{u'name': u'large'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2002c6a'}
+,
 {
-  "_rev": "1-9b11c649fb935d372db79e03b199df92", 
+  "_rev": "3-948011a2c4781f88d97c411ca7ca1ce5", 
   "_id": "605f07062e082f94cbcc00e5f6bb688b", 
   "review": [
     {
@@ -62,51 +61,51 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2002c6a"
 }
-{u'_rev': u'1-ddba5bdf666f9baf8400464c022c12cc', u'_id': u'605f07062e082f94cbcc00e5f6be5b09', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20044ce'}
+,
 {
-  "_rev": "1-ddba5bdf666f9baf8400464c022c12cc", 
+  "_rev": "3-4e4a484cfdde3e60472dc25045e8ab09", 
   "_id": "605f07062e082f94cbcc00e5f6be5b09", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20044ce"
 }
-{u'_rev': u'1-7de7440822d69e930e917878fc1cfe84', u'_id': u'605f07062e082f94cbcc00e5f6c47c87', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2007785'}
+,
 {
-  "_rev": "1-7de7440822d69e930e917878fc1cfe84", 
+  "_rev": "3-fb4827505806e4e1fa3d53f2642dd1ed", 
   "_id": "605f07062e082f94cbcc00e5f6c47c87", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2007785"
 }
-{u'_rev': u'1-cf5f7c0698322a6bf4effa5e7661e95b', u'_id': u'605f07062e082f94cbcc00e5f6cbaffd', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200e643'}
+,
 {
-  "_rev": "1-cf5f7c0698322a6bf4effa5e7661e95b", 
+  "_rev": "3-038cd91ecc00f266f8f59ae5238fa63d", 
   "_id": "605f07062e082f94cbcc00e5f6cbaffd", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200e643"
 }
-{u'_rev': u'1-e52b7735108fba1b1383a705788f4684', u'_id': u'605f07062e082f94cbcc00e5f6cd453f', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200efd2'}
+,
 {
-  "_rev": "1-e52b7735108fba1b1383a705788f4684", 
+  "_rev": "3-8cb3c9c2fe14ee70cfd186dbf295420c", 
   "_id": "605f07062e082f94cbcc00e5f6cd453f", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200efd2"
 }
-{u'_rev': u'1-783d5c72faaa565ea811a8c9a69e5177', u'_id': u'605f07062e082f94cbcc00e5f6d0565b', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2012672'}
+,
 {
-  "_rev": "1-783d5c72faaa565ea811a8c9a69e5177", 
+  "_rev": "3-b267fdb2fabab0dbf7fa133c2f558721", 
   "_id": "605f07062e082f94cbcc00e5f6d0565b", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2012672"
 }
-{u'_rev': u'1-ed1d4a71648dc9b653bbfc13f91c9030', u'_id': u'605f07062e082f94cbcc00e5f6d658da', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2017a3a'}
+,
 {
-  "_rev": "1-ed1d4a71648dc9b653bbfc13f91c9030", 
+  "_rev": "3-d531593aac240dc92f05bdab6cdd9b84", 
   "_id": "605f07062e082f94cbcc00e5f6d658da", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2017a3a"
 }
-{u'_rev': u'1-09bac76d9909b07911935231ab18186a', u'_id': u'605f07062e082f94cbcc00e5f6e42d8a', u'review': [{u'sentence': u'Good quality and timely shipment.', u'seqno': 0, u'reversed_sentence': u'<Descriptor> <Feature> and <Feature>.', u'Feature': [{u'second': u'Good', u'hasrel': u'hasQuality', u'first': u'quality'}, {u'second': u'Good', u'hasrel': u'hasQuality', u'first': u'timely shipment'}], u'Descriptor': [{u'name': u'Good'}, {u'name': u'Good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e202440d'}
+,
 {
-  "_rev": "1-09bac76d9909b07911935231ab18186a", 
+  "_rev": "3-151fb4f6575faed65a69b3863ac342b5", 
   "_id": "605f07062e082f94cbcc00e5f6e42d8a", 
   "review": [
     {
@@ -140,9 +139,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202440d"
 }
-{u'_rev': u'1-dc358bdc1307289d13ccbeafc7345a54', u'_id': u'605f07062e082f94cbcc00e5f6e64fd7', u'review': [{u'seqno': 0, u'Product': [{u'second': u'stopped', u'hasrel': u'hasFeature', u'first': u'laptop'}], u'sentence': u'It stopped working within 2 minutes of using it.', u'Feature': [{u'name': u'stopped'}], u'reversed_sentence': u'It <Feature> working within 2 minutes of using it.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2026f43'}
+,
 {
-  "_rev": "1-dc358bdc1307289d13ccbeafc7345a54", 
+  "_rev": "3-f90e469f8451982c584e51e1f829723a", 
   "_id": "605f07062e082f94cbcc00e5f6e64fd7", 
   "review": [
     {
@@ -168,58 +167,58 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2026f43"
 }
-{u'_rev': u'1-3aa02c604ab5447c6c3e3a48e7c243f1', u'_id': u'605f07062e082f94cbcc00e5f6e783e3', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2028ced'}
+,
 {
-  "_rev": "1-3aa02c604ab5447c6c3e3a48e7c243f1", 
+  "_rev": "3-d3ca9f343d858c0f47c6600938f50bfa", 
   "_id": "605f07062e082f94cbcc00e5f6e783e3", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2028ced"
 }
-{u'_rev': u'1-32a9e46fccfb881733aaa7b7f8ea010d', u'_id': u'605f07062e082f94cbcc00e5f6e8d025', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20297c7'}
+,
 {
-  "_rev": "1-32a9e46fccfb881733aaa7b7f8ea010d", 
+  "_rev": "3-a9b550cd1f225c936f03748bcc07baf7", 
   "_id": "605f07062e082f94cbcc00e5f6e8d025", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20297c7"
 }
-{u'_rev': u'1-cfebad6a3253304d24d9d5694cecc5af', u'_id': u'605f07062e082f94cbcc00e5f6eccdbc', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202bba5'}
+,
 {
-  "_rev": "1-cfebad6a3253304d24d9d5694cecc5af", 
+  "_rev": "3-4d4d929e44f588e8b161054bc2fe0266", 
   "_id": "605f07062e082f94cbcc00e5f6eccdbc", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202bba5"
 }
-{u'_rev': u'1-84375e894c117de8b34cc753f988de1c', u'_id': u'605f07062e082f94cbcc00e5f6f15cf2', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202ece0'}
+,
 {
-  "_rev": "1-84375e894c117de8b34cc753f988de1c", 
+  "_rev": "3-30619d406823d6074313d7eedca5a6ce", 
   "_id": "605f07062e082f94cbcc00e5f6f15cf2", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202ece0"
 }
-{u'_rev': u'1-cf08c764e785b087ea2eb14debe09058', u'_id': u'605f07062e082f94cbcc00e5f6f218c2', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202f3f2'}
+,
 {
-  "_rev": "1-cf08c764e785b087ea2eb14debe09058", 
+  "_rev": "3-5f6d84515a8cddb63a3c4a71ac32e0a8", 
   "_id": "605f07062e082f94cbcc00e5f6f218c2", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202f3f2"
 }
-{u'_rev': u'1-8968a39c74c8d74c1694c4b5c7a9869a', u'_id': u'605f07062e082f94cbcc00e5f6f2d034', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2030236'}
+,
 {
-  "_rev": "1-8968a39c74c8d74c1694c4b5c7a9869a", 
+  "_rev": "3-a2d2b77d5c35384e48d5108759a27824", 
   "_id": "605f07062e082f94cbcc00e5f6f2d034", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2030236"
 }
-{u'_rev': u'1-b1b7eebd4d24648786b0aea9a51520a9', u'_id': u'605f07062e082f94cbcc00e5f6f62075', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2033610'}
+,
 {
-  "_rev": "1-b1b7eebd4d24648786b0aea9a51520a9", 
+  "_rev": "3-b9e81ee60c93e4040fe90c880f1a011a", 
   "_id": "605f07062e082f94cbcc00e5f6f62075", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2033610"
 }
-{u'_rev': u'1-03701bca54662742898427a71859495f', u'_id': u'605f07062e082f94cbcc00e5f6fddabf', u'review': [{u'seqno': 0, u'Product': [{u'second': u'lagging', u'hasrel': u'hasFeature', u'first': u'this product'}], u'sentence': u'I can play MKV files nicely, there is no lagging, it just works perfectly and the quality is excellent.', u'Feature': [{u'name': u'lagging'}], u'reversed_sentence': u'I can play MKV files nicely, there is no <Feature>, it just works perfectly and the quality is excellent.'}, {u'sentence': u'I must say I have had bad experience with Lacie products in the past, I took the risk of getting this solution for streaming video files into my HiFi system and believe me, it was no mistake.I connect the Lacie Connect HD to my Sony BDV-IZ1000W Home Theater Wireless Surround system via a high-quality HD cable and it really works nicely, the sound quality is awesome.', u'seqno': 1, u'reversed_sentence': u'I must say I have had bad experience with Lacie products in the past, I took the risk of getting this solution for streaming video files into my HiFi system and believe me, it was no mistake.I connect the Lacie Connect HD to my Sony BDV-IZ1000W Home Theater Wireless Surround system via a high-quality HD cable and it really works nicely, the <Feature> is <Descriptor>.', u'Feature': [{u'second': u'awesome', u'hasrel': u'hasQuality', u'first': u'sound quality'}], u'Descriptor': [{u'name': u'awesome'}]}, {u'Product': [{u'second': u'image quality', u'hasrel': u'hasFeature', u'first': u'this product'}], u'sentence': u'My TV is a Sony Bravia KDL-55EX710 and the image quality is awesome too indistinguishable from playing Bluray disks.', u'seqno': 2, u'Feature': [{u'name': u'image quality'}, {u'second': u'awesome too indistinguishable from playing Bluray disks', u'hasrel': u'hasQuality', u'first': u'image quality'}], u'Descriptor': [{u'name': u'awesome too indistinguishable from playing Bluray disks'}], u'reversed_sentence': u'My TV is a Sony Bravia KDL-55EX710 and the <Feature> is <Descriptor>.'}, {u'seqno': 3, u'Product': [{u'second': u'Apple', u'hasrel': u'madeBy', u'first': u'this product'}], u'sentence': u'Unlike the Apple TV I also have, the Lacie HD Connect remote has a power off button.', u'Company': [{u'name': u'Apple'}], u'reversed_sentence': u'Unlike the <Company> TV I also have, the Lacie HD Connect remote has a power off button.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2035005'}
+,
 {
-  "_rev": "1-03701bca54662742898427a71859495f", 
+  "_rev": "3-644962a102ff42cf424cc34b963209c0", 
   "_id": "605f07062e082f94cbcc00e5f6fddabf", 
   "review": [
     {
@@ -315,23 +314,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2035005"
 }
-{u'_rev': u'1-cc32b1916cd5d795d4b0309435bcea3d', u'_id': u'89d6e8bc76059dbc76f93d928b6e14b4', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200051e'}
+,
 {
-  "_rev": "1-cc32b1916cd5d795d4b0309435bcea3d", 
+  "_rev": "3-b1573c1fedb9e4e93da9a5b7cc01f1a0", 
   "_id": "89d6e8bc76059dbc76f93d928b6e14b4", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200051e"
 }
-{u'_rev': u'1-85dcc4c56bfdde5b9811657ad660d8cf', u'_id': u'89d6e8bc76059dbc76f93d928b753c96', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2003c0d'}
+,
 {
-  "_rev": "1-85dcc4c56bfdde5b9811657ad660d8cf", 
+  "_rev": "3-38f3acee4e7d0246e23b2dbcadac5beb", 
   "_id": "89d6e8bc76059dbc76f93d928b753c96", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2003c0d"
 }
-{u'_rev': u'1-5ff3fa780fc9087879f9cc5f59fb2663', u'_id': u'89d6e8bc76059dbc76f93d928b7b6bd7', u'review': [{u'sentence': u'The mouse has a great ergonomic shape and contours to the hand very nicely.', u'seqno': 0, u'reversed_sentence': u'The <Feature> has a <Descriptor> and <Descriptor> to the hand very nicely.', u'Feature': [{u'second': u'great ergonomic shape', u'hasrel': u'hasQuality', u'first': u'mouse'}, {u'second': u'contours', u'hasrel': u'hasQuality', u'first': u'mouse'}], u'Descriptor': [{u'name': u'great ergonomic shape'}, {u'name': u'contours'}]}, {u'sentence': u'The mouse behaves great.', u'seqno': 1, u'reversed_sentence': u'The <Feature> <Descriptor>.', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'mouse behaves'}], u'Descriptor': [{u'name': u'great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e200583b'}
+,
 {
-  "_rev": "1-5ff3fa780fc9087879f9cc5f59fb2663", 
+  "_rev": "3-efd3aff6fe1a1827471db957a973da8c", 
   "_id": "89d6e8bc76059dbc76f93d928b7b6bd7", 
   "review": [
     {
@@ -385,9 +384,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e200583b"
 }
-{u'_rev': u'1-e05afdb7830f6391e5cfb0ad4c83ba83', u'_id': u'89d6e8bc76059dbc76f93d928b7c52b2', u'review': [{u'sentence': u'The color is awesome, my wife and my daughter are delighted with it.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor>, my wife and my daughter are delighted with it.', u'Feature': [{u'second': u'awesome', u'hasrel': u'hasQuality', u'first': u'color'}], u'Descriptor': [{u'name': u'awesome'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2006963'}
+,
 {
-  "_rev": "1-e05afdb7830f6391e5cfb0ad4c83ba83", 
+  "_rev": "3-059fbebefec449a173fac3e965dfd12b", 
   "_id": "89d6e8bc76059dbc76f93d928b7c52b2", 
   "review": [
     {
@@ -413,23 +412,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2006963"
 }
-{u'_rev': u'1-ebd6cb8813a5eee373fcf65ca33d88a7', u'_id': u'89d6e8bc76059dbc76f93d928b7d1c93', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200865e'}
+,
 {
-  "_rev": "1-ebd6cb8813a5eee373fcf65ca33d88a7", 
+  "_rev": "3-1ab4152449fe84479b55ced468cd1bf6", 
   "_id": "89d6e8bc76059dbc76f93d928b7d1c93", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200865e"
 }
-{u'_rev': u'1-cf696cbd709b334b15bb63b4c3b95b16', u'_id': u'89d6e8bc76059dbc76f93d928b7f340f', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2008dda'}
+,
 {
-  "_rev": "1-cf696cbd709b334b15bb63b4c3b95b16", 
+  "_rev": "3-9c80a74abc1429279f37a4aa11166f8a", 
   "_id": "89d6e8bc76059dbc76f93d928b7f340f", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2008dda"
 }
-{u'_rev': u'1-36da3643bae8a4bc0e5477260839466a', u'_id': u'89d6e8bc76059dbc76f93d928b805ff3', u'review': [{u'sentence': u'The mouse is very comfortable and tracks accurately.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor> <Feature> and tracks accurately.', u'Feature': [{u'second': u'very', u'hasrel': u'hasQuality', u'first': u'mouse'}, {u'second': u'very', u'hasrel': u'hasQuality', u'first': u'comfortable'}], u'Descriptor': [{u'name': u'very'}, {u'name': u'very'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2009f18'}
+,
 {
-  "_rev": "1-36da3643bae8a4bc0e5477260839466a", 
+  "_rev": "3-e95d3c7614b5e509d14eae6ea2821633", 
   "_id": "89d6e8bc76059dbc76f93d928b805ff3", 
   "review": [
     {
@@ -463,16 +462,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2009f18"
 }
-{u'_rev': u'1-9db2ef12c42e32af59b0fa39f0adcd55', u'_id': u'89d6e8bc76059dbc76f93d928b80f33f', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200ae96'}
+,
 {
-  "_rev": "1-9db2ef12c42e32af59b0fa39f0adcd55", 
+  "_rev": "3-dee57cfb903e2306d7a97c1177489199", 
   "_id": "89d6e8bc76059dbc76f93d928b80f33f", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200ae96"
 }
-{u'_rev': u'1-e797dccdca2bcbe34b28a12718ed62e9', u'_id': u'89d6e8bc76059dbc76f93d928b84c87d', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Microsoft', u'hasrel': u'madeBy', u'first': u'product'}], u'sentence': u"I liked the original Intellimouse alot, but mine was getting pretty oldfor the $8 including shipping (Prime) on this Microsoft product, with the same laft and right 'go back' 'go forward' buttons I was used to, I decided to give it a flyIt's great!", u'Company': [{u'name': u'Microsoft'}], u'reversed_sentence': u"I liked the original Intellimouse alot, but mine was getting pretty oldfor the $8 including shipping (Prime) on this <Company> <Product>, with the same laft and right 'go back' 'go forward' buttons I was used to, I decided to give it a flyIt's great!"}, {u'sentence': u'I mean, there are more expensive mice out there with better ergonomics perhaps or maybe not this goofy pink color, but who cares, for an $8 brand name mouse which works flawlessly with Windows, is very smooth an accurate, and at this price, how can you go wrong (you cant)If you are looking for an under $10 mouse that you want to be sure will work and is of good quality I challenge anyone to find a better answer', u'seqno': 1, u'reversed_sentence': u'I mean, there are more expensive mice out there with better ergonomics perhaps or maybe not this goofy pink color, but who cares, for an $8 brand name mouse which works flawlessly with Windows, is very smooth an accurate, and at this price, how can you go wrong (you cant)If you are looking for an under $10 mouse that you want to be sure will work and is of <Descriptor> <Feature> I challenge anyone to find a better answer', u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'quality'}], u'Descriptor': [{u'name': u'good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e200e683'}
+,
 {
-  "_rev": "1-e797dccdca2bcbe34b28a12718ed62e9", 
+  "_rev": "3-cea799743b9dc389aa4fd81ef87ec7b7", 
   "_id": "89d6e8bc76059dbc76f93d928b84c87d", 
   "review": [
     {
@@ -518,16 +517,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e200e683"
 }
-{u'_rev': u'1-2cda17508e2c15569cc9bb6ee2959b76', u'_id': u'89d6e8bc76059dbc76f93d928b89d7b3', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2014e15'}
+,
 {
-  "_rev": "1-2cda17508e2c15569cc9bb6ee2959b76", 
+  "_rev": "3-eaa19d425407231cdfb0ddd6f9aecc2c", 
   "_id": "89d6e8bc76059dbc76f93d928b89d7b3", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2014e15"
 }
-{u'_rev': u'1-780a64f6fb52df9621eec0be64f333bf', u'_id': u'89d6e8bc76059dbc76f93d928b8b9586', u'review': [{u'sentence': u'the printable surface is very good and not too many coasters at all.', u'seqno': 0, u'reversed_sentence': u'the <Feature> is <Descriptor> and not too many coasters at all.', u'Feature': [{u'second': u'very good', u'hasrel': u'hasQuality', u'first': u'printable surface'}], u'Descriptor': [{u'name': u'very good'}]}, {u'sentence': u'good quality.', u'seqno': 1, u'reversed_sentence': u'<Descriptor> <Feature>.', u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'quality'}], u'Descriptor': [{u'name': u'good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e20159ad'}
+,
 {
-  "_rev": "1-780a64f6fb52df9621eec0be64f333bf", 
+  "_rev": "3-9ba7d4f4cc59786b81bcaa1a6a0dbc50", 
   "_id": "89d6e8bc76059dbc76f93d928b8b9586", 
   "review": [
     {
@@ -573,37 +572,37 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20159ad"
 }
-{u'_rev': u'1-f6f710354b0e5709457b21d31afcb6ab', u'_id': u'89d6e8bc76059dbc76f93d928b8c64bd', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20177de'}
+,
 {
-  "_rev": "1-f6f710354b0e5709457b21d31afcb6ab", 
+  "_rev": "3-04fe19650604a1e41ca492a92738e4b0", 
   "_id": "89d6e8bc76059dbc76f93d928b8c64bd", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20177de"
 }
-{u'_rev': u'1-0a8b5f53009d121887e6bc0b779618ea', u'_id': u'89d6e8bc76059dbc76f93d928b95c97e', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201e85b'}
+,
 {
-  "_rev": "1-0a8b5f53009d121887e6bc0b779618ea", 
+  "_rev": "3-c697e4d6d0a73ec527bf4a554e06c6d7", 
   "_id": "89d6e8bc76059dbc76f93d928b95c97e", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201e85b"
 }
-{u'_rev': u'1-2bbf8b7f5a7ae5ad632ea05e172214e3', u'_id': u'89d6e8bc76059dbc76f93d928b966b18', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201fef7'}
+,
 {
-  "_rev": "1-2bbf8b7f5a7ae5ad632ea05e172214e3", 
+  "_rev": "3-57a930a0fe1981d8681904623daa0223", 
   "_id": "89d6e8bc76059dbc76f93d928b966b18", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201fef7"
 }
-{u'_rev': u'1-2acd08e503ce2cc9ef3c51fb34ecb178', u'_id': u'89d6e8bc76059dbc76f93d928b9a7f8a', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202334d'}
+,
 {
-  "_rev": "1-2acd08e503ce2cc9ef3c51fb34ecb178", 
+  "_rev": "3-7e2bd6cfe03f4fa0aa9d47013f304318", 
   "_id": "89d6e8bc76059dbc76f93d928b9a7f8a", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202334d"
 }
-{u'_rev': u'1-962348fe1549dd3726066020e1974179', u'_id': u'89d6e8bc76059dbc76f93d928bb99363', u'review': [{u'sentence': u'Easy setup and configuration.', u'seqno': 0, u'reversed_sentence': u'<Descriptor> <Feature> and configuration.', u'Feature': [{u'second': u'Easy', u'hasrel': u'hasQuality', u'first': u'setup'}], u'Descriptor': [{u'name': u'Easy'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e203b9d7'}
+,
 {
-  "_rev": "1-962348fe1549dd3726066020e1974179", 
+  "_rev": "3-c9bf2e66040fb2eba4875481b93471d1", 
   "_id": "89d6e8bc76059dbc76f93d928bb99363", 
   "review": [
     {
@@ -629,9 +628,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203b9d7"
 }
-{u'_rev': u'1-97d55ffe2f77d87087d10349e0914e53', u'_id': u'89d6e8bc76059dbc76f93d928bc62803', u'review': [{u'seqno': 0, u'Company': [{u'second': u'nice system', u'hasrel': u'hasQuality', u'first': u'Sony'}], u'sentence': u'Sony makes a nice system.', u'Descriptor': [{u'name': u'nice system'}], u'reversed_sentence': u'<Company> makes a <Descriptor>.'}, {u'sentence': u'The  Sound is great!', u'seqno': 1, u'reversed_sentence': u'The  <Feature> is <Descriptor>!', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'Sound'}], u'Descriptor': [{u'name': u'great'}]}, {u'seqno': 2, u'Product': [{u'second': u'Sony', u'hasrel': u'madeBy', u'first': u'TV'}], u'sentence': u'One thing i did learn,  I should have bought a Sony TV, I have LG and all the remote controls are incompatible, so I have 3 remotes to run.', u'Company': [{u'name': u'Sony'}], u'reversed_sentence': u'One thing i did learn,  I should have bought a <Company> <Product>, I have LG and all the remote controls are incompatible, so I have 3 remotes to run.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2043d8b'}
+,
 {
-  "_rev": "1-97d55ffe2f77d87087d10349e0914e53", 
+  "_rev": "3-a197f6ef90244c1ec2b5b62f82de900d", 
   "_id": "89d6e8bc76059dbc76f93d928bc62803", 
   "review": [
     {
@@ -697,9 +696,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2043d8b"
 }
-{u'_rev': u'1-a034c03153a645a879665070b7ad15b6', u'_id': u'89d6e8bc76059dbc76f93d928bc93b2d', u'review': [{u'seqno': 0, u'Product': [{u'second': u'-Great sound', u'hasrel': u'hasFeature', u'first': u'it'}, {u'second': u'blu-ray you would', u'hasrel': u'hasFeature', u'first': u'it'}], u'sentence': u'Sony is always known for making great products:Pros:-Great sound-Shine black looks great-Lots of wire for rear speakerCons:-With no blu-ray you would think it would be less wide-The wire is bare on one side and a plastic adaptor on the other side so you have you uses the cables in the box-Have a optical cable for better sound but it only dose 5.1 half the time (could be the show tho)If you are looking for something with big sound in a small space this is the right one for you', u'Feature': [{u'name': u'-Great sound'}, {u'name': u'blu-ray you would'}], u'reversed_sentence': u'Sony is always known for making great products:Pros:<Feature>-Shine black looks great-Lots of wire for rear speakerCons:-W<Product>h no <Feature> think <Product> would be less wide-The wire is bare on one side and a plastic adaptor on the other side so you have you uses the cables in the box-Have a optical cable for better sound but it only dose 5.1 half the time (could be the show tho)If you are looking for something with big sound in a small space this is the right one for you'}], u'review_id': u'0000927a59e02ee3d09b12e0e20452c4'}
+,
 {
-  "_rev": "1-a034c03153a645a879665070b7ad15b6", 
+  "_rev": "2-a7d6a6a290910a4d91be6ef6f1add9ca", 
   "_id": "89d6e8bc76059dbc76f93d928bc93b2d", 
   "review": [
     {
@@ -733,9 +732,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20452c4"
 }
-{u'_rev': u'1-9e227e874e627fb933220a16a65c2db8', u'_id': u'89d6e8bc76059dbc76f93d928bcc7b2b', u'review': [{u'seqno': 0, u'Company': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'Sony'}], u'sentence': u'Sony is great.', u'Descriptor': [{u'name': u'great'}], u'reversed_sentence': u'<Company> is <Descriptor>.'}, {u'sentence': u'The sound is great.', u'seqno': 1, u'reversed_sentence': u'The <Feature> is <Descriptor>.', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sound'}], u'Descriptor': [{u'name': u'great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2047206'}
+,
 {
-  "_rev": "1-9e227e874e627fb933220a16a65c2db8", 
+  "_rev": "2-a7491e6ea70cca28579058bdf24e2e1a", 
   "_id": "89d6e8bc76059dbc76f93d928bcc7b2b", 
   "review": [
     {
@@ -781,9 +780,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2047206"
 }
-{u'_rev': u'1-085c5ed782288ee204176b114d853b0d', u'_id': u'89d6e8bc76059dbc76f93d928bd0e185', u'review': [{u'seqno': 0, u'Product': [{u'second': u'miniature size speakers', u'hasrel': u'hasFeature', u'first': u'product'}], u'sentence': u"I was initially taken aback by the miniature size speakers but it's magical output has not ceased to amaze me!", u'Feature': [{u'name': u'miniature size speakers'}], u'reversed_sentence': u"I was initially taken aback by the <Feature> but it's magical output has not ceased to amaze me!"}, {u'seqno': 1, u'Product': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'product'}, {u'second': u'great', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'This is a great product but for the look of the small speakers.', u'Descriptor': [{u'name': u'great'}, {u'name': u'great'}], u'reversed_sentence': u'This is a <Descriptor> <Product> but for the look of the small speakers.'}], u'review_id': u'0000927a59e02ee3d09b12e0e204a529'}
+,
 {
-  "_rev": "1-085c5ed782288ee204176b114d853b0d", 
+  "_rev": "2-9e2c5121fdca0be19b6bb8aa62b335a6", 
   "_id": "89d6e8bc76059dbc76f93d928bd0e185", 
   "review": [
     {
@@ -837,9 +836,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204a529"
 }
-{u'_rev': u'1-2ab78b7f65156bb2c9378d12ff6a752f', u'_id': u'89d6e8bc76059dbc76f93d928bd16e5d', u'review': [{u'sentence': u"Has good sound for that application, but when I recently added a set-top box and connected it to the Coaxial 5.1 audio input, the SPDIF (IR) input from the HTPC can't be selected.", u'seqno': 0, u'reversed_sentence': u"Has <Descriptor> <Feature> for that application, but when I recently added a set-top box and connected it to the Coaxial 5.1 audio input, the SPDIF (IR) input from the HTPC can't be selected.", u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'sound'}], u'Descriptor': [{u'name': u'good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e204a6af'}
+,
 {
-  "_rev": "1-2ab78b7f65156bb2c9378d12ff6a752f", 
+  "_rev": "2-9ac21eabcc721c7af5e771c30878e6f5", 
   "_id": "89d6e8bc76059dbc76f93d928bd16e5d", 
   "review": [
     {
@@ -865,9 +864,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204a6af"
 }
-{u'_rev': u'1-e28f4cce27a53a1fb57daea01d62c1a4', u'_id': u'89d6e8bc76059dbc76f93d928bd249aa', u'review': [{u'sentence': u'Installation was simple and a year later, it is still working great.', u'seqno': 0, u'reversed_sentence': u'<Feature> was <Descriptor> and a year later, it is still working great.', u'Feature': [{u'second': u'simple', u'hasrel': u'hasQuality', u'first': u'Installation'}], u'Descriptor': [{u'name': u'simple'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e204b744'}
+,
 {
-  "_rev": "1-e28f4cce27a53a1fb57daea01d62c1a4", 
+  "_rev": "2-b2e025fa9f6667811322d252a75cb384", 
   "_id": "89d6e8bc76059dbc76f93d928bd249aa", 
   "review": [
     {
@@ -893,16 +892,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204b744"
 }
-{u'_rev': u'1-a19c521ca0ec9dd646924a1f789c687b', u'_id': u'89d6e8bc76059dbc76f93d928bd3b46f', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204d188'}
+,
 {
-  "_rev": "1-a19c521ca0ec9dd646924a1f789c687b", 
+  "_rev": "2-76d9ce1c9292d3b8d2efbca11925328f", 
   "_id": "89d6e8bc76059dbc76f93d928bd3b46f", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204d188"
 }
-{u'_rev': u'1-2f2e5fe847fca9bbb2d17cb8902191b7', u'_id': u'89df48de613c6c22cab383cb50001df6', u'review': [{u'sentence': u'Setup was pretty easy.', u'seqno': 0, u'reversed_sentence': u'<Feature> was <Descriptor>.', u'Feature': [{u'second': u'pretty easy', u'hasrel': u'hasQuality', u'first': u'Setup'}], u'Descriptor': [{u'name': u'pretty easy'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e20386ab'}
+,
 {
-  "_rev": "1-2f2e5fe847fca9bbb2d17cb8902191b7", 
+  "_rev": "2-0b9c4fecfabace40c2197bd7dcd398cb", 
   "_id": "89df48de613c6c22cab383cb50001df6", 
   "review": [
     {
@@ -928,16 +927,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20386ab"
 }
-{u'_rev': u'1-733cefb07346708dd3b37c8a888c8ad7', u'_id': u'89df48de613c6c22cab383cb50018285', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203a5c6'}
+,
 {
-  "_rev": "1-733cefb07346708dd3b37c8a888c8ad7", 
+  "_rev": "2-3587ceaf857169069f6bd65fa92cceb4", 
   "_id": "89df48de613c6c22cab383cb50018285", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203a5c6"
 }
-{u'_rev': u'1-d21a1edfbcfb3bfd140ef40b10e495fc', u'_id': u'89df48de613c6c22cab383cb50075272', u'review': [{u'Product': [{u'second': u'Awesome', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'Awesome product to keep, great customer service, excellent experience with product delivery and package.', u'seqno': 0, u'Customer_Service': [{u'second': u'Awesome', u'hasrel': u'hasQuality', u'first': u'customer service'}, {u'second': u'great', u'hasrel': u'hasQuality', u'first': u'customer service'}, {u'second': u'excellent experience', u'hasrel': u'hasQuality', u'first': u'customer service'}], u'Descriptor': [{u'name': u'Awesome'}, {u'name': u'Awesome'}, {u'name': u'great'}, {u'name': u'excellent experience'}], u'reversed_sentence': u'<Descriptor> <Product> to keep, <Descriptor> <Customer_Service>, <Descriptor> with product delivery and package.'}], u'review_id': u'0000927a59e02ee3d09b12e0e203ed13'}
+,
 {
-  "_rev": "1-d21a1edfbcfb3bfd140ef40b10e495fc", 
+  "_rev": "2-219db2ddcc2b0e44720d74b8c567409a", 
   "_id": "89df48de613c6c22cab383cb50075272", 
   "review": [
     {
@@ -989,16 +988,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203ed13"
 }
-{u'_rev': u'1-d2f3dad0d0a6504611281247feb63ec2', u'_id': u'89df48de613c6c22cab383cb500ac915', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2042447'}
+,
 {
-  "_rev": "1-d2f3dad0d0a6504611281247feb63ec2", 
+  "_rev": "2-ee1c688f208ac449ae428ce4df1d4cd7", 
   "_id": "89df48de613c6c22cab383cb500ac915", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2042447"
 }
-{u'_rev': u'1-0dedca9493ea6377b8c9d52a7cc94bb4', u'_id': u'89df48de613c6c22cab383cb500d37a4', u'review': [{u'sentence': u'holy crap !!! the sound is awesome th sound is almost perfect crisp clear and you really feel the vibrations from the subwoffer even from across the room ,', u'seqno': 0, u'reversed_sentence': u'holy crap !!! the sound is <Descriptor> <Feature> is almost perfect crisp clear and you really feel the vibrations from the subwoffer even from across the room ,', u'Feature': [{u'second': u'awesome', u'hasrel': u'hasQuality', u'first': u'th sound'}], u'Descriptor': [{u'name': u'awesome'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2042e05'}
+,
 {
-  "_rev": "1-0dedca9493ea6377b8c9d52a7cc94bb4", 
+  "_rev": "2-26724e0c144906e074a4fa679cfdb503", 
   "_id": "89df48de613c6c22cab383cb500d37a4", 
   "review": [
     {
@@ -1024,9 +1023,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2042e05"
 }
-{u'_rev': u'1-bd5ceb4bac8328990a7af7201b310c3f', u'_id': u'89df48de613c6c22cab383cb50115ed0', u'review': [{u'sentence': u'Setup is quick and easy as it uses plug and play audio cables for each speaker and are color coded as well.', u'seqno': 0, u'reversed_sentence': u'<Feature> is <Descriptor> and <Descriptor> as it uses plug and play audio cables for each speaker and are color coded as well.', u'Feature': [{u'second': u'quick', u'hasrel': u'hasQuality', u'first': u'Setup'}, {u'second': u'easy', u'hasrel': u'hasQuality', u'first': u'Setup'}], u'Descriptor': [{u'name': u'quick'}, {u'name': u'easy'}]}, {u'seqno': 1, u'Product': [{u'second': u'Sony', u'hasrel': u'madeBy', u'first': u'this product'}], u'sentence': u"Most if not all newer and higher end TVs support this as my Dad's Sony 40' TV does this well.", u'Company': [{u'name': u'Sony'}], u'reversed_sentence': u"Most if not all newer and higher end TVs support this as my Dad's <Company> 40' TV does this well."}], u'review_id': u'0000927a59e02ee3d09b12e0e2044b0e'}
+,
 {
-  "_rev": "1-bd5ceb4bac8328990a7af7201b310c3f", 
+  "_rev": "2-256bd0a8b913a5c6f48544c261f2ec9e", 
   "_id": "89df48de613c6c22cab383cb50115ed0", 
   "review": [
     {
@@ -1080,9 +1079,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2044b0e"
 }
-{u'_rev': u'1-d4da160a942c508d6d8bfe436b6a2bf4', u'_id': u'89df48de613c6c22cab383cb501678dd', u'review': [{u'sentence': u"Don't get me wrong, the sound quality is fantastic, however there is no ability to adjust each separate sound channel.", u'seqno': 0, u'reversed_sentence': u"Don't get me wrong, the <Feature> is <Descriptor>, however there is no ability to adjust each separate sound channel.", u'Feature': [{u'second': u'fantastic', u'hasrel': u'hasQuality', u'first': u'sound quality'}], u'Descriptor': [{u'name': u'fantastic'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2047aa3'}
+,
 {
-  "_rev": "1-d4da160a942c508d6d8bfe436b6a2bf4", 
+  "_rev": "2-a312941bfa5d4072de5fa38354977edc", 
   "_id": "89df48de613c6c22cab383cb501678dd", 
   "review": [
     {
@@ -1108,9 +1107,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2047aa3"
 }
-{u'_rev': u'1-6008d0caa9d21cb9e582615d0eb7d5a3', u'_id': u'89df48de613c6c22cab383cb501b2b71', u'review': [{u'Product': [{u'second': u'bass response', u'hasrel': u'hasFeature', u'first': u'product'}], u'sentence': u'I mounted all speakers high on the walls about 9" down from ceiling and placed the subwoofer under the bed to conceal it and get great bass response while lying in bed.', u'seqno': 0, u'Feature': [{u'name': u'bass response'}, {u'second': u'great', u'hasrel': u'hasQuality', u'first': u'bass response'}], u'Descriptor': [{u'name': u'great'}], u'reversed_sentence': u'I mounted all speakers high on the walls about 9" down from ceiling and placed the subwoofer under the bed to conceal it and get <Descriptor> <Feature> while lying in bed.'}, {u'seqno': 1, u'Product': [{u'second': u'very well', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'So ya, I like to think I have enough audio experience to say this product does very well for the price and can recommend it to anyone interested in getting one.', u'Descriptor': [{u'name': u'very well'}], u'reversed_sentence': u'So ya, I like to think I have enough audio experience to say this <Product> does <Descriptor> for the price and can recommend it to anyone interested in getting one.'}], u'review_id': u'0000927a59e02ee3d09b12e0e204a482'}
+,
 {
-  "_rev": "1-6008d0caa9d21cb9e582615d0eb7d5a3", 
+  "_rev": "2-5c64be5561bf27d8a9d434d0ab24a414", 
   "_id": "89df48de613c6c22cab383cb501b2b71", 
   "review": [
     {
@@ -1166,30 +1165,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204a482"
 }
-{u'_rev': u'1-b4ab536c23e5ceab87b341741245baf2', u'_id': u'89df48de613c6c22cab383cb501f83d9', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204d490'}
+,
 {
-  "_rev": "1-b4ab536c23e5ceab87b341741245baf2", 
+  "_rev": "2-affa1a8e1af270833cc5995816439faa", 
   "_id": "89df48de613c6c22cab383cb501f83d9", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204d490"
 }
-{u'_rev': u'1-4871a57c6b3c525005d68a52b4e46a49', u'_id': u'8bd8a0d0fd0c2411efd2577cc479c981', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2003b52'}
+,
 {
-  "_rev": "1-4871a57c6b3c525005d68a52b4e46a49", 
+  "_rev": "2-922e850b9ecd09c4b17a7cee25165a3e", 
   "_id": "8bd8a0d0fd0c2411efd2577cc479c981", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2003b52"
 }
-{u'_rev': u'1-e3197a251863ce35d779961bd71a702f', u'_id': u'8bd8a0d0fd0c2411efd2577cc47ff020', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2004a16'}
+,
 {
-  "_rev": "1-e3197a251863ce35d779961bd71a702f", 
+  "_rev": "2-ac57c6c21665344732f40e5ea4b360d5", 
   "_id": "8bd8a0d0fd0c2411efd2577cc47ff020", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2004a16"
 }
-{u'_rev': u'1-e5313c3a91366f1c2a2b4e7610f6dfce', u'_id': u'8bd8a0d0fd0c2411efd2577cc483bdeb', u'review': [{u'seqno': 0, u'Product': [{u'second': u'good mouse', u'hasrel': u'hasQuality', u'first': u'This'}], u'sentence': u'This is a good mouse.', u'Descriptor': [{u'name': u'good mouse'}], u'reversed_sentence': u'<Product> is a <Descriptor>.'}, {u'seqno': 1, u'Product': [{u'second': u'jumpy', u'hasrel': u'hasQuality', u'first': u'This'}, {u'second': u'catchy', u'hasrel': u'hasQuality', u'first': u'This'}], u'sentence': u'It is jumpy and catchy.', u'Descriptor': [{u'name': u'jumpy'}, {u'name': u'catchy'}], u'reversed_sentence': u'It is <Descriptor> and <Descriptor>.'}, {u'seqno': 2, u'Product': [{u'second': u'sometimes jump', u'hasrel': u'hasFeature', u'first': u'This'}], u'sentence': u'It will sometimes jump back a little bit after you have moved it, even if you are carful not to move the wheel back.', u'Feature': [{u'name': u'sometimes jump'}], u'reversed_sentence': u'It will <Feature> back a little bit after you have moved it, even if you are carful not to move the wheel back.'}], u'review_id': u'0000927a59e02ee3d09b12e0e20086ab'}
+,
 {
-  "_rev": "1-e5313c3a91366f1c2a2b4e7610f6dfce", 
+  "_rev": "2-28e79bb31466031832ffe1160b12ee85", 
   "_id": "8bd8a0d0fd0c2411efd2577cc483bdeb", 
   "review": [
     {
@@ -1263,23 +1262,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20086ab"
 }
-{u'_rev': u'1-29f13b86a2f196ae414f64556fac9771', u'_id': u'8bd8a0d0fd0c2411efd2577cc48598f5', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2009631'}
+,
 {
-  "_rev": "1-29f13b86a2f196ae414f64556fac9771", 
+  "_rev": "2-b45b7843e8ce7ed842dc0d83d782eac1", 
   "_id": "8bd8a0d0fd0c2411efd2577cc48598f5", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2009631"
 }
-{u'_rev': u'1-bfa9e439d9056c924c9b730cf07e84b1', u'_id': u'8bd8a0d0fd0c2411efd2577cc488a288', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200d007'}
+,
 {
-  "_rev": "1-bfa9e439d9056c924c9b730cf07e84b1", 
+  "_rev": "2-25c56ed91e0735a1e90542c7defb0130", 
   "_id": "8bd8a0d0fd0c2411efd2577cc488a288", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200d007"
 }
-{u'_rev': u'1-a0eb33583aa1a730ad4ea0fafd0e5849', u'_id': u'8bd8a0d0fd0c2411efd2577cc48c58ab', u'review': [{u'sentence': u"Looks good on the screen but just wasn't the mouse for me.", u'seqno': 0, u'reversed_sentence': u"<Feature> <Descriptor> on the <Feature> but just wasn't the mouse for me.", u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'Looks'}, {u'second': u'good', u'hasrel': u'hasQuality', u'first': u'screen'}], u'Descriptor': [{u'name': u'good'}, {u'name': u'good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2010399'}
+,
 {
-  "_rev": "1-a0eb33583aa1a730ad4ea0fafd0e5849", 
+  "_rev": "2-5bd1b94b22268136fcc2da8df7efe053", 
   "_id": "8bd8a0d0fd0c2411efd2577cc48c58ab", 
   "review": [
     {
@@ -1313,51 +1312,51 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2010399"
 }
-{u'_rev': u'1-3418442ffbfc62532aa0fd67783b0edd', u'_id': u'8bd8a0d0fd0c2411efd2577cc49094c8', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2015411'}
+,
 {
-  "_rev": "1-3418442ffbfc62532aa0fd67783b0edd", 
+  "_rev": "2-a3747eb73c03addecc0865166897c51a", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49094c8", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2015411"
 }
-{u'_rev': u'1-79b9004d5a8c55094b8d15cc8899f60f', u'_id': u'8bd8a0d0fd0c2411efd2577cc491f4f3', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20167e6'}
+,
 {
-  "_rev": "1-79b9004d5a8c55094b8d15cc8899f60f", 
+  "_rev": "2-c3ba42189aee0f3cdfcb9d643b740d36", 
   "_id": "8bd8a0d0fd0c2411efd2577cc491f4f3", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20167e6"
 }
-{u'_rev': u'1-2f65b885dc47bb15d7dd1032d3b60a12', u'_id': u'8bd8a0d0fd0c2411efd2577cc4942521', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2019e7b'}
+,
 {
-  "_rev": "1-2f65b885dc47bb15d7dd1032d3b60a12", 
+  "_rev": "2-309d4247d215c4d34b3d58f2aa601994", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4942521", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2019e7b"
 }
-{u'_rev': u'1-1e7484e26ab18a676f3cd84d9d832c6e', u'_id': u'8bd8a0d0fd0c2411efd2577cc4978f93', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201ad70'}
+,
 {
-  "_rev": "1-1e7484e26ab18a676f3cd84d9d832c6e", 
+  "_rev": "2-9f35b3ac143cb06eafc38a0c57432b17", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4978f93", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201ad70"
 }
-{u'_rev': u'1-7a71e71ff52800f50f165b100fc6cdf9', u'_id': u'8bd8a0d0fd0c2411efd2577cc4989176', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201b737'}
+,
 {
-  "_rev": "1-7a71e71ff52800f50f165b100fc6cdf9", 
+  "_rev": "2-23245cd46a1eb4369086795d1c10a32a", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4989176", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201b737"
 }
-{u'_rev': u'1-d9e69a0703940135511532a0118abe45', u'_id': u'8bd8a0d0fd0c2411efd2577cc49ab4e5', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201d7a0'}
+,
 {
-  "_rev": "1-d9e69a0703940135511532a0118abe45", 
+  "_rev": "2-be8ba36606901e74571e872cb0def15c", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49ab4e5", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201d7a0"
 }
-{u'_rev': u'1-7556ece082d2ecd84860b2675f172eb4', u'_id': u'8bd8a0d0fd0c2411efd2577cc49b7e1d', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Great', u'hasrel': u'hasQuality', u'first': u'device'}, {u'second': u'little', u'hasrel': u'hasQuality', u'first': u'device'}], u'sentence': u'Great little device and cheap.', u'Descriptor': [{u'name': u'Great'}, {u'name': u'little'}], u'reversed_sentence': u'<Descriptor> <Descriptor> <Product> and cheap.'}], u'review_id': u'0000927a59e02ee3d09b12e0e201e1f6'}
+,
 {
-  "_rev": "1-7556ece082d2ecd84860b2675f172eb4", 
+  "_rev": "2-c20a8aa78a0184d29080ce98de21e6bf", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49b7e1d", 
   "review": [
     {
@@ -1391,9 +1390,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e201e1f6"
 }
-{u'_rev': u'1-d7867d6dda1e2f5976a426ea14ef9f4a', u'_id': u'8bd8a0d0fd0c2411efd2577cc49d6a8f', u'review': [{u'sentence': u'Item works great with the "Staples 4-port USB Hub 1.1" (Model #607475: http://www.amazon.com/gp/product/B004WTVFE0) and the 150ft 550MHz Cat6-Cable from Cables To Go (Model #27159: http://www.amazon.com/gp/product/B0002JFN56).I use this setup to connect a keyboard, a mouse and 2 gamepads to my HTPC by running the cable from the couch table all the way around the outside of our apartment so it doesn\'t run through the middle of our living room or through doorways.', u'seqno': 0, u'reversed_sentence': u'<Feature> <Descriptor> with the "Staples 4-port USB Hub 1.1" (Model #607475: http://www.amazon.com/gp/product/B004WTVFE0) and the 150ft 550MHz Cat6-Cable from Cables To Go (Model #27159: http://www.amazon.com/gp/product/B0002JFN56).I use this setup to connect a keyboard, a mouse and 2 gamepads to my HTPC by running the cable from the couch table all the way around the outside of our apartment so it doesn\'t run through the middle of our living room or through doorways.', u'Feature': [{u'second': u'works great', u'hasrel': u'hasQuality', u'first': u'Item'}], u'Descriptor': [{u'name': u'works great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e202077b'}
+,
 {
-  "_rev": "1-d7867d6dda1e2f5976a426ea14ef9f4a", 
+  "_rev": "2-e4cdc08a884ce48763d06ad31a9ec1bf", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49d6a8f", 
   "review": [
     {
@@ -1419,44 +1418,44 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202077b"
 }
-{u'_rev': u'1-fbff109407251ee30bc60e51c0caf759', u'_id': u'8bd8a0d0fd0c2411efd2577cc49ec804', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2021450'}
+,
 {
-  "_rev": "1-fbff109407251ee30bc60e51c0caf759", 
+  "_rev": "2-783cad9dfa84b76d3db062befcc2a0d4", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49ec804", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2021450"
 }
-{u'_rev': u'1-fa1f8c96dddf885f6953f11ef03297cc', u'_id': u'8bd8a0d0fd0c2411efd2577cc49f7a51', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2021922'}
+,
 {
-  "_rev": "1-fa1f8c96dddf885f6953f11ef03297cc", 
+  "_rev": "2-0b3eb86aa1d652b73dfa18ac9035508f", 
   "_id": "8bd8a0d0fd0c2411efd2577cc49f7a51", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2021922"
 }
-{u'_rev': u'1-30b0fe76f9bc368e9bc553b87e54270a', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a12508', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20237ca'}
+,
 {
-  "_rev": "1-30b0fe76f9bc368e9bc553b87e54270a", 
+  "_rev": "2-ce116f38df4123196b9ed11e92c5a554", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a12508", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20237ca"
 }
-{u'_rev': u'1-bf129f1597bd92fd556e5d709cc0322f', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a1c419', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20248af'}
+,
 {
-  "_rev": "1-bf129f1597bd92fd556e5d709cc0322f", 
+  "_rev": "2-c56e5c3330ec99f18bbe2a2cef178c72", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a1c419", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20248af"
 }
-{u'_rev': u'1-6c70d81d574fd37fb6904a7137ec28e1', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a28063', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20253fa'}
+,
 {
-  "_rev": "1-6c70d81d574fd37fb6904a7137ec28e1", 
+  "_rev": "2-b40486dce99c1962ff0e4f10a4166f10", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a28063", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20253fa"
 }
-{u'_rev': u'1-9de468c8146180f922c74cf0141dcc31', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a2a135', u'review': [{u'seqno': 0, u'Product': [{u'second': u'great option', u'hasrel': u'hasQuality', u'first': u'This'}], u'sentence': u'This is a great option to extend a USB connection.', u'Descriptor': [{u'name': u'great option'}], u'reversed_sentence': u'<Product> is a <Descriptor> to extend a USB connection.'}], u'review_id': u'0000927a59e02ee3d09b12e0e20260a1'}
+,
 {
-  "_rev": "1-9de468c8146180f922c74cf0141dcc31", 
+  "_rev": "2-fa646b8cf4553071c187e65c47199952", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a2a135", 
   "review": [
     {
@@ -1482,37 +1481,37 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20260a1"
 }
-{u'_rev': u'1-ea5fe25a9a3362de54c963bad0f87e12', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a3dd17', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2026f9f'}
+,
 {
-  "_rev": "1-ea5fe25a9a3362de54c963bad0f87e12", 
+  "_rev": "2-a96183cc617a72c56bc75aae06325385", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a3dd17", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2026f9f"
 }
-{u'_rev': u'1-4d0c08b813001848379b42b21b858890', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a50512', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2028ed1'}
+,
 {
-  "_rev": "1-4d0c08b813001848379b42b21b858890", 
+  "_rev": "2-a0e6ac13d2bff4ac56099af5eccfbda0", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a50512", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2028ed1"
 }
-{u'_rev': u'1-9ea672a8a5dfd257fad350c62c388d6a', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a59f45', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2029460'}
+,
 {
-  "_rev": "1-9ea672a8a5dfd257fad350c62c388d6a", 
+  "_rev": "2-1da4bb9a8e400d41bc1667ee62dfda50", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a59f45", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2029460"
 }
-{u'_rev': u'1-49dbe8e7f56b2fea417b9a22ddff14f0', u'_id': u'8bd8a0d0fd0c2411efd2577cc4a902fb', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202b0b6'}
+,
 {
-  "_rev": "1-49dbe8e7f56b2fea417b9a22ddff14f0", 
+  "_rev": "2-d14afaceb313ae29e345d641ec1d02d3", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4a902fb", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202b0b6"
 }
-{u'_rev': u'1-ac34a07275c1b9f3755f751c2e3d30f7', u'_id': u'8bd8a0d0fd0c2411efd2577cc4ac1d2f', u'review': [{u'seqno': 0, u'Product': [{u'second': u'minimize movement', u'hasrel': u'hasFeature', u'first': u'laptop'}, {u'second': u'minimize movement', u'hasrel': u'hasFeature', u'first': u'laptop'}], u'sentence': u'Might not need to bring a 2nd bag for only a couple days of traveling.6)  Includes a couple soft rectangular blocks for cushioning a smaller laptop and minimize movement in the laptop compartment.', u'Feature': [{u'name': u'minimize movement'}, {u'name': u'minimize movement'}], u'reversed_sentence': u'Might not need to bring a 2nd bag for only a couple days of traveling.6)  Includes a couple soft rectangular blocks for cushioning a smaller <Product> and <Feature> in the <Product> compartment.'}], u'review_id': u'0000927a59e02ee3d09b12e0e202d254'}
+,
 {
-  "_rev": "1-ac34a07275c1b9f3755f751c2e3d30f7", 
+  "_rev": "2-a37d0d444f106f8da040ce962150ad9e", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4ac1d2f", 
   "review": [
     {
@@ -1546,9 +1545,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202d254"
 }
-{u'_rev': u'1-cc96e4e1489602bc3e4c4d6393e6f540', u'_id': u'8bd8a0d0fd0c2411efd2577cc4aca947', u'review': [{u'seqno': 0, u'Product': [{u'second': u'amazing', u'hasrel': u'hasQuality', u'first': u'This bag'}], u'sentence': u'This bag is amazing.', u'Descriptor': [{u'name': u'amazing'}], u'reversed_sentence': u'<Product> is <Descriptor>.'}], u'review_id': u'0000927a59e02ee3d09b12e0e202dd2b'}
+,
 {
-  "_rev": "1-cc96e4e1489602bc3e4c4d6393e6f540", 
+  "_rev": "2-59d20c2ecc5cc1cadbd68fdfc0b34929", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4aca947", 
   "review": [
     {
@@ -1574,37 +1573,37 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202dd2b"
 }
-{u'_rev': u'1-87f181bc2c4b4054fb197406e16b52eb', u'_id': u'8bd8a0d0fd0c2411efd2577cc4adf496', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202e1f4'}
+,
 {
-  "_rev": "1-87f181bc2c4b4054fb197406e16b52eb", 
+  "_rev": "2-9b42310e4da56aaef7768f479d79c24d", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4adf496", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202e1f4"
 }
-{u'_rev': u'1-033e55a9151b8213bdaa4b13e8d59dd6', u'_id': u'8bd8a0d0fd0c2411efd2577cc4b0290e', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203094f'}
+,
 {
-  "_rev": "1-033e55a9151b8213bdaa4b13e8d59dd6", 
+  "_rev": "2-a179fe3a8d60a658915a97acaf606778", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4b0290e", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203094f"
 }
-{u'_rev': u'1-812465205b8bcc840d76399cefc2dd52', u'_id': u'8bd8a0d0fd0c2411efd2577cc4bb07b2', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20364b4'}
+,
 {
-  "_rev": "1-812465205b8bcc840d76399cefc2dd52", 
+  "_rev": "2-2bdf5a5df7d5f47c8ccba13dbc7677ce", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4bb07b2", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20364b4"
 }
-{u'_rev': u'1-a28bdb7ced881dca970f85321a7678ae', u'_id': u'8bd8a0d0fd0c2411efd2577cc4bbeba4', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2037750'}
+,
 {
-  "_rev": "1-a28bdb7ced881dca970f85321a7678ae", 
+  "_rev": "2-6a53e77d20737232520e05fe1e395f64", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4bbeba4", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2037750"
 }
-{u'_rev': u'1-c6ab5c45b2dea9db5100d5a4c6816818', u'_id': u'8bd8a0d0fd0c2411efd2577cc4bd8d1f', u'review': [{u'sentence': u'The automatic sound caliberation is excellent.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor>.', u'Feature': [{u'second': u'excellent', u'hasrel': u'hasQuality', u'first': u'automatic sound caliberation'}], u'Descriptor': [{u'name': u'excellent'}]}, {u'sentence': u'Surround sound is pretty good.', u'seqno': 1, u'reversed_sentence': u'<Feature> is <Descriptor>.', u'Feature': [{u'second': u'pretty good', u'hasrel': u'hasQuality', u'first': u'Surround sound'}], u'Descriptor': [{u'name': u'pretty good'}]}, {u'sentence': u'Also the Audio input slot is pretty good which means you can plug any MP3 player like iPod to the home theater.', u'seqno': 2, u'reversed_sentence': u'Also the <Feature> is <Descriptor> which means you can plug any MP3 player like iPod to the home theater.', u'Feature': [{u'second': u'pretty good', u'hasrel': u'hasQuality', u'first': u'Audio input slot'}], u'Descriptor': [{u'name': u'pretty good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2039d6d'}
+,
 {
-  "_rev": "1-c6ab5c45b2dea9db5100d5a4c6816818", 
+  "_rev": "2-48cb753edcd8027a5b93134627c21673", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4bd8d1f", 
   "review": [
     {
@@ -1670,23 +1669,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2039d6d"
 }
-{u'_rev': u'1-207fd4393be80fdbf3bb2c774c5a918a', u'_id': u'8bd8a0d0fd0c2411efd2577cc4beb337', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203af65'}
+,
 {
-  "_rev": "1-207fd4393be80fdbf3bb2c774c5a918a", 
+  "_rev": "2-aed808b6fee3221058f73a3e0789e7a1", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4beb337", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203af65"
 }
-{u'_rev': u'1-56659049e2a9c7ef1b003218d69862ce', u'_id': u'8bd8a0d0fd0c2411efd2577cc4c1e5c8', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203d79a'}
+,
 {
-  "_rev": "1-56659049e2a9c7ef1b003218d69862ce", 
+  "_rev": "2-caacec8883d1b544c634f0e45e44bc2d", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4c1e5c8", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203d79a"
 }
-{u'_rev': u'1-f8203a6c61b7aed150d6038ae5234f74', u'_id': u'8bd8a0d0fd0c2411efd2577cc4c3fb00', u'review': [{u'sentence': u'The speakers are color-coded, which made things even easier.', u'seqno': 0, u'reversed_sentence': u'The <Feature> are <Descriptor>, which made things even easier.', u'Feature': [{u'second': u'color-coded', u'hasrel': u'hasQuality', u'first': u'speakers'}], u'Descriptor': [{u'name': u'color-coded'}]}, {u'sentence': u'Picture quality is very good.', u'seqno': 1, u'reversed_sentence': u'<Feature> is <Descriptor>.', u'Feature': [{u'second': u'very good', u'hasrel': u'hasQuality', u'first': u'Picture quality'}], u'Descriptor': [{u'name': u'very good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e203df87'}
+,
 {
-  "_rev": "1-f8203a6c61b7aed150d6038ae5234f74", 
+  "_rev": "2-90c1abf2ac3f7807d73229038dd09ea4", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4c3fb00", 
   "review": [
     {
@@ -1732,9 +1731,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203df87"
 }
-{u'_rev': u'1-f76f306c369c7425e66e146f62fed617', u'_id': u'8bd8a0d0fd0c2411efd2577cc4c5b328', u'review': [{u'sentence': u'I really like this system - the sound quality is good for the price.', u'seqno': 0, u'reversed_sentence': u'I really like this system - the <Feature> is <Descriptor> for the price.', u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'sound quality'}], u'Descriptor': [{u'name': u'good'}]}, {u'Product': [{u'second': u'Comcast', u'hasrel': u'madeBy', u'first': u'headphones'}, {u'second': u'sound quality', u'hasrel': u'hasFeature', u'first': u'headphones'}], u'sentence': u'That was not a deal breaker for me because I have another surround system on my LG TV in the family room that will.Overall, the sound quality is good.', u'seqno': 1, u'Company': [{u'name': u'Comcast'}], u'Feature': [{u'name': u'sound quality'}, {u'second': u'good', u'hasrel': u'hasQuality', u'first': u'sound quality'}], u'Descriptor': [{u'name': u'good'}], u'reversed_sentence': u'That was not a deal breaker for me because I have another surround system on my LG TV in the family room that will.Overall, the <Feature> is <Descriptor>.'}, {u'seqno': 2, u'Product': [{u'second': u'top of the line system', u'hasrel': u'hasQuality', u'first': u'headphones'}], u'sentence': u'If you are looking for a top of the line system for your TV that separates ALL highs and lows in the sound, you are going to have to pay $1K or more.', u'Descriptor': [{u'name': u'top of the line system'}], u'reversed_sentence': u'If you are looking for a <Descriptor> for your TV that separates ALL highs and lows in the sound, you are going to have to pay $1K or more.'}], u'review_id': u'0000927a59e02ee3d09b12e0e203f5d8'}
+,
 {
-  "_rev": "1-f76f306c369c7425e66e146f62fed617", 
+  "_rev": "2-114b417e4c97f5a8cf53da75c396bdb5", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4c5b328", 
   "review": [
     {
@@ -1820,30 +1819,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203f5d8"
 }
-{u'_rev': u'1-b7188ce64fdd9d01f9359877ea2d8a36', u'_id': u'8bd8a0d0fd0c2411efd2577cc4c6e9aa', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20403a1'}
+,
 {
-  "_rev": "1-b7188ce64fdd9d01f9359877ea2d8a36", 
+  "_rev": "2-e40a187ac41248d92be769e4aaed77c6", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4c6e9aa", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20403a1"
 }
-{u'_rev': u'1-10c812cee6724a296ac8ed57f9fe323e', u'_id': u'8bd8a0d0fd0c2411efd2577cc4c74993', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204087b'}
+,
 {
-  "_rev": "1-10c812cee6724a296ac8ed57f9fe323e", 
+  "_rev": "2-3f6a0e7e0934586caf26365df09d3faf", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4c74993", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204087b"
 }
-{u'_rev': u'1-210f52deb132071438a97249529f6e6f', u'_id': u'8bd8a0d0fd0c2411efd2577cc4cb148b', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2042e9c'}
+,
 {
-  "_rev": "1-210f52deb132071438a97249529f6e6f", 
+  "_rev": "2-500197fafbd2cd28b07d47caaa0ca792", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4cb148b", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2042e9c"
 }
-{u'_rev': u'1-cad7e599cef766f2e7d505fba9e7e9dc', u'_id': u'8bd8a0d0fd0c2411efd2577cc4cdb9ae', u'review': [{u'Product': [{u'second': u'sound', u'hasrel': u'hasFeature', u'first': u'this'}, {u'second': u'easy to setup', u'hasrel': u'hasFeature', u'first': u'this'}], u'sentence': u"If you're looking for an all-in-one unit that has great sound and a great price and is easy to setup, this is definitely worth considering.", u'seqno': 0, u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sound'}, {u'name': u'sound'}, {u'name': u'easy to setup'}], u'Descriptor': [{u'name': u'great'}], u'reversed_sentence': u"If you're looking for an all-in-one unit that has <Descriptor> <Feature> and a great price and is <Feature>, <Product> is definitely worth considering."}], u'review_id': u'0000927a59e02ee3d09b12e0e20449ef'}
+,
 {
-  "_rev": "1-cad7e599cef766f2e7d505fba9e7e9dc", 
+  "_rev": "2-5dee52d8211cc54fa35aa50d8ac667da", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4cdb9ae", 
   "review": [
     {
@@ -1887,16 +1886,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20449ef"
 }
-{u'_rev': u'1-aa61444024dc39b6a1a6c9510e23ad83', u'_id': u'8bd8a0d0fd0c2411efd2577cc4d592c9', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204898f'}
+,
 {
-  "_rev": "1-aa61444024dc39b6a1a6c9510e23ad83", 
+  "_rev": "2-e4faeb20be9d884bf5e7beab217cb160", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4d592c9", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204898f"
 }
-{u'_rev': u'1-c22f98d00dd2a2b1d5e87b1907dddddd', u'_id': u'8bd8a0d0fd0c2411efd2577cc4d6956c', u'review': [{u'sentence': u"I down-sized from a 7.1 component setup and don't regret it for a second.", u'seqno': 0, u'reversed_sentence': u"I down-sized from a 7.1 <Descriptor> <Feature> and don't regret it for a second.", u'Feature': [{u'second': u'component', u'hasrel': u'hasQuality', u'first': u'setup'}], u'Descriptor': [{u'name': u'component'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2048ae8'}
+,
 {
-  "_rev": "1-c22f98d00dd2a2b1d5e87b1907dddddd", 
+  "_rev": "2-167b1514f58acc9b25ebac7ae906875a", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4d6956c", 
   "review": [
     {
@@ -1922,58 +1921,58 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2048ae8"
 }
-{u'_rev': u'1-62875f9904a51788183d01bab8153651', u'_id': u'8bd8a0d0fd0c2411efd2577cc4d7556c', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2049b88'}
+,
 {
-  "_rev": "1-62875f9904a51788183d01bab8153651", 
+  "_rev": "2-3e90a0c51154e9cfcf53a1c6dbe6a558", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4d7556c", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2049b88"
 }
-{u'_rev': u'1-d572b44699ebd7b7663070483ec91bf9', u'_id': u'8bd8a0d0fd0c2411efd2577cc4df8dee', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2050613'}
+,
 {
-  "_rev": "1-d572b44699ebd7b7663070483ec91bf9", 
+  "_rev": "2-1af1a3826662b012bde428fafe94d735", 
   "_id": "8bd8a0d0fd0c2411efd2577cc4df8dee", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2050613"
 }
-{u'_rev': u'1-31cc43dbdb00b28ae736f42020ba7a36', u'_id': u'8c126799cce01a846d15b4f33f83c360', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2000f34'}
+,
 {
-  "_rev": "1-31cc43dbdb00b28ae736f42020ba7a36", 
+  "_rev": "2-99dc76ffa2e1d1db50164f34a8e559a2", 
   "_id": "8c126799cce01a846d15b4f33f83c360", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2000f34"
 }
-{u'_rev': u'1-ccbcdf9d104e83d871081a8a82037ce2', u'_id': u'8c126799cce01a846d15b4f33f8d9f54', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2004985'}
+,
 {
-  "_rev": "1-ccbcdf9d104e83d871081a8a82037ce2", 
+  "_rev": "2-53c1e55905ae7aeb38e20306fbee036a", 
   "_id": "8c126799cce01a846d15b4f33f8d9f54", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2004985"
 }
-{u'_rev': u'1-918b5d2deff324eb7f9601f500db306f', u'_id': u'8c126799cce01a846d15b4f33f8eb409', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20054b7'}
+,
 {
-  "_rev": "1-918b5d2deff324eb7f9601f500db306f", 
+  "_rev": "2-b083bf1af6298933670324d6e14033f2", 
   "_id": "8c126799cce01a846d15b4f33f8eb409", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20054b7"
 }
-{u'_rev': u'1-3f7903e50e59f6b2191193823a691fb6', u'_id': u'8c126799cce01a846d15b4f33f96560c', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200c0ad'}
+,
 {
-  "_rev": "1-3f7903e50e59f6b2191193823a691fb6", 
+  "_rev": "2-29257da16df95611931bed76152d4876", 
   "_id": "8c126799cce01a846d15b4f33f96560c", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200c0ad"
 }
-{u'_rev': u'1-85fefb8bc190abecb88374261d3aaea7', u'_id': u'8c126799cce01a846d15b4f33f96b16b', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200c590'}
+,
 {
-  "_rev": "1-85fefb8bc190abecb88374261d3aaea7", 
+  "_rev": "2-888aca1b108a28928fb86bc18a9eca29", 
   "_id": "8c126799cce01a846d15b4f33f96b16b", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200c590"
 }
-{u'_rev': u'1-3cb7232f2defc1ea99136964d5e6963a', u'_id': u'8c126799cce01a846d15b4f33f981db1', u'review': [{u'sentence': u'The color is a NICE pale pink (not too &#34;Barbie&#34; or red or kiddish), and it has a comfortable weight to it (neither heavy nor light).', u'seqno': 0, u'reversed_sentence': u'The <Feature> is a <Descriptor> pink (not too &#34;Barbie&#34; or red or kiddish), and it has a comfortable weight to it (neither heavy nor light).', u'Feature': [{u'second': u'NICE pale', u'hasrel': u'hasQuality', u'first': u'color'}], u'Descriptor': [{u'name': u'NICE pale'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e200da8e'}
+,
 {
-  "_rev": "1-3cb7232f2defc1ea99136964d5e6963a", 
+  "_rev": "2-0b079c362c7a2f95f782fe68038bc2f7", 
   "_id": "8c126799cce01a846d15b4f33f981db1", 
   "review": [
     {
@@ -1999,30 +1998,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e200da8e"
 }
-{u'_rev': u'1-f315ee0eb10d6241ad8909625ba09af8', u'_id': u'8c126799cce01a846d15b4f33f9cb372', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2012628'}
+,
 {
-  "_rev": "1-f315ee0eb10d6241ad8909625ba09af8", 
+  "_rev": "2-5d6709a9ee87357781080ff00a841c9c", 
   "_id": "8c126799cce01a846d15b4f33f9cb372", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2012628"
 }
-{u'_rev': u'1-14922b3b3ee5ff9e26c80ee01492ac8e', u'_id': u'8c126799cce01a846d15b4f33f9de79c', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2013067'}
+,
 {
-  "_rev": "1-14922b3b3ee5ff9e26c80ee01492ac8e", 
+  "_rev": "2-8512d9fc26fae93b14742043510d2f04", 
   "_id": "8c126799cce01a846d15b4f33f9de79c", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2013067"
 }
-{u'_rev': u'1-df67b64e68c06bf9264760e762ad44fb', u'_id': u'8c126799cce01a846d15b4f33f9e6cb8', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2013a68'}
+,
 {
-  "_rev": "1-df67b64e68c06bf9264760e762ad44fb", 
+  "_rev": "2-568dfb8fa37146964b57bb9777997f43", 
   "_id": "8c126799cce01a846d15b4f33f9e6cb8", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2013a68"
 }
-{u'_rev': u'1-5bdbd9192decee241c415115d4835741', u'_id': u'8c126799cce01a846d15b4f33f9f13f8', u'review': [{u'sentence': u'Performance very competitive and versatility is excellent.', u'seqno': 0, u'reversed_sentence': u'<Feature> very <Descriptor> and <Descriptor> is excellent.', u'Feature': [{u'second': u'competitive', u'hasrel': u'hasQuality', u'first': u'Performance'}, {u'second': u'versatility', u'hasrel': u'hasQuality', u'first': u'Performance'}], u'Descriptor': [{u'name': u'competitive'}, {u'name': u'versatility'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2013fef'}
+,
 {
-  "_rev": "1-5bdbd9192decee241c415115d4835741", 
+  "_rev": "2-93cba0863998fe3a1d9747a03bcb9296", 
   "_id": "8c126799cce01a846d15b4f33f9f13f8", 
   "review": [
     {
@@ -2056,9 +2055,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2013fef"
 }
-{u'_rev': u'1-01e7b9c0be532f43d5f3fed3d102edd5', u'_id': u'8c126799cce01a846d15b4f33fa01250', u'review': [{u'seqno': 0, u'Product': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'Great price and good product!', u'Descriptor': [{u'name': u'good'}], u'reversed_sentence': u'Great price and <Descriptor> <Product>!'}], u'review_id': u'0000927a59e02ee3d09b12e0e20153bc'}
+,
 {
-  "_rev": "1-01e7b9c0be532f43d5f3fed3d102edd5", 
+  "_rev": "2-2984a785df830cc9a8601254b1234e13", 
   "_id": "8c126799cce01a846d15b4f33fa01250", 
   "review": [
     {
@@ -2084,79 +2083,79 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20153bc"
 }
-{u'_rev': u'1-e52ef1e681b7ea8a0f97a519d4edb68f', u'_id': u'8c126799cce01a846d15b4f33fa0a302', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2015684'}
+,
 {
-  "_rev": "1-e52ef1e681b7ea8a0f97a519d4edb68f", 
+  "_rev": "2-0816cba32be9efe8aed7d87f0b131c15", 
   "_id": "8c126799cce01a846d15b4f33fa0a302", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2015684"
 }
-{u'_rev': u'1-e3a92eebac19d85453195abbf8c15544', u'_id': u'8c126799cce01a846d15b4f33fa39de3', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2018695'}
+,
 {
-  "_rev": "1-e3a92eebac19d85453195abbf8c15544", 
+  "_rev": "2-c0f112af440c61a3022c8076d041a907", 
   "_id": "8c126799cce01a846d15b4f33fa39de3", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2018695"
 }
-{u'_rev': u'1-bd9629a64969d2636533a61496104ece', u'_id': u'8c126799cce01a846d15b4f33fa8cf47', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201ba8f'}
+,
 {
-  "_rev": "1-bd9629a64969d2636533a61496104ece", 
+  "_rev": "2-7feec51b9cdcebbcf2725a5b0cfd885a", 
   "_id": "8c126799cce01a846d15b4f33fa8cf47", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201ba8f"
 }
-{u'_rev': u'1-d145dc1a9088c33fe44b575f252f4ec8', u'_id': u'8c126799cce01a846d15b4f33fab4e56', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201f05b'}
+,
 {
-  "_rev": "1-d145dc1a9088c33fe44b575f252f4ec8", 
+  "_rev": "2-7428d7a1cd47746f3c829206ecae4f80", 
   "_id": "8c126799cce01a846d15b4f33fab4e56", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201f05b"
 }
-{u'_rev': u'1-340b2c62deab1a184e5649745a320ca8', u'_id': u'8c126799cce01a846d15b4f33fb43a21', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20290b5'}
+,
 {
-  "_rev": "1-340b2c62deab1a184e5649745a320ca8", 
+  "_rev": "2-d3f4a64f41fb66192d26efec2ebf1d7c", 
   "_id": "8c126799cce01a846d15b4f33fb43a21", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20290b5"
 }
-{u'_rev': u'1-f96c2487d8687d8fa3dcbf11176c9554', u'_id': u'8c126799cce01a846d15b4f33fb62b31', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202ad39'}
+,
 {
-  "_rev": "1-f96c2487d8687d8fa3dcbf11176c9554", 
+  "_rev": "2-303ba7b6dc3c3bec37391394fdc6bb79", 
   "_id": "8c126799cce01a846d15b4f33fb62b31", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202ad39"
 }
-{u'_rev': u'1-af8b2834d73934839a0c526690fa6999', u'_id': u'8c126799cce01a846d15b4f33fb88151', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202c4be'}
+,
 {
-  "_rev": "1-af8b2834d73934839a0c526690fa6999", 
+  "_rev": "2-577f04a2832c37135f0e9a6f2bf8197b", 
   "_id": "8c126799cce01a846d15b4f33fb88151", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202c4be"
 }
-{u'_rev': u'1-2a383fc590f734755161dc43cc00d9b8', u'_id': u'8c126799cce01a846d15b4f33fbc4194', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202eedb'}
+,
 {
-  "_rev": "1-2a383fc590f734755161dc43cc00d9b8", 
+  "_rev": "2-acbf60da508e02214853c99f273f900a", 
   "_id": "8c126799cce01a846d15b4f33fbc4194", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202eedb"
 }
-{u'_rev': u'1-5b97aec980ed67d02451f28c3e3cb604', u'_id': u'8c126799cce01a846d15b4f33fbe48c5', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20310cc'}
+,
 {
-  "_rev": "1-5b97aec980ed67d02451f28c3e3cb604", 
+  "_rev": "2-a499e6c0e562a2bf3501eef1d8e43ff1", 
   "_id": "8c126799cce01a846d15b4f33fbe48c5", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20310cc"
 }
-{u'_rev': u'1-b229ca039827c7107eb75637b63e970d', u'_id': u'8c126799cce01a846d15b4f33fc05a03', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20329f5'}
+,
 {
-  "_rev": "1-b229ca039827c7107eb75637b63e970d", 
+  "_rev": "2-b2cfa917b101c3f589002d19ac00c75a", 
   "_id": "8c126799cce01a846d15b4f33fc05a03", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20329f5"
 }
-{u'_rev': u'1-da34e47d45b698191df8748cb6f2c872', u'_id': u'8c126799cce01a846d15b4f33fc6f659', u'review': [{u'seqno': 0, u'Product': [{u'second': u'good quality', u'hasrel': u'hasQuality', u'first': u'computer'}], u'sentence': u"other cons;horrible menu systemcheapo remotepro's;it will play the files once you set everything up, and it plays them in good quality...so in recap, unless you have a good quality external hdd, look elsewhere.", u'Descriptor': [{u'name': u'good quality'}], u'reversed_sentence': u"other cons;horrible menu systemcheapo remotepro's;it will play the files once you set everything up, and it plays them in <Descriptor>...so in recap, unless you have a good quality external hdd, look elsewhere."}], u'review_id': u'0000927a59e02ee3d09b12e0e20346a2'}
+,
 {
-  "_rev": "1-da34e47d45b698191df8748cb6f2c872", 
+  "_rev": "2-18ea2849e2106d510dc2d8169b9bdc43", 
   "_id": "8c126799cce01a846d15b4f33fc6f659", 
   "review": [
     {
@@ -2182,23 +2181,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20346a2"
 }
-{u'_rev': u'1-41c9c2e83074d31dd2fef586d36de87e', u'_id': u'8c126799cce01a846d15b4f33fc8dc8a', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2034e2a'}
+,
 {
-  "_rev": "1-41c9c2e83074d31dd2fef586d36de87e", 
+  "_rev": "2-d091312465d82074ab0dfe22588001bf", 
   "_id": "8c126799cce01a846d15b4f33fc8dc8a", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2034e2a"
 }
-{u'_rev': u'1-ee592b8622868bbfdbf019cdcfc5765f', u'_id': u'8c126799cce01a846d15b4f33fc9b8d6', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2035a77'}
+,
 {
-  "_rev": "1-ee592b8622868bbfdbf019cdcfc5765f", 
+  "_rev": "2-bd0ad052a3021de9dd7ffdf42b2f036f", 
   "_id": "8c126799cce01a846d15b4f33fc9b8d6", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2035a77"
 }
-{u'_rev': u'1-a264852aaf124e9a95d45ae946b3f0a2', u'_id': u'8c126799cce01a846d15b4f33fca9d77', u'review': [{u'sentence': u'Setup was easy.', u'seqno': 0, u'reversed_sentence': u'<Feature> was <Descriptor>.', u'Feature': [{u'second': u'easy', u'hasrel': u'hasQuality', u'first': u'Setup'}], u'Descriptor': [{u'name': u'easy'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2036a91'}
+,
 {
-  "_rev": "1-a264852aaf124e9a95d45ae946b3f0a2", 
+  "_rev": "2-6de02158b492574efa66ae0e85b8df09", 
   "_id": "8c126799cce01a846d15b4f33fca9d77", 
   "review": [
     {
@@ -2224,9 +2223,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2036a91"
 }
-{u'_rev': u'1-a93fb7364e79bd96faed933ea87c09f6', u'_id': u'8c126799cce01a846d15b4f33fcff120', u'review': [{u'sentence': u'The remote is tiny, and it takes a bit of getting used to when switching from watching DVDs to listening to the television set.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor>, and it takes a bit of getting used to when switching from watching DVDs to listening to the television set.', u'Feature': [{u'second': u'tiny', u'hasrel': u'hasQuality', u'first': u'remote'}], u'Descriptor': [{u'name': u'tiny'}]}, {u'seqno': 1, u'Product': [{u'second': u'plug style', u'hasrel': u'hasFeature', u'first': u'speakers'}], u'sentence': u"The subwoofer is cheap looking, and I had hoped to use my older Sony subwoofer, but due to a change in the plug style, I didn't.For the price it is a very decent unit, although it does not have the sophistication one may wish, but it comes with a much lower price also.", u'Feature': [{u'name': u'plug style'}], u'reversed_sentence': u"The subwoofer is cheap looking, and I had hoped to use my older Sony subwoofer, but due to a change in the <Feature>, I didn't.For the price it is a very decent unit, although it does not have the sophistication one may wish, but it comes with a much lower price also."}, {u'sentence': u'Tiny remote, short cable wires, cheap looking subwoofer, no DVD eject button.', u'seqno': 2, u'reversed_sentence': u'<Feature>, short cable wires, <Descriptor>, no DVD eject button.', u'Feature': [{u'second': u'cheap looking subwoofer', u'hasrel': u'hasQuality', u'first': u'Tiny remote'}], u'Descriptor': [{u'name': u'cheap looking subwoofer'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e203cbb4'}
+,
 {
-  "_rev": "1-a93fb7364e79bd96faed933ea87c09f6", 
+  "_rev": "2-211e89b836d6adb0772c7fb1f99ee5b8", 
   "_id": "8c126799cce01a846d15b4f33fcff120", 
   "review": [
     {
@@ -2292,9 +2291,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203cbb4"
 }
-{u'_rev': u'1-77590dbf3924ddd84371f99b8fd2ba1c', u'_id': u'8c126799cce01a846d15b4f33fd72335', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Sony', u'hasrel': u'madeBy', u'first': u'TV'}], u'sentence': u'Well designed and when coupled to a Sony TV everything is on line or on screen.', u'Company': [{u'name': u'Sony'}], u'reversed_sentence': u'Well designed and when coupled to a <Company> <Product> everything is on line or on screen.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2041588'}
+,
 {
-  "_rev": "1-77590dbf3924ddd84371f99b8fd2ba1c", 
+  "_rev": "2-757421e95d1c2fdf72e127ef0b2fbfa0", 
   "_id": "8c126799cce01a846d15b4f33fd72335", 
   "review": [
     {
@@ -2320,16 +2319,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2041588"
 }
-{u'_rev': u'1-cf42c9500ec572ab99cbde9fde46813f', u'_id': u'8c126799cce01a846d15b4f33fd83db4', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2042623'}
+,
 {
-  "_rev": "1-cf42c9500ec572ab99cbde9fde46813f", 
+  "_rev": "2-ad520ae5c01d6ff9d29fae90dec8dbff", 
   "_id": "8c126799cce01a846d15b4f33fd83db4", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2042623"
 }
-{u'_rev': u'1-35da8b9fc541e81194cd2dc2f902a2e9', u'_id': u'8c126799cce01a846d15b4f33fd8a479', u'review': [{u'sentence': u'Works great, looks great, sounds great.', u'seqno': 0, u'reversed_sentence': u'Works <Descriptor>, looks <Descriptor>, <Feature> great.', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sounds'}, {u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sounds'}], u'Descriptor': [{u'name': u'great'}, {u'name': u'great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2042998'}
+,
 {
-  "_rev": "1-35da8b9fc541e81194cd2dc2f902a2e9", 
+  "_rev": "2-7909ddecb27f80a2ed704ea6c62ca255", 
   "_id": "8c126799cce01a846d15b4f33fd8a479", 
   "review": [
     {
@@ -2363,30 +2362,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2042998"
 }
-{u'_rev': u'1-beacf669e44f9957ba2b294ad50ca520', u'_id': u'8c126799cce01a846d15b4f33fdaa854', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20434e7'}
+,
 {
-  "_rev": "1-beacf669e44f9957ba2b294ad50ca520", 
+  "_rev": "2-211a92f72df2a472f3d1b059d5f1e50f", 
   "_id": "8c126799cce01a846d15b4f33fdaa854", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20434e7"
 }
-{u'_rev': u'1-53c537dce5bca9f1ef01cd4b22f3f8e3', u'_id': u'8c126799cce01a846d15b4f33fdeb534', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20450c1'}
+,
 {
-  "_rev": "1-53c537dce5bca9f1ef01cd4b22f3f8e3", 
+  "_rev": "2-c56f4478389d74363f9082d55b09d485", 
   "_id": "8c126799cce01a846d15b4f33fdeb534", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20450c1"
 }
-{u'_rev': u'1-b3cbc04098c447eab718ebf37aceaf12', u'_id': u'8c126799cce01a846d15b4f33fdf97da', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2045fba'}
+,
 {
-  "_rev": "1-b3cbc04098c447eab718ebf37aceaf12", 
+  "_rev": "2-127f75eab5c442c7ed43ac142b38b6ee", 
   "_id": "8c126799cce01a846d15b4f33fdf97da", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2045fba"
 }
-{u'_rev': u'1-899ec89ace80a4e45f7ec6deb6884af7', u'_id': u'8c126799cce01a846d15b4f33fe70f54', u'review': [{u'seqno': 0, u'Product': [{u'second': u'open', u'hasrel': u'hasFeature', u'first': u'product'}], u'sentence': u'Packing: it arrived in one piece, no damage and easy to open; No about the product: very easy to assemble, the sound it is great for a less than $200 dollars home theater system made by Sony.', u'Feature': [{u'name': u'open'}], u'reversed_sentence': u'Packing: it arrived in one piece, no damage and easy to <Feature>; No about the <Product>: very easy to assemble, the sound it is great for a less than $200 dollars home theater system made by Sony.'}], u'review_id': u'0000927a59e02ee3d09b12e0e204a366'}
+,
 {
-  "_rev": "1-899ec89ace80a4e45f7ec6deb6884af7", 
+  "_rev": "2-a8b45425397034dd252888ccb21fb27e", 
   "_id": "8c126799cce01a846d15b4f33fe70f54", 
   "review": [
     {
@@ -2412,9 +2411,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204a366"
 }
-{u'_rev': u'1-1fcf3466a66ef0abdad86735232b7535', u'_id': u'8c126799cce01a846d15b4f33fe9d3a7', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Digital', u'hasrel': u'madeBy', u'first': u'product'}], u'sentence': u"Western Digital Elements SE 1 TB USB 2.0 Portable is really a grate product for someone who wants a good storage capacity under a nice brand-name and with affordable price..... This WD's HD is very light-weight, very compact in size comparing to other HDs with same storage capacity... Runs smooth, no noise... looks simple, slim, straight black piece...One drawback I've seen in this HD is its connection jack on HD.. It seems very delicate.. I feel like it will be broken if I won't pay attention while connecting or disconnecting the cable.. I've also seen this problem in some WD Passport HDs...The best !", u'Company': [{u'name': u'Digital'}], u'reversed_sentence': u"Western <Company> Elements SE 1 TB USB 2.0 Portable is really a grate <Product> for someone who wants a good storage capacity under a nice brand-name and with affordable price..... This WD's HD is very light-weight, very compact in size comparing to other HDs with same storage capacity... Runs smooth, no noise... looks simple, slim, straight black piece...One drawback I've seen in this HD is its connection jack on HD.. It seems very delicate.. I feel like it will be broken if I won't pay attention while connecting or disconnecting the cable.. I've also seen this problem in some WD Passport HDs...The best !"}], u'review_id': u'0000927a59e02ee3d09b12e0e204c6ba'}
+,
 {
-  "_rev": "1-1fcf3466a66ef0abdad86735232b7535", 
+  "_rev": "2-267dd554026e5c7620b4cb95da28f4ec", 
   "_id": "8c126799cce01a846d15b4f33fe9d3a7", 
   "review": [
     {
@@ -2440,37 +2439,37 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204c6ba"
 }
-{u'_rev': u'1-35ad581e94a38b7b5b14e2a494c8caf6', u'_id': u'8c126799cce01a846d15b4f33febf131', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204d7e7'}
+,
 {
-  "_rev": "1-35ad581e94a38b7b5b14e2a494c8caf6", 
+  "_rev": "2-71010c3280ea18c0e93e5a173fc792e0", 
   "_id": "8c126799cce01a846d15b4f33febf131", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204d7e7"
 }
-{u'_rev': u'1-3639cb79eca3bcd694ba283b0ecaeedf', u'_id': u'8c126799cce01a846d15b4f33fed091d', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204f348'}
+,
 {
-  "_rev": "1-3639cb79eca3bcd694ba283b0ecaeedf", 
+  "_rev": "2-4b75f5ac36b10b8f7971f1c2db178668", 
   "_id": "8c126799cce01a846d15b4f33fed091d", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204f348"
 }
-{u'_rev': u'1-bf67ca9d7b3d141f46c4b112942eba14', u'_id': u'8c126799cce01a846d15b4f33fee2074', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2050311'}
+,
 {
-  "_rev": "1-bf67ca9d7b3d141f46c4b112942eba14", 
+  "_rev": "2-c24bec9ba9aa1e2f5759f456a6f5950d", 
   "_id": "8c126799cce01a846d15b4f33fee2074", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2050311"
 }
-{u'_rev': u'1-a057b99d8b9b328c6c2def8b6f1256cd', u'_id': u'a92d5942f62a95d300bb9b156705707a', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2000888'}
+,
 {
-  "_rev": "1-a057b99d8b9b328c6c2def8b6f1256cd", 
+  "_rev": "2-82c4344c77318c9c815be145469d19b7", 
   "_id": "a92d5942f62a95d300bb9b156705707a", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2000888"
 }
-{u'_rev': u'1-78746967edbe69d467edf2824b971a01', u'_id': u'a92d5942f62a95d300bb9b15670734ec', u'review': [{u'sentence': u'Excellent styling and looks.', u'seqno': 0, u'reversed_sentence': u'<Descriptor> <Feature> and looks.', u'Feature': [{u'second': u'Excellent', u'hasrel': u'hasQuality', u'first': u'styling'}], u'Descriptor': [{u'name': u'Excellent'}]}, {u'seqno': 1, u'Product': [{u'second': u'Microsoft', u'hasrel': u'madeBy', u'first': u'product'}], u'sentence': u"I have a small hands though it's not a big deal, I may get used to it soon.Overall:As expected from Microsoft, this product is a well built product with pro looks and that is why I prefer Microsoft over any other brand (even Logitech).", u'Company': [{u'name': u'Microsoft'}], u'reversed_sentence': u"I have a small hands though it's not a big deal, I may get used to it soon.Overall:As expected from <Company>, this <Product> is a well built product with pro looks and that is why I prefer Microsoft over any other brand (even Logitech)."}], u'review_id': u'0000927a59e02ee3d09b12e0e2001b53'}
+,
 {
-  "_rev": "1-78746967edbe69d467edf2824b971a01", 
+  "_rev": "2-d90ce92a81417e7577da5fd27cabc8b4", 
   "_id": "a92d5942f62a95d300bb9b15670734ec", 
   "review": [
     {
@@ -2516,23 +2515,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2001b53"
 }
-{u'_rev': u'1-93f8f25307e375a2dec4edd3f8a397da', u'_id': u'a92d5942f62a95d300bb9b15670a6419', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2002d47'}
+,
 {
-  "_rev": "1-93f8f25307e375a2dec4edd3f8a397da", 
+  "_rev": "2-500fb8b80d781851d87996eab2edf443", 
   "_id": "a92d5942f62a95d300bb9b15670a6419", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2002d47"
 }
-{u'_rev': u'1-33575f6ecbbb23807e426325c5ba5bdb', u'_id': u'a92d5942f62a95d300bb9b15670e7f12', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200496f'}
+,
 {
-  "_rev": "1-33575f6ecbbb23807e426325c5ba5bdb", 
+  "_rev": "2-2b5ca8afe045a71f739d6d57085778c2", 
   "_id": "a92d5942f62a95d300bb9b15670e7f12", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200496f"
 }
-{u'_rev': u'1-6a5da60f99d2425f456f9f0f4f8a71c3', u'_id': u'a92d5942f62a95d300bb9b1567122c62', u'review': [{u'sentence': u'The scroll wheel is overly sensitive.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor>.', u'Feature': [{u'second': u'overly sensitive', u'hasrel': u'hasQuality', u'first': u'scroll wheel'}], u'Descriptor': [{u'name': u'overly sensitive'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e20065e4'}
+,
 {
-  "_rev": "1-6a5da60f99d2425f456f9f0f4f8a71c3", 
+  "_rev": "2-7de27b75f7873fc5613f2c5b8b8a2fd3", 
   "_id": "a92d5942f62a95d300bb9b1567122c62", 
   "review": [
     {
@@ -2558,9 +2557,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20065e4"
 }
-{u'_rev': u'1-c3bfd91c18cc6a4920c7b0e1e07b7be5', u'_id': u'a92d5942f62a95d300bb9b1567180d8f', u'review': [{u'sentence': u'The wheel has a great feel and its super accurate.', u'seqno': 0, u'reversed_sentence': u'The <Feature> has a great feel and its <Descriptor>.', u'Feature': [{u'second': u'super accurate', u'hasrel': u'hasQuality', u'first': u'wheel'}], u'Descriptor': [{u'name': u'super accurate'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e200b5d9'}
+,
 {
-  "_rev": "1-c3bfd91c18cc6a4920c7b0e1e07b7be5", 
+  "_rev": "2-8008a589faa8bd6a88c54d11c9e87405", 
   "_id": "a92d5942f62a95d300bb9b1567180d8f", 
   "review": [
     {
@@ -2586,16 +2585,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e200b5d9"
 }
-{u'_rev': u'1-120a08e511d370202b52327030fac5b9', u'_id': u'a92d5942f62a95d300bb9b15672529dc', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2017abd'}
+,
 {
-  "_rev": "1-120a08e511d370202b52327030fac5b9", 
+  "_rev": "2-97da5126236bcb9a81b64214665dab1a", 
   "_id": "a92d5942f62a95d300bb9b15672529dc", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2017abd"
 }
-{u'_rev': u'1-ef9c3e47496789a2333b6520ec7aadce', u'_id': u'a92d5942f62a95d300bb9b1567263066', u'review': [{u'seqno': 0, u'Product': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'Cheap price, fast shipping, great product.', u'Descriptor': [{u'name': u'great'}], u'reversed_sentence': u'Cheap price, fast shipping, <Descriptor> <Product>.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2019121'}
+,
 {
-  "_rev": "1-ef9c3e47496789a2333b6520ec7aadce", 
+  "_rev": "2-5e5dde5fa85e990006a5b44943b80af4", 
   "_id": "a92d5942f62a95d300bb9b1567263066", 
   "review": [
     {
@@ -2621,30 +2620,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2019121"
 }
-{u'_rev': u'1-481e408650a96c3b524fcd8a6eae583f', u'_id': u'a92d5942f62a95d300bb9b15672ce791', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201dc2b'}
+,
 {
-  "_rev": "1-481e408650a96c3b524fcd8a6eae583f", 
+  "_rev": "2-f40d3e0d0257176e10246d00079416b3", 
   "_id": "a92d5942f62a95d300bb9b15672ce791", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201dc2b"
 }
-{u'_rev': u'1-9abb35bca50bfbb853e00d081d62669c', u'_id': u'a92d5942f62a95d300bb9b156730476b', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20210ea'}
+,
 {
-  "_rev": "1-9abb35bca50bfbb853e00d081d62669c", 
+  "_rev": "2-97cc3cf5307e2e4eadc7a0d804d616af", 
   "_id": "a92d5942f62a95d300bb9b156730476b", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20210ea"
 }
-{u'_rev': u'1-ef1e4ef39eb175c8e29c90500ecfa30c', u'_id': u'a92d5942f62a95d300bb9b156733ce32', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2025176'}
+,
 {
-  "_rev": "1-ef1e4ef39eb175c8e29c90500ecfa30c", 
+  "_rev": "2-26fddf327db98d2b80739ea2dead30a7", 
   "_id": "a92d5942f62a95d300bb9b156733ce32", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2025176"
 }
-{u'_rev': u'1-a348edc504eedaf49ad12684750973d4', u'_id': u'a92d5942f62a95d300bb9b15673940f4', u'review': [{u'seqno': 0, u'Product': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'product'}], u'sentence': u'so I guess this is a good product.', u'Descriptor': [{u'name': u'good'}], u'reversed_sentence': u'so I guess this is a <Descriptor> <Product>.'}], u'review_id': u'0000927a59e02ee3d09b12e0e202a1fb'}
+,
 {
-  "_rev": "1-a348edc504eedaf49ad12684750973d4", 
+  "_rev": "2-4e5553a53f517239288bd934fe272a55", 
   "_id": "a92d5942f62a95d300bb9b15673940f4", 
   "review": [
     {
@@ -2670,9 +2669,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202a1fb"
 }
-{u'_rev': u'1-d01bab32140d4b59663cf5f3b5ddec6f', u'_id': u'a92d5942f62a95d300bb9b15673a552e', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Lenovo', u'hasrel': u'madeBy', u'first': u'product'}], u'sentence': u'Judging from the comments, this is a fraudulent listing, nowhere indicating that this is not a Lenovo product.', u'Company': [{u'name': u'Lenovo'}], u'reversed_sentence': u'Judging from the comments, this is a fraudulent listing, nowhere indicating that this is not a <Company> <Product>.'}], u'review_id': u'0000927a59e02ee3d09b12e0e202ad78'}
+,
 {
-  "_rev": "1-d01bab32140d4b59663cf5f3b5ddec6f", 
+  "_rev": "2-d19f42507b26f3a89e40f81e5fe13c69", 
   "_id": "a92d5942f62a95d300bb9b15673a552e", 
   "review": [
     {
@@ -2698,9 +2697,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202ad78"
 }
-{u'_rev': u'1-a118da9b675c7f6f002d084f43308708', u'_id': u'a92d5942f62a95d300bb9b15673cbac5', u'review': [{u'sentence': u'Very durable and a lot of space.', u'seqno': 0, u'reversed_sentence': u'<Descriptor> <Feature> and a lot of space.', u'Feature': [{u'second': u'Very', u'hasrel': u'hasQuality', u'first': u'durable'}], u'Descriptor': [{u'name': u'Very'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e202d029'}
+,
 {
-  "_rev": "1-a118da9b675c7f6f002d084f43308708", 
+  "_rev": "2-d3598043fbaef6c879909da69359a925", 
   "_id": "a92d5942f62a95d300bb9b15673cbac5", 
   "review": [
     {
@@ -2726,44 +2725,44 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e202d029"
 }
-{u'_rev': u'1-e45eee9d1cf0fef9e16f6bab894dbb18', u'_id': u'a92d5942f62a95d300bb9b15673f7f02', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202e099'}
+,
 {
-  "_rev": "1-e45eee9d1cf0fef9e16f6bab894dbb18", 
+  "_rev": "2-58c378c0c6521be16428a530e9d11cbf", 
   "_id": "a92d5942f62a95d300bb9b15673f7f02", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202e099"
 }
-{u'_rev': u'1-8c915a62660daab4587cc714b5bf533c', u'_id': u'a92d5942f62a95d300bb9b156741c54e', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202f64b'}
+,
 {
-  "_rev": "1-8c915a62660daab4587cc714b5bf533c", 
+  "_rev": "2-4cb6907a308f3695ccee5aac96c14489", 
   "_id": "a92d5942f62a95d300bb9b156741c54e", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202f64b"
 }
-{u'_rev': u'1-e83454fd82c7c006dbe43b9afdff4360', u'_id': u'a92d5942f62a95d300bb9b15674331c3', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2031a30'}
+,
 {
-  "_rev": "1-e83454fd82c7c006dbe43b9afdff4360", 
+  "_rev": "2-ef9b394559426cdba8cd1089cdc68e17", 
   "_id": "a92d5942f62a95d300bb9b15674331c3", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2031a30"
 }
-{u'_rev': u'1-7504cd4d03ccde433f5757fb42c0735b', u'_id': u'a92d5942f62a95d300bb9b15674513cc', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2032b51'}
+,
 {
-  "_rev": "1-7504cd4d03ccde433f5757fb42c0735b", 
+  "_rev": "2-6d83e1f62cd4083e5fca3879b5a9b7ec", 
   "_id": "a92d5942f62a95d300bb9b15674513cc", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2032b51"
 }
-{u'_rev': u'1-a88811026d95dc4ffbd7637815c2bbd9', u'_id': u'a92d5942f62a95d300bb9b1567473134', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203371b'}
+,
 {
-  "_rev": "1-a88811026d95dc4ffbd7637815c2bbd9", 
+  "_rev": "2-7198b719c852c5593c5f20a944c62ada", 
   "_id": "a92d5942f62a95d300bb9b1567473134", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203371b"
 }
-{u'_rev': u'1-1be77cfc34c7e5e74d7a3d00c8433d7d', u'_id': u'a92d5942f62a95d300bb9b1567530499', u'review': [{u'sentence': u'For the price it has very good sound.', u'seqno': 0, u'reversed_sentence': u'For the price it has <Descriptor> <Feature>.', u'Feature': [{u'second': u'very good', u'hasrel': u'hasQuality', u'first': u'sound'}], u'Descriptor': [{u'name': u'very good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e203bf7b'}
+,
 {
-  "_rev": "1-1be77cfc34c7e5e74d7a3d00c8433d7d", 
+  "_rev": "2-815095c01177a53eab4df7acf5f66587", 
   "_id": "a92d5942f62a95d300bb9b1567530499", 
   "review": [
     {
@@ -2789,9 +2788,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203bf7b"
 }
-{u'_rev': u'1-453e3716d75c66a8a1b2e3aa77f86321', u'_id': u'a92d5942f62a95d300bb9b1567590630', u'review': [{u'sentence': u"Let me start off by having you think of the best sound system you've ever experienced.", u'seqno': 0, u'reversed_sentence': u"Let me start off by having you think of the <Descriptor> <Feature> you've ever experienced.", u'Feature': [{u'second': u'best', u'hasrel': u'hasQuality', u'first': u'sound system'}], u'Descriptor': [{u'name': u'best'}]}, {u'sentence': u'Now with that being said, 200 bones on a quality, middle of the road 5.1 Dolby digital sound setup is pretty good on my watch (a watch I have also reviewed here on Amazon mind you).', u'seqno': 1, u'reversed_sentence': u'Now with that being said, 200 bones on a quality, middle of the road 5.1 Dolby digital <Feature> is <Descriptor> on my watch (a watch I have also reviewed here on Amazon mind you).', u'Feature': [{u'second': u'pretty good', u'hasrel': u'hasQuality', u'first': u'sound setup'}], u'Descriptor': [{u'name': u'pretty good'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e20401dc'}
+,
 {
-  "_rev": "1-453e3716d75c66a8a1b2e3aa77f86321", 
+  "_rev": "2-3116b4437c63f9e395d726e9270aeab4", 
   "_id": "a92d5942f62a95d300bb9b1567590630", 
   "review": [
     {
@@ -2837,16 +2836,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20401dc"
 }
-{u'_rev': u'1-8c508982e15238c84faac576db5968ee', u'_id': u'a92d5942f62a95d300bb9b15675cfaf7', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2042a8c'}
+,
 {
-  "_rev": "1-8c508982e15238c84faac576db5968ee", 
+  "_rev": "2-9ffd299d444d31d74b3f68f6fb81fdd8", 
   "_id": "a92d5942f62a95d300bb9b15675cfaf7", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2042a8c"
 }
-{u'_rev': u'1-d6aa64ffb47d3d131a4eb0163b0edd36', u'_id': u'a92d5942f62a95d300bb9b15675fc977', u'review': [{u'sentence': u'They are real durable and they do their job, though I think the description and photos should be better.', u'seqno': 0, u'reversed_sentence': u'<Feature> are <Descriptor> <Feature> and they do their job, though I think the description and photos should be better.', u'Feature': [{u'second': u'real', u'hasrel': u'hasQuality', u'first': u'They'}, {u'second': u'real', u'hasrel': u'hasQuality', u'first': u'durable'}], u'Descriptor': [{u'name': u'real'}, {u'name': u'real'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2044223'}
+,
 {
-  "_rev": "1-d6aa64ffb47d3d131a4eb0163b0edd36", 
+  "_rev": "2-974547cb71a6005478f81e9d29867fd0", 
   "_id": "a92d5942f62a95d300bb9b15675fc977", 
   "review": [
     {
@@ -2880,16 +2879,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2044223"
 }
-{u'_rev': u'1-6ef7bbceee16a096e3390bee3a129563', u'_id': u'a92d5942f62a95d300bb9b1567658a7c', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2047175'}
+,
 {
-  "_rev": "1-6ef7bbceee16a096e3390bee3a129563", 
+  "_rev": "2-17e84348fe945dc434531199790b6b8c", 
   "_id": "a92d5942f62a95d300bb9b1567658a7c", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2047175"
 }
-{u'_rev': u'1-e0d3363e2512b63a5acb77b0dcb96a04', u'_id': u'a92d5942f62a95d300bb9b15676851d7', u'review': [{u'seqno': 0, u'Product': [{u'second': u'nice system', u'hasrel': u'hasQuality', u'first': u'speakers'}], u'sentence': u'This is a nice system.', u'Descriptor': [{u'name': u'nice system'}], u'reversed_sentence': u'This is a <Descriptor>.'}, {u'seqno': 1, u'Product': [{u'second': u'Apple', u'hasrel': u'madeBy', u'first': u'speakers'}], u'sentence': u"We've used it 99% of the time simply for speakers, as we watch everything on Apple TV these days.", u'Company': [{u'name': u'Apple'}], u'reversed_sentence': u"We've used it 99% of the time simply for <Product>, as we watch everything on <Company> TV these days."}, {u'sentence': u'The sound is great, gets nice and loud without distorting, has a good balance of surround vs. center (dialog) vs subwoofer (bass).', u'seqno': 2, u'reversed_sentence': u'The <Feature> is <Descriptor>, gets nice and loud without distorting, has a good balance of surround vs. center (dialog) vs subwoofer (bass).', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sound'}], u'Descriptor': [{u'name': u'great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e204978d'}
+,
 {
-  "_rev": "1-e0d3363e2512b63a5acb77b0dcb96a04", 
+  "_rev": "2-55b6df1bca2392e061973d56f6878694", 
   "_id": "a92d5942f62a95d300bb9b15676851d7", 
   "review": [
     {
@@ -2955,23 +2954,23 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204978d"
 }
-{u'_rev': u'1-ef001e0b936502af5c2093e682310cb7', u'_id': u'a92d5942f62a95d300bb9b15676b7f85', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204a835'}
+,
 {
-  "_rev": "1-ef001e0b936502af5c2093e682310cb7", 
+  "_rev": "2-75cad8de139c4175112ad6a1c6897bff", 
   "_id": "a92d5942f62a95d300bb9b15676b7f85", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204a835"
 }
-{u'_rev': u'1-14033b9b8fe48af5effb418ea9a57462', u'_id': u'a92d5942f62a95d300bb9b15676eda93', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e204e39b'}
+,
 {
-  "_rev": "1-14033b9b8fe48af5effb418ea9a57462", 
+  "_rev": "2-bc504937421ca7d335949943052e27e0", 
   "_id": "a92d5942f62a95d300bb9b15676eda93", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e204e39b"
 }
-{u'_rev': u'1-df490e14d23655d1d832510733a625f2', u'_id': u'c3f07b92a567b1bb117cad37f3efc78c', u'review': [{u'sentence': u'The scrolling wheel is very smoooth.', u'seqno': 0, u'reversed_sentence': u'The <Feature> is <Descriptor>.', u'Feature': [{u'second': u'very smoooth', u'hasrel': u'hasQuality', u'first': u'scrolling wheel'}], u'Descriptor': [{u'name': u'very smoooth'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2008d5a'}
+,
 {
-  "_rev": "1-df490e14d23655d1d832510733a625f2", 
+  "_rev": "2-bb31f2ec787e194338868fe1679c160f", 
   "_id": "c3f07b92a567b1bb117cad37f3efc78c", 
   "review": [
     {
@@ -2997,30 +2996,30 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2008d5a"
 }
-{u'_rev': u'1-88578781c5cc31bae2b3fa54039bb5a9', u'_id': u'c3f07b92a567b1bb117cad37f3f3fff7', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200ce4b'}
+,
 {
-  "_rev": "1-88578781c5cc31bae2b3fa54039bb5a9", 
+  "_rev": "2-c5312704bf508a52ec9d946ca7bc9d33", 
   "_id": "c3f07b92a567b1bb117cad37f3f3fff7", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200ce4b"
 }
-{u'_rev': u'1-c0b2feb3ba040c68fa61ff01ff7bd4fc', u'_id': u'c3f07b92a567b1bb117cad37f3f5ca86', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200eb52'}
+,
 {
-  "_rev": "1-c0b2feb3ba040c68fa61ff01ff7bd4fc", 
+  "_rev": "2-a87567a7bf7b7d0067c7e48c7c336ace", 
   "_id": "c3f07b92a567b1bb117cad37f3f5ca86", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200eb52"
 }
-{u'_rev': u'1-a68cd8e6b54a6c51f068fef13f4777a6', u'_id': u'c3f07b92a567b1bb117cad37f3f67561', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e200f099'}
+,
 {
-  "_rev": "1-a68cd8e6b54a6c51f068fef13f4777a6", 
+  "_rev": "2-6b4c3ced3b642cfbc247b2efa94a3cc0", 
   "_id": "c3f07b92a567b1bb117cad37f3f67561", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e200f099"
 }
-{u'_rev': u'1-a133d4c69353039067961431698bc292', u'_id': u'c3f07b92a567b1bb117cad37f3f728da', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Windows', u'hasrel': u'madeBy', u'first': u'XP'}], u'sentence': u'Testing was done with Windows XP and Windows 7.', u'Company': [{u'name': u'Windows'}], u'reversed_sentence': u'Testing was done with <Company> <Product> and Windows 7.'}], u'review_id': u'0000927a59e02ee3d09b12e0e200f70d'}
+,
 {
-  "_rev": "1-a133d4c69353039067961431698bc292", 
+  "_rev": "2-4f0094393329e847bc80f5e3fd50918e", 
   "_id": "c3f07b92a567b1bb117cad37f3f728da", 
   "review": [
     {
@@ -3046,44 +3045,44 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e200f70d"
 }
-{u'_rev': u'1-42e8c74d97e92d3f38cef1ced167ce0d', u'_id': u'c3f07b92a567b1bb117cad37f3f834a2', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20112a9'}
+,
 {
-  "_rev": "1-42e8c74d97e92d3f38cef1ced167ce0d", 
+  "_rev": "2-67d02d5f47989527db32dfd874d89c3d", 
   "_id": "c3f07b92a567b1bb117cad37f3f834a2", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20112a9"
 }
-{u'_rev': u'1-1651f542c57eec749ddde48ae447f7b5', u'_id': u'c3f07b92a567b1bb117cad37f3f8ffba', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2011dcd'}
+,
 {
-  "_rev": "1-1651f542c57eec749ddde48ae447f7b5", 
+  "_rev": "2-2fee32f8b0f3ab763038f2497fc2c4ec", 
   "_id": "c3f07b92a567b1bb117cad37f3f8ffba", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2011dcd"
 }
-{u'_rev': u'1-2d1d4855aa80fd8105880b1d1ff34863', u'_id': u'c3f07b92a567b1bb117cad37f3ff7684', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2018146'}
+,
 {
-  "_rev": "1-2d1d4855aa80fd8105880b1d1ff34863", 
+  "_rev": "2-cabc63a757b7519080ec19ce5cacd935", 
   "_id": "c3f07b92a567b1bb117cad37f3ff7684", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2018146"
 }
-{u'_rev': u'1-ac6e77bf0be499f887c3b2861bc9a24e', u'_id': u'f932d05511549eb9bc3c473ad103bb17', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201a7ed'}
+,
 {
-  "_rev": "1-ac6e77bf0be499f887c3b2861bc9a24e", 
+  "_rev": "2-27b6f3c43d7a877f0d1baa11491aea66", 
   "_id": "f932d05511549eb9bc3c473ad103bb17", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201a7ed"
 }
-{u'_rev': u'1-2681adff9cd779a938a1e0d3184aabd2', u'_id': u'f932d05511549eb9bc3c473ad1069bd1', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e201c9ae'}
+,
 {
-  "_rev": "1-2681adff9cd779a938a1e0d3184aabd2", 
+  "_rev": "2-5c12fe92abf1d8c8bc7cbd88df0592b5", 
   "_id": "f932d05511549eb9bc3c473ad1069bd1", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e201c9ae"
 }
-{u'_rev': u'1-f81347251fe402e49f54dc558d511a5f', u'_id': u'f932d05511549eb9bc3c473ad10cc849', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Windows', u'hasrel': u'madeBy', u'first': u'laptop'}], u'sentence': u'I use on a Windows XP laptop and hook a camera up to keep an eye on my Great Dane when she is in the back yard.', u'Company': [{u'name': u'Windows'}], u'reversed_sentence': u'I use on a <Company> XP <Product> and hook a camera up to keep an eye on my Great Dane when she is in the back yard.'}], u'review_id': u'0000927a59e02ee3d09b12e0e2021a89'}
+,
 {
-  "_rev": "1-f81347251fe402e49f54dc558d511a5f", 
+  "_rev": "2-5434e8388069557f6a891a61d977d463", 
   "_id": "f932d05511549eb9bc3c473ad10cc849", 
   "review": [
     {
@@ -3109,44 +3108,44 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2021a89"
 }
-{u'_rev': u'1-d2fc26b0e7493109902b18a42b6a2f9a', u'_id': u'f932d05511549eb9bc3c473ad10d0d69', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e20227b5'}
+,
 {
-  "_rev": "1-d2fc26b0e7493109902b18a42b6a2f9a", 
+  "_rev": "2-d54b617b6884552cf04e62530528fbcf", 
   "_id": "f932d05511549eb9bc3c473ad10d0d69", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e20227b5"
 }
-{u'_rev': u'1-fdb1f47631f6eae97714e0e85287d744', u'_id': u'f932d05511549eb9bc3c473ad10d64de', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2022b21'}
+,
 {
-  "_rev": "1-fdb1f47631f6eae97714e0e85287d744", 
+  "_rev": "2-f4f573c9997930913c6912be4aa77463", 
   "_id": "f932d05511549eb9bc3c473ad10d64de", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2022b21"
 }
-{u'_rev': u'1-d25f67ab5778a027267a58920a526442', u'_id': u'f932d05511549eb9bc3c473ad1114536', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2027f2c'}
+,
 {
-  "_rev": "1-d25f67ab5778a027267a58920a526442", 
+  "_rev": "2-440ddb7ad3d08f0feb6df4d8f229c5ff", 
   "_id": "f932d05511549eb9bc3c473ad1114536", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2027f2c"
 }
-{u'_rev': u'1-fa2326e605c02d401e3ebaf822665e78', u'_id': u'f932d05511549eb9bc3c473ad1131a8d', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e2029ee2'}
+,
 {
-  "_rev": "1-fa2326e605c02d401e3ebaf822665e78", 
+  "_rev": "2-282c60bad45fd72b3cad5bdcbe978203", 
   "_id": "f932d05511549eb9bc3c473ad1131a8d", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e2029ee2"
 }
-{u'_rev': u'1-824e29651345b9d621af747b1c2a56f6', u'_id': u'f932d05511549eb9bc3c473ad113dbf4', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e202a1db'}
+,
 {
-  "_rev": "1-824e29651345b9d621af747b1c2a56f6", 
+  "_rev": "2-dfbb4c8f8e2d31d47c914e198145fc78", 
   "_id": "f932d05511549eb9bc3c473ad113dbf4", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e202a1db"
 }
-{u'_rev': u'1-88a11eaa1caddf57c7ccc202371d0993', u'_id': u'f932d05511549eb9bc3c473ad11d6a22', u'review': [{u'seqno': 0, u'Product': [{u'second': u'warranty', u'hasrel': u'hasFeature', u'first': u'laptop'}], u'sentence': u"I'll probably get a small drawstring bag just to make sure the USB adapter doesn't get lost in my laptop backpack, but it seems to be secured  well by the magnet when not in use.I looked at this mouse and the Inland version (in a local store) and the only difference I can see is the warranty and the Gear Head vs. Inland name.", u'Feature': [{u'name': u'warranty'}], u'reversed_sentence': u"I'll probably get a small drawstring bag just to make sure the USB adapter doesn't get lost in my <Product> backpack, but it seems to be secured  well by the magnet when not in use.I looked at this mouse and the Inland version (in a local store) and the only difference I can see is the <Feature> and the Gear Head vs. Inland name."}], u'review_id': u'0000927a59e02ee3d09b12e0e203134a'}
+,
 {
-  "_rev": "1-88a11eaa1caddf57c7ccc202371d0993", 
+  "_rev": "2-8fdaf9f3bc66b1f80aa23efa97f50ecb", 
   "_id": "f932d05511549eb9bc3c473ad11d6a22", 
   "review": [
     {
@@ -3172,16 +3171,16 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203134a"
 }
-{u'_rev': u'1-21a93a471132e15501e0fd945d485661', u'_id': u'f932d05511549eb9bc3c473ad126b776', u'review': [], u'review_id': u'0000927a59e02ee3d09b12e0e203471b'}
+,
 {
-  "_rev": "1-21a93a471132e15501e0fd945d485661", 
+  "_rev": "2-aa7ef267e11b43c29e6043c157712d02", 
   "_id": "f932d05511549eb9bc3c473ad126b776", 
   "review": [], 
   "review_id": "0000927a59e02ee3d09b12e0e203471b"
 }
-{u'_rev': u'1-b1a634f2d45d75ab01c5de7054d86589', u'_id': u'f932d05511549eb9bc3c473ad12ae88d', u'review': [{u'sentence': u'With traditional audio cables(red,white,blue,green etc.)the picture and sound was very good but once I added an HDMI and fiber optic audio cable the quality truly became theatrical.', u'seqno': 0, u'reversed_sentence': u'With <Feature>(red,white,blue,green etc.)the picture and sound was very <Descriptor> but once I added an HDMI and fiber optic audio cable the quality truly became theatrical.', u'Feature': [{u'second': u'good', u'hasrel': u'hasQuality', u'first': u'traditional audio cables'}], u'Descriptor': [{u'name': u'good'}]}, {u'sentence': u"The sub woofer isn't over the top and the overall sound truly surrounds you.I don't remember reading if the dvd player upscales the viewing quality of standard movies but I've went back and looked at some movies in my collection and the picture quality is a lot better than I ever remember.", u'seqno': 1, u'reversed_sentence': u"The sub woofer isn't over the top and the <Feature> truly surrounds you.I don't remember reading if the <Feature> of standard movies but I've went back and looked at some movies in my collection and the <Feature> is <Descriptor> than I ever remember.", u'Feature': [{u'second': u'a lot better', u'hasrel': u'hasQuality', u'first': u'overall sound'}, {u'second': u'a lot better', u'hasrel': u'hasQuality', u'first': u'dvd player upscales the viewing quality'}, {u'second': u'a lot better', u'hasrel': u'hasQuality', u'first': u'picture quality'}], u'Descriptor': [{u'name': u'a lot better'}, {u'name': u'a lot better'}, {u'name': u'a lot better'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2038dd8'}
+,
 {
-  "_rev": "1-b1a634f2d45d75ab01c5de7054d86589", 
+  "_rev": "2-d3b301366638c2d4e1eddb14cc48fc5e", 
   "_id": "f932d05511549eb9bc3c473ad12ae88d", 
   "review": [
     {
@@ -3243,9 +3242,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2038dd8"
 }
-{u'_rev': u'1-1e8acd2b269234a0631a2ba4a6b8c6ff', u'_id': u'f932d05511549eb9bc3c473ad12da519', u'review': [{u'seqno': 0, u'Product': [{u'second': u'Sennheiser', u'hasrel': u'madeBy', u'first': u'headphones'}], u'sentence': u'I had purchased Sennheiser wireless headphones over a year ago since  I was renting a condo in Monroe.', u'Company': [{u'name': u'Sennheiser'}], u'reversed_sentence': u'I had purchased <Company> wireless <Product> over a year ago since  I was renting a condo in Monroe.'}, {u'seqno': 1, u'Product': [{u'second': u'Sony', u'hasrel': u'madeBy', u'first': u'headphones'}], u'sentence': u'Set up was very easy and I only needed a little assistance from Sony to match up this system with my 52&#34; Sony Bravia HD TV.', u'Company': [{u'name': u'Sony'}], u'reversed_sentence': u'Set up was very easy and I only needed a little assistance from <Company> to match up this system with my 52&#34; Sony Bravia HD TV.'}], u'review_id': u'0000927a59e02ee3d09b12e0e203b8ef'}
+,
 {
-  "_rev": "1-1e8acd2b269234a0631a2ba4a6b8c6ff", 
+  "_rev": "2-ed6c40f7cac2a0efc0649784965ae00a", 
   "_id": "f932d05511549eb9bc3c473ad12da519", 
   "review": [
     {
@@ -3291,9 +3290,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e203b8ef"
 }
-{u'_rev': u'1-bd21307d22c90ed7f4ae91545eff7daf', u'_id': u'f932d05511549eb9bc3c473ad139d631', u'review': [{u'sentence': u'the sound quality is great ( it did not came with an hdmi ) but I had a bunch anyways.', u'seqno': 0, u'reversed_sentence': u'the <Feature> is <Descriptor> ( it did not came with an hdmi ) but I had a bunch anyways.', u'Feature': [{u'second': u'great', u'hasrel': u'hasQuality', u'first': u'sound quality'}], u'Descriptor': [{u'name': u'great'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2043638'}
+,
 {
-  "_rev": "1-bd21307d22c90ed7f4ae91545eff7daf", 
+  "_rev": "2-7eaf996214a10be40ade3a0bbb8857cb", 
   "_id": "f932d05511549eb9bc3c473ad139d631", 
   "review": [
     {
@@ -3319,9 +3318,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2043638"
 }
-{u'_rev': u'1-547c68af2a099a8af7b4aa4526383709', u'_id': u'f932d05511549eb9bc3c473ad13f4693', u'review': [{u'Product': [{u'second': u'Setup', u'hasrel': u'hasFeature', u'first': u'them'}], u'sentence': u'I ordered this home theater system because I was looking for the following:* A decent set of 5.1 surround-sound speakers to go with my new flat-panel HDTV, since in my experience, flat-panel TVs have less-than-stellar built-in speakers, due to their size* A DVD player, since the one I had was old and crappy* A setup that wouldn\'t break the bank* A system that wasn\'t "smart" (i.e. internet-capable with apps for viewing online content), since the TV I ordered has that alreadyThis system met all those requirements, and I\'m pretty happy with it.Pros:* Setup was easy, to the point where you don\'t really even need the instructions, since it\'s so intuitive* The sound output is great,', u'seqno': 0, u'Feature': [{u'name': u'Setup'}, {u'second': u'easy', u'hasrel': u'hasQuality', u'first': u'Setup'}], u'Descriptor': [{u'name': u'easy'}], u'reversed_sentence': u'I ordered this home theater system because I was looking for the following:* A decent set of 5.1 surround-sound speakers to go with my new flat-panel HDTV, since in my experience, flat-panel TVs have less-than-stellar built-in speakers, due to their size* A DVD player, since the one I had was old and crappy* A setup that wouldn\'t break the bank* A system that wasn\'t "smart" (i.e. internet-capable with apps for viewing online content), since the TV I ordered has that alreadyThis system met all those requirements, and I\'m pretty happy with it.Pros:* <Feature> was <Descriptor>, to the point where you don\'t really even need the instructions, since it\'s so intuitive* The sound output is great,'}, {u'Product': [{u'second': u'Sony', u'hasrel': u'madeBy', u'first': u'them'}, {u'second': u'calibration', u'hasrel': u'hasFeature', u'first': u'them'}], u'sentence': u"The remote control also works for the iPhone (play, pause, next, etc.), which is handy.* The HDMI sync worked flawlessly, so the system turns on automatically when I turn on the TV (and not a Sony BRAVIA TV, for the record - it's an LG HDTV).* The calibration mic included with the system makes it really easy to automatically calibrate the output of each of the speakers.", u'seqno': 1, u'Company': [{u'name': u'Sony'}], u'Feature': [{u'name': u'calibration'}], u'reversed_sentence': u"The remote control also works for the iPhone (play, pause, next, etc.), which is handy.* The HDMI sync worked flawlessly, so the system turns on automatically when I turn on the TV (and not a <Company> BRAVIA TV, for the record - it's an LG HDTV).* The <Feature> mic included with the system makes it really easy to automatically calibrate the output of each of the speakers."}, {u'Product': [{u'second': u'individual speakers', u'hasrel': u'hasFeature', u'first': u'them'}], u'sentence': u'The speakers use a proprietary wire connection, so splicing them to make them longer would have been a little tricky (though I have read reports of people managing it).* Adjusting the output settings on the individual speakers is easy (as stated in the pros section above), but it does require going into the settings menu, which can only be accessed when the system is NOT playing a DVD.', u'seqno': 2, u'Feature': [{u'name': u'individual speakers'}, {u'second': u'easy', u'hasrel': u'hasQuality', u'first': u'individual speakers'}], u'Descriptor': [{u'name': u'easy'}], u'reversed_sentence': u'The speakers use a proprietary wire connection, so splicing <Product> to make them longer would have been a little tricky (though I have read reports of people managing it).* Adjusting the output settings on the <Feature> is <Descriptor> (as stated in the pros section above), but it does require going into the settings menu, which can only be accessed when the system is NOT playing a DVD.'}], u'review_id': u'0000927a59e02ee3d09b12e0e20462f4'}
+,
 {
-  "_rev": "1-547c68af2a099a8af7b4aa4526383709", 
+  "_rev": "2-89035a68324fd2025b6aa04a5a2543b9", 
   "_id": "f932d05511549eb9bc3c473ad13f4693", 
   "review": [
     {
@@ -3417,9 +3416,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e20462f4"
 }
-{u'_rev': u'1-353d16e3481dd8a57ededb907347b49a', u'_id': u'f932d05511549eb9bc3c473ad141d4a9', u'review': [{u'Product': [{u'second': u'music quality', u'hasrel': u'hasFeature', u'first': u'it'}, {u'second': u'awsume', u'hasrel': u'hasQuality', u'first': u'it'}], u'sentence': u'the music quality is awsume and it rendors the sound effects very well in movies.', u'seqno': 0, u'Feature': [{u'second': u'awsume', u'hasrel': u'hasQuality', u'first': u'music quality'}, {u'name': u'music quality'}], u'Descriptor': [{u'name': u'awsume'}, {u'name': u'awsume'}], u'reversed_sentence': u'the <Feature> is <Descriptor> and <Product> rendors the sound effects very well in movies.'}, {u'sentence': u'Oh dont forget to buy the cables you will need the Dmi and fiber optic cables for the best quality it does not come in the box.', u'seqno': 1, u'reversed_sentence': u'Oh dont forget to buy the cables you will need the Dmi and fiber optic cables for the <Descriptor> <Feature> it does not come in the box.', u'Feature': [{u'second': u'best', u'hasrel': u'hasQuality', u'first': u'quality'}], u'Descriptor': [{u'name': u'best'}]}], u'review_id': u'0000927a59e02ee3d09b12e0e2047e97'}
+,
 {
-  "_rev": "1-353d16e3481dd8a57ededb907347b49a", 
+  "_rev": "2-bb7e16262d6ff4237024dac258b06b4a", 
   "_id": "f932d05511549eb9bc3c473ad141d4a9", 
   "review": [
     {
@@ -3483,9 +3482,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e2047e97"
 }
-{u'_rev': u'1-373e1d6d836153ca9399e8e3da5dbddb', u'_id': u'f932d05511549eb9bc3c473ad1421a11', u'review': [{u'seqno': 0, u'Product': [{u'second': u'more expensive cousins', u'hasrel': u'hasQuality', u'first': u'its'}], u'sentence': u"No looming problems.I m not a fanatic audiophile...but it actually provides more sound than my family room can handle; amazing for so small and few speakers.I consider it a good value and don't know why I would need all the bells/whistles of its more expensive cousins.", u'Descriptor': [{u'name': u'more expensive cousins'}], u'reversed_sentence': u"No looming problems.I m not a fanatic audiophile...but it actually provides more sound than my family room can handle; amazing for so small and few speakers.I consider it a good value and don't know why I would need all the bells/whistles of <Product> <Descriptor>."}], u'review_id': u'0000927a59e02ee3d09b12e0e204890a'}
+,
 {
-  "_rev": "1-373e1d6d836153ca9399e8e3da5dbddb", 
+  "_rev": "2-7793a1f2c99d68792565739de5d35ad7", 
   "_id": "f932d05511549eb9bc3c473ad1421a11", 
   "review": [
     {
@@ -3511,9 +3510,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204890a"
 }
-{u'_rev': u'1-ffd9374de7dcd61c85de7139e1c371a3', u'_id': u'f932d05511549eb9bc3c473ad148540d', u'review': [{u'seqno': 0, u'Product': [{u'second': u'connectivity', u'hasrel': u'hasFeature', u'first': u'drive'}], u'sentence': u"It works perfectly, connectivity is great, speed is very good (it's not FW800, but I wasn't expecting that) and it is virtually silent.", u'Feature': [{u'name': u'connectivity'}], u'reversed_sentence': u"It works perfectly, <Feature> is great, speed is very good (it's not FW800, but I wasn't expecting that) and it is virtually silent."}], u'review_id': u'0000927a59e02ee3d09b12e0e204cc0c'}
+,
 {
-  "_rev": "1-ffd9374de7dcd61c85de7139e1c371a3", 
+  "_rev": "2-db4d5c4a4f49d84a30bff45b6409ba80", 
   "_id": "f932d05511549eb9bc3c473ad148540d", 
   "review": [
     {
@@ -3539,9 +3538,9 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204cc0c"
 }
-{u'_rev': u'1-1ee9218ee9029f8ea2495ef16008b3e3', u'_id': u'f932d05511549eb9bc3c473ad14b22cd', u'review': [{u'seqno': 0, u'Product': [{u'second': u'ease of Powered', u'hasrel': u'hasFeature', u'first': u'drive'}], u'sentence': u'The ease of Powered USB and the capacity of the drive are ideal for making backups of my drives.', u'Feature': [{u'name': u'ease of Powered'}], u'reversed_sentence': u'The <Feature> USB and the capacity of the <Product> are ideal for making backups of my drives.'}], u'review_id': u'0000927a59e02ee3d09b12e0e204fa33'}
+,
 {
-  "_rev": "1-1ee9218ee9029f8ea2495ef16008b3e3", 
+  "_rev": "2-b896cc5538fdf0f0c6183f68fc9c4866", 
   "_id": "f932d05511549eb9bc3c473ad14b22cd", 
   "review": [
     {
@@ -3567,3 +3566,4 @@
   ], 
   "review_id": "0000927a59e02ee3d09b12e0e204fa33"
 }
+]
