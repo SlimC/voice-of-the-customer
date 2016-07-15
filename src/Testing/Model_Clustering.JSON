@@ -1,0 +1,47 @@
+{
+  "product_name":"Computer X",
+  "product_id":293940183,
+  "features": [
+    {
+      "group-name": "keyboard",
+      "keywords":["fast", "clacky", "loud", "feels nice"],
+      "review-ids":[23, 546, 12312, 9909]
+    },
+    {
+      "group-name": "screen",
+      "keywords":["bright", "shows pictures", "rectangular","attached"],
+      "review-ids":[45,132,2134,4321]
+    },
+    {
+      "group-name": "memory",
+      "keywords":["included", "spacious"],
+      "review-ids": [123,23443]
+    },
+    {
+      "group-name": "storage",
+      "keywords":["has", "25GB","small"],
+      "review-ids": [23,123,432333333]
+    },
+    {
+      "group-name":"design",
+      "keywords": ["sleek","smart","fresh","synergy"],
+      "review-ids":[4,5,6,7]
+    },
+    {
+      "group-name":"processor",
+      "keywords": ["wicked fast","fastest ever","energy efficient"],
+      "review-ids": [45,54,67]
+    },
+    {
+      "group-name": "color",
+      "keywords": ["purple","majestic","red//blue"],
+      "review-ids":[5,43,5]
+    },
+    {
+      "group-name": "size",
+      "keywords":["small","big"],
+      "review-ids":[4,4]
+    }
+  ],
+  "type": "cluster"
+}
