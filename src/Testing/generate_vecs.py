@@ -38,8 +38,10 @@ def generate_vectors():
 				break		
 		if flag==0:
 			keywords.append(line)
-		if len(vec)>0:	
-			vecs.append(vec)
+			if len(vec)>0:
+				#vec=vec	
+				vecs.append(vec)
+			
 	print vecs	
 	print keywords
 	for keyword in keywords:
@@ -49,6 +51,7 @@ def generate_vectors():
 
 sentences = word2vec.Text8Corpus('text8')
 modelname='sample_model'
+model = word2vec.Word2Vec.load_word2vec_format(modelname+'.bin', binary=True)
 #train first time
 #train(sentences,modelname)
 generate_vectors()
