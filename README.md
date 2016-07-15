@@ -1,6 +1,24 @@
-# Product Intelligence Demo [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/demo-boilerplate-nodejs)
+# Product Intelligence Demo [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/product-intelligence.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/product-intelligence)
 
-[TODO: ADD README TEXT]
+## Getting Started
+
+1. Install the python dependencies with `pip`
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+1. Install the node dependencies with `npm`
+
+    ```sh
+    npm install
+    ```
+
+1. Start the application
+
+    ```sh
+    npm start
+    ```
 
 ### Privacy Notice
 
