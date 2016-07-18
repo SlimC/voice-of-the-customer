@@ -18,16 +18,16 @@
 
 var express = require('express');
 var app = express();
-var watson = require('watson-developer-cloud');
+//var watson = require('watson-developer-cloud');
 var cloudant = require('cloudant');
 
 // if bluemix credentials exists, then override local
 var mockUp = true;
 var credentials = {
-  key: 'ngeryfornewareseveryseen',
-  password: 'e75a6f3000ad59bde1cc03115335ac2b0b091b5c',
-  url: 'https://ngeryfornewareseveryseen:e75a6f3000ad59bde1cc03115335ac2b0b091b5c@1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com',
-  version: 'v1'
+	key: 'ngeryfornewareseveryseen',
+	password: 'e75a6f3000ad59bde1cc03115335ac2b0b091b5c',
+	url: 'https://ngeryfornewareseveryseen:e75a6f3000ad59bde1cc03115335ac2b0b091b5c@1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com',
+	version: 'v1'
 };
 
 // Bootstrap application settings
@@ -35,27 +35,27 @@ require('./config/express')(app);
 
 // <service name> is coming from node_modules/watson-developer-cloud/lib/index.js
 app.get('/', function(req, res) {
-  res.render('index');
+	res.render('index');
 });
 
 app.get('/api/product', function(req, res) {
-  if(!req.query.productId) {
-    console.log("NO PRODUCT ID GIVEN.");
-  }
+	if(!req.query.productId) {
+		return "";
+	}
 
-  if(mockUp) {
-    //load mock data json from cloundant-mock-data.js
-    var mockData = require('./data/cloudant-mock-data')();
-    return res.json(mockData);
-  } else {
-    cloudant(credentials.url, function(err, cloud) {
-      if (err) {
-        return console.log('Failed to initialize Cloudant: ' + err.message);
-      } else {
-        return console.log('Connected successfully to Cloudant');
-      }
-    });
-  }
+	if(mockUp) {
+		//load mock data json from cloundant-mock-data.js
+		var mockData = require('./data/cloudant-mock-data')();
+		return res.json(mockData);
+	} else {
+		cloudant(credentials.url, function(err/*, cloud*/) {
+			if (err) {
+				return 'Failed to initialize Cloudant: ' + err.message;
+			} else {
+				return 'Connected successfully to Cloudant';
+			}
+		});
+	}
 });
 
 // error-handler application settings

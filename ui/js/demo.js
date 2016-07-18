@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* global someTemplate: true, _:true */
+
+  /*global _ headerTemplate featureTemplate issueTemplate customerServiceTemplate:true*/
+  /* eslint no-console: "warn" */
 'use strict';
 
 $(document).ready(function() {
-  var productData = null;
   $.get('/api/product?productId=' + 100, function(data) {
-    console.log(data);
+    //console.log(data);
     var headerTemp = headerTemplate.innerHTML;
     $('.product-header').append(_.template(headerTemp, {
       item: data
