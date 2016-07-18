@@ -16,8 +16,8 @@ from scipy import spatial
 import numpy as np
 
 def generate_vectors():
-	fp=open('sample_test.txt')    ##file with input keywords
-	fw=open('obtained_keywords.txt','w')   ##file with output keywords
+	fp=open('unique_sample_TV.txt')    ##file with input keywords
+	fw=open('obtained_keywords_TV_unique.txt','w')   ##file with output keywords
 	vecs=[]
 	keywords=[]
 
@@ -46,12 +46,17 @@ def generate_vectors():
 	print keywords
 	for keyword in keywords:
 		fw.write(keyword)
-	np.save('keywords_vecs.npy',vecs)  ###vectors
-	np.save('keywords.npy',keywords)   ###keywords
+	np.save('keywords_vecs_TV_unique.npy',vecs)  ###vectors
+	np.save('keywords_TV_unique.npy',keywords)   ###keywords
 
 sentences = word2vec.Text8Corpus('text8')
 modelname='sample_model'
 model = word2vec.Word2Vec.load_word2vec_format(modelname+'.bin', binary=True)
+print model.similarity('sound','cans')
+print "gaming"
+#print model['gaming']
+#print model['sound']
+#print model['important thing']
 #train first time
 #train(sentences,modelname)
 generate_vectors()
