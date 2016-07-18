@@ -27,5 +27,8 @@ class MySentences():
                 line = document['reviewText']
                 yield line.split()
 corpus = MySentences()
-model = gensim.models.Word2Vec(corpus)
+model = gensim.models.Word2Vec()
+model.build_vocab(corpus)
+model.save('custom_word2vec.model')
+model.train(corpus)
 model.save('custom_word2vec.model')
