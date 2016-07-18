@@ -3,45 +3,51 @@
   "product_id":293940183,
   "features": [
     {
-      "group-name": "keyboard",
-      "keywords":["fast", "clacky", "loud", "feels nice"],
-      "review-ids":[{"review_id": 23, "sent_id": 43}, 546, 12312, 9909]
+      "feature": "keyboard",
+      "keywords": [
+        {
+          "keyword": "fast",
+          "sentence_id": 1234,
+          "review_id": 42,
+          "sentiment": "positive"
+        },
+        {
+          "keyword": "feels nice",
+          "sentence_id": 1234,
+          "review_id": 42,
+          "sentiment": "positive"
+        },
+        {
+          "keyword": "sticky",
+          "sentence_id": 42,
+          "review_id": 314,
+          "sentiment": "negative"
+        }
+      ]
     },
     {
-      "group-name": "screen",
-      "keywords":["bright", "shows pictures", "rectangular","attached"],
-      "ids":[{"review_id":26,"sentence_id":7}, {"review_id":2456,"sentence_id":34}, {"review_id":7632,"sentence_id":34}, {"review_id":261,"sentence_id":34}]
-    },
-    {
-      "group-name": "memory",
-      "keywords":["included", "spacious"],
-      "ids":[{"review_id":4253,"sentence_id":34}, {"review_id":765,"sentence_id":36}]
-    },
-    {
-      "group-name": "storage",
-      "keywords":["has", "25GB","small"],
-      "ids":[{"review_id":13,"sentence_id":65}, {"review_id":3456,"sentence_id":3}, {"review_id":76,"sentence_id":8}]
-    },
-    {
-      "group-name":"design",
-      "keywords": ["sleek","smart","fresh","synergy"],
-      "ids":[{"review_id":3345,"sentence_id":76}, {"review_id":98,"sentence_id":4}, {"review_id":34,"sentence_id":45}, {"review_id":6345,"sentence_id":235}]
-    },
-    {
-      "group-name":"processor",
-      "keywords": ["wicked fast","fastest ever","energy efficient"],
-      "ids":[{"review_id":234,"sentence_id":765}, {"review_id":345,"sentence_id":765}, {"review_id":456,"sentence_id":39}]
-    },
-    {
-      "group-name": "color",
-      "keywords": ["purple","majestic","red//blue"],
-      "ids":[{"review_id":373,"sentence_id":39}, {"review_id":64,"sentence_id":25}, {"review_id":87,"sentence_id":23}]
-    },
-    {
-      "group-name": "size",
-      "keywords":["small","big"],
-      "ids":[{"review_id":102,"sentence_id":84}, {"review_id":20348,"sentence_id":93}]
+      "feature": "display",
+      "keywords": [
+        {
+          "keyword": "clear",
+          "sentence_id": 1234,
+          "review_id": 42,
+          "sentiment": "positive"
+        },
+        {
+          "keyword": "faded",
+          "sentence_id": 345,
+          "review_id": 42,
+          "sentiment": "negative"
+        },
+        {
+          "keyword": "thick",
+          "sentence_id": 42,
+          "review_id": 314,
+          "sentiment": "negative"
+        }
+      ]
     }
-  ],
+  ]
   "type": "cluster"
 }
