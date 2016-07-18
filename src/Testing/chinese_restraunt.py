@@ -2,8 +2,8 @@ import numpy as np
 import scipy.spatial.distance as distance
 
 def crp(vecs):
-    clusterVec = []         # tracks sum of vectors in a cluster
-    clusterIdx = []         # array of index arrays. e.g. [[1, 3, 5], [2, 4, 6]]
+    clusterVec = [0]         # tracks sum of vectors in a cluster
+    clusterIdx = [0]         # array of index arrays. e.g. [[1, 3, 5], [2, 4, 6]]
     ncluster = 0
     # probablity to create a new table if new customer
     # is not strongly "similar" to any existing table
@@ -12,7 +12,7 @@ def crp(vecs):
     rands = np.random.rand(N)         # N rand variables sampled from U(0, 1)
 
     for i in range(N):
-        maxSim = -Inf
+        maxSim = - np.inf
         maxIdx = 0
         v = vecs[i]
         for j in range(ncluster):

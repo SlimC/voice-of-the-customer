@@ -1,0 +1,4 @@
+# lint Python modules using external checkers.
+[MASTER]
+ignore=SVN
+disable=R0903

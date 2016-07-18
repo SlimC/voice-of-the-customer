@@ -5,7 +5,7 @@
     {
       "group-name": "keyboard",
       "keywords":["fast", "clacky", "loud", "feels nice"],
-      "ids":[{"review_id":23,"sentence_id":39}, {"review_id":345,"sentence_id":124}, {"review_id":634,"sentence_id":256}, {"review_id":8765,"sentence_id":203}]
+      "review-ids":[{"review_id": 23, "sent_id": 43}, 546, 12312, 9909]
     },
     {
       "group-name": "screen",
