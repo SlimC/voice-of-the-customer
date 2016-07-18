@@ -6,7 +6,7 @@ pp = pprint.PrettyPrinter(depth=6)
 import nltk 
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=913207d1-81b0-42be-89c4-9b82bedfc9d9&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
+	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=bbb894cf-003c-4000-9772-23e4860b3034&apikey=7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -15,7 +15,7 @@ def get_relations(review):
 	return response
 
 def get_entities(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=913207d1-81b0-42be-89c4-9b82bedfc9d9&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=bbb894cf-003c-4000-9772-23e4860b3034&apikey=7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b&outputMode=json&sentiment=1"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
@@ -37,6 +37,7 @@ def token_replacement_entities(review):
 def token_replacement(review_text):
 	review = get_relations(review_text)
 	entity_info = get_entities(review_text)
+	entities = []
 	if 'entities' in entity_info:
 		entities=entity_info['entities']
 	sentences = nltk.tokenize.sent_tokenize(review_text)
@@ -74,7 +75,7 @@ def token_replacement(review_text):
 				count=int(entity['count'])
 				classification = "<" + entity['type'] + ">"
 				
-				sentence = re.sub(r'/b%s/b' % token, classification, sentence, count=count)
+				sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
 
 				dict['replaced_sentence']=sentence
 		result.append(dict)			

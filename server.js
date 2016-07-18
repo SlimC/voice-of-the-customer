@@ -1,4 +1,6 @@
 #! /usr/bin/env node
+ /* eslint no-console: "warn" */
+
 'use strict';
 
 require('dot-env');

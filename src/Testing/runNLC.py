@@ -66,7 +66,11 @@ print("[")
 for review in data:
 	# Run tier 1 classification
 	for line in review['review']:
-		sentence = line['reversed_sentence']
+		sentence = ""
+		if('replaced_sentence' in line):
+			sentence = line['replaced_sentence']
+		else:
+			sentence = line['sentence']
 		resp = nlc.classify(classifierTree['tier1'],sentence)
 		classification = resp["top_class"]
 		line["layer1type"] = classification
