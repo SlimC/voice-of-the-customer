@@ -6,7 +6,7 @@ pp = pprint.PrettyPrinter(depth=6)
 import nltk 
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=55e67f5f-a90c-49cb-b7a4-d89ec5fd59aa&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
+	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=b6b78f7e-d035-48ba-9dff-f464154609dd&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -14,10 +14,11 @@ def get_relations(review):
 	return response
 
 def get_entities(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=913207d1-81b0-42be-89c4-9b82bedfc9d9&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json&sentiment=1"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
+	print response
 	return response
 
 def token_replacement_entities(review):
@@ -33,8 +34,9 @@ def token_replacement_entities(review):
 			text = re.replace(r"\b%s\b" % token, classification, text,count=1)
 	return text
 
-fp=open('sample.txt','w')
-fd=open('descriptors.txt','w')
+fp=open('sample_TV.txt','w')
+fd=open('descriptors_TV.txt','w')
+#fx=open('unique_sample_TV.txt','w')
 
 def split_long_string(token, nlc):
         if len(token) > 1024:
@@ -49,9 +51,12 @@ def split_long_string(token, nlc):
                 to_write = [token] + classes
                 writer.writerow(to_write)
 
-def features(review_text):
+def features(review_text,unique_clusters):
 	fp.write("________________\n")
 	fd.write("________________\n")
+	print "\n obtained unique cluster"
+	print unique_clusters
+	#unique_clusters={}
 	#fp.write("new review\n")
 	print "review text"
 	print review_text
@@ -61,6 +66,13 @@ def features(review_text):
 		for entity in entities:
 			token=entity['text']
 			if entity['type']=='Feature':
+				if token in unique_clusters:
+					unique_clusters[token]+=1
+				else:
+					unique_clusters[token]=0	
                         	fp.write(token+"\n")
 			if entity['type']=='Descriptor':
                                         fd.write(token+"\n")
+	#for token in unique_clusters:
+	#	fx.write(token+"\n")
+	return unique_clusters
