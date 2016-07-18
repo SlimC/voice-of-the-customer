@@ -1,0 +1,125 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'i', 'pylint' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.4
+4 verbose install initial load of /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/package.json
+5 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/babel-eslint/package.json
+6 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/body-parser/package.json
+7 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/browser-sync/package.json
+8 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/cf-deployment-tracker-client/package.json
+9 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/cloudant/package.json
+10 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/codecov/package.json
+11 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/compression/package.json
+12 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/debug/package.json
+13 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/dot-env/package.json
+14 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/ejs/package.json
+15 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/eslint/package.json
+16 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/eslint-config-airbnb-es5/package.json
+17 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/eslint-plugin-react/package.json
+18 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/express/package.json
+19 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/express-rate-limit/package.json
+20 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/express-secure-only/package.json
+21 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp/package.json
+22 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-autoprefixer/package.json
+23 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-concat/package.json
+24 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-iconfont/package.json
+25 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-iconfont-css/package.json
+26 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-nodemon/package.json
+27 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-plumber/package.json
+28 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/gulp-sass/package.json
+29 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/helmet/package.json
+30 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/istanbul/package.json
+31 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/jupyter/package.json
+32 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/mocha/package.json
+33 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/morgan/package.json
+34 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/nock/package.json
+35 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/precommit-hook/package.json
+36 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/run-sequence/package.json
+37 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/supertest/package.json
+38 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/watson-developer-cloud/package.json
+39 verbose installManyTop reading scoped package data from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/node_modules/wrench/package.json
+40 info package.json cf-deployment-tracker-client@0.1.1 license should be a valid SPDX license expression
+41 info package.json gulp-iconfont@1.0.2 No license field.
+42 info package.json jupyter@0.0.0 No description
+43 info package.json jupyter@0.0.0 No repository field.
+44 info package.json jupyter@0.0.0 No README data
+45 info package.json wrench@1.5.9 No license field.
+46 verbose readDependencies loading dependencies from /Users/zainadmani/Documents/ProductIntelligence/product-intelligence/package.json
+47 silly cache add args [ 'pylint', null ]
+48 verbose cache add spec pylint
+49 silly cache add parsed spec Result {
+49 silly cache add   raw: 'pylint',
+49 silly cache add   scope: null,
+49 silly cache add   name: 'pylint',
+49 silly cache add   rawSpec: '',
+49 silly cache add   spec: 'latest',
+49 silly cache add   type: 'tag' }
+50 silly addNamed pylint@latest
+51 verbose addNamed "latest" is being treated as a dist-tag for pylint
+52 info addNameTag [ 'pylint', 'latest' ]
+53 silly mapToRegistry name pylint
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry uri https://registry.npmjs.org/pylint
+57 verbose addNameTag registry:https://registry.npmjs.org/pylint not in flight; fetching
+58 verbose request uri https://registry.npmjs.org/pylint
+59 verbose request no auth needed
+60 info attempt registry request try #1 at 1:36:35 PM
+61 verbose request id e27e8a2ec550601c
+62 http request GET https://registry.npmjs.org/pylint
+63 http 404 https://registry.npmjs.org/pylint
+64 verbose headers { 'content-type': 'application/json',
+64 verbose headers   'cache-control': 'max-age=0',
+64 verbose headers   'content-length': '2',
+64 verbose headers   'accept-ranges': 'bytes',
+64 verbose headers   date: 'Mon, 18 Jul 2016 18:36:36 GMT',
+64 verbose headers   via: '1.1 varnish',
+64 verbose headers   age: '0',
+64 verbose headers   connection: 'keep-alive',
+64 verbose headers   'x-served-by': 'cache-den6026-DEN',
+64 verbose headers   'x-cache': 'MISS',
+64 verbose headers   'x-cache-hits': '0',
+64 verbose headers   'x-timer': 'S1468866995.989724,VS0,VE238',
+64 verbose headers   vary: 'Accept-Encoding' }
+65 silly get cb [ 404,
+65 silly get   { 'content-type': 'application/json',
+65 silly get     'cache-control': 'max-age=0',
+65 silly get     'content-length': '2',
+65 silly get     'accept-ranges': 'bytes',
+65 silly get     date: 'Mon, 18 Jul 2016 18:36:36 GMT',
+65 silly get     via: '1.1 varnish',
+65 silly get     age: '0',
+65 silly get     connection: 'keep-alive',
+65 silly get     'x-served-by': 'cache-den6026-DEN',
+65 silly get     'x-cache': 'MISS',
+65 silly get     'x-cache-hits': '0',
+65 silly get     'x-timer': 'S1468866995.989724,VS0,VE238',
+65 silly get     vary: 'Accept-Encoding' } ]
+66 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/pylint
+66 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+66 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+66 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+66 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+66 verbose stack     at emitTwo (events.js:87:13)
+66 verbose stack     at Request.emit (events.js:172:7)
+66 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+66 verbose stack     at emitOne (events.js:82:20)
+66 verbose stack     at Request.emit (events.js:169:7)
+66 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+67 verbose statusCode 404
+68 verbose pkgid pylint
+69 verbose cwd /Users/zainadmani/Documents/ProductIntelligence/product-intelligence
+70 error Darwin 15.5.0
+71 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "i" "pylint"
+72 error node v4.2.4
+73 error npm  v2.14.12
+74 error code E404
+75 error 404 Registry returned 404 for GET on https://registry.npmjs.org/pylint
+75 error 404
+75 error 404 'pylint' is not in the npm registry.
+75 error 404 You should bug the author to publish it (or use the name yourself!)
+75 error 404 It was specified as a dependency of 'service-demo'
+75 error 404
+75 error 404 Note that you can also install from a
+75 error 404 tarball, folder, http url, or git url.
+76 verbose exit [ 1, true ]
