@@ -5,42 +5,42 @@
     {
       "group-name": "keyboard",
       "keywords":["fast", "clacky", "loud", "feels nice"],
-      "review-ids":[23, 546, 12312, 9909]
+      "ids":[{"review_id":23,"sentence_id":39}, {"review_id":345,"sentence_id":124}, {"review_id":634,"sentence_id":256}, {"review_id":8765,"sentence_id":203}]
     },
     {
       "group-name": "screen",
       "keywords":["bright", "shows pictures", "rectangular","attached"],
-      "review-ids":[45,132,2134,4321]
+      "ids":[{"review_id":26,"sentence_id":7}, {"review_id":2456,"sentence_id":34}, {"review_id":7632,"sentence_id":34}, {"review_id":261,"sentence_id":34}]
     },
     {
       "group-name": "memory",
       "keywords":["included", "spacious"],
-      "review-ids": [123,23443]
+      "ids":[{"review_id":4253,"sentence_id":34}, {"review_id":765,"sentence_id":36}]
     },
     {
       "group-name": "storage",
       "keywords":["has", "25GB","small"],
-      "review-ids": [23,123,432333333]
+      "ids":[{"review_id":13,"sentence_id":65}, {"review_id":3456,"sentence_id":3}, {"review_id":76,"sentence_id":8}]
     },
     {
       "group-name":"design",
       "keywords": ["sleek","smart","fresh","synergy"],
-      "review-ids":[4,5,6,7]
+      "ids":[{"review_id":3345,"sentence_id":76}, {"review_id":98,"sentence_id":4}, {"review_id":34,"sentence_id":45}, {"review_id":6345,"sentence_id":235}]
     },
     {
       "group-name":"processor",
       "keywords": ["wicked fast","fastest ever","energy efficient"],
-      "review-ids": [45,54,67]
+      "ids":[{"review_id":234,"sentence_id":765}, {"review_id":345,"sentence_id":765}, {"review_id":456,"sentence_id":39}]
     },
     {
       "group-name": "color",
       "keywords": ["purple","majestic","red//blue"],
-      "review-ids":[5,43,5]
+      "ids":[{"review_id":373,"sentence_id":39}, {"review_id":64,"sentence_id":25}, {"review_id":87,"sentence_id":23}]
     },
     {
       "group-name": "size",
       "keywords":["small","big"],
-      "review-ids":[4,4]
+      "ids":[{"review_id":102,"sentence_id":84}, {"review_id":20348,"sentence_id":93}]
     }
   ],
   "type": "cluster"
