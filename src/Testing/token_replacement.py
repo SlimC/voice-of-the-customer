@@ -3,7 +3,7 @@ import ast
 import pprint
 import re
 pp = pprint.PrettyPrinter(depth=6)
-import nltk 
+import nltk
 
 def get_relations(review):
 	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=bbb894cf-003c-4000-9772-23e4860b3034&apikey=7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b&outputMode=json"
@@ -50,7 +50,7 @@ def token_replacement(review_text):
 	for sentence in sentences:
 		dict={}
 		sentence_dict[sentence]=i
-		
+
 		dict['sentence']=sentence
 		dict['seqno']=i
 		i+=1
@@ -71,14 +71,14 @@ def token_replacement(review_text):
 				else:
 					dict[entity['type']]=[]
 					dict[entity['type']].append(test)
-				
+
 				count=int(entity['count'])
 				classification = "<" + entity['type'] + ">"
-				
+
 				sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
 
 				dict['replaced_sentence']=sentence
-		result.append(dict)			
+		result.append(dict)
 	#print sentence_dict
 	#print result
 	if 'typedRelations' in review:
@@ -109,7 +109,49 @@ def token_replacement(review_text):
 					else:
 						local=[temp_dict]
 						dict[type]=local
+
+	result = avg_sentiment(result)
 	return result
-			
-				
+
+def avg_sentiment(review):
+	sentiments = []
+
+	review_text = review['review']
+
+	for sentence in review_text:
+		if 'Feature' in sentence:
+			for feature in sentence['Feature']:
+				if 'name' in feature and 'sentiment' in feature:
+					sentiments.append({'name':feature['name'], 'sentiment':feature['sentiment'][0], 'done':False})
+	for feature in sentiments:
+		if not feature['done']:
+			text = feature['name']
+			pos = 0
+			neg = 0
+			neutral = 0
+			most = ''
+			for other in sentiments:
+				if other['name'] == text:
+					other['done'] = True
+					if other['sentiment'] == 'positive':
+						pos +=1
+					elif other['sentiment'] == 'negative':
+						neg +=1
+					elif other['sentiment'] == 'neutral':
+						neutral +=1
+			if pos == max(pos,neg,neutral):
+				most = 'positive'
+			elif neg == max(pos, neg, neutral):
+				most = 'negative'
+			elif neutral == max(pos, neg, neutral):
+				most = 'neutral'
+
+			for sentence in review_text:
+				if 'Feature' in sentence:
+					for feature in sentence['Feature']:
+						if 'sentiment' in feature and 'name' in feature:
+							if feature['name'] == text:
+								feature['sentiment'] = [most]
+	review['review'] = review_text
+	return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');

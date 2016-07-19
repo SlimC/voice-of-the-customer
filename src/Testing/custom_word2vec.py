@@ -20,7 +20,6 @@ class MySentences():
         for document in db:
             if i > int(sys.argv[1]):
                 break
-            print document
             print i
             i+=1
             if 'reviewText' in document:
@@ -30,5 +29,7 @@ corpus = MySentences()
 model = gensim.models.Word2Vec()
 model.build_vocab(corpus)
 model.save('custom_word2vec.model')
+print 'Saved Corpus'
 model.train(corpus)
 model.save('custom_word2vec.model')
+print 'Saved Finished Model'
