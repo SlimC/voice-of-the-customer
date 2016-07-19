@@ -4,47 +4,53 @@
   "features": [
     {
       "feature": "keyboard",
+      "keyword_count": 3124,
+      "sentiments": {
+        "positive": 1812,
+        "neutral": 401,
+        "negative": 911
+      },
       "keywords": [
         {
           "keyword": "fast",
           "sentence_id": 1234,
-          "review_id": 42,
-          "sentiment": "positive"
+          "review_id": 42
         },
         {
           "keyword": "feels nice",
           "sentence_id": 1234,
-          "review_id": 42,
-          "sentiment": "positive"
+          "review_id": 42
         },
         {
           "keyword": "sticky",
           "sentence_id": 42,
-          "review_id": 314,
-          "sentiment": "negative"
+          "review_id": 314
         }
       ]
     },
     {
       "feature": "display",
+      "keyword_count": 1234,
+      "sentiments": {
+        "positive": 439,
+        "neutral": 509,
+        "negative": 286
+      },
       "keywords": [
         {
           "keyword": "clear",
           "sentence_id": 1234,
-          "review_id": 42,
-          "sentiment": "positive"
+          "review_id": 42
         },
         {
           "keyword": "faded",
           "sentence_id": 345,
-          "review_id": 42,
-          "sentiment": "negative"
+          "review_id": 42
         },
         {
           "keyword": "thick",
           "sentence_id": 42,
-          "review_id": 314,
-          "sentiment": "negative"
+          "review_id": 314
         }
       ]
     }

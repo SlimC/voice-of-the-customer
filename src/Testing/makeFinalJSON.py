@@ -76,13 +76,9 @@ for item in featureArray:
 	#print(json.dumps(item,indent=2))
 	feature = {}
 	feature["group_name"] = item["feature"]
-	feature["percentage"] = len(item["keywords"])
-	total = total + len(item["keywords"])
-	feature["sentiments"] = {
-		"positive": 0,
-		"neutral": 0,
-		"negative": 0
-	}
+	feature["percentage"] = item["keyword_count"]
+	total = total + item["keyword_count"]
+	feature["sentiments"] = item["sentiments"]
 	feature["keywords"] = []
 	for i in range(len(item["keywords"])):
 		elem = item["keywords"][i]
@@ -91,10 +87,9 @@ for item in featureArray:
 			"review_id": elem["review_id"],
 			"sentence_id": elem["sentence_id"]
 		}
-		feature["sentiments"][elem["sentiment"]] += 1
 		feature["keywords"].append(keyword)
 	for sent in feature["sentiments"]:
-		feature["sentiments"][sent] = feature["sentiments"][sent]/float(len(item["keywords"]))*100
+		feature["sentiments"][sent] = feature["sentiments"][sent]/float(item["keyword_count"])*100
 	outputJSON["features"].append(feature)
 
 for item in outputJSON["features"]:
