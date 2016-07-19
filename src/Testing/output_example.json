@@ -1,0 +1,164 @@
+{
+  "customer_service": {
+    "sentiment": {
+      "positive": 47.05882352941176, 
+      "neutral": 15.966386554621847, 
+      "negative": 36.97478991596639
+    }
+  }, 
+  "features": [
+    {
+      "keywords": [
+        {
+          "sentence_id": 1234, 
+          "name": "fast", 
+          "review_id": 42
+        }, 
+        {
+          "sentence_id": 1234, 
+          "name": "feels nice", 
+          "review_id": 42
+        }, 
+        {
+          "sentence_id": 42, 
+          "name": "sticky", 
+          "review_id": 314
+        }
+      ], 
+      "percentage": 50.0, 
+      "sentiments": {
+        "positive": 66.66666666666666, 
+        "neutral": 0.0, 
+        "negative": 33.33333333333333
+      }, 
+      "group_name": "keyboard"
+    }, 
+    {
+      "keywords": [
+        {
+          "sentence_id": 1234, 
+          "name": "clear", 
+          "review_id": 42
+        }, 
+        {
+          "sentence_id": 345, 
+          "name": "faded", 
+          "review_id": 42
+        }, 
+        {
+          "sentence_id": 42, 
+          "name": "thick", 
+          "review_id": 314
+        }
+      ], 
+      "percentage": 50.0, 
+      "sentiments": {
+        "positive": 33.33333333333333, 
+        "neutral": 0.0, 
+        "negative": 66.66666666666666
+      }, 
+      "group_name": "display"
+    }
+  ], 
+  "product_name": "", 
+  "issues": {
+    "percentage": 6.541405706332637, 
+    "review_ids": [
+      "0000927a59e02ee3d09b12e0e200efd2", 
+      "0000927a59e02ee3d09b12e0e201f05b", 
+      "0000927a59e02ee3d09b12e0e2021a89", 
+      "0000927a59e02ee3d09b12e0e20237ca", 
+      "0000927a59e02ee3d09b12e0e20297c7", 
+      "0000927a59e02ee3d09b12e0e202d254", 
+      "0000927a59e02ee3d09b12e0e202d254", 
+      "0000927a59e02ee3d09b12e0e202d254", 
+      "0000927a59e02ee3d09b12e0e203cbb4", 
+      "0000927a59e02ee3d09b12e0e203cbb4", 
+      "0000927a59e02ee3d09b12e0e203cbb4", 
+      "0000927a59e02ee3d09b12e0e203ed13", 
+      "0000927a59e02ee3d09b12e0e20462f4", 
+      "0000927a59e02ee3d09b12e0e204a482", 
+      "0000927a59e02ee3d09b12e0e204a482", 
+      "0000927a59e02ee3d09b12e0e204a482", 
+      "0000927a59e02ee3d09b12e0e2050311", 
+      "0000927a59e02ee3d09b12e0e2050311", 
+      "0000927a59e02ee3d09b12e0e2058278", 
+      "0000927a59e02ee3d09b12e0e2058278", 
+      "0000927a59e02ee3d09b12e0e2058278", 
+      "0000927a59e02ee3d09b12e0e200c590", 
+      "0000927a59e02ee3d09b12e0e2010399", 
+      "0000927a59e02ee3d09b12e0e2013a68", 
+      "0000927a59e02ee3d09b12e0e202d029", 
+      "0000927a59e02ee3d09b12e0e20329f5", 
+      "0000927a59e02ee3d09b12e0e2032b51", 
+      "0000927a59e02ee3d09b12e0e203d79a", 
+      "0000927a59e02ee3d09b12e0e203d79a", 
+      "0000927a59e02ee3d09b12e0e204cc0c", 
+      "0000927a59e02ee3d09b12e0e204cc0c", 
+      "0000927a59e02ee3d09b12e0e2051cd9", 
+      "0000927a59e02ee3d09b12e0e205d16b", 
+      "0000927a59e02ee3d09b12e0e205e143", 
+      "0000927a59e02ee3d09b12e0e2000f34", 
+      "0000927a59e02ee3d09b12e0e2003b52", 
+      "0000927a59e02ee3d09b12e0e200f70d", 
+      "0000927a59e02ee3d09b12e0e200f70d", 
+      "0000927a59e02ee3d09b12e0e20253fa", 
+      "0000927a59e02ee3d09b12e0e20386ab", 
+      "0000927a59e02ee3d09b12e0e20386ab", 
+      "0000927a59e02ee3d09b12e0e20386ab", 
+      "0000927a59e02ee3d09b12e0e2038dd8", 
+      "0000927a59e02ee3d09b12e0e204b744", 
+      "0000927a59e02ee3d09b12e0e205ea4e", 
+      "0000927a59e02ee3d09b12e0e206424b", 
+      "0000927a59e02ee3d09b12e0e2066621", 
+      "0000927a59e02ee3d09b12e0e200583b", 
+      "0000927a59e02ee3d09b12e0e2034e2a", 
+      "0000927a59e02ee3d09b12e0e2034e2a", 
+      "0000927a59e02ee3d09b12e0e2034e2a", 
+      "0000927a59e02ee3d09b12e0e203af65", 
+      "0000927a59e02ee3d09b12e0e20604be", 
+      "0000927a59e02ee3d09b12e0e20604be", 
+      "0000927a59e02ee3d09b12e0e20605af", 
+      "0000927a59e02ee3d09b12e0e20676aa", 
+      "0000927a59e02ee3d09b12e0e20677bf", 
+      "0000927a59e02ee3d09b12e0e2002c6a", 
+      "0000927a59e02ee3d09b12e0e2002c6a", 
+      "0000927a59e02ee3d09b12e0e2002c6a", 
+      "0000927a59e02ee3d09b12e0e2002c6a", 
+      "0000927a59e02ee3d09b12e0e2002c6a", 
+      "0000927a59e02ee3d09b12e0e2004985", 
+      "0000927a59e02ee3d09b12e0e2015684", 
+      "0000927a59e02ee3d09b12e0e2026f43", 
+      "0000927a59e02ee3d09b12e0e202e1f4", 
+      "0000927a59e02ee3d09b12e0e2030236", 
+      "0000927a59e02ee3d09b12e0e2041588", 
+      "0000927a59e02ee3d09b12e0e2042623", 
+      "0000927a59e02ee3d09b12e0e20434e7", 
+      "0000927a59e02ee3d09b12e0e2059fdf", 
+      "0000927a59e02ee3d09b12e0e205c753", 
+      "0000927a59e02ee3d09b12e0e2001b53", 
+      "0000927a59e02ee3d09b12e0e2002616", 
+      "0000927a59e02ee3d09b12e0e2002616", 
+      "0000927a59e02ee3d09b12e0e2002616", 
+      "0000927a59e02ee3d09b12e0e2006963", 
+      "0000927a59e02ee3d09b12e0e20086ab", 
+      "0000927a59e02ee3d09b12e0e20177de", 
+      "0000927a59e02ee3d09b12e0e201a7ed", 
+      "0000927a59e02ee3d09b12e0e201a7ed", 
+      "0000927a59e02ee3d09b12e0e2021922", 
+      "0000927a59e02ee3d09b12e0e2021922", 
+      "0000927a59e02ee3d09b12e0e203df87", 
+      "0000927a59e02ee3d09b12e0e203df87", 
+      "0000927a59e02ee3d09b12e0e203df87", 
+      "0000927a59e02ee3d09b12e0e203f5d8", 
+      "0000927a59e02ee3d09b12e0e204d7e7", 
+      "0000927a59e02ee3d09b12e0e205efba", 
+      "0000927a59e02ee3d09b12e0e205fba5", 
+      "0000927a59e02ee3d09b12e0e2060645", 
+      "0000927a59e02ee3d09b12e0e2064fa7", 
+      "0000927a59e02ee3d09b12e0e2064fa7", 
+      "0000927a59e02ee3d09b12e0e2068be6"
+    ]
+  }, 
+  "product_id": null
+}
