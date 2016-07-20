@@ -11,7 +11,7 @@ DATABASE = ''												#Replace with the name of the database
 USERNAME = ''												#Replace with the username from your credentials for the NLC
 PASSWORD = ''												#Replace with the password from your credentials for the NLC
 DESIGN = ''													#replace with the name of the design document that contains the view. This should be of the form '_design/XXXX'
-VIEW = 		''												#Replace with the view from your database to poll, be the name of the view and should return the text to classify
+VIEW = ''													#Replace with the view from your database to poll, be the name of the view and should return the text to classify
 RESULTFILE = ''												#Replace with where to store the result file in csv format
 CLASSIFIERID = ''											#Replace with the id of the classifier to use to classify
 

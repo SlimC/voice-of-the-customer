@@ -3,6 +3,7 @@ import numpy as np
 import ast
 import re
 import csv
+import sys
 
 def csv_handler(file, training, testing):
     ftest = open("testing_set.csv","wb")
@@ -37,24 +38,45 @@ def json_handler(file,writer,json_field):
         writer.writerow([text])
     except:
         print "ERROR: Something wrong with .json file: " + file.name
+flags = {}
 
-print "Input the full path to your data"
-print "The data can be in the format of a .csv file (with one column and one text per line), or a directory of .json or .txt files."
-print "NOTE: If you are using a directory, please make sure your data is the only thing in the directory"
-location = raw_input("Data Location: ")
+if sys.argv[0] != '':
+    args = sys.argv[1:]
+    opts = getopt.getopt(args, 'l:e:r:j:')
+        for pair in opts:
+            flags[pair[0]] = pair[1]
+
+
+if sys.argv[0] =='':
+    print "Input the full path to your data"
+    print "The data can be in the format of a .csv file (with one column and one text per line), or a directory of .json or .txt files."
+    print "NOTE: If you are using a directory, please make sure your data is the only thing in the directory"
+    location = raw_input("Data Location: ")
+else:
+    if '-l' in flags:
+        location = flags['-l']
+    else:
+        print "ERROR: No file location. Did you use the -l flag to mark a file location?"
 
 if re.match(r".\.csv$",location):
     try:
         f = open(location,'rb')
         training = 0
         testing = 0
-        while training + testing != 100:
-            print "What fraction would you like to use for training? (We recommend 70%)"
-            training = raw_input("Training (0-100): ")
-            print "What fraction would you like to use for testing? (We recommend 30%)"
-            testing = raw_input("Testing (0-100): ")
-            if training + testing != 100:
-                print "ERROR: Training and testing sets must equal 100%"
+        if sys.argv[0] ==0:
+            while training + testing != 100:
+                print "What fraction would you like to use for training? (We recommend 70%)"
+                training = raw_input("Training (0-100): ")
+                print "What fraction would you like to use for testing? (We recommend 30%)"
+                testing = raw_input("Testing (0-100): ")
+                if training + testing != 100:
+                    print "ERROR: Training and testing sets must equal 100%"
+        else:
+            if '-r' in flags and '-e' in flags:
+                training = flags['-r']
+                testing = flags['-e']
+            else:
+                print "ERROR: No training or testing split. Did you use the -r and -e flags to mark them?"
 
         training = float(training)/100
         testing = float(testing)/100
@@ -73,13 +95,20 @@ else:
         total_docs = len(files)
         training = 0
         testing = 0
-        while training + testing != 100:
-            print "What fraction would you like to use for training? (We recommend 70%)"
-            training = input("Training (0-100): ")
-            print "What fraction would you like to use for testing? (We recommend 30%)"
-            testing = input("Testing (0-100): ")
-            if training + testing != 100:
-                print "ERROR: Training and testing sets must equal 100%"
+        if sys.argv[0] == '':
+            while training + testing != 100:
+                print "What fraction would you like to use for training? (We recommend 70%)"
+                training = input("Training (0-100): ")
+                print "What fraction would you like to use for testing? (We recommend 30%)"
+                testing = input("Testing (0-100): ")
+                if training + testing != 100:
+                    print "ERROR: Training and testing sets must equal 100%"
+        else:
+            if '-r' in flags and '-e' in flags:
+                training = flags['-r']
+                testing = flags['-e']
+            else:
+                print "ERROR: No training or testing split. Did you use the -r and -e flags to mark them?"
 
         training = float(training)/100
         testing = float(testing)/100
@@ -99,9 +128,15 @@ else:
                     txt_handler(f, wtest)
                 f.close()
             if re.match(r".\.json$", entry):
-                if json_field == "":
-                    print "What key in the .json contains your text data?"
-                    json_field = raw_input("Json Key: ")
+                if sys.argv[0] =='':
+                    if json_field == "":
+                        print "What key in the .json contains your text data?"
+                        json_field = raw_input("Json Key: ")
+                else:
+                    if '-j' in flags:
+                        json_fields = flags['-j']
+                    if json_field =="":
+                        print "Please use the -j flag to give the key of the .json that contains the text data."
 
                 f = open(location + '/' + entry,'rb')
 
