@@ -29,12 +29,12 @@ print temp_client
 ##########
 
 ##create
-temp_database = temp_client.create_database('testdb_final_6')
+#temp_database = temp_client.create_database('testdb_final_6')
 
 ###if exists
-#temp_database = temp_client['testdb']
+temp_database = temp_client['testdb_final_6']
 
-query = Query(my_database, selector={'_id': {'$gt': 0},'type':["review"]})
+query = Query(my_database, selector={'type':["review"],'asin':"B00BCGRZ04"})
 
 
 for doc in query.result:

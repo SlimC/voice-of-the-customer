@@ -13,18 +13,18 @@
       "keywords": [
         {
           "keyword": "fast",
-          "sentence_id": 1234,
-          "review_id": 42
+          "sentence_id": [1234,1235]
+          "review_id": [42,44]
         },
         {
           "keyword": "feels nice",
-          "sentence_id": 1234,
-          "review_id": 42
+          "sentence_id": [1234,1256]
+          "review_id": [42,43]
         },
         {
           "keyword": "sticky",
-          "sentence_id": 42,
-          "review_id": 314
+          "sentence_id": [42,66,77],
+          "review_id": [314,42,34]
         }
       ]
     },
@@ -39,18 +39,18 @@
       "keywords": [
         {
           "keyword": "clear",
-          "sentence_id": 1234,
-          "review_id": 42
+          "sentence_id": [1234,1435]
+          "review_id": [42,66]
         },
         {
           "keyword": "faded",
-          "sentence_id": 345,
-          "review_id": 42
+          "sentence_id": [345,66],
+          "review_id": [42,77]
         },
         {
           "keyword": "thick",
-          "sentence_id": 42,
-          "review_id": 314
+          "sentence_id": [42,66],
+          "review_id": [314,88]
         }
       ]
     }
