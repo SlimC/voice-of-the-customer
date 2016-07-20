@@ -62,10 +62,8 @@ def token_replacement(review_text):
 			#print entity
 			token=entity['text']
 			temp={}
-			words=sentence.split()
-			print words
-			if token in words:
-				#print "found"
+			if re.search(r'\b%s\b' % token, sentence) is not None :
+				print "found"
 				#print token+" "+sentence
 				test={}
 				test['name']=token
@@ -159,4 +157,3 @@ def avg_sentiment(review):
 								feature['sentiment'] = [most]
 	return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');
-
