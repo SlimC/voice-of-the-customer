@@ -41,6 +41,7 @@ def token_replacement_entities(review):
 def token_replacement(review_text):
 	review = get_relations(review_text)
 	entity_info = get_entities(review_text)
+	entity_info = avg_sentiment(entity_info)
 	entities = []
 	if 'entities' in entity_info:
 		entities=entity_info['entities']
@@ -119,13 +120,12 @@ def token_replacement(review_text):
 def avg_sentiment(review):
 	sentiments = []
 	print review
-	review_text = review['review']
+	entities = review['entites']
 
-	for sentence in review_text:
-		if 'Feature' in sentence:
-			for feature in sentence['Feature']:
-				if 'name' in feature and 'sentiment' in feature:
-					sentiments.append({'name':feature['name'], 'sentiment':feature['sentiment'][0], 'done':False})
+	for i in entities
+
+	for sentence in entities:
+		sentiments.append({'name':feature['text'], 'sentiment':feature['sentiment']['type'], 'done':False})
 	for feature in sentiments:
 		if not feature['done']:
 			text = feature['name']
@@ -149,11 +149,8 @@ def avg_sentiment(review):
 			elif neutral == max(pos, neg, neutral):
 				most = 'neutral'
 
-			for sentence in review_text:
-				if 'Feature' in sentence:
-					for feature in sentence['Feature']:
-						if 'sentiment' in feature and 'name' in feature:
-							if feature['name'] == text:
-								feature['sentiment'] = [most]
+			for entity in entities:
+				if entity['text'] == text:
+					entity['sentiment']['type'] = [most]
 	return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');
