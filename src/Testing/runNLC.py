@@ -1,5 +1,5 @@
 from cloudant.client import Cloudant
-from cloudant.query import Query 
+from cloudant.query import Query
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1
 
@@ -15,7 +15,7 @@ CLASSIFIER_JSON = '../../data/classifier_ids.json'
 BULK_RATE = 100
 
 # Retrieve Classifier ID's
-with open(CLASSIFIER_JSON) as classifier_ids:    
+with open(CLASSIFIER_JSON) as classifier_ids:
     classifierTree = json.load(classifier_ids)
 print(classifierTree)
 
@@ -56,7 +56,7 @@ data = [{
 'type':'review'
 }]
 
-query = Query(db, selector={'_id': {'$gt': 0},'review':{ '$exists':True }}) 
+query = Query(my_database, selector={'_id': {'$gt': 0},'type':["replaced"]})
 data = query.result
 
 nlc = NaturalLanguageClassifierV1(username = CLF_USERNAME, password = CLF_PASSWORD)
@@ -89,14 +89,10 @@ for review in data:
 			line["layer3type"] = ""
 	print(json.dumps(review,indent=2))
 	print(",")
+    review['type'] = ['classified']
 	updated_reviews.append(review)
 	if(len(updated_reviews) >= BULK_RATE):
 		db.bulk_docs(updated_reviews)
 		updated_reviews = []
 print("]")
 db.bulk_docs(updated_reviews)
-
-
-
-
-
