@@ -4,9 +4,13 @@ import pprint
 import re
 pp = pprint.PrettyPrinter(depth=6)
 import nltk
+from cloudant.client import Cloudant
+from cloudant.query import Query
+
+
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
+	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -15,7 +19,7 @@ def get_relations(review):
 	return response
 
 def get_entities(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json&sentiment=1"
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
@@ -31,7 +35,7 @@ def token_replacement_entities(review):
 		for i in entities:
 			token = i['text']
 			classification = "<" + i['type'] + ">"
-			text = re.replace(r"\b%s\b" % token, classification, text,count=1)
+			text = re.sub(r"\b%s\b" % token, classification, text,count=1)
 	return text
 
 def token_replacement(review_text):
@@ -153,6 +157,6 @@ def avg_sentiment(review):
 						if 'sentiment' in feature and 'name' in feature:
 							if feature['name'] == text:
 								feature['sentiment'] = [most]
-	review['review'] = review_text
 	return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');
+

@@ -29,7 +29,7 @@ print temp_client
 ##########
 
 ##create
-temp_database = temp_client.create_database('testdb_final_4')
+temp_database = temp_client.create_database('testdb_final_6')
 
 ###if exists
 #temp_database = temp_client['testdb']
