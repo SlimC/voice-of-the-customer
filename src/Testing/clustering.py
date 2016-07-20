@@ -43,7 +43,7 @@ for data in query.result:
 	rev_id.append(data['_id'])
 
 print rev_id
-rev_id=["0000927a59e02ee3d09b12e0e202bba5","0000927a59e02ee3d09b12e0e202dd2b","0000927a59e02ee3d09b12e0e202f3f2"]
+rev_id=["0000927a59e02ee3d09b12e0e202bba5","0000927a59e02ee3d09b12e0e202dd2b","0000927a59e02ee3d09b12e0e202f3f2","0000927a59e02ee3d09b12e0e2056019"]
 temp={}
 keys=[]
 for rev in rev_id:	
@@ -162,4 +162,38 @@ clusters=cluster_try(vecs)
 def create_json(clusters):
 	print clusters
 	for i in clusters:
+		keyword_count=0
+		pos=0
+		neg=0
+		neutral=0
+		unique_words={}
+		clusterinfo={}
+		for key in clusters[i]:			
+			keyword= keys[key]['word']
+			if keyword in unique_words:
+				unique_words[keyword]['count']+=1
+				unique_words[keyword]['review_id'].append(keys[key]['rev_id'])
+				unique_words[keyword]['sentence_id'].append(keys[key]['sentence_id'])
+			else:
+				unique_words[keyword]={}
+				unique_words[keyword]['count']=1
+				unique_words[keyword]['review_id']=[keys[key]['rev_id']]
+				unique_words[keyword]['sentence_id']=[keys[key]['sentence_id']]
+			keyword_count+=1
+			print unique_words
+			if keys[key]['sentiment'][0]=='positive':
+					pos+=1
+			if keys[key]['sentiment'][0]=='Neutral':
+					neutral+=1
+			if keys[key]['sentiment'][0]=='negative':
+					neg+=1
+		for w in sorted(unique_words, key=unique_words.get, reverse=True):
+			name=w
+			print w
+		
+	
+
+print create_json(clusters)
+			
+			
 		

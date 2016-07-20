@@ -65,7 +65,8 @@ def token_replacement(review_text):
 				#print token+" "+sentence
 				test={}
 				test['name']=token
-				test['sentiment']=[entity['sentiment']['type']]
+				if 'sentiment' in entity:
+					test['sentiment']=[entity['sentiment']['type']]
 				if entity['type'] in dict:
 					dict[entity['type']].append(test)
 				else:
@@ -90,7 +91,7 @@ def token_replacement(review_text):
 				temp_dict={}
 				temp_dict['hasrel']=text['type']
 				#print text['arguments'][0]
-				temp_dict['name']=text['arguments'][0]['entities'][0]['text']
+				temp_dict['rel_name']=text['arguments'][0]['entities'][0]['text']
 				type=text['arguments'][0]['entities'][0]['type']
 				temp_dict['second']=text['arguments'][1]['entities'][0]['text']
 				#print "temp_dict"
@@ -110,12 +111,12 @@ def token_replacement(review_text):
 						local=[temp_dict]
 						dict[type]=local
 
-	result = avg_sentiment(result)
+	#result = avg_sentiment(result)
 	return result
 
 def avg_sentiment(review):
 	sentiments = []
-
+	print review
 	review_text = review['review']
 
 	for sentence in review_text:
