@@ -6,7 +6,7 @@ pp = pprint.PrettyPrinter(depth=6)
 import nltk
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=bbb894cf-003c-4000-9772-23e4860b3034&apikey=7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b&outputMode=json"
+	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -15,7 +15,7 @@ def get_relations(review):
 	return response
 
 def get_entities(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=bbb894cf-003c-4000-9772-23e4860b3034&apikey=7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b&outputMode=json&sentiment=1"
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json&sentiment=1"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
