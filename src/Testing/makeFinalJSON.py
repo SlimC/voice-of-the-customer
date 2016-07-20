@@ -3,7 +3,6 @@ from cloudant.client import Cloudant
 from cloudant.query import Query 
 from watson_developer_cloud import AlchemyLanguageV1
 
-
 JSON_FILE = "./Model_Clustering.JSON"
 outputJSON = {
 	"product_name": "",
@@ -69,6 +68,7 @@ if(customer_service_total > 0):
 
 with open(JSON_FILE) as features:    
     productFeatures = json.load(features)
+
 
 featureArray = productFeatures["features"]
 total = 0
