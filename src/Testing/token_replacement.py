@@ -119,38 +119,36 @@ def token_replacement(review_text):
 
 def avg_sentiment(review):
 	sentiments = []
-	print review
-	entities = review['entites']
+	if 'entities' in review:
+		entities = review['entities']
 
-	for i in entities
+		for sentence in entities:
+			sentiments.append({'name':sentence['text'], 'sentiment':sentence['sentiment']['type'], 'done':False})
+		for feature in sentiments:
+			if not feature['done']:
+				text = feature['name']
+				pos = 0
+				neg = 0
+				neutral = 0
+				most = ''
+				for other in sentiments:
+					if other['name'] == text:
+						other['done'] = True
+						if other['sentiment'] == 'positive':
+							pos +=1
+						elif other['sentiment'] == 'negative':
+							neg +=1
+						elif other['sentiment'] == 'neutral':
+							neutral +=1
+				if pos == max(pos,neg,neutral):
+					most = 'positive'
+				elif neg == max(pos, neg, neutral):
+					most = 'negative'
+				elif neutral == max(pos, neg, neutral):
+					most = 'neutral'
 
-	for sentence in entities:
-		sentiments.append({'name':feature['text'], 'sentiment':feature['sentiment']['type'], 'done':False})
-	for feature in sentiments:
-		if not feature['done']:
-			text = feature['name']
-			pos = 0
-			neg = 0
-			neutral = 0
-			most = ''
-			for other in sentiments:
-				if other['name'] == text:
-					other['done'] = True
-					if other['sentiment'] == 'positive':
-						pos +=1
-					elif other['sentiment'] == 'negative':
-						neg +=1
-					elif other['sentiment'] == 'neutral':
-						neutral +=1
-			if pos == max(pos,neg,neutral):
-				most = 'positive'
-			elif neg == max(pos, neg, neutral):
-				most = 'negative'
-			elif neutral == max(pos, neg, neutral):
-				most = 'neutral'
-
-			for entity in entities:
-				if entity['text'] == text:
-					entity['sentiment']['type'] = [most]
+				for entity in entities:
+					if entity['text'] == text:
+						entity['sentiment']['type'] = [most]
 	return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');
