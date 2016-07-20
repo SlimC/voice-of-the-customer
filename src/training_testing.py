@@ -33,9 +33,7 @@ def json_handler(file,writer,json_field):
 
     try:
         processed_text = ast.literal_eval(raw_text)
-        print processed_text
         text = processed_text[json_field]
-        print text
         writer.writerow([text])
     except:
         print "ERROR: Something wrong with .json file: " + file.name
