@@ -13,12 +13,12 @@
       "keywords": [
         {
           "keyword": "fast",
-          "sentence_id": [1234,1235]
+          "sentence_id": [1234,1235],
           "review_id": [42,44]
         },
         {
           "keyword": "feels nice",
-          "sentence_id": [1234,1256]
+          "sentence_id": [1234,1256],
           "review_id": [42,43]
         },
         {
@@ -39,7 +39,7 @@
       "keywords": [
         {
           "keyword": "clear",
-          "sentence_id": [1234,1435]
+          "sentence_id": [1234,1435],
           "review_id": [42,66]
         },
         {
