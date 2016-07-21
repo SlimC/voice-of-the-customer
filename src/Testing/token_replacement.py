@@ -10,7 +10,8 @@ from cloudant.query import Query
 
 
 def get_relations(review):
-	url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
+	url="http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
+	#url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -19,7 +20,7 @@ def get_relations(review):
 	return response
 
 def get_entities(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
+	url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json&sentiment=1"
 	f = requests.get(url, params={'text':review})
 	response = f.content
 	response = ast.literal_eval(response)
@@ -60,7 +61,7 @@ def split_long_string(text,data):
 		return data
 	
 
-def token_replacement(review_text):
+def token_replacement(review_text,seq_no):
 	print "\n\n text is \n"
 	print review_text
 	#data=[]
@@ -77,11 +78,11 @@ def token_replacement(review_text):
 	sentence_dict={}
 	#print entities
 	#print sentences
-	i=0
+	i=seq_no
 	dict={}
 	for sentence in sentences:
 		dict={}
-		sentence_dict[sentence]=i
+		sentence_dict[sentence]=i-seq_no
 
 		dict['sentence']=sentence
 		dict['seqno']=i
@@ -142,7 +143,8 @@ def token_replacement(review_text):
 						dict[type]=local
 
 	#result = avg_sentiment(result)
-	return result
+	final_result=[result,i]
+	return final_result
 
 def avg_sentiment(review):
 	sentiments = []
