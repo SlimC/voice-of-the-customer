@@ -29,25 +29,65 @@ print temp_client
 ##########
 
 ##create
-#temp_database = temp_client.create_database('testdb_final_6')
+#temp_database = temp_client.create_database('testdb_final_product')
 
 ###if exists
-temp_database = temp_client['testdb_final_6']
+temp_database = temp_client['testdb_final_product']
 
-query = Query(my_database, selector={'type':["review"],'asin':"B00BCGRZ04"})
+#query = Query(my_database, selector={'asin':"B00BCGRZ04"})
+#B0042A8CW2
+#query = Query(my_database, selector={'asin':"B0042A8CW2"})
+#query = Query(my_database, selector={'asin':'B00BCGRZ04'},fields=["_id"])
+
+#for doc in query.result:
+#	print doc
+#dddb09bdee0f0ae701af3455b6259cb0
 
 
+def find_middle(generator):
+        sequences = list(generator)
+        mid_sentence = len(sequences)/2
+        middle_char = sequences[mid_sentence][1]
+        middle_char = int(middle_char) + 1
+        return middle_char
+
+def split_long_string(text,data):
+	print "\n \n text received is \n\n"
+	print text
+        if len(text) > 3024:
+		print "\n split\n"
+                sequences = nltk.tokenize.util.regexp_span_tokenize(text, r'\.')
+                middle = find_middle(sequences)
+                second_half = text[middle:].strip()
+                first_half = text[:middle].strip()
+                #return first_half
+		print "\n first half\n"
+		print first_half
+		print "\n second half\n"
+		print second_half
+                #data.append([first_half])
+                #data.append([second_half])
+		print data
+                split_long_string(first_half,data)
+                split_long_string(second_half,data)
+        else:
+                return data
+
+query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
 for doc in query.result:
 	#print doc
-
-	text=doc['reviewText']
-	#print text
-	review= token_replacement.token_replacement(text);
-
-	dict={}
-	#specify review id
-	dict['review_id']=doc['_id']
-	dict['review']=review
-	print dict
-	my_document=temp_database.create_document(dict)
+	if 'reviewText' in doc:
+		text=doc['reviewText']
+		data=[]
+		data=split_long_string(text,data)
+		print data
+		#print text
+		print "\n"+doc['_id']+"\n"
+		####review= token_replacement.token_replacement(text);
+		####dict={}
+		#specify review id
+		####dict['review_id']=doc['_id']
+		####dict['review']=review
+		####print dict
+		##########my_document=temp_database.create_document(dict)
 

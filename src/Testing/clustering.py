@@ -168,7 +168,8 @@ def create_json(clusters):
 		neutral=0
 		unique_words={}
 		clusterinfo={}
-		for key in clusters[i]:			
+		for key in clusters[i]:
+			#clusterinfo={}			
 			keyword= keys[key]['word']
 			if keyword in unique_words:
 				unique_words[keyword]['count']+=1
@@ -181,16 +182,31 @@ def create_json(clusters):
 				unique_words[keyword]['sentence_id']=[keys[key]['sentence_id']]
 			keyword_count+=1
 			print unique_words
+			list_keywords=[]
+			for feature in unique_words:
+				data={}
+				data['keyword']=feature
+				data['sentence_id']=unique_words[feature]['sentence_id']
+				data['review_id']=unique_words[feature]['review_id']
+				list_keywords.append(data)
+			#clusterinfo['keywords']=list_keywords
 			if keys[key]['sentiment'][0]=='positive':
 					pos+=1
 			if keys[key]['sentiment'][0]=='Neutral':
 					neutral+=1
 			if keys[key]['sentiment'][0]=='negative':
 					neg+=1
+		clusterinfo['keywords']=list_keywords
+		clusterinfo['sentiments']={}
+		clusterinfo['sentiments']['positive']=pos
+		clusterinfo['sentiments']['negative']=neg
+		clusterinfo['sentiments']['neutral']=neutral
+		clusterinfo['keyword_count']=keyword_count
 		for w in sorted(unique_words, key=unique_words.get, reverse=True):
 			name=w
+			clusterinfo['feature']=name
 			print w
-		
+		print clusterinfo
 	
 
 print create_json(clusters)

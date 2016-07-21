@@ -10,7 +10,7 @@ from cloudant.query import Query
 
 
 def get_relations(review):
-	url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
+	url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	#url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
 	f = requests.get(url, params={'text':review})
 	response = f.content
@@ -38,7 +38,34 @@ def token_replacement_entities(review):
 			text = re.sub(r"\b%s\b" % token, classification, text,count=1)
 	return text
 
+def find_middle(generator):
+        sequences = list(generator)
+        mid_sentence = len(sequences)/2
+        middle_char = sequences[mid_sentence][1]
+        middle_char = int(middle_char) + 1
+        return middle_char
+
+def split_long_string(text,data):
+        if len(text) > 3024:
+                sequences = nltk.tokenize.util.regexp_span_tokenize(text, r'\.')
+                middle = find_middle(sequences)
+                first_half = text[middle:].strip()
+                second_half = text[:middle].strip()
+		#return first_half
+		data.append(first_half)
+		data.append(second_half)
+		split_long_string(first_half,data)
+		split_long_string(second_half,data)
+	else:
+		return data
+	
+
 def token_replacement(review_text):
+	print "\n\n text is \n"
+	print review_text
+	#data=[]
+	#review_text=split_long_string(review_text,data)
+	
 	review = get_relations(review_text)
 	entity_info = get_entities(review_text)
 	entity_info = avg_sentiment(entity_info)
