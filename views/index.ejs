@@ -13,7 +13,6 @@
 <body>
   <!-- top level heading -->
   <header class="_demo--heading">
-    <div class="_demo--container">
       <a class="wordmark" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/" target="_blank">
         <span class="wordmark--left">IBM</span>
         <span class="wordmark--right">Product Intelligence</span>
@@ -36,45 +35,44 @@
         </li>
         <li class="base--li heading-nav--li" role="presentation">
           <a class="heading-nav--item" href="https://developer.ibm.com/watson/" target="_blank" role="menuitem">
-                        Community
-                    </a>
+            Community
+          </a>
         </li>
       </nav>
-    </div>
   </header>
 
   <!-- demo body -->
-  <div class="_demo--container">
+  <div class="result">
     <div class="loader">
       <img src="images/loading.gif" alt="loading animation">
     </div>
-    <article class="_content base--article">
-      <h2 class="base--h2">Product Intelligence Demo</h2>
-      <div class="base--h2 product-header">
-
-      </div>
-      <div class="tab-panels" role="tabpanel">
-        <ul class="tab-panels--tab-list" role="tablist">
-          <li class="tab-panels--tab-list-item base--li" role="presentation">
-            <a class="tab-panels--tab base--a active" href="#feature-panel" aria-controls="feature-panel" role="tab">Features</a>
-          </li>
-          <li class="tab-panels--tab-list-item base--li" role="presentation">
-            <a class="tab-panels--tab base--a" href="#issue-panel" aria-controls="issue-panel" role="tab">Issues</a>
-          </li>
-          <li class="tab-panels--tab-list-item base--li" role="presentation">
-            <a class="tab-panels--tab base--a" href="#customer-service-panel" aria-controls="customer-service-panel" role="tab">Customer Service</a>
-          </li>
+    <article class="_content result--article">
+      <div class="result--sidebar">
+        <ul>
+          <li><a class="result--sidebar-link" href='#'>Overview</a></li>
+          <li><a class="result--sidebar-link" href='#features'>Features</a></li>
+          <li><a class="result--sidebar-link" href='#issues'>Issues</a></li>
+          <li><a class="result--sidebar-link" href='#customer-service'>Customer Service</a></li>
         </ul>
-        <div class="tab-panels--tab-content">
-          <div id="feature-panel" class="tab-panels--tab-pane active" role="tab-panel">
+      </div>
+      <div class="result--product">
+        <div class="result--h2 result--header"></div>
 
-          </div>
-          <div id="issue-panel" class="tab-panels--tab-pane" role="tab-panel">
+        <hr width="30%">
+        <div class="result--h3"><a name="features"></a>Features</div>
+        <div class="result--features">
 
-          </div>
-          <div id="customer-service-panel" class="tab-panels--tab-pane" role="tab-panel">
+        </div>
 
-          </div>
+        <hr width="30%">
+        <div class="result--h3"><a name="issues"></a>Issues</div>
+        <div class="result--issues">
+
+        </div>
+        <hr width="30%">
+        <div class="result--h3"><a name="customer-service">Customer Service</a></div>
+        <div class="result--customer-service">
+
         </div>
       </div>
     </article>

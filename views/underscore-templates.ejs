@@ -1,83 +1,59 @@
 <script type="text/html" id="headerTemplate">
-    <div class="base--p">
+    <div class="result--h2">
         <%= item.product_name %> (ID: <%= item.product_id %>)
+    </div>
+    <div class="result--p">
+        <%= item.description %>
     </div>
 </script>
 
 <script type="text/html" id="featureTemplate">
-    <table class="base--table">
-        <thead class="base--thead">
-        <tr class="base--tr">
-            <td class="base--td">Name</td>
-            <td class="base--td">Discussion<br>Percentage</td>
-            <td class="base--td">Keywords Found</td>
-            <td class="base--td">Sentiment</td>
-        </tr>
-        </thead>
-        <tbody class="base--tbody">
+    <ul class="result--graph">
         <% _.each(items, function(item, key, list) { %>
-        <tr class="base--tr">
-            <td class="base--td">
-                <%= item.group_name %>
-            </td>
-            <td class="base--td">
-                <%= item.percentage %>%
-            </td>
-            <td>
-                <% _.each(item.keywords, function(keyword, innerKey, list) { %>
-                    "<%= keyword.name %>" <br>
-                <% }); %>
-            </td>
-            <td class="base--td">
-                Positive: <%= item.sentiments.positive %>% <br>
-                Neutral: <%= item.sentiments.neutral %>% <br>
-                Negative: <%= item.sentiments.negative %>%
-            </td>
-        </tr>
+            <li class="result--graph--feature">
+                <div class="result--graph--name"><%= item.group_name %></div>
+                <div class="result--graph--bar">
+                    <div class="result--graph--percent" style="width:<%= item.showPercentage %>%">
+                        <div class="result--graph--pos" style="width:<%= item.sentiments.positive %>%">&nbsp</div>
+                        <div class="result--graph--neutral" style="width:<%= item.sentiments.positive + item.sentiments.neutral %>%">&nbsp</div>
+                        <div class="result--graph--neg" style="width:<%= item.sentiments.positive + item.sentiments.neutral + item.sentiments.negative %>%">&nbsp</div>
+                    </div>
+                </div>
+            </li><br>
         <% }); %>
-        </tbody>
-    </table>
+    </ul>
+
+    <ul class="result--keywords">
+        <% _.each(items, function(item, key, list) { %>
+            <li class="result--keywords--feature">
+                <% _.each(item.keywords, function(keyword, key, list) { %>
+                    <div class="result--keyword"><%= keyword.name %></div>
+                <% }); %>
+            </li><br>
+        <% }); %>
+    </ul>
 </script>
 
 <script type="text/html" id="issueTemplate">
-    <div class="base--h3">
+    <div class="result--p">
         Issues/Defects were seen by <%= item.percentage %>% of your consumers.
     </div>
 </script>
 
 <script type="text/html" id="customerServiceTemplate">
-    <table class="base--table">
-        <thead class="base--thead">
-        <tr class="base--tr">
-            <td class="base--td">Sentiment</td>
-            <td class="base--td">Percentage Found</td>
-        </tr>
-        </thead>
-        <tbody class="base--tbody">
-        <tr class="base--tr">
-            <td class="base--td">
-                Positive
-            </td>
-            <td>
-                <%= item.sentiment.positive %>%
-            </td>
-        </tr>
-        <tr class="base--tr">
-            <td class="base--td">
-                Neutral
-            </td>
-            <td>
-                <%= item.sentiment.neutral %>%
-            </td>
-        </tr>
-        <tr class="base--tr">
-            <td class="base--td">
-                Negative
-            </td>
-            <td>
-                <%= item.sentiment.negative %>%
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <ul class="result--graph">
+        <li class="result--graph--axis">
+
+        </li>
+        <li class="result--graph--feature">
+            <div class="result--graph--name">Sentiment</div>
+            <div class="result--graph--bar">
+                <div class="result--graph--percent" style="width:100%">
+                    <div class="result--graph--pos" style="width:<%= item.sentiment.positive %>%">&nbsp</div>
+                    <div class="result--graph--neutral" style="width:<%= item.sentiment.positive + item.sentiment.neutral %>%">&nbsp</div>
+                    <div class="result--graph--neg" style="width:<%= item.sentiment.positive + item.sentiment.neutral + item.sentiment.negative %>%">&nbsp</div>
+                </div>
+            </div>
+        </li><br>
+    </ul>
 </script>

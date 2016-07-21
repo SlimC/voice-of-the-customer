@@ -9,6 +9,138 @@ $container-width-large: get('large');
   opacity: 1;
 }
 
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+._demo--heading {
+  z-index: 10;
+  padding-left: 3%;
+  padding-right: 3%;
+  position: fixed;
+  width: 100%;
+}
+
+._demo--container {
+  margin: 0;
+  padding: 0;
+  width:100%;
+}
+
+.result {
+  margin: 0;
+  width:100%;
+
+  &--sidebar {
+    width: 15%;
+    float: left;
+    position: fixed;
+    top: 30%;
+
+    &-link {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--product {
+    margin-top: 2rem;
+    padding-left: 15%;
+    float: left;
+    width: 100%;
+  }
+
+  &--h2 {
+    font-size: 3rem;
+  }
+
+  &--h3 {
+    font-size: 2rem;
+  }
+
+  &--p {
+    font-size: 1rem;
+  }
+
+  &--keywords {
+    width: 30%;
+    float: left;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  &--keyword {
+    float: left;
+    margin: 0;
+    border-radius: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-width: 1px;
+    border-style: solid;
+    margin-right: .5rem;
+  }
+
+  &--graph {
+    width: 70%;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    float: left;
+
+    &--name {
+      float: left;
+      width: 20%;
+    }
+
+    &--bar {
+      margin: 0;
+      float: left;
+      width: 80%;
+    }
+
+    &--percent {
+      position: relative;
+      margin: 0;
+      height:1rem;
+    }
+
+    &--pos {
+      z-index: 3;
+      position: absolute;
+      margin: 0;
+      background-color: green;
+      float: left;
+      border-radius: 2rem;
+      border-radius: 2rem;
+    }
+
+    &--neutral {
+      z-index: 2;
+      position: absolute;
+      margin: 0;
+      background-color: yellow;
+      float: left;
+      border-radius: 2rem;
+      border-radius: 2rem;
+    }
+
+    &--neg {
+      z-index: 1;
+      position: absolute;
+      margin: 0;
+      background-color: red;
+      float: left;
+      border-radius: 2rem;
+      border-radius: 2rem;
+    }
+  }
+}
+
 .banner--service-icon {
   background-color: white;
   border-radius: 50%;

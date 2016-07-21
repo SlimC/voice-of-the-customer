@@ -20,24 +20,26 @@
 
 $(document).ready(function() {
   $.get('/api/product?productId=' + 100, function(data) {
-    //console.log(data);
+    console.log(data);
+    var maxPercent = normalizePercents(data);
     var headerTemp = headerTemplate.innerHTML;
-    $('.product-header').append(_.template(headerTemp, {
+    $('.result--header').append(_.template(headerTemp, {
       item: data
     }));
 
     var featuresTemp = featureTemplate.innerHTML;
-    $('#feature-panel').append(_.template(featuresTemp, {
-      items: data.features
+    $('.result--features').append(_.template(featuresTemp, {
+      items: data.features,
+      maxPercent: maxPercent
     }));
 
     var issueTemp = issueTemplate.innerHTML;
-    $('#issue-panel').append(_.template(issueTemp, {
+    $('.result--issues').append(_.template(issueTemp, {
       item: data.issues
     }));
 
     var customerServiceTemp = customerServiceTemplate.innerHTML;
-    $('#customer-service-panel').append(_.template(customerServiceTemp, {
+    $('.result--customer-service').append(_.template(customerServiceTemp, {
       item: data.customer_service
     }));
 
@@ -47,3 +49,18 @@ $(document).ready(function() {
     console.log(error);
   });
 });
+
+function normalizePercents(data) {
+  //var maxPercent = Math.ceil(data.features[0].percentage/10)*10;
+  var maxPercent = data.features[0].percentage;
+  //console.log(maxPercent);
+  data.features.map(function(item) {
+    item.showPercentage = item.percentage/maxPercent * 100;
+  });
+
+  return maxPercent
+}
+
+
+
+

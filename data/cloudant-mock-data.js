@@ -24,30 +24,8 @@ module.exports = function() {
     return { //Mock data response
         product_name: 'Samsung Galaxy S7',
         product_id: 100,
+        description: 'Great phone made by Samsung that runs Android and has a bunch of cool features that nobody could want',
         features: [
-            {
-                group_name: 'Display',
-                percentage: 12,
-                keywords: [
-                    {
-                        name: 'Screen',
-                        review_ids: [111, 3]
-                    },
-                    {
-                        name: 'Color',
-                        review_ids: [9193, 13, 83]
-                    },
-                    {
-                        name: 'Resolution',
-                        review_ids: [9374, 2134, 452]
-                    }
-                ],
-                sentiments: {
-                    positive: 81,
-                    neutral: 3,
-                    negative: 16
-                }
-            },
             {
                 group_name: 'Battery',
                 percentage: 56,
@@ -92,6 +70,29 @@ module.exports = function() {
                     positive: 75,
                     neutral: 20,
                     negative: 5
+                }
+            },
+            {
+                group_name: 'Display',
+                percentage: 12,
+                keywords: [
+                    {
+                        name: 'Screen',
+                        review_ids: [111, 3]
+                    },
+                    {
+                        name: 'Color',
+                        review_ids: [9193, 13, 83]
+                    },
+                    {
+                        name: 'Resolution',
+                        review_ids: [9374, 2134, 452]
+                    }
+                ],
+                sentiments: {
+                    positive: 81,
+                    neutral: 3,
+                    negative: 16
                 }
             }
         ],
