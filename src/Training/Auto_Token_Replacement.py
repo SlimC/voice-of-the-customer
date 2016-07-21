@@ -1,5 +1,8 @@
-import token_replacement as t
 import csv
+import sys, os
+
+sys.path.insert(0, os.path.abspath('..'))
+from utils import token_replacement as t
 
 read = open('ground_truth_layer1.csv','rb') ##replace with correct filenames
 write = open('ground_truth_layer1_replace.csv','wb')     ##replace with correct filenames

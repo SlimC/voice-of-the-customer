@@ -1,4 +1,3 @@
-
 import couchdbkit
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1

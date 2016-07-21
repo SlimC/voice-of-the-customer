@@ -17,7 +17,7 @@ def classify(review):
 	if(classification == "Product"):
 		resp = nlc.classify(classifierTree['tier2'],review)
 		classification = resp["top_class"]
-		if(classification != "Price"):
+		if(classification == "Feature"):
 			resp = nlc.classify(classifierTree['tier3'],review)
 			classification = resp["top_class"]
 	return classification
