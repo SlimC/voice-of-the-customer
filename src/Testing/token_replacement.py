@@ -62,89 +62,95 @@ def find_middle(text):
         return middle_char
 
 def token_replacement(review_text,seq_no):
-    print "\n\n text is \n"
-    print review_text
-    #data=[]
-    #review_text=split_long_string(review_text,data)
+	print "\n\n text is \n"
+	print review_text
+	#data=[]
+	#review_text=split_long_string(review_text,data)
+	
+	review = get_relations(review_text)
+	entity_info = get_entities(review_text)
+	entity_info = avg_sentiment(entity_info)
+	entities = []
+	if 'entities' in entity_info:
+		entities=entity_info['entities']
+	sentences = nltk.tokenize.sent_tokenize(review_text)
+	result=[]
+	sentence_dict={}
+	#print entities
+	#print sentences
+	i=seq_no
+	dict={}
+	for sentence in sentences:
+		dict={}
+		sentence_dict[sentence]=i-seq_no
 
-    review = get_relations(review_text)
-    entity_info = get_entities(review_text)
-    entity_info = avg_sentiment(entity_info)
-    entities = []
-    if 'entities' in entity_info:
-        entities=entity_info['entities']
-    sentences = nltk.tokenize.sent_tokenize(review_text)
-    result=[]
-    sentence_dict={}
-    #print entities
-    #print sentences
-    i=seq_no
-    dict={}
-    for sentence in sentences:
-        dict={}
-        sentence_dict[sentence]=i-seq_no
+		dict['sentence']=sentence
+		dict['seqno']=i
+		i+=1
+		for entity in entities:
+			#print entity
+			token=entity['text']
+			temp={}
+			print "\n\n token\n\n"
+			print token
+			print "\n\n sentence\n\n"
+			print sentence
+			token = re.escape(token)
+			if re.search(r'\b%s\b' % token, sentence) is not None :
+				print "found"
+				#print token+" "+sentence
+				test={}
+				test['name']=token
+				if 'sentiment' in entity:
+					test['sentiment']=[entity['sentiment']['type']]
+				if entity['type'] in dict:
+					dict[entity['type']].append(test)
+				else:
+					dict[entity['type']]=[]
+					dict[entity['type']].append(test)
 
-        dict['sentence']=sentence
-        dict['seqno']=i
-        i+=1
-        for entity in entities:
-            #print entity
-            token=entity['text']
-            temp={}
-            if re.search(r'\b%s\b' % token, sentence) is not None :
-                print "found"
-                #print token+" "+sentence
-                test={}
-                test['name']=token
-                if 'sentiment' in entity:
-                    test['sentiment']=[entity['sentiment']['type']]
-                if entity['type'] in dict:
-                    dict[entity['type']].append(test)
-                else:
-                    dict[entity['type']]=[]
-                    dict[entity['type']].append(test)
+				count=int(entity['count'])
+				classification = "<" + entity['type'] + ">"
 
-                count=int(entity['count'])
-                classification = "<" + entity['type'] + ">"
-                token = re.escape(token)
-                sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
+				sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
 
-                dict['replaced_sentence']=sentence
-        result.append(dict)
-    #print sentence_dict
-    #print result
-    if 'typedRelations' in review:
-        types = review['typedRelations']
-        #print types
-        if types != []:
-            for text in types:
-                #print text
-                temp_dict={}
-                temp_dict['hasrel']=text['type']
-                #print text['arguments'][0]
-                temp_dict['rel_name']=text['arguments'][0]['entities'][0]['text']
-                type=text['arguments'][0]['entities'][0]['type']
-                temp_dict['second']=text['arguments'][1]['entities'][0]['text']
-                #print "temp_dict"
-                #print temp_dict
-                sentence=text['sentence']
-                #print sentence
-                #print "sentence dict"
-                #print sentence_dict
-                if sentence in sentence_dict:
-                    dict=result[sentence_dict[sentence]]
-                    #print "type"
-                    #print dict[type]
-                    if type in dict:
-                        local=dict[type]
-                        local.append(temp_dict)
-                    else:
-                        local=[temp_dict]
-                        dict[type]=local
+				dict['replaced_sentence']=sentence
+		result.append(dict)
+	#print sentence_dict
+	#print result
+	if 'typedRelations' in review:
+		types = review['typedRelations']
+		#print types
+		if types != []:
+			for text in types:
+				#print text
+				temp_dict={}
+				temp_dict['hasrel']=text['type']
+				#print text['arguments'][0]
+				temp_dict['rel_name']=text['arguments'][0]['entities'][0]['text']
+				type=text['arguments'][0]['entities'][0]['type']
+				temp_dict['second']=text['arguments'][1]['entities'][0]['text']
+				#print "temp_dict"
+				#print temp_dict
+				sentence=text['sentence']
+				#print sentence
+				#print "sentence dict"
+				#print sentence_dict
+				if sentence in sentence_dict:
+					dict=result[sentence_dict[sentence]]
+					#print "type"
+					#print dict[type]
+					if type in dict:
+						local=dict[type]
+						local.append(temp_dict)
+					else:
+						local=[temp_dict]
+						dict[type]=local
 
-    #result = avg_sentiment(result)
-    final_result=[result,i]
-    return final_result
+	#result = avg_sentiment(result)
+	final_result=[result,i]
+	return final_result
+
 
 def avg_sentiment(review):
     sentiments = []
