@@ -213,12 +213,12 @@ def create_json(clusters,cluster_data,mapping):
 				data['count']=unique_words[feature]['count']
 				list_keywords.append(data)
 			#clusterinfo['keywords']=list_keywords
-			#print
-			if keys[index]['sentiment'][0]=='[positive]':
+			#print keys[index]['sentiment'][0]
+			if keys[index]['sentiment'][0][0]=='positive':
 					pos+=1
-			if keys[index]['sentiment'][0]=='[neutral]':
+			if keys[index]['sentiment'][0][0]=='neutral':
 					neutral+=1
-			if keys[index]['sentiment'][0]=='[negative]':
+			if keys[index]['sentiment'][0][0]=='negative':
 					neg+=1
 		clusterinfo['keywords']=list_keywords
 		clusterinfo['sentiments']={}
