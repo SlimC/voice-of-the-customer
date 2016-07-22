@@ -14,14 +14,14 @@ print temp_client
 
 
 ##create
-temp_database = temp_client.create_database('testdb_final_headphone_set')
+temp_database = temp_client.create_database('testdb_final_headphone_set11')
 
 ###if exists
 #temp_database = temp_client['testdb_final_product']
 
 #query = Query(my_database, selector={'asin':"B00BCGRZ04"})
 #B0042A8CW2
-query = Query(my_database, selector={'asin':"B0042A8CW2"})
+#query = Query(my_database, selector={'asin':"B0042A8CW2"})
 #query = Query(my_database, selector={'asin':'B00BCGRZ04'},fields=["_id"])
 
 #for doc in query.result:
@@ -36,9 +36,9 @@ def find_middle(generator):
         middle_char = int(middle_char) + 1
         return middle_char
 
-content=[]
+#content=[]
 
-def split_long_string(text):
+def split_long_string(text,data):
 	print "\n \n text received is \n\n"
 	print text
         if len(text) > 5024:
@@ -47,31 +47,33 @@ def split_long_string(text):
                 middle = find_middle(sequences)
                 second_half = text[middle:].strip()
                 first_half = text[:middle].strip()
-                first_half=split_long_string(first_half)
-                second_half=split_long_string(second_half)
+                first_half=split_long_string(first_half,data)
+                second_half=split_long_string(second_half,data)
         else:
-		content.append(text)
+		data.append(text)
                 return text
 
 #query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
+query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b627f57a"})
+#dddb09bdee0f0ae701af3455b627f57a
 for doc in query.result:
 	#print doc
 	if 'reviewText' in doc:
 		text=doc['reviewText']
 		data=[]
-		data=split_long_string(text)
+		split_long_string(text,data)
 		print "\n \n content \n"
-		print content
+		print data
 		#print data
 		#print text
 		print "\n"+doc['_id']+"\n"
-		if len(content)==0:
-			content=[text]
+		if len(data)==0:
+			data=[text]
 		print "\n\n original text is\n\n"
 		print text
 		print "\n\n parts are\n\n"
 		seq_no=0
-		for text in content:
+		for text in data:
 			print text
 			print "\n"
 			[review,seq_no]= token_replacement.token_replacement(text,seq_no);

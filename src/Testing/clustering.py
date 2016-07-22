@@ -76,6 +76,7 @@ for rev in rev_id:
 print "\n keys\n"
 print keys
 
+
 sentences = word2vec.Text8Corpus('text8')
 modelname='sample_model'
 
