@@ -12,7 +12,7 @@ DATABASE =
 
 f = open('num.txt','rb+')
 lines = f.readlines()
-num = lines[-1] +
+num = lines[-1]
 status = num[0:1]
 num = int(num[1:])
 
@@ -101,6 +101,7 @@ if status == "fu" or status == "sf":
         doc = doc['value']
         final = make_final(doc, db)
         final['type'] = ['final']
+        i += 1
 
         if i % n == 0 or i = len(raw):
             f.write("sf%i\n" % j)
