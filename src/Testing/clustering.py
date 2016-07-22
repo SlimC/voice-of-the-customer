@@ -129,8 +129,8 @@ def generate_vectors(features):
 
 [vecs,mapping]=generate_vectors(keys)
 
-print "\n vecs\n"
-print vecs
+#print "\n vecs\n"
+#print vecs
 
 print "\n \n mapping \n"
 print mapping
