@@ -1,7 +1,7 @@
 from cloudant.client import Cloudant
 from cloudant.query import Query
 import nltk
-import token_replacement
+import token_replacement_old
 
 
 client = Cloudant("1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix","5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638",account="1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix")
@@ -14,7 +14,7 @@ print temp_client
 
 
 ##create
-temp_database = temp_client.create_database('testdb_final_headphone_set20')
+temp_database = temp_client.create_database('testdb_final_headphone_set22')
 
 ###if exists
 #temp_database = temp_client['testdb_final_product']
@@ -53,8 +53,8 @@ def split_long_string(text,data):
 		data.append(text)
                 return text
 
-#query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
-query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b627f57a"})
+query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
+#query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b627f57a"})
 #dddb09bdee0f0ae701af3455b627f57a
 for doc in query.result:
 	#print doc
@@ -76,7 +76,7 @@ for doc in query.result:
 		for text in data:
 			print text
 			print "\n"
-			[review,seq_no]= token_replacement.token_replacement(text,seq_no);
+			[review,seq_no]= token_replacement_old.token_replacement(text,seq_no);
 			dict={}
 			#specify review id
 			dict['review_id']=doc['_id']
