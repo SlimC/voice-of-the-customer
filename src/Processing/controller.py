@@ -2,6 +2,7 @@ import cloudant
 import testdb
 import runNLC
 import clustering
+import token_replacement
 
 
 DB_USERNAME = 											#Replace with your server URL
@@ -13,7 +14,7 @@ f = open('num.txt','rb+')
 lines = f.readlines()
 num = lines[-1] +
 status = num[0:1]
-num = num[1:]
+num = int(num[1:])
 
 client = Cloudant(DB_USERNAME,DB_PASSWORD,account=DB_ACCOUNT)
 client.connect()
@@ -50,6 +51,7 @@ finished = []
     raw = db.get_view_result('_design/names','replaced')
     finished = []
     j = 0
+    num = 0
 
 if status == "fr" or status == "sc":
     raw = raw[num:]
@@ -69,6 +71,7 @@ if status == "fr" or status == "sc":
     raw = db.get_view_result('_design/names','classified')
     finished = []
     j = 0
+    num = 0
 
 #TODO finish clustering portion of the script
 if status == "fc" or status == "su":
