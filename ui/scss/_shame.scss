@@ -9,9 +9,14 @@ $container-width-large: get('large');
   opacity: 1;
 }
 
-hr {
+.page-splitter {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.exerpt {
+  color: lighten(gray,10%);
+  margin: 0;
 }
 
 ._demo--heading {
@@ -20,6 +25,7 @@ hr {
   padding-right: 3%;
   position: fixed;
   width: 100%;
+  height: 4rem;
 }
 
 ._demo--container {
@@ -30,12 +36,72 @@ hr {
 
 .result {
   margin: 0;
+  padding-top: 4rem;
   width:100%;
+
+  &--search {
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    background-color: gray;
+    height: 5rem;
+
+    &--input {
+        display: block;
+        position: relative;
+        width: 80%;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        border-bottom: 1px solid;
+        padding: 1rem;
+        border-radius: 3px;
+        font-size: 2rem;
+        background: inherit;
+    }
+
+    &--input:hover, &--input:focus {
+      color: black;
+      background: inherit;
+      border-radius: 7px;
+      transition: all 0.5s;
+    }
+  }
+
+  &--article {
+    padding-top: 3rem;
+  }
+
+  &--key {
+
+    &--item {
+      width: 33%;
+      float: left;
+      margin: 0;
+    }
+
+    &--color {
+      border-radius: 2rem;
+      width: 2rem;
+      height: 1rem;
+      float: left;
+      margin: 0;
+    }
+
+    &--name {
+      float: left;
+      margin: 0;
+      padding-left: 1rem;
+      line-height: 1rem;
+    }
+  }
 
   &--sidebar {
     width: 15%;
     float: left;
     position: fixed;
+    margin-top: 3rem;
     top: 30%;
 
     &-link {
@@ -50,8 +116,8 @@ hr {
   }
 
   &--product {
-    margin-top: 2rem;
     padding-left: 15%;
+    margin-top: 3rem;
     float: left;
     width: 100%;
   }
@@ -73,17 +139,25 @@ hr {
     float: left;
     margin: 0;
     padding-left: 1.5rem;
+
+    &--feature {
+      z-index: -1000;
+    }
   }
 
   &--keyword {
     float: left;
     margin: 0;
-    border-radius: 2rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    border-width: 1px;
-    border-style: solid;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
+    background-color: gray;
+
+    &--name {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      margin-left: .5rem;
+      background-color: lighten(gray,40%);
+      font-size: 1rem;
+    }
   }
 
   &--graph {
@@ -113,7 +187,7 @@ hr {
       z-index: 3;
       position: absolute;
       margin: 0;
-      background-color: green;
+      background-color: lighten(gray,20%);
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;
@@ -123,7 +197,7 @@ hr {
       z-index: 2;
       position: absolute;
       margin: 0;
-      background-color: yellow;
+      background-color: darken(gray, 10%);
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;
@@ -133,7 +207,7 @@ hr {
       z-index: 1;
       position: absolute;
       margin: 0;
-      background-color: red;
+      background-color: lighten(gray, 40%);
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;

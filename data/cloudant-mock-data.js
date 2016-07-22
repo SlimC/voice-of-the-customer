@@ -24,7 +24,7 @@ module.exports = function() {
     return { //Mock data response
         product_name: 'Samsung Galaxy S7',
         product_id: 100,
-        description: 'Great phone made by Samsung that runs Android and has a bunch of cool features that nobody could want',
+        description: 'Great phone made by Samsung that runs Android. Hundreds of features that are not available anywhere else and made by a compnay you can trust.',
         features: [
             {
                 group_name: 'Battery',
@@ -105,7 +105,10 @@ module.exports = function() {
                 positive: 60,
                 neutral: 21,
                 negative: 19
-            }
+            },
+            positive_sentence: "They had GREAT service!",
+            neutral_sentence: "Customer Service was ok",
+            negative_sentence: "They don't care about the customer at all, really need to revamp Customer Service."
         }
     }
 };
