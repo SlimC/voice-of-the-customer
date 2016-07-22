@@ -14,7 +14,7 @@ print temp_client
 
 
 ##create
-temp_database = temp_client.create_database('testdb_final_headphone2')
+temp_database = temp_client.create_database('testdb_final_headphone_set')
 
 ###if exists
 #temp_database = temp_client['testdb_final_product']
