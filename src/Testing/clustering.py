@@ -24,7 +24,7 @@ import numpy as np
 server = cloudant.client.Cloudant(USERNAME,PASSWORD,url=SERVER)
 server.connect()
 db = server[DATABASE]
-query = Query(db, selector={'asin':'B0042A8CW2'},fields=["_id"])
+query = Query(db, selector={'asin':'B0042A8CW2'},fields=["_id","helpful"])
 #B0042A8CW2
 #'B00BCGRZ04'
 
@@ -40,13 +40,23 @@ temp_client.connect()
 
 db_2=temp_client[client_database]
 rev_id=[]
+helpful={}
 for data in query.result:
+	#print data
 	rev_id.append(data['_id'])
-
+	if 'helpful' in data:
+		#print data['helpful']
+		helpful[data['_id']]=data['helpful'][0]
+	else:
+		helpful[data['_id']]=0
 print rev_id
+print helpful
+
+
 #rev_id=["0000927a59e02ee3d09b12e0e202bba5","0000927a59e02ee3d09b12e0e202dd2b","0000927a59e02ee3d09b12e0e202f3f2","0000927a59e02ee3d09b12e0e2056019"]
 temp={}
 keys=[]
+local_dump={}
 for rev in rev_id:
 	#print rev	
 	query_id=Query(db_2, selector={'review_id':rev})
@@ -59,6 +69,7 @@ for rev in rev_id:
 		#print "\n"
 		#print res
 		text=res['review']
+		local_dump[res['review_id']]=text
 		for obj in text:
 			if 'Feature' in obj:
 				feature=obj['Feature']
@@ -78,6 +89,10 @@ for rev in rev_id:
 
 print "\n keys\n"
 print keys
+
+print "\n local dump \n"
+pp.pprint(local_dump)
+
 
 
 sentences = word2vec.Text8Corpus('text8')
@@ -217,6 +232,32 @@ def create_json(clusters,cluster_data,mapping):
 					clusterinfo['feature']=feature
 				data['sentence_id']=unique_words[feature]['sentence_id']
 				data['review_id']=unique_words[feature]['review_id']
+				####section to get most helpful review
+				helpful_vote=0
+				for index_rev in range(0,len(data['review_id'])):
+					if helpful[data['review_id'][index_rev]]>=helpful_vote:
+						helpful_vote=helpful[data['review_id'][index_rev]]
+						helpful_rev=index_rev
+				#query_rev=Query(db_2, selector={'review_id':data['review_id'][helpful_rev]})
+				#helpful_review=query_rev.result[0][0]
+				#print "\n\n"
+				#print helpful_rev
+				sent_id=data['sentence_id'][helpful_rev]
+				helpful_review=local_dump[data['review_id'][helpful_rev]]
+
+				##cause of split reviews-to remove
+				sent_id=sent_id-helpful_review[0]['seqno']
+				if sent_id>0:
+					excerpt=helpful_review[sent_id-1]['sentence']+helpful_review[sent_id]['sentence']
+				else:
+					excerpt=helpful_review[sent_id]['sentence']
+				if sent_id<len(helpful_review)-1:
+					excerpt=excerpt+helpful_review[sent_id+1]['sentence']
+				#print helpful_review[sent_id]
+				#print excerpt
+				data['excerpt']=excerpt
+				
+				####
 				data['count']=unique_words[feature]['count']
 				list_keywords.append(data)
 				stop_count+=1
