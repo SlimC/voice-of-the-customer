@@ -52,26 +52,29 @@ for rev in rev_id:
 	query_id=Query(db_2, selector={'review_id':rev})
 	if len(query_id.result[0])==0:
 		continue
-	res=query_id.result[0][0]
-	#rev=query_id.result[0]
-	#print "\n"
-	#print res
-	text=res['review']
-	for obj in text:
-		if 'Feature' in obj:
-			feature=obj['Feature']
-			for data in feature:
-				if 'name' in data:
-					temp={}
-					temp['word']=data['name']
-					if 'sentiment' in data:
-						temp['sentiment']=data['sentiment']
-					else:
-						temp['sentiment']=['neutral']
-					temp['rev_id']=res['review_id']
-					temp['sentence_id']=obj['seqno']
-					#print temp
-					keys.append(temp)
+	#print query_id.result[0]
+	for res in query_id.result[0]:
+		#res=query_id.result[0][0]
+		#rev=query_id.result[0]
+		#print "\n"
+		#print res
+		text=res['review']
+		for obj in text:
+			if 'Feature' in obj:
+				feature=obj['Feature']
+				for data in feature:
+					if 'name' in data:
+						temp={}
+						temp['word']=data['name']
+						if 'sentiment' in data:
+							temp['sentiment']=data['sentiment']
+						else:
+							temp['sentiment']=['neutral']
+						temp['rev_id']=res['review_id']
+						temp['sentence_id']=obj['seqno']
+						#print temp
+						keys.append(temp)
+
 
 print "\n keys\n"
 print keys

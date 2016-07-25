@@ -14,12 +14,12 @@ print temp_client
 
 
 ##create
-temp_database = temp_client.create_database('testdb_final_headphone_set22')
+#temp_database = temp_client.create_database('testdb_final_products')
 
 ###if exists
-#temp_database = temp_client['testdb_final_product']
+temp_database = temp_client['testdb_final_products']
 
-#query = Query(my_database, selector={'asin':"B00BCGRZ04"})
+query = Query(my_database, selector={'asin':"B00BCGRZ04"})
 #B0042A8CW2
 #query = Query(my_database, selector={'asin':"B0042A8CW2"})
 #query = Query(my_database, selector={'asin':'B00BCGRZ04'},fields=["_id"])
@@ -53,7 +53,7 @@ def split_long_string(text,data):
 		data.append(text)
                 return text
 
-query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
+#query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b6259cb0"})
 #query = Query(my_database, selector={'_id':"dddb09bdee0f0ae701af3455b627f57a"})
 #dddb09bdee0f0ae701af3455b627f57a
 for doc in query.result:
