@@ -246,9 +246,11 @@ def create_json(clusters,cluster_data,mapping):
 
 cluster_data=[]
 features=create_json(clusters,cluster_data,mapping)
+features = sorted(features, key=lambda k: k['keyword_count'],reverse=True)
+ 
 dict={}
 dict['product_id']='sss'
-dict['features']=features
+dict['features']=features[:10]
 		
 print dict			
 		
