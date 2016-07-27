@@ -3,6 +3,7 @@ import ast
 import re
 import nltk
 
+
 def get_relations(review):
     split = {}
     #url="http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
@@ -15,12 +16,13 @@ def get_relations(review):
         half = review[mid:]
         review = review[:mid]
         split = get_relations(half)
-    f = requests.get(url, params={'text':review})
+    f = requests.get(url, params={'text': review})
     response = f.content
     response = ast.literal_eval(response)
     if split != {}:
         if 'typedRelations' in response and 'typedRelations' in split:
             response['typedRelations'] = response['typedRelations'] + split['typedRelations']
+            response['text'] = response['text'] + split['text']
         elif 'typedRelations' in split and not 'typedRelations' in response:
             response['typedRelations'] = split['typedRelations']
     print response
@@ -36,12 +38,13 @@ def get_entities(review):
         review = review[:mid]
         half = review[mid:]
         split = get_entities(half)
-    f = requests.get(url, params={'text':review})
+    f = requests.get(url, params={'text': review})
     response = f.content
     response = ast.literal_eval(response)
     if split != {}:
         if 'entities' in split and 'entities' in response:
             response['entities'] = response['entities'] + split['entities']
+            response['text'] = response['text'] + split['text']
         elif 'entites' in split and not 'entities' in response:
             response['entities'] = split['entities']
     return response
@@ -67,23 +70,20 @@ def find_middle(text):
         middle_char = int(middle_char) + 1
         return middle_char
 
-def token_replacement(review_text,seq_no):
+def token_replacement(review_text):
     print "\n\n text is \n"
     print review_text
-    #data=[]
-    #review_text=split_long_string(review_text,data)
 
     review = get_relations(review_text)
     entity_info = get_entities(review_text)
     entity_info = avg_sentiment(entity_info)
     entities = []
     if 'entities' in entity_info:
-        entities=entity_info['entities']
+        entities = entity_info['entities']
     sentences = nltk.tokenize.sent_tokenize(review_text)
-    result=[]
-    sentence_dict={}
-    #print entities
-    #print sentences
+    result = []
+    sentence_dict = {}
+    seq_no = 0
     i=seq_no
     dict={}
     for sentence in sentences:
@@ -97,7 +97,8 @@ def token_replacement(review_text,seq_no):
             #print entity
             token=entity['text']
             temp={}
-            if re.search(r'\b%s\b' % token, sentence) is not None :
+            token = re.escape(token)
+            if re.search(r'\b%s\b' % token, sentence) is not None:
                 print "found"
                 #print token+" "+sentence
                 test={}
