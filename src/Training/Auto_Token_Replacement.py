@@ -11,8 +11,8 @@ reader = csv.reader(read)
 writer = csv.writer(write)
 
 for row in reader:
-	token = t.token_replacement(row[0])
+	token = t.token_replacement_entities(row[0])
 	writer.writerow([token,row[1]])
-	
+
 read.close()
 write.close()

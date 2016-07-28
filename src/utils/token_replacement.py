@@ -21,10 +21,22 @@ def get_entities(review):
         if 'entities' in split and 'entities' in response:
             response['entities'] = response['entities'] + split['entities']
             response['text'] = response['text'] + split['text']
-        elif 'entites' in split and 'entities' not in response:
+        elif 'entites' in split and not 'entities' in response:
             response['entities'] = split['entities']
     return response
 
+def token_replacement_entities(review):
+    processed = get_entities(review)
+    if 'statusInfo' in processed:
+        return review
+    if 'entities' in processed:
+        entities = processed['entities']
+        text = processed['text']
+        for i in entities:
+            token = i['text']
+            classification = "<" + i['type'] + ">"
+            text = re.sub(r"\b%s\b" % token, classification, text,count=1)
+    return text
 
 def find_middle(text):
         generator = nltk.tokenize.util.regexp_span_tokenize(text, r'\.')
@@ -34,74 +46,5 @@ def find_middle(text):
         middle_char = int(middle_char) + 1
         return middle_char
 
-def token_replacement(review_text):
 
-    entity_info = get_entities(review_text)
-    entity_info = avg_sentiment(entity_info)
-    entities = []
-    if 'entities' in entity_info:
-        entities = entity_info['entities']
-    sentences = nltk.tokenize.sent_tokenize(review_text)
-    result = []
-    sentence_dict = {}
-    seq_no = 0
-    i=seq_no
-    dict={}
-    for sentence in sentences:
-        dict={}
-        sentence_dict[sentence]=i-seq_no
-
-        dict['sentence']=sentence
-        dict['seqno']=i
-        i+=1
-        for entity in entities:
-            #print entity
-            token=entity['text']
-            token = re.escape(token)
-            if re.search(r'\b%s\b' % token, sentence) is not None:
-                classification = "<" + entity['type'] + ">"
-                re.sub(r'\\ ',' ',token)
-                sentence = re.sub(r'\b%s\b' % token, classification, sentence)
-
-                dict['replaced_sentence'] = dict['replaced_sentence'] + sentence
-        result.append(dict)
-    #print sentence_dict
-    #print result
-
-    return dict['replaced_sentence']
-
-def avg_sentiment(review):
-    sentiments = []
-    if 'entities' in review:
-        entities = review['entities']
-
-        for sentence in entities:
-            sentiments.append({'name':sentence['text'], 'sentiment':sentence['sentiment']['type'], 'done':False})
-        for feature in sentiments:
-            if not feature['done']:
-                text = feature['name']
-                pos = 0
-                neg = 0
-                neutral = 0
-                most = ''
-                for other in sentiments:
-                    if other['name'] == text:
-                        other['done'] = True
-                        if other['sentiment'] == 'positive':
-                            pos +=1
-                        elif other['sentiment'] == 'negative':
-                            neg +=1
-                        elif other['sentiment'] == 'neutral':
-                            neutral +=1
-                if pos == max(pos,neg,neutral):
-                    most = 'positive'
-                elif neg == max(pos, neg, neutral):
-                    most = 'negative'
-                elif neutral == max(pos, neg, neutral):
-                    most = 'neutral'
-
-                for entity in entities:
-                    if entity['text'] == text:
-                        entity['sentiment']['type'] = [most]
-    return review
 #print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');
