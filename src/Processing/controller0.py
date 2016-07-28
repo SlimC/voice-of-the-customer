@@ -41,15 +41,9 @@ if status == 'sb' or status == 'sr':
             text = token_replacement.token_replacement(text)
             new_doc['review'] = text
             new_doc['type'] = ['replaced']
-            finished[i] = new_doc
-            i += 1
             j += 1
-
-        if i % n == 0 or i == len(raw):
-            for k in range(0, i):
-                db.create_document(finished[k])
+            db.create_document(new_doc)
             f.write("sr%i\n" % j)
-            i = 0
     status = "fr"
     f.write("fr0\n")
 

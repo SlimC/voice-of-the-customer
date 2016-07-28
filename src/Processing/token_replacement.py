@@ -114,6 +114,7 @@ def token_replacement(review_text):
                 count=int(entity['count'])
                 classification = "<" + entity['type'] + ">"
                 token = re.escape(token)
+                re.sub(r'\\ ',' ',token)
                 sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
 
                 dict['replaced_sentence']=sentence
