@@ -35,6 +35,8 @@ def token_replacement_entities(review):
         for i in entities:
             token = i['text']
             classification = "<" + i['type'] + ">"
+            text = re.escape(text)
+            re.sub(r'\\ ',' ',token)
             text = re.sub(r"\b%s\b" % token, classification, text,count=1)
     return text
 
