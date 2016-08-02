@@ -24,9 +24,9 @@ var cloudant = require('cloudant');
 // if bluemix credentials exists, then override local
 var mockUp = true;
 var credentials = {
-	key: 'ngeryfornewareseveryseen',
-	password: 'e75a6f3000ad59bde1cc03115335ac2b0b091b5c',
-	url: 'https://ngeryfornewareseveryseen:e75a6f3000ad59bde1cc03115335ac2b0b091b5c@1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com',
+	key: '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix',
+	password: '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638',
+	url: 'https://1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix:5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638@1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com',
 	version: 'v1'
 };
 
@@ -43,18 +43,35 @@ app.get('/api/product', function(req, res) {
 		return "";
 	}
 
-	if(mockUp) {
+	if(mockUp || req.query.productId === '100' || req.query.productId === '101') {
 		//load mock data json from cloundant-mock-data.js
-		var mockData = require('./data/cloudant-mock-data')();
+		var mockData = require('./data/cloudant-mock-data')(req.query.productId);
 		return res.json(mockData);
 	} else {
-		cloudant(credentials.url, function(err/*, cloud*/) {
+		cloudant(credentials.url, function(err, cloud) {
 			if (err) {
+				console.log("FAILED");
 				return 'Failed to initialize Cloudant: ' + err.message;
 			} else {
-				return 'Connected successfully to Cloudant';
+				console.log("WORKED");
+				var db = cloud.db.use("testdb");
+				db.get(req.query.productId, function(err, data) {
+					// The rest of your code goes here. For example:
+					console.log("Found data:", data);
+					return res.json(data);
+  				});
 			}
 		});
+	}
+});
+
+app.get('/api/product-list', function(req, res) {
+	if(mockUp) {
+		var productList = require('./data/mock-product-list')();
+		return res.json(productList);
+	} else {
+		var productList = require('./data/product-list')();
+		return res.json(productList);
 	}
 });
 

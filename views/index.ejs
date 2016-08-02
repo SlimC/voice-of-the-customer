@@ -44,40 +44,36 @@
   <!-- demo body -->
   <div class="result">
     <div class="result--search">
-      <input type='text' class='result--search--input' id='query' placeholder='Enter a product name'></input>
+      <input type='text' autocomplete="off" class='result--search--input' id='query' placeholder='Enter a product name'></input>
+    </div>
+    <div class="result--autocomplete">
+
     </div>
     <div class="loader">
       <img src="images/loading.gif" alt="loading animation">
     </div>
     <article class="_content result--article">
-      <div class="result--sidebar">
-        <ul>
-          <li><a class="result--sidebar-link" href='#'>Overview</a></li>
-          <li><a class="result--sidebar-link" href='#features'>Features</a></li>
-          <li><a class="result--sidebar-link" href='#issues'>Issues</a></li>
-          <li><a class="result--sidebar-link" href='#customer-service'>Customer Service</a></li>
-        </ul>
-      </div>
       <div class="result--product">
-        <a name="features"></a>
-        <div class="result--h2 result--header"></div>
+        <i class="icon-no icon result--product--x" onclick="clickX(event)"></i>
+        <div class="result--placeholder">Search something to see results</div>
+          <div class="result--product-details">
+            <div class="result--h2 result--header"></div>
+            <br>
+            <hr class="page-splitter">
+            <div class="result--h3">Features</div>
+            <div class="result--features">
 
-        <hr class="page-splitter" width="30%">
-        <div class="result--h3">Features</div>
-        <div class="result--features"><a name="issues"></a>
+            </div>
+            <hr class="page-splitter">
+            <div class="result--h3">Issues</div>
+            <div class="result--issues">
 
-        </div>
-
-        <hr class="page-splitter" width="30%">
-        <div class="result--h3">Issues</div>
-        <div class="result--issues">
-
-        </div><a name="customer-service"></a>
-        <hr class="page-splitter" width="30%">
-        <div class="result--h3">Customer Service</div>
-        <div class="result--customer-service">
-
-        </div>
+            </div>
+            <hr class="page-splitter">
+            <div class="result--h3">Customer Service</div>
+            <div class="result--customer-service">
+          </div>
+        </div><br><br><br><br>
       </div>
     </article>
   </div>
@@ -85,6 +81,7 @@
   <$ include ./underscore-templates.ejs $>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src=""></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
   <script type="text/javascript" src="js/demo.js"></script>
 </body>

@@ -18,37 +18,128 @@
   /* eslint no-console: "warn" */
 'use strict';
 
+var prodList = null;
+var compareView = false;
+
 $(document).ready(function() {
-  $.get('/api/product?productId=' + 100, function(data) {
+
+  $("#query").focus().keyup(function (e) {
+    if (e.which != 13) {
+      //NOT ENTER
+      doAutocomplete();
+    } else {
+      //HIT ENTER
+      console.log("ENTER");
+    }
+  });
+
+  $.get('/api/product-list', function(data) {
+    prodList = data;
+    console.log(prodList);
+    $('.loader').hide();
+  }).fail(function(error) {
+    $('.loader').hide();
+  });
+});
+
+function clickCompare(e) {
+  var parent = $(".result--product").parent();
+  $(".result--product").addClass("result--product-comparison").removeClass("result--product");
+  $(".result--product--x").show();
+  $(".result--compare-results").hide();
+  parent.append($(".result--product-comparison").clone().addClass("pane_2"));
+  $(".result--search--input").attr("placeholder", "Enter a product name to compare to");
+  $(".pane_2").find(".result--product-details").css("visibility","hidden");
+  //$(".pane_2").find(".result--product-details").hide();
+  $(".pane_2").find(".result--placeholder").show();
+  compareView = true;
+}
+
+function clickX(e) {
+  var product = e.target.parentNode;
+  console.log(product);
+  $(product).remove();
+  $(".result--product-comparison").addClass("result--product").removeClass("result--product-comparison").removeClass("pane_2");
+  $(".result--product--x").hide();
+  $(".result--compare-results").show();
+  $(".result--search--input").attr("placeholder", "Enter a product name");
+  compareView = false;
+}
+
+function clickProduct(e) {
+  var productId = e.target.nextElementSibling.innerText;
+  $("#query").val('');
+  doAutocomplete();
+  console.log(productId);
+  updateProduct(productId);
+}
+
+function updateProduct(prodId) {
+  $.get('/api/product?productId=' + prodId, function(data) {
+    var parent = null;
+    if(compareView) {
+      parent = $(".pane_2");
+      parent.find(".result--product-details").css("visibility","visible");
+    } else {
+      parent = $(".result--product");
+    }
+
+    parent.find(".result--product-details").show();
+    parent.find(".result--placeholder").hide();
+
     console.log(data);
+    fixKeywords(data);
     var maxPercent = normalizePercents(data);
     var headerTemp = headerTemplate.innerHTML;
-    $('.result--header').append(_.template(headerTemp, {
+    parent.find('.result--header').html(_.template(headerTemp, {
       item: data
     }));
 
     var featuresTemp = featureTemplate.innerHTML;
-    $('.result--features').append(_.template(featuresTemp, {
+    parent.find('.result--features').html(_.template(featuresTemp, {
       items: data.features,
       maxPercent: maxPercent
     }));
 
     var issueTemp = issueTemplate.innerHTML;
-    $('.result--issues').append(_.template(issueTemp, {
+    parent.find('.result--issues').html(_.template(issueTemp, {
       item: data.issues
     }));
 
     var customerServiceTemp = customerServiceTemplate.innerHTML;
-    $('.result--customer-service').append(_.template(customerServiceTemp, {
+    parent.find('.result--customer-service').html(_.template(customerServiceTemp, {
       item: data.customer_service
     }));
 
-    $('.loader').hide();
+    if(compareView) {
+      parent.find(".result--product--x").show();
+      parent.find(".result--compare-results").hide();
+    }
 
   }).fail(function(error) {
     console.log(error);
   });
-});
+
+}
+
+function doAutocomplete(data) {
+    var maxLen = 3;
+    var len = 0;
+    var query = $("#query").val();
+    var filteredProdList = [];
+    if(query != "") {
+      filteredProdList = prodList.filter(function(val) {
+        if(len < maxLen && val.name.toUpperCase().indexOf(query.toUpperCase()) > -1) {
+          len += 1;
+          return val;
+        }
+      });
+    }
+    var autocompleteTemp = autocompleteTemplate.innerHTML;
+    $('.result--autocomplete').html(_.template(autocompleteTemp, {
+      items: filteredProdList
+    }));
+}
 
 function normalizePercents(data) {
   //var maxPercent = Math.ceil(data.features[0].percentage/10)*10;
@@ -61,6 +152,16 @@ function normalizePercents(data) {
   return maxPercent
 }
 
+function fixKeywords(data) {
+  data.features.map(function(feature) {
+    feature.keywords.map(function(keyword) {
+      if(keyword.name.length > 10) {
+        keyword.name = keyword.name.substring(0, 7) + "...";
+      }
+      keyword.name = keyword.name.charAt(0).toUpperCase() + keyword.name.slice(1);
+    });
+  });
+}
 
 
 

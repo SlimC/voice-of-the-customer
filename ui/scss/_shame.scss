@@ -12,11 +12,17 @@ $container-width-large: get('large');
 .page-splitter {
   margin-top: 5%;
   margin-bottom: 5%;
+  width: 10rem;
 }
 
 .exerpt {
   color: lighten(gray,10%);
   margin: 0;
+  padding-left: 1rem;
+
+  &--splitter {
+    width: 3rem;
+  }
 }
 
 ._demo--heading {
@@ -39,12 +45,75 @@ $container-width-large: get('large');
   padding-top: 4rem;
   width:100%;
 
+  &--placeholder {
+    text-align: center;
+    color: lighten(gray,20%);
+  }
+
+  &--product-details {
+    display: none;
+  }
+
+  &--subheader {
+    @include grid(7);
+  }
+
+  &--compare-results {
+    border-radius: 2rem;
+    color: #9855d4;
+    border-color: #9855d4;
+    width: auto;
+    font-size: 1rem;
+    float: right;
+    margin-top: 1rem;
+
+    &:hover {
+      color: white;
+      background-color: #9855d4;
+    }
+
+    &:focus {
+      color: white;
+      background-color: #9855d4;
+    }
+  }
+
+  &--autocomplete {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    background-color: lighten(gray,15%);
+    margin-top: 8rem;
+
+    &--items {
+      padding: 0.5 rem;
+      width: 80%;
+      vertical-align: middle;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &--item {
+      padding: 0.5rem;
+
+      &:hover {
+        background-color: lighten(gray, 25%);
+      }
+
+      &--id {
+        display: none;
+      }
+    }
+  }
+
   &--search {
     z-index: 1000;
     width: 100%;
     position: fixed;
     background-color: gray;
-    height: 5rem;
+    height: 8rem;
 
     &--input {
         display: block;
@@ -56,6 +125,7 @@ $container-width-large: get('large');
         border: none;
         border-bottom: 1px solid;
         padding: 1rem;
+        margin-top: 2rem;
         border-radius: 3px;
         font-size: 2rem;
         background: inherit;
@@ -71,19 +141,22 @@ $container-width-large: get('large');
 
   &--article {
     padding-top: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
   }
 
   &--key {
 
     &--item {
-      width: 33%;
+      @include grid(4);
       float: left;
       margin: 0;
     }
 
     &--color {
       border-radius: 2rem;
-      width: 2rem;
+      width: 1.5rem;
       height: 1rem;
       float: left;
       margin: 0;
@@ -98,11 +171,11 @@ $container-width-large: get('large');
   }
 
   &--sidebar {
-    width: 15%;
+    @include grid(1.5);
     float: left;
     position: fixed;
     margin-top: 3rem;
-    top: 30%;
+    top: 15rem;
 
     &-link {
       color: black;
@@ -116,10 +189,31 @@ $container-width-large: get('large');
   }
 
   &--product {
-    padding-left: 15%;
-    margin-top: 3rem;
-    float: left;
-    width: 100%;
+    @include grid(10);
+    padding-left: 2rem;
+    margin-top: 8rem;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--x {
+      float: right;
+      display: none;
+    }
+  }
+
+  &--product-comparison {
+    @include grid(6);
+    margin-top: 8rem;
+    padding-left: 1rem;
+
+    .result--graph {
+      @include grid(12);
+    }
+
+    .result--keywords {
+      @include grid(12);
+    }
   }
 
   &--h2 {
@@ -135,12 +229,23 @@ $container-width-large: get('large');
   }
 
   &--keywords {
-    width: 30%;
-    float: left;
-    margin: 0;
-    padding-left: 1.5rem;
+    @include grid(12);
+    margin-top: 0;
+
+    @include breakpoint(800px) {
+      @include grid-reset;
+      @include grid(5);
+      margin-right: 0;
+      margin-top: 0;
+      padding-left: 3rem;
+    }
+
+    &--header {
+      line-height: 1rem;
+    }
 
     &--feature {
+      margin: 0;
       z-index: -1000;
     }
   }
@@ -149,32 +254,47 @@ $container-width-large: get('large');
     float: left;
     margin: 0;
     margin-right: 0.5rem;
-    background-color: gray;
+    background-color: #00b4a0;
+
+    &:hover {
+      background-color: #ececec;
+    }
+
+    &--splitter {
+      width: 3rem;
+    }
 
     &--name {
       padding-left: 0.5rem;
       padding-right: 0.5rem;
       margin-left: .5rem;
-      background-color: lighten(gray,40%);
+      background-color: #ececec;
+      color: #006d5d;
       font-size: 1rem;
+
+      &:hover {
+        background-color: #00b4a0;
+        color: #ffffff;
+      }
     }
   }
 
   &--graph {
-    width: 70%;
+    @include grid(12);
+    @include breakpoint(800px) {
+      @include grid-reset;
+      @include grid(7);
+    }
     padding-bottom: 1rem;
-    padding-right: 1rem;
-    float: left;
 
     &--name {
+      @include grid(3);
       float: left;
-      width: 20%;
     }
 
     &--bar {
+      @include grid(9);
       margin: 0;
-      float: left;
-      width: 80%;
     }
 
     &--percent {
@@ -187,7 +307,7 @@ $container-width-large: get('large');
       z-index: 3;
       position: absolute;
       margin: 0;
-      background-color: lighten(gray,20%);
+      background-color: #00b4a0;
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;
@@ -197,7 +317,7 @@ $container-width-large: get('large');
       z-index: 2;
       position: absolute;
       margin: 0;
-      background-color: darken(gray, 10%);
+      background-color: #734098;
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;
@@ -207,12 +327,21 @@ $container-width-large: get('large');
       z-index: 1;
       position: absolute;
       margin: 0;
-      background-color: lighten(gray, 40%);
+      background-color: #ba8ff7;
       float: left;
       border-radius: 2rem;
       border-radius: 2rem;
     }
   }
+}
+
+.pane_2 {
+  background-color: #c0e6ff;
+  margin-right: 0 !important;
+  height: 100%;
+  margin-top: 0;
+  padding-top: 8rem;
+  padding-right: 1rem;
 }
 
 .banner--service-icon {
@@ -288,7 +417,6 @@ $container-width-large: get('large');
     }
   }
 }
-
 
 $expand-duration: 0.2s;
 
