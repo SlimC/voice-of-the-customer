@@ -3,10 +3,34 @@ import ast
 import re
 import nltk
 
+apikey = 'ffd7397f4be657f7740a84038f903271b2707a11'
+modelId = '1ef79b92-8974-48cf-8a54-bfec9059e14f'
+
+def get_relations(review):
+    split = {}
+    url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=" + modelId + "&apikey=" + apikey + "&outputMode=json"
+    if len(review) > 5024:
+        mid = find_middle(review)
+        while mid >= 5024:
+            mid = find_middle(review[:mid])
+        half = review[mid:]
+        review = review[:mid]
+        split = get_relations(half)
+    f = requests.get(url, params={'text': review})
+    response = f.content
+    response = ast.literal_eval(response)
+    if split != {}:
+        if 'typedRelations' in response and 'typedRelations' in split:
+            response['typedRelations'] = response['typedRelations'] + split['typedRelations']
+            response['text'] = response['text'] + split['text']
+        elif 'typedRelations' in split and not 'typedRelations' in response:
+            response['typedRelations'] = split['typedRelations']
+    print response
+    return response
 
 def get_entities(review):
     split = {}
-    url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
+    url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=" + modelId + "&apikey=" + apikey + "&outputMode=json&sentiment=1"
     if len(review) > 5024:
         mid = find_middle(review)
         while mid >= 5024:
