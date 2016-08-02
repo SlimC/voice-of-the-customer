@@ -50,27 +50,25 @@ app.get('/api/product', function(req, res) {
 	} else {
 		cloudant(credentials.url, function(err, cloud) {
 			if (err) {
-				console.log("FAILED");
 				return 'Failed to initialize Cloudant: ' + err.message;
 			} else {
-				console.log("WORKED");
 				var db = cloud.db.use("testdb");
 				db.get(req.query.productId, function(err, data) {
 					// The rest of your code goes here. For example:
-					console.log("Found data:", data);
 					return res.json(data);
-  				});
+				});
 			}
 		});
 	}
 });
 
 app.get('/api/product-list', function(req, res) {
+	var productList = null;
 	if(mockUp) {
-		var productList = require('./data/mock-product-list')();
+		productList = require('./data/mock-product-list')();
 		return res.json(productList);
 	} else {
-		var productList = require('./data/product-list')();
+		productList = require('./data/product-list')();
 		return res.json(productList);
 	}
 });
