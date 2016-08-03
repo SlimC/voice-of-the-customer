@@ -5,123 +5,112 @@ import token_replacement
 import makeFinalJSON
 
 
+def add_review(status):
+    cluster = status['cluster_switch']
+    classify = status['classify_switch']
+    replace = status['replace_switch']
+    review = status['review_switch']
+    final = status['final_switch']
+    finished = status['finished_switch']
+    num = cluster + classify + replace + review + final + finished
+    return num
+
 DB_USERNAME = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
 DB_PASSWORD = '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638'
 DB_ACCOUNT = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
 DATABASE = 'testdb'
 
-f = open('num.txt', 'rb+')
-lines = f.readlines()
-num = lines[-1]
-status = num[0:2]
-print status
-num = int(num[2:])
-print num
+model_tracker = {
+                    'cluster_switch': 0,
+                    'classify_switch': 0,
+                    'replace_switch': 0,
+                    'review_switch': 1,
+                    'final_switch': 0,
+                    'finished_switch': 0,
+                    'replaced': [],
+                    'classified': [],
+                    'clustered': [],
+                    'final': []
+                }
 
 client = cloudant.client.Cloudant(DB_USERNAME, DB_PASSWORD, account=DB_ACCOUNT)
 client.connect()
 db = client[DATABASE]
+status = {}
 
-raw = db.get_view_result('_design/names', 'review')
+try:
+    status = db['tracker']
+except KeyError:
+    status = db.create_document(model_tracker)
 
-i = 0
-n = 999
-j = 0
-
-finished = [0]*1000
-if status == 'sb' or status == 'sr':
-    raw = raw[num:]
+if add_review(status) < 3:
+    raw = db.get_view_result('_design/names', 'review')
     for doc in raw:
         new_doc = {}
         doc = doc['value']
-        review_id = doc['_id']
-        new_doc['review_id'] = review_id
-        text = doc['reviewText']
-        text = token_replacement.token_replacement(text)
-        new_doc['review'] = text
-        new_doc['type'] = ['replaced']
-        finished[i] = new_doc
-        i += 1
-        j += 1
+        asin = doc['asin']
+        if doc['_id'] not in status['replaced']:
+            review_id = doc['_id']
+            new_doc['review_id'] = review_id
+            text = doc['reviewText']
+            text = token_replacement.token_replacement(text)
+            new_doc['review'] = text
+            new_doc['type'] = ['replaced']
+            status['replaced'].append(review_id)
+            db.create_document(new_doc)
+            status.save()
+    status['classify_switch'] = 1
+    status.save()
 
-        if i % n == 0 or i == len(raw):
-            for k in range(0,i):
-                db.create_document(finished[k])
-            f.write("sr%i\n" % j)
-            i = 0
-    status = "fr"
-    f.write("fr0\n")
-
-raw = db.get_view_result('_design/names', 'replaced')
-finished = [0] * 1000
-j = 0
-num = 0
-
-if status == "fr" or status == "sc":
-    raw = raw[num:]
+if add_review(status) == 3:
+    raw = db.get_view_result('_design/names', 'replaced')
     for doc in raw:
         doc = doc['value']
-        del doc['_id']
-        new_doc = runNLC.classify(doc)
-        finished[i] = new_doc
-        i += 1
-        j += 1
-        if i % n == 0 or i == len(raw):
-            for k in range(0, i):
-                db.create_document(finished[k])
-            f.write("sc%i\n" % j)
-            i = 0
-    status = "fc"
-    f.write("fc0\n")
-raw = db.get_view_result('_design/names', 'classified')
-finished = [0] * 1000
-j = 0
-num = 0
+        rev_id = doc['review_id']
+        if rev_id not in status['classified']:
+            doc_id = doc['_id']
+            del doc['_id']
+            new_doc = runNLC.classify(doc)
+            status['classified'].append(doc_id)
+            db.create_document(new_doc)
+            status.save()
+    status['cluster_switch'] = 1
 
-# TODO finish clustering portion of the script
-if status == "fc" or status == "su":
-    raw = raw[num:]
-    processed = []
+if add_review(status) == 4:
+    raw = db.get_view_result('_design/names', 'classified')
     for doc in raw:
         doc = doc['value']
-        ident = doc['review_id']
+        rev_id = doc['review_id']
         del doc['_id']
-        review = db[ident]
+        review = db[rev_id]
         asin = review['asin']
-        if asin not in processed:
+        if asin not in status['clustered']:
             processed = clustering.cluster(doc, db, asin)
             processed['product_id'] = asin
             processed['type'] = ['clustered']
-            finished[i] = processed
-            processed.append(asin)
-            i += 1
-            j += 1
-        if i % n == 0 or i == len(raw):
-            for k in range(0, i):
-                db.create_document(finished[k])
-            f.write("su%i\n" % j)
-            i = 0
-    status = "fu"
-    f.write("fu0\n")
-raw = db.get_view_result('_design/names', 'clustered')
-finished = [0] * 1000
-j = 0
-num = 0
+            status['clustered'].append(asin)
+            db.create_document(processed)
+            status.save()
+    status['final_switch'] = 1
 
-if status == "fu" or status == "sf":
-    raw = raw[num:]
+if add_review(status) == 5:
+    raw = db.get_view_result('_design/names', 'clustered')
     for doc in raw:
         doc = doc['value']
-        del doc['_id']
-        final = makeFinalJSON.make_final(doc, db)
-        final['type'] = ['final']
-        i += 1
+        name = doc['product_name']
+        asin = doc['product_id']
+        if asin not in status['finished']:
+            del doc['_id']
+            final = {}
+            final = makeFinalJSON.make_final(doc, db)
+            final['type'] = ['final']
+            final['product_id'] = asin
+            final['product_name'] = name
+            status['finished'].append(asin)
+            db.create_document(final)
+            status.save()
+    status['finished_switch'] = 1
+    status.save()
 
-        if i % n == 0 or i == len(raw):
-            for k in range(0, i):
-                db.create_document(finished[k])
-            f.write("sf0\n")
-            i = 0
-    status = "ff"
-    f.write("finished")
-f.close()
+if add_review(status) > 5:
+    print 'Finished'

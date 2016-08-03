@@ -46,12 +46,12 @@ if status == 'sb' or status == 'sr':
             f.write("sr%i\n" % j)
     status = "fr"
     f.write("fr0\n")
+    num = 0
 
 if status == "fr" or status == "sc":
     raw = db.get_view_result('_design/names', 'replaced')
     finished = [0] * 1000
     j = 0
-    num = 0
     raw = raw[num:]
     for doc in raw:
         doc = doc['value']
@@ -66,13 +66,13 @@ if status == "fr" or status == "sc":
             f.write("sc%i\n" % j)
     status = "fc"
     f.write("fc0\n")
+    num = 0
 
 # TODO finish clustering portion of the script
 if status == "fc" or status == "su":
     raw = db.get_view_result('_design/names', 'classified')
     finished = [0] * 1000
     j = 0
-    num = 0
     raw = raw[num:]
     processed_asin = []
     for doc in raw:
@@ -95,12 +95,12 @@ if status == "fc" or status == "su":
                 i = 0
     status = "fu"
     f.write("fu0\n")
+    num = 0
 
 if status == "fu" or status == "sf":
     raw = db.get_view_result('_design/names', 'clustered')
     finished = [0] * 1000
     j = 0
-    num = 0
     raw = raw[num:]
     for doc in raw:
         doc = doc['value']
