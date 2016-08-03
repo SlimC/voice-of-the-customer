@@ -21,6 +21,7 @@ DB_ACCOUNT = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
 DATABASE = 'testdb'
 
 model_tracker = {
+                    '_id': 'tracker',
                     'cluster_switch': 0,
                     'classify_switch': 0,
                     'replace_switch': 0,
@@ -44,6 +45,8 @@ except KeyError:
     status = db.create_document(model_tracker)
 
 if add_review(status) < 3:
+    status['replace_switch'] = 1
+    status.save()
     raw = db.get_view_result('_design/names', 'review')
     for doc in raw:
         new_doc = {}
@@ -56,6 +59,7 @@ if add_review(status) < 3:
             text = token_replacement.token_replacement(text)
             new_doc['review'] = text
             new_doc['type'] = ['replaced']
+            new_doc['asin'] = asin
             status['replaced'].append(review_id)
             db.create_document(new_doc)
             status.save()
