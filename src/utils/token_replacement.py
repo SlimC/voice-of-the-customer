@@ -1,14 +1,15 @@
-import requests
 import ast
 import re
 import nltk
+from watson_developer_cloud import alchemy_language_v1 as alchemy
 
-apikey = 'ffd7397f4be657f7740a84038f903271b2707a11'
-modelId = '1ef79b92-8974-48cf-8a54-bfec9059e14f'
+apikey = ''  # Replace with your Alchemy Language API key
+modelId = ''  # Replace with the model-id from Watson Knowledge Studio
+alchemyapi = alchemy.AlchemyLanguageV1(api_key=apikey)
+
 
 def get_relations(review):
     split = {}
-    url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=" + modelId + "&apikey=" + apikey + "&outputMode=json"
     if len(review) > 5024:
         mid = find_middle(review)
         while mid >= 5024:
@@ -16,21 +17,22 @@ def get_relations(review):
         half = review[mid:]
         review = review[:mid]
         split = get_relations(half)
-    f = requests.get(url, params={'text': review})
+    f = alchemyapi.typed_relations(text=review, model=modelId)
     response = f.content
     response = ast.literal_eval(response)
     if split != {}:
         if 'typedRelations' in response and 'typedRelations' in split:
-            response['typedRelations'] = response['typedRelations'] + split['typedRelations']
+            response['typedRelations'] = response['typedRelations'] + \
+                split['typedRelations']
             response['text'] = response['text'] + split['text']
-        elif 'typedRelations' in split and not 'typedRelations' in response:
+        elif 'typedRelations' in split and 'typedRelations' not in response:
             response['typedRelations'] = split['typedRelations']
     print response
     return response
 
+
 def get_entities(review):
     split = {}
-    url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=" + modelId + "&apikey=" + apikey + "&outputMode=json&sentiment=1"
     if len(review) > 5024:
         mid = find_middle(review)
         while mid >= 5024:
@@ -38,16 +40,17 @@ def get_entities(review):
         review = review[:mid]
         half = review[mid:]
         split = get_entities(half)
-    f = requests.get(url, params={'text': review})
+    f = alchemyapi.entities(text=review, model=modelId, sentiment=True)
     response = f.content
     response = ast.literal_eval(response)
     if split != {}:
         if 'entities' in split and 'entities' in response:
             response['entities'] = response['entities'] + split['entities']
             response['text'] = response['text'] + split['text']
-        elif 'entites' in split and not 'entities' in response:
+        elif 'entites' in split and 'entities' not in response:
             response['entities'] = split['entities']
     return response
+
 
 def token_replacement_entities(review):
     processed = get_entities(review)
@@ -59,12 +62,11 @@ def token_replacement_entities(review):
         for i in entities:
             token = i['text']
             classification = "<" + i['type'] + ">"
-            if i['type']=='Descriptor':
-               continue
             token = re.escape(token)
-            re.sub(r'\\ ',' ',token)
-            text = re.sub(r"\b%s\b" % token, classification, text,count=1)
+            re.sub(r'\\ ', ' ', token)
+            text = re.sub(r"\b%s\b" % token, classification, text, count=1)
     return text
+
 
 def find_middle(text):
         generator = nltk.tokenize.util.regexp_span_tokenize(text, r'\.')
@@ -73,6 +75,3 @@ def find_middle(text):
         middle_char = sequences[mid_sentence][1]
         middle_char = int(middle_char) + 1
         return middle_char
-
-
-#print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');

@@ -1,43 +1,40 @@
-import couchdbkit
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1
-import csv
 
-tier1CSV = 'new train sets/training_layer1_replace_no_descriptor.csv'
-tier2CSV = 'new train sets/training_layer2_replace_no_descriptor.csv'
-#tier3CSV = 'training_set3.csv'
-USERNAME = 'a6f087f2-73d6-4d33-bece-821ec3c5b96a'
-PASSWORD = '8StZ2fxq0eFF'
-JSON_TARGET = '../../data/classifier_ids.json'
+tier1CSV = ''  # Replace with location of layer 1 training data
+tier2CSV = ''  # Replace with another location of layer 2 training data
+USERNAME = ''  # Replace with username of NLC credentials
+PASSWORD = ''  # Replace with password of NLC credentials
+JSON_TARGET = '../../data/classifier_ids.json'  # Location to keep classifiers
 
 classifierTree = {
-	'tier1':'',
-	'tier2':'',
-	'tier3':''
+    'tier1': '',
+    'tier2': '',
+    'tier3': ''
 }
 
 # Initialize classifier
-nlc = NaturalLanguageClassifierV1(username = USERNAME, password = PASSWORD)
+nlc = NaturalLanguageClassifierV1(username=USERNAME, password=PASSWORD)
 
 # Train tier 1 classifier
 print("############# TIER 1 CLASSIFIER ##############")
 with open(tier1CSV, 'rb') as training_data:
-  classifier = nlc.create(
-    training_data=training_data,
-    name='tier1',
-    language='en'
-  )
+    classifier = nlc.create(
+        training_data=training_data,
+        name='tier1',
+        language='en'
+      )
 print(json.dumps(classifier, indent=2))
 classifierTree['tier1'] = classifier['classifier_id']
 
 # Train tier 2 classifier
 print("############# TIER 2 CLASSIFIER ##############")
 with open(tier2CSV, 'rb') as training_data:
-  classifier = nlc.create(
-    training_data=training_data,
-    name='tier2',
-    language='en'
-  )
+    classifier = nlc.create(
+        training_data=training_data,
+        name='tier2',
+        language='en'
+      )
 print(json.dumps(classifier, indent=2))
 classifierTree['tier2'] = classifier['classifier_id']
 
