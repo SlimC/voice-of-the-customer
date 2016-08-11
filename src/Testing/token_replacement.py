@@ -1,66 +1,71 @@
-import requests
 import ast
 import re
 import nltk
+import time
+from watson_developer_cloud import alchemy_language_v1 as alchemy
+
+apikey = ''  # Replace with your Alchemy Language API key
+modelId = ''  # Replace with the model-id from Watson Knowledge Studio
+alchemyapi = alchemy.AlchemyLanguageV1(api_key=apikey)
+
 
 def get_relations(review):
-    ##split = {}
-    ##url="http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json"
-    url = "https://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
-    #url = "http://access.alchemyapi.com/calls/text/TextGetTypedRelations?showSourceText=1&model=ae997404-c8d5-433a-995c-dceeacf22e34&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json"
-<<<<<<< Updated upstream
-    ##if len(review) > 5024:
-        ##mid = find_middle(review)
-        ##while mid >= 5024:
-                ##mid = find_middle(review[mid:])
-        ##review = review[:mid]
-        ##half = review[mid:]
-        ##split = get_relations(half)
-=======
+    split = {}
     if len(review) > 5024:
         mid = find_middle(review)
         while mid >= 5024:
-                mid = find_middle(review[:mid])
-        review = review[:mid]
+            mid = find_middle(review[:mid])
         half = review[mid:]
+        review = review[:mid]
         split = get_relations(half)
->>>>>>> Stashed changes
-    f = requests.get(url, params={'text':review})
+    f = alchemyapi.typed_relations(text=review, model=modelId)
     response = f.content
     response = ast.literal_eval(response)
-    ##if split != {}:
-        ##response['typedRelations'] = response['typedRelations'] + split['typedRelations']
-    ##print response
+
+    while response['status'] == 'ERROR':
+        if 'language' in response:
+            if response['language'] != 'english':
+                break
+        time.sleep(60)
+
+    if split != {}:
+        if 'typedRelations' in response and 'typedRelations' in split:
+            response['typedRelations'] = response['typedRelations'] + split['typedRelations']
+            response['text'] = response['text'] + split['text']
+        elif 'typedRelations' in split and 'typedRelations' not in response:
+            response['typedRelations'] = split['typedRelations']
     return response
 
+
 def get_entities(review):
-<<<<<<< Updated upstream
-    ##split = {}
-    url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=e21cc89b-125b-43e7-b13f-9e4112929c02&apikey=ffd7397f4be657f7740a84038f903271b2707a11&outputMode=json&sentiment=1"
-    ##if len(review) > 5024:
-        ##mid = find_middle(review)
-        ##while mid >= 5024:
-            ##mid = find_middle(review[mid:])
-        ##review = review[:mid]
-        ##half = review[mid:]
-        ##split = get_relations(half)
-=======
     split = {}
-    url = "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities?showSourceText=1&model=a259053c-01e6-4fb9-a4e4-2377bb35b43f&apikey=dd8e269c92c4149bbf3e3b81490de0de4378dcab&outputMode=json&sentiment=1"
     if len(review) > 5024:
         mid = find_middle(review)
         while mid >= 5024:
             mid = find_middle(review[:mid])
         review = review[:mid]
         half = review[mid:]
-        split = get_relations(half)
->>>>>>> Stashed changes
-    f = requests.get(url, params={'text':review})
+        split = get_entities(half)
+    f = alchemyapi.entities(text=review, model=modelId, sentiment=True)
     response = f.content
     response = ast.literal_eval(response)
-    ##if split != {}:
-        ##response['entities'] = response['entites'] + split['entities']
+    while 'status' in response and response['status'] == 'ERROR':
+        if 'language' in response:
+            if response['language'] != 'english':
+                break
+        if response['statusInfo'] == 'content-is-empty':
+            break
+        print response
+        time.sleep(60)
+
+    if split != {}:
+        if 'entities' in split and 'entities' in response:
+            response['entities'] = response['entities'] + split['entities']
+            response['text'] = response['text'] + split['text']
+        elif 'entites' in split and 'entities' not in response:
+            response['entities'] = split['entities']
     return response
+
 
 def token_replacement_entities(review):
     processed = get_entities(review)
@@ -72,8 +77,9 @@ def token_replacement_entities(review):
         for i in entities:
             token = i['text']
             classification = "<" + i['type'] + ">"
-            text = re.sub(r"\b%s\b" % token, classification, text,count=1)
+            text = re.sub(r"\b%s\b" % token, classification, text, count=1)
     return text
+
 
 def find_middle(text):
         generator = nltk.tokenize.util.regexp_span_tokenize(text, r'\.')
@@ -83,92 +89,69 @@ def find_middle(text):
         middle_char = int(middle_char) + 1
         return middle_char
 
-def token_replacement(review_text,seq_no):
-	print "\n\n text is \n"
-	print review_text
-	#data=[]
-	#review_text=split_long_string(review_text,data)
-	
-	review = get_relations(review_text)
-	entity_info = get_entities(review_text)
-	entity_info = avg_sentiment(entity_info)
-	entities = []
-	if 'entities' in entity_info:
-		entities=entity_info['entities']
-	sentences = nltk.tokenize.sent_tokenize(review_text)
-	result=[]
-	sentence_dict={}
-	#print entities
-	#print sentences
-	i=seq_no
-	dict={}
-	for sentence in sentences:
-		dict={}
-		sentence_dict[sentence]=i-seq_no
 
-		dict['sentence']=sentence
-		dict['seqno']=i
-		i+=1
-		for entity in entities:
-			#print entity
-			token=entity['text']
-			temp={}
-			token = re.escape(token)
-			if re.search(r'\b%s\b' % token, sentence) is not None :
-				print "found"
-				#print token+" "+sentence
-				test={}
-				test['name']=token
-				if 'sentiment' in entity:
-					test['sentiment']=[entity['sentiment']['type']]
-				if entity['type'] in dict:
-					dict[entity['type']].append(test)
-				else:
-					dict[entity['type']]=[]
-					dict[entity['type']].append(test)
+def token_replacement(review_text):
+    review = get_relations(review_text)
+    entity_info = get_entities(review_text)
+    entity_info = avg_sentiment(entity_info)
+    entities = []
+    if 'entities' in entity_info:
+        entities = entity_info['entities']
+    sentences = nltk.tokenize.sent_tokenize(review_text)
+    result = []
+    sentence_dict = {}
+    seq_no = 0
+    i = seq_no
+    entry = {}
+    for sentence in sentences:
+        entry = {}
+        sentence_dict[sentence] = i-seq_no
 
-				count=int(entity['count'])
-				classification = "<" + entity['type'] + ">"
+        entry['sentence'] = sentence
+        entry['seqno'] = i
+        i += 1
+        for entity in entities:
+            token = entity['text']
+            token = re.escape(token)
+            token = re.sub(r'\\ ', ' ', token)
+            if re.search(r'\b%s\b' % token, sentence) is not None:
+                test = {}
+                test['name'] = token
+                if 'sentiment' in entity:
+                    test['sentiment'] = [entity['sentiment']['type']]
+                if entity['type'] in entry:
+                    entry[entity['type']].append(test)
+                else:
+                    entry[entity['type']] = []
+                    entry[entity['type']].append(test)
 
-				sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
+                count = int(entity['count'])
+                classification = "<" + entity['type'] + ">"
+                sentence = re.sub(r'\b%s\b' % token, classification, sentence, count=count)
 
-				dict['replaced_sentence']=sentence
-		result.append(dict)
-	#print sentence_dict
-	#print result
-	if 'typedRelations' in review:
-		types = review['typedRelations']
-		#print types
-		if types != []:
-			for text in types:
-				#print text
-				temp_dict={}
-				temp_dict['hasrel']=text['type']
-				#print text['arguments'][0]
-				temp_dict['rel_name']=text['arguments'][0]['entities'][0]['text']
-				type=text['arguments'][0]['entities'][0]['type']
-				temp_dict['second']=text['arguments'][1]['entities'][0]['text']
-				#print "temp_dict"
-				#print temp_dict
-				sentence=text['sentence']
-				#print sentence
-				#print "sentence dict"
-				#print sentence_dict
-				if sentence in sentence_dict:
-					dict=result[sentence_dict[sentence]]
-					#print "type"
-					#print dict[type]
-					if type in dict:
-						local=dict[type]
-						local.append(temp_dict)
-					else:
-						local=[temp_dict]
-						dict[type]=local
+                entry['replaced_sentence'] = sentence
+        result.append(entry)
+    if 'typedRelations' in review:
+        types = review['typedRelations']
+        if types != []:
+            for text in types:
+                temp_dict = {}
+                temp_dict['hasrel'] = text['type']
+                temp_dict['rel_name'] = text['arguments'][0]['entities'][0]['text']
+                typed_entity = text['arguments'][0]['entities'][0]['type']
+                temp_dict['second'] = text['arguments'][1]['entities'][0]['text']
+                sentence = text['sentence']
+                if sentence in sentence_dict:
+                    entry = result[sentence_dict[sentence]]
+                    if typed_entity in entry:
+                        local = entry[typed_entity]
+                        local.append(temp_dict)
+                    else:
+                        local = [temp_dict]
+                        entry[typed_entity] = local
 
-	#result = avg_sentiment(result)
-	final_result=[result,i]
-	return final_result
-
+    final_result = [result, i]
+    return final_result
 
 def avg_sentiment(review):
     sentiments = []
@@ -176,7 +159,9 @@ def avg_sentiment(review):
         entities = review['entities']
 
         for sentence in entities:
-            sentiments.append({'name':sentence['text'], 'sentiment':sentence['sentiment']['type'], 'done':False})
+            if 'text' in sentence and 'sentiment' in sentence:
+                sentiments.append({'name': sentence['text'],
+                    'sentiment': sentence['sentiment']['type'], 'done': False})
         for feature in sentiments:
             if not feature['done']:
                 text = feature['name']
@@ -188,12 +173,12 @@ def avg_sentiment(review):
                     if other['name'] == text:
                         other['done'] = True
                         if other['sentiment'] == 'positive':
-                            pos +=1
+                            pos += 1
                         elif other['sentiment'] == 'negative':
-                            neg +=1
+                            neg += 1
                         elif other['sentiment'] == 'neutral':
-                            neutral +=1
-                if pos == max(pos,neg,neutral):
+                            neutral += 1
+                if pos == max(pos, neg, neutral):
                     most = 'positive'
                 elif neg == max(pos, neg, neutral):
                     most = 'negative'
@@ -204,4 +189,3 @@ def avg_sentiment(review):
                     if entity['text'] == text:
                         entity['sentiment']['type'] = [most]
     return review
-#print token_replacement('This TV has good picture quality and this radio has good sound. I bought it for 500 dollars. I like this TV. I do not like the radio.');

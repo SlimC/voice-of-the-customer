@@ -3,14 +3,14 @@ from cloudant.query import Query
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1
 
-DB_USERNAME = 'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'													#Replace with your server URL
-DB_PASSWORD = 'bfd53fe017adeea40cd4894bb29451ddff6805fc1b94a179eba4de8ef84b632f'
-DB_ACCOUNT = 'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'
-DATABASE = 'testdb'												#Replace with the name of the database
+DB_USERNAME = ''  # Replace with your server URL
+DB_PASSWORD = ''  # Replace with your DB password
+DB_ACCOUNT = ''  # replace with your DB username
+DATABASE = ''  # Replace with the name of the database
 
-CLF_USERNAME = 'e561bc30-d294-41f4-8b47-39fc6bc29917'												#Replace with the username from your credentials for the NLC
-CLF_PASSWORD = 'XH8pYnsYfClv'												#Replace with the password from your credentials for the NLC
-CLASSIFIER_JSON = '../../data/classifier_ids.json'
+CLF_USERNAME = ''  # Replace with the username from your credentials for the NLC
+CLF_PASSWORD = ''  # Replace with the password from your credentials for the NLC
+CLASSIFIER_JSON = '../../data/classifier_ids.json'  # Location of classifiers
 
 BULK_RATE = 100
 
@@ -19,7 +19,7 @@ with open(CLASSIFIER_JSON) as classifier_ids:
     classifierTree = json.load(classifier_ids)
 print(classifierTree)
 
-client = Cloudant(DB_USERNAME,DB_PASSWORD,account=DB_ACCOUNT)
+client = Cloudant(DB_USERNAME, DB_PASSWORD, account=DB_ACCOUNT)
 client.connect()
 db = client[DATABASE]
 
@@ -56,43 +56,39 @@ data = [{
 'type':'review'
 }]
 
-query = Query(my_database, selector={'_id': {'$gt': 0},'type':["replaced"]})
+query = Query(db, selector={'type': ["replaced"]})
 data = query.result
 
-nlc = NaturalLanguageClassifierV1(username = CLF_USERNAME, password = CLF_PASSWORD)
+nlc = NaturalLanguageClassifierV1(username=CLF_USERNAME, password=CLF_PASSWORD)
 
 updated_reviews = []
-print("[")
 for review in data:
-	# Run tier 1 classification
-	for line in review['review']:
-		sentence = ""
-		if('replaced_sentence' in line):
-			sentence = line['replaced_sentence']
-		else:
-			sentence = line['sentence']
-		resp = nlc.classify(classifierTree['tier1'],sentence)
-		classification = resp["top_class"]
-		line["layer1type"] = classification
-		if(classification == "Product"):
-			resp = nlc.classify(classifierTree['tier2'],sentence)
-			classification = resp["top_class"]
-			line["layer2type"] = classification
-			if(classification != "Price"):
-				resp = nlc.classify(classifierTree['tier3'],sentence)
-				classification = resp["top_class"]
-				line["layer3type"] = classification
-			else:
-				line["layer3type"] = ""
-		else:
-			line["layer2type"] = ""
-			line["layer3type"] = ""
-	print(json.dumps(review,indent=2))
-	print(",")
+    # Run tier 1 classification
+    for line in review['review']:
+        sentence = ""
+        if('replaced_sentence' in line):
+            sentence = line['replaced_sentence']
+        else:
+            sentence = line['sentence']
+        resp = nlc.classify(classifierTree['tier1'], sentence)
+        classification = resp["top_class"]
+        line["layer1type"] = classification
+        if(classification == "Product"):
+            resp = nlc.classify(classifierTree['tier2'], sentence)
+            classification = resp["top_class"]
+            line["layer2type"] = classification
+            if(classification != "Price"):
+                resp = nlc.classify(classifierTree['tier3'], sentence)
+                classification = resp["top_class"]
+                line["layer3type"] = classification
+            else:
+                line["layer3type"] = ""
+        else:
+            line["layer2type"] = ""
+            line["layer3type"] = ""
     review['type'] = ['classified']
-	updated_reviews.append(review)
-	if(len(updated_reviews) >= BULK_RATE):
-		db.bulk_docs(updated_reviews)
-		updated_reviews = []
-print("]")
+    updated_reviews.append(review)
+    if(len(updated_reviews) >= BULK_RATE):
+        db.bulk_docs(updated_reviews)
+        updated_reviews = []
 db.bulk_docs(updated_reviews)

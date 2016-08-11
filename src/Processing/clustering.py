@@ -4,6 +4,7 @@ from gensim.models import word2vec
 import logging
 import numpy as np
 import re
+import os
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
@@ -18,25 +19,20 @@ def generate_vectors(features, model):
     mapping = []
     count = 0
     for line in features:
-        print line
         words = line['word'].split()
-        print words
         vec = []
         flag = 0
         for word in words:
             word = str(word)
-            print word
-            word = re.sub(r'\\','',word)
-            print word
+            word = re.escape(word)
+            word = re.sub(r'\\', '', word)
             if word in model:
                 if len(vec) > 1:
                     vec = vec+model[word]
-                    print vec
                 else:
                     vec = model[word]
             else:
                 flag = 1
-                print "Not in"
                 break
         if flag == 0:
             if len(vec) > 0:
@@ -118,7 +114,6 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
 
                 ##cause of split reviews-to remove
                 sent_id=sent_id-helpful_review[0][0]['seqno']
-                print sent_id
                 if sent_id>0:
                     excerpt=helpful_review[0][sent_id-1]['sentence']+helpful_review[0][sent_id]['sentence']
                 else:
@@ -152,7 +147,7 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
 
 def cluster(doc, db, asin):
     SERVER = 'https://1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com'
-    DATABASE = 'testdb'
+    DATABASE = 'amazon_data'
     USERNAME = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
     PASSWORD = '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638'
 
@@ -165,7 +160,6 @@ def cluster(doc, db, asin):
     name = ''
     if 'title' in meta:
         name = meta['title']
-    print name
     rev_id = []
     helpful={}
     for data in query.result:
@@ -179,15 +173,13 @@ def cluster(doc, db, asin):
     keys = []
     local_dump = {}
     for rev in rev_id:
-        print rev
         query_id = Query(db, selector={'review_id': rev, 'type': ['classified']})
         for i in query_id.result:
             if len(query_id.result[0]) == 0:
-                print 'continue'
                 continue
         for res in query_id.result[0]:
             text = res['review']
-            local_dump[res['review_id']]=text
+            local_dump[res['review_id']] = text
             for obj in text[0]:
                 if 'Feature' in obj:
                     feature = obj['Feature']
@@ -203,13 +195,10 @@ def cluster(doc, db, asin):
                             temp['sentence_id'] = obj['seqno']
                             keys.append(temp)
 
-    print "\n\nkeys"
-    print keys
     modelname = 'sample_model'
-    model = word2vec.Word2Vec.load_word2vec_format(modelname+'.bin', binary=True)
+    cwd = os.getcwd()
+    model = word2vec.Word2Vec.load_word2vec_format(cwd+ '/' + modelname+'.bin', binary=True)
     [vecs, mapping] = generate_vectors(keys, model)
-    print vecs
-    print mapping
     clusters = cluster_try(vecs)
     cluster_data = []
     features = create_json(clusters, cluster_data, mapping, keys, helpful, local_dump)

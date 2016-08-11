@@ -11,6 +11,8 @@ with open(CLASSIFIER_JSON) as classifier_ids:
 
 nlc = NaturalLanguageClassifierV1(username=CLF_USERNAME, password=CLF_PASSWORD)
 
+# TODO Make general, do not bind to our NLC classes
+
 
 def classify(review):
     resp = nlc.classify(classifierTree['tier1'], review)

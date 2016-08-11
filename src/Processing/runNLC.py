@@ -1,12 +1,14 @@
 import json
 from watson_developer_cloud import NaturalLanguageClassifierV1
+import os
 
-CLF_USERNAME = 'e561bc30-d294-41f4-8b47-39fc6bc29917'
-CLF_PASSWORD = 'XH8pYnsYfClv'
-CLASSIFIER_JSON = '../../data/classifier_ids.json'
+CLF_USERNAME = ''
+CLF_PASSWORD = ''
+CLASSIFIER_JSON = '/classifier_ids.json'
 
 # Retrieve Classifier ID's
-with open(CLASSIFIER_JSON) as classifier_ids:
+cwd = os.getcwd()
+with open(cwd+CLASSIFIER_JSON) as classifier_ids:
     classifierTree = json.load(classifier_ids)
 
 nlc = NaturalLanguageClassifierV1(username=CLF_USERNAME, password=CLF_PASSWORD)
@@ -15,8 +17,6 @@ nlc = NaturalLanguageClassifierV1(username=CLF_USERNAME, password=CLF_PASSWORD)
 def classify(review):
 
     for line in review['review'][0]:
-        print type(line)
-        print line
         sentence = ""
         if('replaced_sentence' in line):
             sentence = line['replaced_sentence']

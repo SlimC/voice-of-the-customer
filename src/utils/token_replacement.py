@@ -20,6 +20,13 @@ def get_relations(review):
     f = alchemyapi.typed_relations(text=review, model=modelId)
     response = f.content
     response = ast.literal_eval(response)
+
+    while response['status'] == 'ERROR':
+        if 'language' in response:
+            if response['language'] != 'english':
+                break
+        print response
+
     if split != {}:
         if 'typedRelations' in response and 'typedRelations' in split:
             response['typedRelations'] = response['typedRelations'] + \
@@ -27,7 +34,6 @@ def get_relations(review):
             response['text'] = response['text'] + split['text']
         elif 'typedRelations' in split and 'typedRelations' not in response:
             response['typedRelations'] = split['typedRelations']
-    print response
     return response
 
 

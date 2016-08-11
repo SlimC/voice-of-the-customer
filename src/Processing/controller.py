@@ -15,10 +15,10 @@ def add_review(status):
     num = cluster + classify + replace + review + final + finished
     return num
 
-DB_USERNAME = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
-DB_PASSWORD = '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638'
-DB_ACCOUNT = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'
-DATABASE = 'testdb'
+DB_USERNAME = ''
+DB_PASSWORD = ''
+DB_ACCOUNT = ''
+DATABASE = ''
 
 model_tracker = {
                     '_id': 'tracker',

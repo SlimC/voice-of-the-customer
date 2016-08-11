@@ -21,13 +21,13 @@ outputJSON = {
     }
 }
 
-DB_USERNAME = 'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'    # Replace with your server URL
-DB_PASSWORD = 'bfd53fe017adeea40cd4894bb29451ddff6805fc1b94a179eba4de8ef84b632f'
-DB_ACCOUNT = 'f097af24-3f84-4672-8b97-86dd54a78ef6-bluemix'
-DATABASE = 'testdb'                                                # Replace with the name of the database
-AL_KEY = '7e476d77ac23fabfcbf51a3a32c8d8faf6e9594b'
+DB_USERNAME = ''
+DB_PASSWORD = ''
+DB_ACCOUNT = ''
+DATABASE = ''                                                # Replace with the name of the database
+AL_KEY = ''
 
-client = Cloudant(DB_USERNAME,DB_PASSWORD,account=DB_ACCOUNT)
+client = Cloudant(DB_USERNAME, DB_PASSWORD, account=DB_ACCOUNT)
 client.connect()
 db = client[DATABASE]
 
@@ -54,24 +54,27 @@ def make_final(cluster, db):
                 reviewnums.add(review_ids)
     for i in range(0, len(reviewnums)):
         if len(reviewnums) > 0:
-            q = Query(db, selector={'review_id': reviewnums.pop(), 'type': ['classified']})
-            reviews.append(q.result[0])
+            num = reviewnums.pop()
+            q = Query(db, selector={'review_id': num})
+            for i in q.result():
+                if i['type'] == ['classified']:
+                    reviews.append(q.result[0])
     reviewnums.clear()
     total = 0
     for review in reviews:
-        for line in review[0]["review"]:
-            total = total + 1
-            if type(line) == list:
-                line = line[0]
-            if type(line) == int:
-                print line
-                continue
-            if(line["layer3type"] == "Issue"):
-                outputJSON["issues"]["percentage"] = outputJSON["issues"]["percentage"] + 1
-                outputJSON["issues"]["review_ids"].append(review[0]["review_id"])
-            if(line["layer2type"] == "Customer Service"):
-                sentiment = alchemy.sentiment(text=line["sentence"])["docSentiment"]["type"]
-                outputJSON["customer_service"]["sentiment"][sentiment] = outputJSON["customer_service"]["sentiment"][sentiment] + 1
+        if review != []:
+            for line in review[0]["review"]:
+                total = total + 1
+                if type(line) == list:
+                    line = line[0]
+                if type(line) == int:
+                    continue
+                if(line["layer3type"] == "Issue"):
+                    outputJSON["issues"]["percentage"] = outputJSON["issues"]["percentage"] + 1
+                    outputJSON["issues"]["review_ids"].append(review[0]["review_id"])
+                if(line["layer2type"] == "Customer Service"):
+                    sentiment = alchemy.sentiment(text=line["sentence"])["docSentiment"]["type"]
+                    outputJSON["customer_service"]["sentiment"][sentiment] = outputJSON["customer_service"]["sentiment"][sentiment] + 1
 
     outputJSON["issues"]["percentage"] = outputJSON["issues"]["percentage"]/float(total)*100
     customer_service_total = 0

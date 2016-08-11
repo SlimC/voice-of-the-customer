@@ -1,299 +1,216 @@
-import nltk
 import cloudant
-import requests
-import csv
-import sys
-import extract_keywords
 from cloudant.query import Query
-SERVER = 'https://1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix.cloudant.com'                                                                                                    #Replace with your server URL
-DATABASE = 'amazon_data'                                                                                                #Replace with the name of the database
-USERNAME = '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix'                                                                                               #Replace with the username from your credentials for the NLC
-PASSWORD = '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638'
-DESIGN = 'names'                                                                                                        #replace with the name of the design document that contains the view. This should be of the form '_design/XXXX'
-VIEW =          'asinview'                                                                                              #Replace with the view from your database to poll, this should take the form of view_file/view and should return the text to classify as the value field and what you would like to call it as the key
-DESTINATION = 'out1.csv'                                                                                                                        #Replace with correct name for output file (NOTE must be *.csv)
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
 from gensim.models import word2vec
 import logging
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-import random
-from scipy import spatial
 import numpy as np
 
-server = cloudant.client.Cloudant(USERNAME,PASSWORD,url=SERVER)
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s',
+                    level=logging.INFO)
+
+
+SERVER = ''  # Replace with your server URL
+DATABASE = ''  # Replace with the name of the database
+USERNAME = ''  # Replace with the username from your credentials for the NLC
+PASSWORD = ''
+DESIGN = ''    # Replace with the name of the design document that contains
+                # the view. This should be of the form '_design/XXXX'
+VIEW = ''      # Replace with the view from your database to poll,
+               # this should take the form of view_file/view and should return
+               # the text to classify as the value field and what you would
+               # like to call it as the key
+DESTINATION = ''  # Replace with correct name for output file (Must be *.csv)
+CLASS_NAME = ''  # Replace with the name of the class to cluster
+
+
+server = cloudant.client.Cloudant(USERNAME, PASSWORD, url=SERVER)
 server.connect()
 db = server[DATABASE]
-query = Query(db, selector={'asin':'B0042A8CW2'},fields=["_id","helpful"])
-#B0042A8CW2
-#'B00BCGRZ04'
+query = Query(db, selector={'asin': 'B0042A8CW2'}, fields=["_id", "helpful"])
 
-client_username='fc5dda33-3709-459b-8857-92b93630db31-bluemix'
-client_password='a15d0990d5ebfb2aedd5a61dacdbdb132b6e2266f74a7f46cadfadbc6b982b06'
-client_database='testdb_final_headphone_set10'
-#client_server='https://fc5dda33-3709-459b-8857-92b93630db31-bluemix.cloudant.com'
-#client_db=cloudant.client.Cloudant(client_username,client_password,account=client_username)
-#client_db.connect()
 
-temp_client = cloudant.client.Cloudant("fc5dda33-3709-459b-8857-92b93630db31-bluemix","a15d0990d5ebfb2aedd5a61dacdbdb132b6e2266f74a7f46cadfadbc6b982b06",account="fc5dda33-3709-459b-8857-92b93630db31-bluemix")
-temp_client.connect()
+def generate_vectors(features):
+    vecs = []
+    mapping = []
+    count = 0
+    for line in features:
+            print line
+            words = line['word'].split()
+            vec = []
+            flag = 0
+            for word in words:
+                    if word in model:
+                            if len(vec) > 1:
+                                    vec = vec + model[word]
+                            else:
+                                    vec = model[word]
+                    else:
+                            flag = 1
+                            break
+            if flag == 0:
+                    if len(vec) > 0:
+                            vecs.append(vec)
+                            mapping.append(count)
+            count += 1
 
-db_2=temp_client[client_database]
-rev_id=[]
-helpful={}
+    return [vecs, mapping]
+
+# features and stuff- array of json
+# cluster features
+# sentiment aggregation
+# final json
+
+
+def cluster_try(vecs):
+        clusterVec = {}
+        clusterIdx = {}
+        no_of_clusters = 1
+        clusterIdx[0] = [0]
+        clusterVec[0] = vecs[0]
+        max_sim = 0.5
+        index = 0
+        for i in range(1, len(vecs)):
+                flag = 0
+                max_sim = 0.5
+                for j in range(no_of_clusters):
+                        sim = np.dot(vecs[i],
+                                     clusterVec[j]) / \
+                                     (np.linalg.norm(
+                                      clusterVec[j]) * np.linalg.norm(vecs[i]))
+                        if sim > max_sim:
+                                flag = 1
+                                max_sim = sim
+                                index = j
+                if flag == 0:
+                        clusterIdx[j+1] = [i]
+                        clusterVec[j+1] = vecs[i]
+                        no_of_clusters += 1
+                else:
+                        clusterIdx[index].append(i)
+                        clusterVec[index] += vecs[i]
+        return clusterIdx
+
+
+def create_json(clusters, cluster_data, mapping):
+    for i in clusters:
+        keyword_count = 0
+        pos = 0
+        neg = 0
+        neutral = 0
+        unique_words = {}
+        clusterinfo = {}
+        for key in clusters[i]:
+            index = mapping[key]
+            keyword = keys[index]['word']
+            if keyword in unique_words:
+                unique_words[keyword]['count'] += 1
+                unique_words[keyword]['review_id'].append(
+                                                    keys[index]['rev_id'])
+                unique_words[keyword]['sentence_id'].append(
+                                                    keys[index]['sentence_id'])
+            else:
+                unique_words[keyword] = {}
+                unique_words[keyword]['count'] = 1
+                unique_words[keyword]['review_id'] = [keys[index]['rev_id']]
+                unique_words[keyword]['sentence_id'] = [keys[index]['sentence_id']]
+            keyword_count += 1
+            list_keywords = []
+            stop_count = 0
+            for feature in sorted(unique_words, key=unique_words.get, reverse=True):
+                data = {}
+                data['keyword'] = feature
+                if stop_count == 0:
+                    clusterinfo['feature'] = feature
+                data['sentence_id'] = unique_words[feature]['sentence_id']
+                data['review_id'] = unique_words[feature]['review_id']
+                # section to get most helpful review
+                helpful_vote = 0
+                for index_rev in range(0, len(data['review_id'])):
+                    if helpful[data['review_id'][index_rev]] >= helpful_vote:
+                        helpful_vote = helpful[data['review_id'][index_rev]]
+                        helpful_rev = index_rev
+                sent_id = data['sentence_id'][helpful_rev]
+                helpful_review = local_dump[data['review_id'][helpful_rev]]
+
+                sent_id = sent_id-helpful_review[0]['seqno']
+                if sent_id > 0:
+                    excerpt = helpful_review[sent_id-1]['sentence'] + \
+                        helpful_review[sent_id]['sentence']
+                else:
+                    excerpt = helpful_review[sent_id]['sentence']
+                if sent_id < len(helpful_review)-1:
+                    excerpt = excerpt+helpful_review[sent_id+1]['sentence']
+                data['excerpt'] = excerpt
+
+                ####
+                data['count'] = unique_words[feature]['count']
+                list_keywords.append(data)
+                stop_count += 1
+                if stop_count == 3:
+                    break
+            if keys[index]['sentiment'][0][0] == 'positive':
+                    pos += 1
+            if keys[index]['sentiment'][0][0] == 'neutral':
+                    neutral += 1
+            if keys[index]['sentiment'][0][0] == 'negative':
+                    neg += 1
+        clusterinfo['keywords'] = list_keywords
+        clusterinfo['sentiments'] = {}
+        clusterinfo['sentiments']['positive'] = pos
+        clusterinfo['sentiments']['negative'] = neg
+        clusterinfo['sentiments']['neutral'] = neutral
+        clusterinfo['keyword_count'] = keyword_count
+        cluster_data.append(clusterinfo)
+    return cluster_data
+
+
+rev_id = []
+helpful = {}
 for data in query.result:
-	#print data
-	rev_id.append(data['_id'])
-	if 'helpful' in data:
-		#print data['helpful']
-		helpful[data['_id']]=data['helpful'][0]
-	else:
-		helpful[data['_id']]=0
+    rev_id.append(data['_id'])
+    if 'helpful' in data:
+        helpful[data['_id']] = data['helpful'][0]
+    else:
+        helpful[data['_id']] = 0
 print rev_id
 print helpful
 
 
-#rev_id=["0000927a59e02ee3d09b12e0e202bba5","0000927a59e02ee3d09b12e0e202dd2b","0000927a59e02ee3d09b12e0e202f3f2","0000927a59e02ee3d09b12e0e2056019"]
-temp={}
-keys=[]
-local_dump={}
+temp = {}
+keys = []
+local_dump = {}
 for rev in rev_id:
-	#print rev	
-	query_id=Query(db_2, selector={'review_id':rev})
-	if len(query_id.result[0])==0:
-		continue
-	#print query_id.result[0]
-	for res in query_id.result[0]:
-		#res=query_id.result[0][0]
-		#rev=query_id.result[0]
-		#print "\n"
-		#print res
-		text=res['review']
-		local_dump[res['review_id']]=text
-		for obj in text:
-			if 'Feature' in obj:
-				feature=obj['Feature']
-				for data in feature:
-					if 'name' in data:
-						temp={}
-						temp['word']=data['name']
-						if 'sentiment' in data:
-							temp['sentiment']=data['sentiment']
-						else:
-							temp['sentiment']=['neutral']
-						temp['rev_id']=res['review_id']
-						temp['sentence_id']=obj['seqno']
-						#print temp
-						keys.append(temp)
+    query_id = Query(db, selector={'review_id': rev})
+    if len(query_id.result[0]) == 0:
+        continue
+    for res in query_id.result[0]:
+        text = res['review']
+        local_dump[res['review_id']] = text
+        for obj in text:
+            if CLASS_NAME in obj:
+                feature = obj['Feature']
+                for data in feature:
+                    if 'name' in data:
+                        temp = {}
+                        temp['word'] = data['name']
+                        if 'sentiment' in data:
+                            temp['sentiment'] = data['sentiment']
+                        else:
+                            temp['sentiment'] = ['neutral']
+                        temp['rev_id'] = res['review_id']
+                        temp['sentence_id'] = obj['seqno']
+                        keys.append(temp)
 
-
-print "\n keys\n"
-print keys
-
-print "\n local dump \n"
-pp.pprint(local_dump)
-
-
-
-sentences = word2vec.Text8Corpus('text8')
-modelname='sample_model'
-
-def train(sentences,modelname):
-        model = word2vec.Word2Vec(sentences, size=200)
-        model.save(modelname)
-        model.save_word2vec_format(modelname+'.bin', binary=True)
-
-#train(sentences,modelname)
+modelname = 'sample_model'
 
 model = word2vec.Word2Vec.load_word2vec_format(modelname+'.bin', binary=True)
-#print model.similarity('sound','cans')
-#print "gaming"
 
-def generate_vectors(features):
-        #fp=open('unique_sample_TV.txt')    ##file with input keywords
-        #fw=open('obtained_keywords_headphone_completetest.txt','w')   ##file with output keywords
-        vecs=[]
-        #keywords=[]
-	mapping=[]
-	count=0
-        for line in features:
-                print line
-                words=line['word'].split()
-                no=len(words)
-                vec=[]
-                flag=0
-                for word in words:
-                        if word in model:
-                                if len(vec)>1:
-                                        vec=vec+model[word]
-                                else:
-                                        vec=model[word]
-                        else:
-                                flag=1
-                                break
-                if flag==0:
-                        #keywords.append(line)
-                        if len(vec)>0:
-                                #vec=vec
-                                vecs.append(vec)
-                                mapping.append(count)
-                count+=1	
+[vecs, mapping] = generate_vectors(keys)
+clusters = cluster_try(vecs)
 
-        return [vecs,mapping]
-        #print keywords
-        #for keyword in keywords:
-        #        fw.write(keyword)
-        #np.save('keywords_vecs_headphone_completetest.npy',vecs)  ###vectors
-        #np.save('keywords_TV_unique.npy',keywords)   ###keywords
+cluster_data = []
+features = create_json(clusters, cluster_data, mapping)
+features = sorted(features, key=lambda k: k['keyword_count'], reverse=True)
 
-[vecs,mapping]=generate_vectors(keys)
-
-#print "\n vecs\n"
-#print vecs
-
-print "\n \n mapping \n"
-print mapping
-
-#features and stuff- array of json	
-#cluster features
-##sentiment aggregation
-##final json
-
-def cluster_try(vecs):
-        clusterVec={}
-        clusterIdx={}
-        no_of_clusters=1
-        id=0
-        clusterIdx[0]=[0]
-        #clusterIdx[0].append([0])
-        clusterVec[0]=vecs[0]
-        max_sim=0.5
-        index=0
-        for i in range(1,len(vecs)):
-                flag=0
-                max_sim=0.5
-                for j in range(no_of_clusters):
-                        sim=np.dot(vecs[i],clusterVec[j])/(np.linalg.norm(clusterVec[j])* np.linalg.norm(vecs[i]))
-                        #sim=cosine(vecs[i],clusterVec[j])
-                        if sim>max_sim :
-                                #clusterIdx[j].append(i)
-                                #clusterVec[j]+=vecs[i]
-                                flag=1
-                                max_sim=sim
-                                index=j
-                                #print "\n index"
-                                #print index
-                                #break
-                if flag==0:
-                        clusterIdx[j+1]=[i]
-                        clusterVec[j+1]=vecs[i]
-                        no_of_clusters+=1
-                else:
-                        clusterIdx[index].append(i)
-                        clusterVec[index]+=vecs[i]
-        return clusterIdx
-
-clusters=cluster_try(vecs)
-
-print "\n clusters \n"
-print clusters
-
-
-def create_json(clusters,cluster_data,mapping):
-	#print clusters
-	for i in clusters:
-		keyword_count=0
-		pos=0
-		neg=0
-		neutral=0
-		unique_words={}
-		clusterinfo={}
-		for key in clusters[i]:
-			#clusterinfo={}
-			index=mapping[key]			
-			keyword= keys[index]['word']
-			if keyword in unique_words:
-				unique_words[keyword]['count']+=1
-				unique_words[keyword]['review_id'].append(keys[index]['rev_id'])
-				unique_words[keyword]['sentence_id'].append(keys[index]['sentence_id'])
-			else:
-				unique_words[keyword]={}
-				unique_words[keyword]['count']=1
-				unique_words[keyword]['review_id']=[keys[index]['rev_id']]
-				unique_words[keyword]['sentence_id']=[keys[index]['sentence_id']]
-			keyword_count+=1
-			#print unique_words
-			list_keywords=[]
-			stop_count=0
-			for feature in sorted(unique_words, key=unique_words.get, reverse=True):
-				data={}
-				data['keyword']=feature
-				if stop_count==0:
-					clusterinfo['feature']=feature
-				data['sentence_id']=unique_words[feature]['sentence_id']
-				data['review_id']=unique_words[feature]['review_id']
-				####section to get most helpful review
-				helpful_vote=0
-				for index_rev in range(0,len(data['review_id'])):
-					if helpful[data['review_id'][index_rev]]>=helpful_vote:
-						helpful_vote=helpful[data['review_id'][index_rev]]
-						helpful_rev=index_rev
-				#query_rev=Query(db_2, selector={'review_id':data['review_id'][helpful_rev]})
-				#helpful_review=query_rev.result[0][0]
-				#print "\n\n"
-				#print helpful_rev
-				sent_id=data['sentence_id'][helpful_rev]
-				helpful_review=local_dump[data['review_id'][helpful_rev]]
-
-				##cause of split reviews-to remove
-				sent_id=sent_id-helpful_review[0]['seqno']
-				if sent_id>0:
-					excerpt=helpful_review[sent_id-1]['sentence']+helpful_review[sent_id]['sentence']
-				else:
-					excerpt=helpful_review[sent_id]['sentence']
-				if sent_id<len(helpful_review)-1:
-					excerpt=excerpt+helpful_review[sent_id+1]['sentence']
-				#print helpful_review[sent_id]
-				#print excerpt
-				data['excerpt']=excerpt
-				
-				####
-				data['count']=unique_words[feature]['count']
-				list_keywords.append(data)
-				stop_count+=1
-				if stop_count==3:
-					break
-			#clusterinfo['keywords']=list_keywords
-			#print keys[index]['sentiment'][0]
-			if keys[index]['sentiment'][0][0]=='positive':
-					pos+=1
-			if keys[index]['sentiment'][0][0]=='neutral':
-					neutral+=1
-			if keys[index]['sentiment'][0][0]=='negative':
-					neg+=1
-		clusterinfo['keywords']=list_keywords
-		clusterinfo['sentiments']={}
-		clusterinfo['sentiments']['positive']=pos
-		clusterinfo['sentiments']['negative']=neg
-		clusterinfo['sentiments']['neutral']=neutral
-		clusterinfo['keyword_count']=keyword_count
-		#for w in sorted(unique_words, key=unique_words.get, reverse=False):
-			#name=w
-			#clusterinfo['feature']=name
-			#print w
-		cluster_data.append(clusterinfo)
-	return cluster_data
-	
-
-cluster_data=[]
-features=create_json(clusters,cluster_data,mapping)
-features = sorted(features, key=lambda k: k['keyword_count'],reverse=True)
- 
-dict={}
-dict['product_id']='sss'
-dict['features']=features[:10]
-		
-print dict			
-		
-pp.pprint(dict)
-
+output_dict = {}
+output_dict['product_id'] = 'sss'  # TODO: What is???
+output_dict['features'] = features[:10]
