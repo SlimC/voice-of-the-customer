@@ -22,7 +22,7 @@ var app = express();
 var cloudant = require('cloudant');
 
 // if bluemix credentials exists, then override local
-var mockUp = true;
+var mockUp = false;
 var credentials = {
 	key: '1790ef54-fcf2-4029-9b73-9000dff88e6e-bluemix',
 	password: '5beb3f8b9f95586542e3d9c5acfb0c52832252432623e534d4e88b12fad29638',
@@ -52,7 +52,7 @@ app.get('/api/product', function(req, res) {
 			if (err) {
 				return 'Failed to initialize Cloudant: ' + err.message;
 			} else {
-				var db = cloud.db.use("testdb");
+				var db = cloud.db.use("testdb2");
 				db.get(req.query.productId, function(err, data) {
 					// The rest of your code goes here. For example:
 					return res.json(data);

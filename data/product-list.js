@@ -19,16 +19,40 @@
 
 module.exports = function() {
     return [{
-        "id":"9fbb3e71d134a22ce183e984a591f916",
-        "name":"Sennheiser HD 598 Headphones"
+        "id":"22e6343bf6748a6c408fac1e0c69f3c3",
+        "name":"Microsoft Comfort Mouse 4500 - Poppy Red"
     },
     {
-        "id":"4d751cdd537048fc5db61dd6f6d58c69",
+        "id":"56644a772c2ec9e89f6ce785b1c1528e",
         "name": "Microsoft Comfort Mouse 4500"
     },
     {
-        "id":"4d751cdd537048fc5db61dd6f6ed9ca7",
-        "name" : "Samsung UN19F4000 19\" 720p LED-LCD TV - 16:9"
+        "id":"6666526730953249e153fb108eee5fa1",
+        "name" : "Garmin n&uuml;vi 65LM GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"
+    },
+    {
+      "id":"9dcef3aea4f4827c8d26dd834387f73a",
+      "name":"Bose QuietComfort 15 Acoustic Noise Cancelling Headphones"
+    },
+    {
+      "id":"f9204a0a8eaf8e5e7c4cb935138f8f4c",
+      "name":"Kidz Gear Wired Headphones For Kids - Gray"
+    },
+    {
+      "id":"9dcef3aea4f4827c8d26dd8343bace76",
+      "name":"Seiki SE22FR01 22-Inch 1080p 60Hz LED HDTV"
+    },
+    {
+      "id":"c8b860c1d45364dde8e127959a86733b",
+      "name":"Samsung UN19F4000 19-Inch 720p 60Hz Slim LED HDTV"
+    },
+    {
+      "id":"c8b860c1d45364dde8e127959a9ec566",
+      "name":"Garmin n&uuml;vi 55LMT GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"
+    },
+    {
+      "id":"d045f1b39d53302d09ed5a5e4d82c5a0",
+      "name":"VIZIO M651d-A2R 65-Inch 1080p 240Hz 3D Smart LED HDTV (2013 Model)"
     },
     {
         "id":"100",
