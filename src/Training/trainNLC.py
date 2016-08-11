@@ -38,18 +38,6 @@ with open(tier2CSV, 'rb') as training_data:
 print(json.dumps(classifier, indent=2))
 classifierTree['tier2'] = classifier['classifier_id']
 
-'''
-# Train tier 3 classifier
-print("############# TIER 3 CLASSIFIER ##############")
-with open(tier3CSV, 'rb') as training_data:
-  classifier = nlc.create(
-    training_data=training_data,
-    name='tier3',
-    language='en'
-  )
-print(json.dumps(classifier, indent=2))
-classifierTree['tier3'] = classifier['classifier_id']
-'''
 
 # Write the tiers with classifier id's to file for use later
 with open(JSON_TARGET, 'w') as outfile:
