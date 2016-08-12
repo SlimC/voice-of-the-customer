@@ -1,5 +1,6 @@
 import cloudant
 import csv
+import sys
 
 SERVER = ''      ''' Replace with your server URL'''
 DATABASE = ''    ''' Replace with the name of the database'''
@@ -23,17 +24,27 @@ query = db.get_view_result(DESIGN, VIEW)
 file = open(DESTINATION, 'wb')
 writer = csv.writer(file)
 
+if len(sys.args[1]) > 0:  # Number of reviews to pull
+    number = sys.args[1]
+else:
+    number = 50
+
+i = 0
 
 for q in query:
-    print q[0]
-    if 'key' in q[0] and q[0]['key'] is not None:
-        title = q[0]['key']
+    if i < number:
+        print q[0]
+        if 'key' in q[0] and q[0]['key'] is not None:
+            title = q[0]['key']
+        else:
+            title = "No Title"
+        if 'value' in q[0] and q[0]['value'] is not None:
+            text = q[0]['value']
+        else:
+            text = "No Text"
+        writer.writerow([title, text])
+        i += 1
     else:
-        title = "No Title"
-    if 'value' in q[0] and q[0]['value'] is not None:
-        text = q[0]['value']
-    else:
-        text = "No Text"
-    writer.writerow([title, text])
+        break
 
 file.close()
