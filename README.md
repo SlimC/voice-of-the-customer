@@ -20,6 +20,26 @@
     npm start
     ```
 
+### High Level Flow
+
+Training 
+
+1. Train WKS Model
+2. Make training/testing sets
+3. Do entity replacement on the training/testing sets
+4. Design the NLC tree
+5. Do the hand classification on the replaced training and testing set
+6. Train the classifiers
+7. Validate then troubleshoot if necessary
+
+Processing (What the src/Processing/controller.py does)
+
+1. Take review and run it through entity extraction
+2. Run it through classifier
+3. Cluster
+4. make Final JSON actually turns this into something a front end can use
+
+
 ### Privacy Notice
 
 This node sample web application includes code to track deployments to Bluemix and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker][deploy_track_url] service on each deployment:
