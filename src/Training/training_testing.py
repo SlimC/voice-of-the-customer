@@ -9,6 +9,7 @@ The flags are:
     -e Precentage of data to split into testing
     -j Field in .json that contains the text data. Only necessary if loading
         from a .json file.
+    -m Maximum number of sentences to use total
 '''
 
 import os
@@ -20,8 +21,12 @@ import sys
 import getopt
 import nltk
 
+maximum = 300
+track = 0
+
 
 def csv_handler(file, training, testing):
+    global track
     ftest = open("testing_set.csv", "wb")
     ftrain = open("training_set.csv", "wb")
     wtest = csv.writer(ftest)
@@ -32,54 +37,66 @@ def csv_handler(file, training, testing):
     reader = csv.reader(f)
 
     for row in reader:
-        if rand() < training:
-            sentences = nltk.tokenize.sent_tokenize(row)
-            for sentence in sentences:
-                wtrain.writerow([sentence])
-        else:
-            sentences = nltk.tokenize.sent_tokenize(row)
-            for sentence in sentences:
-                wtest.writerow([sentence])
+        if track < maximum:
+            if rand() < training:
+                sentences = nltk.tokenize.sent_tokenize(row)
+                for sentence in sentences:
+                    wtrain.writerow([sentence])
+                    track += 1
+            else:
+                sentences = nltk.tokenize.sent_tokenize(row)
+                for sentence in sentences:
+                    wtest.writerow([sentence])
+                    track += 1
 
     ftest.close()
     ftrain.close()
 
 
 def txt_handler(file, writer):
-
+    global track
     text = file.read()
     sentences = nltk.tokenize.sent_tokenize(text)
-    for sentence in sentences:
-        writer.writerow([sentences])
+    if track < maximum:
+        for sentence in sentences:
+            writer.writerow([sentences])
+            track += 1
 
 
 def json_handler(file, writer, json_field):
-    raw_text = file.read()
+    global track
+    if track < maximum:
+        raw_text = file.read()
 
-    try:
-        processed_text = ast.literal_eval(raw_text)
-        text = processed_text[json_field]
-        sentences = nltk.tokenize.sent_tokenize(text)
-        for sentence in sentences:
-            writer.writerow([sentences])
-    except:
-        print "ERROR: Something wrong with .json file: " + file.name
+        try:
+            processed_text = ast.literal_eval(raw_text)
+            text = processed_text[json_field]
+            sentences = nltk.tokenize.sent_tokenize(text)
+            for sentence in sentences:
+                writer.writerow([sentences])
+                track += 1
+        except:
+            print "ERROR: Something wrong with .json file: " + file.name
 flags = {}
 
 if len(sys.argv) > 1:
     args = sys.argv[1:]
-    opts = getopt.getopt(args, 'l:e:r:j:')
+    opts = getopt.getopt(args, 'l:e:r:j:m:')
     for pair in opts:
         flags[pair[0]] = pair[1]
 
+if '-m' in flags:
+    maximum = flags['-m']
 
-if len(sys.argv) > 1:
+if len(sys.argv) <= 1:
     print "Input the full path to your data"
     print "The data can be in the format of a .csv file (with one column" + \
         " and one text per line), or a directory of .json or .txt files."
     print "NOTE: If you are using a directory, please make sure your data" + \
         "is the only thing in the directory"
     location = raw_input("Data Location: ")
+    print "Please input the maximum number of sentences to use"
+    maximum = input("Maximum Sentences: ")
 else:
     if '-l' in flags:
         location = flags['-l']
