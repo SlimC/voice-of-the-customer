@@ -8,7 +8,7 @@ The flags are:
     -r Percentage of data to split into training
     -e Precentage of data to split into testing
     -j Field in .json that contains the text data. Only necessary if loading
-        from a .json file. 
+        from a .json file.
 '''
 
 import os
@@ -18,6 +18,7 @@ import re
 import csv
 import sys
 import getopt
+import nltk
 
 
 def csv_handler(file, training, testing):
@@ -32,9 +33,13 @@ def csv_handler(file, training, testing):
 
     for row in reader:
         if rand() < training:
-            wtrain.writerow([row])
+            sentences = nltk.tokenize.sent_tokenize(row)
+            for sentence in sentences:
+                wtrain.writerow([sentence])
         else:
-            wtest.writerow([row])
+            sentences = nltk.tokenize.sent_tokenize(row)
+            for sentence in sentences:
+                wtest.writerow([sentence])
 
     ftest.close()
     ftrain.close()
@@ -43,7 +48,9 @@ def csv_handler(file, training, testing):
 def txt_handler(file, writer):
 
     text = file.read()
-    writer.writerow([text])
+    sentences = nltk.tokenize.sent_tokenize(text)
+    for sentence in sentences:
+        writer.writerow([sentences])
 
 
 def json_handler(file, writer, json_field):
@@ -52,7 +59,9 @@ def json_handler(file, writer, json_field):
     try:
         processed_text = ast.literal_eval(raw_text)
         text = processed_text[json_field]
-        writer.writerow([text])
+        sentences = nltk.tokenize.sent_tokenize(text)
+        for sentence in sentences:
+            writer.writerow([sentences])
     except:
         print "ERROR: Something wrong with .json file: " + file.name
 flags = {}
