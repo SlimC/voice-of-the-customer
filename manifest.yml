@@ -1,5 +1,5 @@
 applications:
-- name: service-demo
+- name: product-intel-demo
   command: npm start
   path: .
   memory: 512M

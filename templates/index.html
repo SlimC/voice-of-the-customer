@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>Product Intelligence</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- top level heading -->
+  <header class="_demo--heading">
+      <a class="wordmark" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/" target="_blank">
+        <span class="wordmark--left">IBM</span>
+        <span class="wordmark--right">Product Intelligence</span>
+      </a>
+      <nav class="heading-nav" role="menubar">
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/services-catalog.html" target="_blank" role="menuitem">
+                    	Services
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/" target="_blank" role="menuitem">
+						Docs
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/gallery.html" target="_blank" role="menuitem">
+						App Gallery
+					</a>
+        </li>
+        <li class="base--li heading-nav--li" role="presentation">
+          <a class="heading-nav--item" href="https://developer.ibm.com/watson/" target="_blank" role="menuitem">
+            Community
+          </a>
+        </li>
+      </nav>
+  </header>
+
+  <!-- demo body -->
+  <div class="result">
+    <div class="result--search">
+      <input type='text' autocomplete="off" class='result--search--input' id='query' placeholder='Enter a product name'></input>
+    </div>
+    <div class="result--autocomplete">
+
+    </div>
+    <div class="loader">
+      <img src="static/images/loading.gif" alt="loading animation">
+    </div>
+    <article class="_content result--article">
+      <div class="result--product">
+        <i class="icon-no icon result--product--x" onclick="clickX(event)"></i>
+        <div class="result--placeholder">Search something to see results</div>
+          <div class="result--product-details">
+            <div class="result--h2 result--header"></div>
+            <br>
+            <hr class="page-splitter">
+            <div class="result--h3">Features</div>
+            <div class="result--features">
+
+            </div>
+            <hr class="page-splitter">
+            <div class="result--h3">Issues</div>
+            <div class="result--issues">
+
+            </div>
+            <hr class="page-splitter">
+            <div class="result--h3">Customer Service</div>
+            <div class="result--customer-service">
+          </div>
+        </div><br><br><br><br>
+      </div>
+    </article>
+  </div>
+
+  <script type="text/html" id="headerTemplate">
+      <div class="result--h2">
+          <%= item.product_name %>
+          <button class="base--button result--compare-results" onclick="clickCompare()">Compare Product</button>
+      </div>
+      <div class="result--p result--subheader">
+          <%= item.description %>
+      </div>
+  </script>
+
+  <script type="text/html" id="autocompleteTemplate">
+      <ul class="result--autocomplete--items">
+          <% _.each(items, function(item, key, list) { %>
+              <li class="result--autocomplete--item result--h3" onclick="clickProduct(event)">
+                  <div class="result--autocomplete--item--name"><%= item.name %></div>
+                  <div class="result--autocomplete--item--id"><%= item.id %></div>
+              </li>
+          <% }); %>
+      </ul>
+  </script>
+
+  <script type="text/html" id="featureTemplate">
+      <ul class="result--graph">
+          <ul class="result--key">
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #00b4a0">&nbsp</div>
+                  <div class="result--key--name">Positive</div>
+              </li>
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #734098">&nbsp</div>
+                  <div class="result--key--name">Neutral</div>
+              </li>
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #ba8ff7">&nbsp</div>
+                  <div class="result--key--name">Negative</div>
+              </li>
+          </ul><br>
+          <% _.each(items, function(item, key, list) { %>
+              <li class="result--graph--feature">
+                  <div class="result--graph--name"><%= item.group_name %></div>
+                  <div class="result--graph--bar">
+                      <div class="result--graph--percent" style="width:<%= item.showPercentage %>%">
+                          <div class="result--graph--pos" style="width:<%= item.sentiments.positive %>%">&nbsp</div>
+                          <div class="result--graph--neutral" style="width:<%= item.sentiments.positive + item.sentiments.neutral %>%">&nbsp</div>
+                          <div class="result--graph--neg" style="width:<%= item.sentiments.positive + item.sentiments.neutral + item.sentiments.negative %>%">&nbsp</div>
+                      </div>
+                  </div>
+              </li><br><hr style="visibility: hidden">
+          <% }); %>
+      </ul>
+
+      <ul class="result--keywords">
+          <div class="result--keywords--header">
+              Keywords
+          </div><br>
+          <% _.each(items, function(item, key, list) { %>
+              <li class="result--keywords--feature">
+                  <% _.each(item.keywords, function(keyword, key, list) { %>
+                      <div class="result--keyword">
+                          <div class="result--keyword--name"><%= keyword.name %></div>
+                      </div>
+                  <% }); %>
+              </li><br><hr class="result--keyword--splitter">
+          <% }); %>
+      </ul>
+  </script>
+
+  <script type="text/html" id="issueTemplate">
+      <div class="result--p">
+          Issues/Defects were seen by <strong><%= item.percentage %>% of your consumers.</strong>
+      </div>
+  </script>
+
+  <script type="text/html" id="customerServiceTemplate">
+      <ul class="result--graph">
+          <ul class="result--key">
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #00b4a0">&nbsp</div>
+                  <div class="result--key--name">Positive</div>
+              </li>
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #734098">&nbsp</div>
+                  <div class="result--key--name">Neutral</div>
+              </li>
+              <li class="result--key--item">
+                  <div class="result--key--color" style="background-color: #ba8ff7">&nbsp</div>
+                  <div class="result--key--name">Negative</div>
+              </li>
+          </ul><br>
+          <li class="result--graph--feature">
+              <div class="result--graph--name">Sentiment</div>
+              <div class="result--graph--bar">
+                  <div class="result--graph--percent" style="width:100%">
+                      <div class="result--graph--pos" style="width:<%= item.sentiment.positive %>%">&nbsp</div>
+                      <div class="result--graph--neutral" style="width:<%= item.sentiment.positive + item.sentiment.neutral %>%">&nbsp</div>
+                      <div class="result--graph--neg" style="width:<%= item.sentiment.positive + item.sentiment.neutral + item.sentiment.negative %>%">&nbsp</div>
+                  </div>
+              </div>
+          </li><br>
+      </ul>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src=""></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+  <script type="text/javascript" src="static/js/demo.js"></script>
+</body>
+
+</html>
