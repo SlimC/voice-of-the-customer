@@ -7,13 +7,11 @@ This is an Starter Kit (SK), which is designed to get you up and running quickly
 Demo: https://product-intel-demo.mybluemix.net/
 
 **IMPORTANT:**
-1. The Weather API requires an API key with high tranasctions limits. You need to upgrade to the Standard or Premimum plan. The pricing model is based on the number of calls per minute to the REST APIs. The Free and Base plans allow you to make a maximum of 10 API calls per minute. The Standard and Premimum plans allow you to make 150 and 375 API calls per minute respectively. Each plan has a maximum number of API calls allowed.  The Premimum plan is ideal. 
+1. Using the Watson Knowledge Studio tool requires signing up it. A 30-day free trial is also available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
 
 2. This application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports > 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
-3. Running the application using the Facebook and Twilio bots will require credentials to access their services. Go to "Installing the bots" section.
-
-4. The Conversation service requires training prior to running the application. Refer to Step 13 below.
+3. The Natural Language Classifier service requires training prior to running the application. Refer to Step 11 below.
 
 ## Table of Contents
  - [Getting Started](#getting-started)
@@ -23,7 +21,7 @@ Demo: https://product-intel-demo.mybluemix.net/
  - [Adapting/Extending the Starter Kit](#adaptingextending-the-starter-kit)
  - [Best Practices](#best-practices)
  - [Troubleshooting](#troubleshooting)
- 
+
 ## Getting Started
 
 The application is written in [Python](https://www.python.org/doc/). Instructions for downloading and installing it are included in the documentation.
@@ -35,9 +33,9 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 
       ```yaml
       declared-services:
-  		natural-language-classifier-service:
-    	  label: natural_language_classifier
-    	  plan: standard
+        natural-language-classifier-service:
+          label: natural_language_classifier
+          plan: standard
         cloudantNoSQLDB-service:
           label: cloudantNoSQLDB
           plan: Shared
@@ -63,7 +61,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
     cf api https://api.ng.bluemix.net
     cf login -u <your-Bluemix-ID> -p <your-Bluemix-password>
     ```
-    
+
 7. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```
   cf create-service natural_language_classifier standard natural-language-classifier-service
@@ -90,10 +88,10 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 
     ```none
     source venv/bin/activate
-    
+
     ALCHEMY_API_KEY=
-	VARIABLE_NAME=
-	
+	  VARIABLE_NAME=
+
     #NLC
     NLC_URL=https://gateway.watsonplatform.net/conversation/api
     NLC_USERNAME=
@@ -120,7 +118,7 @@ curl -u "{username}":"{password}" -F training_data=@resources/classifier-trainin
 
     [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
 
-## Training an entity detection model 
+## Training an entity detection model
 
 The Training phase is responsible for creating a customized model which detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
@@ -164,7 +162,7 @@ The following links provide more information about the Natural Language Classifi
 ### Cloudant service
   * [API documentation](https://console.ng.bluemix.net/docs/services/Cloudant/index.html#Cloudant): Get an in-depth understanding of the Cloudant services
   * [API reference](https://docs.cloudant.com/api.html#-api-reference): Code examples and reference
-  
+
 ### AlchemyAPI
   * [API documentation](http://www.alchemyapi.com/api): Get an in-depth understanding of the AlchemyAPI services
   * [AlchemyData News reference](http://docs.alchemyapi.com/): API and query gallery
