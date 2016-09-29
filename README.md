@@ -2,10 +2,9 @@
 
 ## Installation
 
-This is an Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews from Amazon around products from the Electronics section. This starter kit uses Watson Knowledge Studio, the AlchemyLanguage and Natural Language Classifier 
-(NLC) APIs along with Cloudant on BlueMix. 
+This is an Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews from Amazon around products from the Electronics section.
 
-Demo: https://product-intel-demo.mybluemix.net/ 
+Demo: https://product-intel-demo.mybluemix.net/
 
 **IMPORTANT:**
 1. Using the Watson Knowledge Studio tool requires signing up it. A 30-day free trial is also available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
@@ -25,15 +24,12 @@ Demo: https://product-intel-demo.mybluemix.net/
 
 ## Getting Started
 
-The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing and configuring the dependencies needed for the application.
+The application is written in [Python](https://www.python.org/doc/). Instructions for downloading and installing it are included in the documentation.
 
-1. Log into GitHub and clone  the repository for this application. Change to the folder that contains your clone of this repository.
-
+1. Log into GitHub and fork the project repository. Clone your fork to a folder on your local system and change to that folder.
 2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
-
 3. If it is not already installed on your system, download and install the [Cloud-foundry CLI][cloud_foundry] tool.
-
-4. Edit the `manifest.yml` file in the folder that contains your clone of the repository and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
+4. Edit the `manifest.yml` file in the folder that contains your fork and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
       ```yaml
       declared-services:
@@ -66,7 +62,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     cf login -u <your-Bluemix-ID> -p <your-Bluemix-password>
     ```
 
-7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
+7. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```
   cf create-service natural_language_classifier standard natural-language-classifier-service
   cf service-key natural-language-classifier-service myKey
@@ -74,22 +70,21 @@ The application is written in [Python](https://www.python.org/doc/). The followi
   **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there will be no change if you only create a single classifier instance for use by this application.
 
 
-8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API Key.
+8. Create and retrieve service keys for the Alchemy Language service. If you are using an existing alchemy service, use those credentials instead.
 
     ```bash
     cf create-service-key alchemy-language-service myKey
     cf service-key alchemy-language-service myKey
     ```
 
-9. Create and retrieve service keys for the Cloudant NoSQL database service by running the following command:
+9. Create and retrieve service keys for the Cloudant service. If you are using an existing alchemy service, use those credentials instead.
 
     ```bash
-    cf create-service cloudantNoSQLDB Shared cloudantNoDQLDB-service
+    cf create-service-key cloudantNoSQLDB-service myKey
     cf service-key cloudantNoSQLDB-service myKey
     ```
-**Note:** You will see a message which warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
-10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command.
+10. Provide the credentials to the application by creating a `.env` file using this format: (**Note**: there is an example .env.example file in the root directory of your forked code instance)
 
     ```none
     source venv/bin/activate
@@ -109,7 +104,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     CLOUDANT_DB=
     ```
 
-11. The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in step 7:
+11. The Natural Language Classifier requires training prior to using the application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in the last step):
 ```
 curl -u "{username}":"{password}" -F training_data=@resources/classifier-training-data.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
 ```
@@ -127,7 +122,7 @@ curl -u "{username}":"{password}" -F training_data=@resources/classifier-trainin
 
 The Training phase is responsible for creating a customized model which detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
-The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks entitled `Training.ipynb`under the `notebooks` folder of this repo.
+The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks under the `notebooks` folder of this repo.
 
 1. Getting the data
 2. Training the WKS Model
@@ -137,11 +132,11 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 6. Doing the hand classification on the replaced training and testing set
 7. Training the classifiers
 
-## Processing the data (What the `src/Processing/controller.py` does)
+## Processing the data (What the src/Processing/controller.py does)
 
-1. Take review and run data through entity extraction
-2. Classify the data
-3. Cluster the data
+1. Take review and run it through entity extraction
+2. Run it through classifier
+3. Cluster
 4. make Final JSON actually turns this into something a front end can use
 
 ## Adapting/Extending the Starter Kit
