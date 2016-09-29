@@ -5,5 +5,3 @@ python-dotenv
 cf-deployment-tracker
 cloudant
 couchdbkit
-gensim
-couchdb

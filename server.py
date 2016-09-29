@@ -21,33 +21,25 @@
     description: Run the Flask web server
 """
 import os
-import configparser
 import cf_deployment_tracker
-import cloudant
+from cloudant.client import Cloudant
 from requests.exceptions import HTTPError
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
-#getting current directory
-curdir = os.getcwd()
 
 try:
-    #loading credentials from .env file
-    credFilePath = os.path.join(curdir,'.env')
-    config = configparser.ConfigParser()
-    config.read(credFilePath)
+    load_dotenv(find_dotenv())
 except Exception:
     print 'warning: no .env file loaded'
 
-client = cloudant.client.Cloudant(config['CLOUDANT']['CLOUDANT_USERNAME'],
-                                  config['CLOUDANT']['CLOUDANT_PASSWORD'],
-                                  account=config['CLOUDANT']['CLOUDANT_USERNAME'])
-client.connect()
-products_db = client['products']
-reviews_db = client[config['CLOUDANT']['CLOUDANT_DB']]
-
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
+
+#Connect to cloudant db
+dbClient = Cloudant(os.environ['CLOUDANT_USER'], os.environ['CLOUDANT_PW'], url=os.environ['CLOUDANT_URL'])
+dbClient.connect()
+cloundantDB = dbClient[os.environ['CLOUDANT_DB']]
 
 # Application routes
 
@@ -56,30 +48,11 @@ def index():
     """returns the html to the client"""
     return render_template('index.html')
 
-"""
-def get_product_list():
-    #returns the list of products to the client for type ahead
-    products = []
-    for doc in products_db:
-        doc_entry = {}
-        try:
-            doc_entry['id'] = doc['_id']
-            doc_entry['name'] = doc['product_name']
-            products.append(doc_entry)
-        except:
-            logger.error('Error creating list of products.')
-    json_products = {"products":products}
-    print json_products
-    return jsonify(json_products)
-"""
-
 #Temporary for until I change this to load from cloudant, a file, or something less ugly
 @app.route('/api/product-list', methods=['GET'])
 def get_product_list():
-    #returns a list of known products to the client for type ahead
-    #test = {"id":"test_id", "name":"test_name"}
-    #return jsonify(test)
-    return jsonify({"products":[{"id":"22e6343bf6748a6c408fac1e0c69f3c3", "name":"Microsoft Comfort Mouse 4500 - Poppy Red"},
+    """returns a list of known products to the client for type ahead"""
+    return jsonify([{"id":"22e6343bf6748a6c408fac1e0c69f3c3", "name":"Microsoft Comfort Mouse 4500 - Poppy Red"},
                     {"id":"56644a772c2ec9e89f6ce785b1c1528e", "name": "Microsoft Comfort Mouse 4500"},
                     {"id":"6666526730953249e153fb108eee5fa1", "name" : "Garmin n&uuml;vi 65LM GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"},
                     {"id":"9dcef3aea4f4827c8d26dd834387f73a", "name":"Bose QuietComfort 15 Acoustic Noise Cancelling Headphones"},
@@ -89,15 +62,13 @@ def get_product_list():
                     {"id":"c8b860c1d45364dde8e127959a9ec566", "name":"Garmin n&uuml;vi 55LMT GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"},
                     {"id":"d045f1b39d53302d09ed5a5e4d82c5a0", "name":"VIZIO M651d-A2R 65-Inch 1080p 240Hz 3D Smart LED HDTV (2013 Model)"},
                     {"id":"100", "name" : "Samsung Galaxy S7"},
-                    {"id":"101", "name" : "iPhone 6s"}]})
-
+                    {"id":"101", "name" : "iPhone 6s"}])
 
 @app.route('/api/product', methods=['GET'])
 def get_product():
     """retrieves data on a product from the cloudant db and sends to client"""
-    print request.args.get('product_id')
-    print products_db[request.args.get('product_id')]
-    return jsonify(products_db[request.args.get('product_id')])
+    print request.args.get('productId')
+    return jsonify(cloundantDB[request.args.get('productId')])
 
 @app.errorhandler(Exception)
 def handle_error(err):
