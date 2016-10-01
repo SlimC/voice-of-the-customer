@@ -133,24 +133,24 @@ function updateProduct(prodId) {
 
 function doAutocomplete() {
 
-    return "Samsung UN19F4000 19-Inch 720p 60Hz Slim LED HDTV";
-    //var maxLen = 3;
-    //var len = 0;
-    //var query = $("#query").val();
-    //var filteredProdList = [];
-    //if(query != "") {
-    //  //filteredProdList = prodList.filter(function(val) {
-    //  filteredProdList = prodList.filter(function(val) {
-    //    if(len < maxLen && val.name.toUpperCase().indexOf(query.toUpperCase()) > -1) {
-    //      len += 1;
-    //      return val;
-    //    }
-    //  });
-    //}
-    //var autocompleteTemp = autocompleteTemplate.innerHTML;
-    //$('.result--autocomplete').html(_.template(autocompleteTemp, {
-    //  items: filteredProdList
-    //}));
+    //return "Samsung UN19F4000 19-Inch 720p 60Hz Slim LED HDTV";
+    var maxLen = 3;
+    var len = 0;
+    var query = $("#query").val();
+    var filteredProdList = [];
+    if(query != "") {
+      //filteredProdList = prodList.filter(function(val) {
+      filteredProdList = prodList.products.filter(function(val) {
+        if(len < maxLen && val.name.toUpperCase().indexOf(query.toUpperCase()) > -1) {
+          len += 1;
+          return val;
+        }
+      });
+    }
+    var autocompleteTemp = autocompleteTemplate.innerHTML;
+    $('.result--autocomplete').html(_.template(autocompleteTemp, {
+      items: filteredProdList
+    }));
 
 }
 
