@@ -21,16 +21,16 @@
     description: Run the Flask web server
 """
 import os
-import configparser
 import cf_deployment_tracker
 import cloudant
 import json
-from cloudant.query import Query
+import configparser
 from requests.exceptions import HTTPError
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
+
 #getting current directory
 curdir = os.getcwd()
 
@@ -42,6 +42,7 @@ try:
 except Exception:
     print 'warning: no .env file loaded'
 
+#Connect to cloudant db
 client = cloudant.client.Cloudant(config['CLOUDANT']['CLOUDANT_USERNAME'],
                                   config['CLOUDANT']['CLOUDANT_PASSWORD'],
                                   account=config['CLOUDANT']['CLOUDANT_USERNAME'])
@@ -57,7 +58,6 @@ cf_deployment_tracker.track()
 def index():
     """returns the html to the client"""
     return render_template('index.html')
-
 
 @app.route('/api/product-list', methods=['GET'])
 def get_product_list():
