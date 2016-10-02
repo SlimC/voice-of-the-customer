@@ -4,9 +4,6 @@ python-dotenv
 cf-deployment-tracker
 cloudant
 couchdbkit
-<<<<<<< HEAD
 gensim
 couchdb
 nltk
-=======
->>>>>>> 8a926bf3cf87fb485ddecb826fad4ac1cbd477a4
