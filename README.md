@@ -68,8 +68,10 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 7. <a name="step7"></a>Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```
   cf create-service natural_language_classifier standard natural-language-classifier-service
-  cf service-key natural-language-classifier-service myKey
+  cf service-key natural-language-classifier-service &lt;myKey&gt;
   ```
+  In this command, `&lt;myKey&gt;` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for &lt;MyKey&gt; is `Credentials-1`.
+  
   **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there is no change if you create only a single classifier instance for use by this application.
 
 
