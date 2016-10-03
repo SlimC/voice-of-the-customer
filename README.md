@@ -131,6 +131,17 @@ This step uses the models  trained on the previous step. Follow the instructions
 
 This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than Electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can also create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
 
+## Deploying it to Bluemix
+
+Push the updated application live by running the following command:
+
+    ```bash
+    cf push
+    ```
+    or by pressing the "Deploy to Bluemix" button below.
+
+    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+
 ## Reference information
 
 The following links provide more information about the Natural Language Classifier, Cloudant, and Alchemy Language services.
