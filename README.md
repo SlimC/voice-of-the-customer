@@ -69,27 +69,27 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```bash
   cf create-service natural_language_classifier standard natural-language-classifier-service
-  cf service-key natural-language-classifier-service <your-key>
+  cf service-key natural-language-classifier-service <your-NLC-key>
   ```
-  In this command, `<your-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-key>` is `Credentials-1`.
+  In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-key>` is `Credentials-1`.
   
-  **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there is no change if you create only a single classifier instance for use by this application.
+  **Note:** The commands return a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error." The first Natural Language Classifier instance that you create is free under the standard plan, so there is no change if you create only a single classifier instance for use by this application.
 
 
-8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API Key.
+8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API key.
 
     ```bash
-    cf create-service-key alchemy-language-service <your-key>
-    cf service-key alchemy-language-service <your-key>
+    cf create-service-key alchemy-language-service <your-AlchemyAPI-key>
+    cf service-key alchemy-language-service <your-AlchemyAPI-key>
     ```
 
 9. Create and retrieve service keys for the Cloudant NoSQL database service by running the following command:
 
     ```bash
     cf create-service cloudantNoSQLDB Shared cloudantNoSQLDB-service
-    cf service-key cloudantNoSQLDB-service <your-key>
+    cf service-key cloudantNoSQLDB-service <your-Cloudant-key>
     ```
-**Note:** You will see a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
+**Note:** The commands return a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
 10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file by using the following command:
 
@@ -129,14 +129,14 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 
 ## Training an entity detection model
 
-The Training phase is responsible for creating a customized model which detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
+The Training phase is responsible for creating a customized model that detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
-The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks entitled `Training.ipynb`under the `notebooks` folder of this repo.
+The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks entitled `Training.ipynb`under the `notebooks` directory of this repo.
 
 1. Getting the data
 2. Training the WKS Model
-3. Making training/testing sets
-4. Doing entity replacement on the training/testing sets
+3. Making training and testing sets
+4. Doing entity replacement on the training and testing sets
 5. Designing the NLC tree
 6. Doing the hand classification on the replaced training and testing set
 7. Training the classifiers
@@ -146,7 +146,7 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 1. Take a review or reviews and run the data through entity extraction.
 2. Classify the data.
 3. Cluster the data.
-4. General final JSON that a front end can use.
+4. Generate final JSON that a front end can use.
 
 ## Adapting/Extending the Starter Kit
 
@@ -156,7 +156,7 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 
 ![](readme_images/VoC-ArchitectureFlow.jpg)
 
-This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than Electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
+This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
 
 ## Reference information
 
