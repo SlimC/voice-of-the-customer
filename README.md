@@ -104,7 +104,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 	  VARIABLE_NAME=
 
     #NLC
-    NLC_URL=https://gateway.watsonplatform.net/conversation/api
+    NLC_URL=https://gateway.watsonplatform.net/natural-language-classifier/api
     NLC_USERNAME=
     NLC_PASSWORD=
 
