@@ -11,8 +11,6 @@ Demo: https://product-intel-demo.mybluemix.net/
 
 2. The application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports more than 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
-3. The Natural Language Classifier service requires training prior to running the application. Refer to [step 11](#step11)</a> below.
-
 ## Table of Contents
  - [Getting Started](#getting-started)
  - [Training an entity detection model](#training)
@@ -68,7 +66,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     cf login -u <your-Bluemix-ID> -p <your-Bluemix-password>
     ```
 
-7. <a name="step7"></a>Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
+7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```bash
   cf create-service natural_language_classifier standard natural-language-classifier-service
   cf service-key natural-language-classifier-service <your-key>
@@ -120,12 +118,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 	WKS_MODEL_ID=    
 	```
 
-11. <a name="step11"></a>The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `Data/ground_truth.csv`. Adapt the following curl command to train your classifier by replacing {username} and {password} with your service credentials for the Natural Language Classifier you created in [step 7](#step7):
-```bash
-curl -u "{username}":"{password}" -F training_data=@Data/ground_truth.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
-```
-
-12. Push the updated application live by running the following command:
+11. Push the updated application live by running the following command:
 
     ```bash
     cf push
