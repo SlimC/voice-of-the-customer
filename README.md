@@ -7,7 +7,7 @@ This is a Starter Kit (SK), which is designed to get you up and running quickly 
 Demo: https://product-intel-demo.mybluemix.net/ 
 
 **IMPORTANT:**
-1. Using the Watson Knowledge Studio tool requires signing up for it. A 30-day free trial is available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
+1. You must sign up to use the Watson Knowledge Studio tool. A 30-day free trial is available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
 
 2. The application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports more than 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
@@ -26,9 +26,9 @@ Demo: https://product-intel-demo.mybluemix.net/
 
 The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing and configuring the dependencies needed for the application.
 
-1. Log into GitHub and clone the repository for the application. Change to the folder that contains your clone of the repository.
+1. Log into GitHub and clone the repository for the application. Change to the directory that contains your clone of the repository.
 
-2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
+2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta and Experimental Services are free to use.
 
 3. If it is not already installed on your system, download and install the [Cloud Foundry CLI][cloud_foundry] tool.
 
@@ -36,6 +36,9 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 
       ```yaml
       declared-services:
+  		alchemy-language-service:
+    	  label: alchemy
+    	  plan: standard
         natural-language-classifier-service:
           label: natural_language_classifier
           plan: standard
@@ -78,17 +81,17 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API Key.
 
     ```bash
-    cf create-service-key alchemy-language-service myKey
-    cf service-key alchemy-language-service myKey
+    cf create-service-key alchemy-language-service &lt;myKey&gt;
+    cf service-key alchemy-language-service &lt;myKey&gt;
     ```
 
 9. Create and retrieve service keys for the Cloudant NoSQL database service by running the following command:
 
     ```bash
-    cf create-service cloudantNoSQLDB Shared cloudantNoDQLDB-service
+    cf create-service cloudantNoSQLDB Shared cloudantNoSQLDB-service
     cf service-key cloudantNoSQLDB-service myKey
     ```
-**Note:** You will see a message which warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
+**Note:** You will see a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
 10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file by using the following command:
 
@@ -98,22 +101,24 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 	Edit the `.env.` file to add values for the listed environment variables:
 
     ```none
-    source venv/bin/activate
+	[CLOUDANT]
+	CLOUDANT_USERNAME=
+	CLOUDANT_PASSWORD=
+	CLOUDANT_URL=
+	CLOUDANT_DB=voc_ask_db
 
-    ALCHEMY_API_KEY=
-	  VARIABLE_NAME=
+	[NLC]
+	NLC_URL=https://gateway.watsonplatform.net/natural-language-classifier/api
+	NLC_USERNAME=
+	NLC_PASSWORD=
+	NLC_CLASSIFIER=
 
-    #NLC
-    NLC_URL=https://gateway.watsonplatform.net/natural-language-classifier/api
-    NLC_USERNAME=
-    NLC_PASSWORD=
+	[ALCHEMY]
+	ALCHEMY_API_KEY=
 
-    #CLOUDANT
-    CLOUDANT_URL=
-    CLOUDANT_USERNAME=
-    CLOUDANT_PASSWORD=
-    CLOUDANT_DB=voc_ask_db
-    ```
+	[WKS]
+	WKS_MODEL_ID=    
+	```
 
 11. <a name="step11"></a>The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in [step 7](#step7):
 ```
