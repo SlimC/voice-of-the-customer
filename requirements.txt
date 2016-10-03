@@ -1,7 +1,6 @@
 # web app
 flask==0.11.1
 numpy==1.11.1
-scipy
 python-dotenv
 cf-deployment-tracker
 cloudant
