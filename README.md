@@ -120,9 +120,9 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 	WKS_MODEL_ID=    
 	```
 
-11. <a name="step11"></a>The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in [step 7](#step7):
-```
-curl -u "{username}":"{password}" -F training_data=@resources/classifier-training-data.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
+11. <a name="step11"></a>The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `Data/ground_truth.csv`. Adapt the following curl command to train your classifier by replacing {username} and {password} with your service credentials for the Natural Language Classifier you created in [step 7](#step7):
+```bash
+curl -u "{username}":"{password}" -F training_data=@Data/ground_truth.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
 ```
 
 12. Push the updated application live by running the following command:
