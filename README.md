@@ -11,11 +11,11 @@ Demo: https://product-intel-demo.mybluemix.net/
 
 2. This application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports > 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
-3. The Natural Language Classifier service requires training prior to running the application. Refer to Step 11 below.
+3. The Natural Language Classifier service requires training prior to running the application. Refer to the Training notebook in /notebooks.
 
 ## Table of Contents
  - [Getting Started](#getting-started)
- - [Training an entity detection model](#training)
+ - [Training an entity detection model and a classifier](#training)
  - [Processing the data](#processing)
  - [Running the application locally](#running-locally)
  - [Adapting/Extending the Starter Kit](#adaptingextending-the-starter-kit)
@@ -87,36 +87,24 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 10. Provide the credentials to the application by creating a `.env` file using this format: (**Note**: there is an example .env.example file in the root directory of your forked code instance)
 
     ```none
-    source venv/bin/activate
-
-    ALCHEMY_API_KEY=
-	  VARIABLE_NAME=
-
-    #NLC
-    NLC_URL=https://gateway.watsonplatform.net/conversation/api
-    NLC_USERNAME=
-    NLC_PASSWORD=
-
-    #CLOUDANT
-    CLOUDANT_URL=
+    [CLOUDANT]
     CLOUDANT_USERNAME=
     CLOUDANT_PASSWORD=
-    CLOUDANT_DB=
+    CLOUDANT_URL=
+    CLOUDANT_DB=voc_ask_db
+
+    [NLC]
+    NLC_URL=https://gateway.watsonplatform.net/natural-language-classifier/api
+    NLC_USERNAME=
+    NLC_PASSWORD=
+    NLC_CLASSIFIER=
+
+    [ALCHEMY]
+    ALCHEMY_API_KEY=
+
+    [WKS]
+    WKS_MODEL_ID=
     ```
-
-11. The Natural Language Classifier requires training prior to using the application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in the last step):
-```
-curl -u "{username}":"{password}" -F training_data=@resources/classifier-training-data.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
-```
-
-12. Push the updated application live by running the following command:
-
-    ```bash
-    cf push
-    ```
-    or by pressing the "Deploy to Bluemix" button below.
-
-    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
 
 ## Training an entity detection model
 
@@ -124,20 +112,14 @@ The Training phase is responsible for creating a customized model which detects 
 
 The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks under the `notebooks` folder of this repo.
 
-1. Getting the data
-2. Training the WKS Model
-3. Making training/testing sets
-4. Doing entity replacement on the training/testing sets
-5. Designing the NLC tree
-6. Doing the hand classification on the replaced training and testing set
-7. Training the classifiers
+To create your WKS model and export it to your Alchemy API key, follow the instructions on the `WKS` notebook.
 
-## Processing the data (What the src/Processing/controller.py does)
+After you have created your customized model, follow the instructions to train your classifier in the `Training` notebook.
 
-1. Take review and run it through entity extraction
-2. Run it through classifier
-3. Cluster
-4. make Final JSON actually turns this into something a front end can use
+
+## Processing the data
+
+This step uses the models  trained on the previous step. Follow the instructions on the `Processing` notebook to allow the data to be in a format that can be consumed by the UI.
 
 ## Adapting/Extending the Starter Kit
 
@@ -172,7 +154,7 @@ The following links provide more information about the Natural Language Classifi
 ### Intents for the NLC service instance
   * When defining intents, follow naming conventions to create consistent intents.
   * Use "-" to separate multiple levels (Example : location-weather-forecast)
-  * Use "_" to separate multiple word intents (Example : business_center)
+  * Use "\_" to separate multiple word intents (Example : business_center)
   * Provide more variations of input via examples for each intent. The more variations the better.
   * Avoid overlapping intents across examples. (Example : benefits_eligibility and benefits_elgibility_employee). To avoid this, group examples into a single intent and use entities to deal with subtle variations.
   * Examples for intents should be representative of end user input
