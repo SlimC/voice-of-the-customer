@@ -2,17 +2,16 @@
 
 ## Installation
 
-This is an Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews from Amazon around products from the Electronics section. This starter kit uses Watson Knowledge Studio, the AlchemyLanguage and Natural Language Classifier 
-(NLC) APIs along with Cloudant on BlueMix. 
+This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer satisfaction based on different product reviews. The demo for this SK uses reviews of electronics products on Amazon. This starter kit uses Watson Knowledge Studio, the AlchemyLanguage and Natural Language Classifier (NLC) APIs, and Cloudant on BlueMix.
 
 Demo: https://product-intel-demo.mybluemix.net/ 
 
 **IMPORTANT:**
-1. Using the Watson Knowledge Studio tool requires signing up it. A 30-day free trial is also available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
+1. Using the Watson Knowledge Studio tool requires signing up for it. A 30-day free trial is available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
 
-2. This application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports > 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
+2. The application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports more than 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
-3. The Natural Language Classifier service requires training prior to running the application. Refer to Step 11 below.
+3. The Natural Language Classifier service requires training prior to running the application. Refer to [step 11](#step11)</a> below.
 
 ## Table of Contents
  - [Getting Started](#getting-started)
@@ -27,11 +26,11 @@ Demo: https://product-intel-demo.mybluemix.net/
 
 The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing and configuring the dependencies needed for the application.
 
-1. Log into GitHub and clone  the repository for this application. Change to the folder that contains your clone of this repository.
+1. Log into GitHub and clone the repository for the application. Change to the folder that contains your clone of the repository.
 
 2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
 
-3. If it is not already installed on your system, download and install the [Cloud-foundry CLI][cloud_foundry] tool.
+3. If it is not already installed on your system, download and install the [Cloud Foundry CLI][cloud_foundry] tool.
 
 4. Edit the `manifest.yml` file in the folder that contains your clone of the repository and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
@@ -66,12 +65,12 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     cf login -u <your-Bluemix-ID> -p <your-Bluemix-password>
     ```
 
-7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
+7. <a name="step7"></a>Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```
   cf create-service natural_language_classifier standard natural-language-classifier-service
   cf service-key natural-language-classifier-service myKey
   ```
-  **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there will be no change if you only create a single classifier instance for use by this application.
+  **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there is no change if you create only a single classifier instance for use by this application.
 
 
 8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API Key.
@@ -89,7 +88,12 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     ```
 **Note:** You will see a message which warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
-10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command.
+10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file by using the following command:
+
+	```bash
+	cp .env.example .env
+	```
+	Edit the `.env.` file to add values for the listed environment variables:
 
     ```none
     source venv/bin/activate
@@ -106,10 +110,10 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     CLOUDANT_URL=
     CLOUDANT_USERNAME=
     CLOUDANT_PASSWORD=
-    CLOUDANT_DB=
+    CLOUDANT_DB=voc_ask_db
     ```
 
-11. The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in step 7:
+11. <a name="step11"></a>The Natural Language Classifier service must be trained before you can successfully use this application. The training data is provided in `resources/classifier-training-data.csv`. Adapt the following curl command to train your classifier (replace the username and password with the service credentials of the Natural Language Classifier created in [step 7](#step7):
 ```
 curl -u "{username}":"{password}" -F training_data=@resources/classifier-training-data.csv -F training_metadata="{\"language\":\"en\",\"name\":\"My Classifier\"}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
 ```
@@ -137,12 +141,12 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 6. Doing the hand classification on the replaced training and testing set
 7. Training the classifiers
 
-## Processing the data (What the `src/Processing/controller.py` does)
+## Processing the data (What the `src/Processing/controller.py` script does)
 
-1. Take review and run data through entity extraction
-2. Classify the data
-3. Cluster the data
-4. make Final JSON actually turns this into something a front end can use
+1. Take a review or reviews and run the data through entity extraction.
+2. Classify the data.
+3. Cluster the data.
+4. General final JSON that a front end can use.
 
 ## Adapting/Extending the Starter Kit
 
@@ -152,7 +156,7 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 
 ![](readme_images/VoC-ArchitectureFlow.jpg)
 
-This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than Electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can also create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
+This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than Electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
 
 ## Reference information
 

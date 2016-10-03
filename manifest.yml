@@ -1,5 +1,5 @@
 applications:
-- name: product-intel-demo
+- name: tayloras-product-intel-demo
   command: npm start
   path: .
   memory: 512M
