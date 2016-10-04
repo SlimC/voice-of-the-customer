@@ -37,7 +37,7 @@ try:
     CREDFILEPATH = os.path.join(CURDIR, '.env')
     CONFIG = configparser.ConfigParser()
     CONFIG.read(CREDFILEPATH)
-except Exception:
+except:
     print 'warning: no .env file loaded'
 
 #Connect to cloudant db
@@ -61,7 +61,8 @@ def index():
 def get_product_list():
     """returns the list of products to the client for type ahead"""
     products = []
-    designdocument = cloudant.design_document.DesignDocument(REVIEWS_DB, document_id="_design/names")
+    designdocument = cloudant.design_document.DesignDocument\
+    (REVIEWS_DB, document_id="_design/names")
     docs = cloudant.view.View(designdocument, "final")
     for result in docs.result:
         try:
@@ -70,7 +71,7 @@ def get_product_list():
             doc_entry['id'] = doc['_id']
             doc_entry['name'] = doc['product_name']
             products.append(doc_entry)
-        except Exception:
+        except:
             print 'Error when creating list of products.'
     json_products = {"products":products}
     return jsonify(json_products)
