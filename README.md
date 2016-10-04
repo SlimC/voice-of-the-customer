@@ -1,35 +1,56 @@
 # Voice of the Customer [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/product-intelligence.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/product-intelligence)
 
-## Installation
+This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews of electronics products on Amazon.
 
-This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer satisfaction based on different product reviews. The demo for this SK uses reviews of electronics products on Amazon. This starter kit uses Watson Knowledge Studio, the AlchemyLanguage and Natural Language Classifier (NLC) APIs, and Cloudant on BlueMix.
+Demo: https://product-intel-demo.mybluemix.net/
 
-Demo: https://product-intel-demo.mybluemix.net/ 
-
-**IMPORTANT:**
+**IMPORTANT NOTES:**
 1. You must sign up to use the Watson Knowledge Studio tool. A 30-day free trial is available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
 
 2. The application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports more than 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
+3. The Natural Language Classifier service requires training prior to running the application. Refer to the `Training` notebook in `/notebooks`.
+
 ## Table of Contents
+ - [How this app works](#how-this-app-works)
  - [Getting Started](#getting-started)
+ - [Installation](#installation)
+ - [Running locally](#running-locally)
+ - [Running the notebooks](#running-notebooks)
  - [Training an entity detection model](#training)
  - [Processing the data](#processing)
  - [Adapting/Extending the Starter Kit](#adaptingextending-the-starter-kit)
+ - [Deploying the application to Bluemix](#deploying)
+ - [Reference information](#ref)
  - [Best Practices](#best-practices)
  - [Troubleshooting](#troubleshooting)
 
+## <a name="how-this-app-works"></a>How this app works
+This starter kit uses Jupyter Notebook(s), a web application that allows you to create and share documents that contain code, visualizations, and explanatory text. (Jupyter Notebook was formerly known as iPython Notebook.) Jupyter Notebook automatically executes specific sections of Python code that are embedded in a notebook, displaying the results of those commands in a highlighted section below each block code block. The Jupyter notebooks in this SK show you how to creating an entity model, classifying and clustering the data.
+
+This SK has 2 primary Jupyter notebooks:
+   * `Training`, which shows how to take a data set, import it into Cloudant, create Ground Truth, and use WKS to create an entity model, and then train a classifier.
+   * `WKS`, which runs on all of the review data after all of the models are  trained and validated.
+
+
 ## <a name="getting-started"></a>Getting Started
 
-The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing, and configuring the dependencies needed for the application.
+The application is written in [Python](https://www.python.org/doc/). Instructions for downloading and installing it are included in the documentation.
 
-1. Log into GitHub and clone the repository for the application. Change to the directory that contains your clone of the repository.
+### Prerequisites
 
-2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta and Experimental Services are free to use.
+You need the following to use this SK:
+* A UNIX-based OS (or Cygwin)
+* Git
+* Python
+* Anaconda&mdash;installing this package also installs the Jupyter notebook package, which includes iPython (now referred to as Jupyter)
+* A Bluemix account
 
+## <a name="installation"></a>Installation
+1. Log into GitHub and fork the project repository. Clone your fork to a folder on your local system and change to that folder.
+2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
 3. If it is not already installed on your system, download and install the [Cloud Foundry CLI][cloud_foundry] tool.
-
-4. Edit the `manifest.yml` file in the folder that contains your clone of the repository and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
+4. Edit the `manifest.yml` file in the folder that contains your fork and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
     ```yaml
     declared-services:
@@ -53,7 +74,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
       memory: 512M
     ```
 
-5. Install the python dependencies with `pip`:
+5. Install the python dependencies by using `pip`:
 
     ```sh
     pip install -r requirements.txt
@@ -71,9 +92,9 @@ The application is written in [Python](https://www.python.org/doc/). The followi
   cf create-service natural_language_classifier standard natural-language-classifier-service
   cf service-key natural-language-classifier-service <your-NLC-key>
   ```
-  In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-key>` is `Credentials-1`.
+  In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-NLC-key>` is `Credentials-1`.
   
-  **Note:** The commands return a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error." The first Natural Language Classifier instance that you create is free under the standard plan, so there is no change if you create only a single classifier instance for use by this application.
+  **Note:** The commands return a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error." The first Natural Language Classifier instance that you create is free under the standard plan, so there is no charge if you create only a single classifier instance for use by this application.
 
 
 8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API key.
@@ -83,7 +104,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
     cf service-key alchemy-language-service <your-AlchemyAPI-key>
     ```
 
-9. Create and retrieve service keys for the Cloudant NoSQL database service by running the following command:
+9. Create and retrieve service keys for the Cloudant service. If you are using an existing Cloudant service, use those credentials instead.
 
     ```bash
     cf create-service cloudantNoSQLDB Shared cloudantNoSQLDB-service
@@ -118,35 +139,35 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 	WKS_MODEL_ID=    
 	```
 
-11. Push the updated application live by running the following command:
+## <a name="running-locally"></a>Running locally
+First, make sure that you followed steps 1 through 10 in [Getting Started](#getting-started).
 
-    ```bash
-    cf push
-    ```
-    or by pressing the "Deploy to Bluemix" button below.
+Start the application:
 
-    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+     python server.py
+
+
+
+## <a name="running-notebooks"></a>Running the notebooks
+The Jupyter notebooks show you step-by-step instructions, automatically executing specified sections of Python code. We used Jupyter notebooks because they encourage experimentation, which is an important part of developing any machine learning system.
+
+To start the notebooks, make sure you are in the root directory of your git checkout of the SK repository, and run the command `jupyter notebook`. This  starts the Jupyter notebook server and opens a browser window. With the browser window open, click on notebooks, and then open the notebook labeled `training`. Follow the instructions.
 
 ## <a name="training"></a>Training an entity detection model
 
 The Training phase is responsible for creating a customized model that detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
-The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks entitled `Training.ipynb`under the `notebooks` directory of this repo.
+The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks under the `notebooks` folder of this repo.
 
-1. Getting the data
-2. Training the WKS Model
-3. Making training and testing sets
-4. Doing entity replacement on the training and testing sets
-5. Designing the NLC tree
-6. Doing the hand classification on the replaced training and testing set
-7. Training the classifiers
+To create your WKS model and export it to your Alchemy API key, follow the instructions on the `WKS` notebook.
 
-## <a name="processing"></a>Processing the data (What the `src/Processing/controller.py` script does)
+After you have created your customized model, follow the instructions to train your classifier in the `Training` notebook.
 
-1. Take a review or reviews and run the data through entity extraction.
-2. Classify the data.
-3. Cluster the data.
-4. Generate final JSON that a front end can use.
+
+## <a name="processing"></a>Processing the data
+
+This step uses the models trained in the previous step. Follow the instructions in the `WKS` notebook to format the data so that it can be consumed by the UI.
+
 
 ## <a name="adaptingextending-the-starter-kit"></a>Adapting/Extending the Starter Kit
 
@@ -158,7 +179,17 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 
 This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
 
-## Reference information
+## <a name="deploying"></a>Deploying the application to Bluemix
+
+Push the updated application live by running the following command:
+
+    cf push
+
+or by pressing the "Deploy to Bluemix" button below.
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+
+## <a name="ref"></a>Reference information
 
 The following links provide more information about the Natural Language Classifier, Cloudant, and Alchemy Language services.
 
@@ -180,14 +211,24 @@ The following links provide more information about the Natural Language Classifi
 
 ### Intents for the NLC service instance
   * When defining intents, follow naming conventions to create consistent intents.
-  * Use "-" to separate multiple levels (Example : location-weather-forecast)
-  * Use "_" to separate multiple word intents (Example : business_center)
+  * Use "`-`" to separate multiple levels (Example: `location-weather-forecast`)
+  * Use "`_`" to separate multiple word intents (Example: `business_center`)
   * Provide more variations of input via examples for each intent. The more variations the better.
-  * Avoid overlapping intents across examples. (Example : benefits_eligibility and benefits_elgibility_employee). To avoid this, group examples into a single intent and use entities to deal with subtle variations.
-  * Examples for intents should be representative of end user input
+  * Avoid overlapping intents across examples. (Example: `benefits_eligibility` and `benefits_eligibility_employee`). To avoid this, group examples into a single intent and use entities to deal with subtle variations.
+  * Examples for intents should be representative of end user input.
+
 
 ## <a name="troubleshooting"></a>Troubleshooting
 
+### Watson Knowledge Studio (WKS)
+  * Entity and Relation Types can NOT have spaces. It is best to stick with alphanumeric characters and the underscore ("`_`") character.
+  * At least 2 entity types and at least 2 relation types with 2 example mentions of each in the ground truth are required to perform a successful training run of machine learning annotator.
+  * Rule of thumb: 50 mentions for a given type (entity type, relation type) in the training data. It is recommended to have training data distributed across all possible subtypes and roles for entities to help train system better.
+  * When defining type system and document size, make sure that type system is not too complex and document size is not too large that human annotators won't be able to efficiently follow the guidelines. Keep the entity types to fewer than 50 and keep document size to no more than a few paragraphs.
+  * Name entity and relation types in a way that is not ambiguous. If any names for entity or relation types are similar, it will make it more difficult to remember when to use which type.
+  * For ground truth, it is recommended to use representative documents that include the entities and relations most relevant for your application. Representative really means that the mentions and relations appear in similar context (other words around them) as to what your application expects.
+
+### Bluemix logs
 To troubleshoot your Bluemix application, use the logs. To see the logs, run:
 
   ```bash
