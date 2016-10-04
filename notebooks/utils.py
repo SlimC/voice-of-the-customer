@@ -22,7 +22,7 @@ def avg_sentiment(review):
 
         for sentence in entities:
             if 'text' in sentence and 'sentiment' in sentence:
-                sentiments.append({'name': sentence['text'],
+                sentiments.append({'name': sentence['text'], \
                     'sentiment': sentence['sentiment']['type'], 'done': False})
         for feature in sentiments:
             if not feature['done']:
@@ -132,20 +132,21 @@ def cluster_try(vecs):
         for j in range(no_of_clusters):
             sim = 0
             try:
-                sim = np.dot(vecs[i], clusterVec[j])/(np.linalg.norm(clusterVec[j]) * np.linalg.norm(vecs[i]))
+                sim = np.dot(vecs[i], clusterVec[j])/\
+                (np.linalg.norm(clusterVec[j]) * np.linalg.norm(vecs[i]))
             except:
                 print "Error when calculating similarity of vectors."
             if sim > max_sim:
                 flag = 1
                 max_sim = sim
                 index = j
-        if flag == 0:
-            clusterIdx[j+1] = [i]
-            clusterVec[j+1] = vecs[i]
-            no_of_clusters += 1
-        else:
-            clusterIdx[index].append(i)
-            clusterVec[index] += vecs[i]
+            if flag == 0:
+                clusterIdx[j+1] = [i]
+                clusterVec[j+1] = vecs[i]
+                no_of_clusters += 1
+            else:
+                clusterIdx[index].append(i)
+                clusterVec[index] += vecs[i]
     return clusterIdx
 
 
@@ -184,25 +185,25 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
                     clusterinfo['feature'] = feature
                 data['sentence_id'] = unique_words[feature]['sentence_id']
                 data['review_id'] = unique_words[feature]['review_id']
-                helpful_vote=0
-                for index_rev in range(0,len(data['review_id'])):
-                    if helpful[data['review_id'][index_rev]]>=helpful_vote:
-                        helpful_vote=helpful[data['review_id'][index_rev]]
-                        helpful_rev=index_rev
-                sent_id=data['sentence_id'][helpful_rev]
+                helpful_vote = 0
+                for index_rev in range(0, len(data['review_id'])):
+                    if helpful[data['review_id'][index_rev]] >= helpful_vote:
+                        helpful_vote = helpful[data['review_id'][index_rev]]
+                        helpful_rev = index_rev
+                sent_id = data['sentence_id'][helpful_rev]
                 helpful_review=local_dump[data['review_id'][helpful_rev]]
 
                 ##cause of split reviews-to remove
-                sent_id=sent_id-helpful_review[0][0]['seqno']
-                if sent_id>0:
-                    excerpt=helpful_review[0][sent_id-1]['sentence']+\
+                sent_id = sent_id-helpful_review[0][0]['seqno']
+                if sent_id > 0:
+                    excerpt = helpful_review[0][sent_id-1]['sentence']+\
                         helpful_review[0][sent_id]['sentence']
                 else:
-                    excerpt=helpful_review[0][sent_id]['sentence']
-                if sent_id<len(helpful_review[0])-1:
-                    excerpt=excerpt+helpful_review[0][sent_id+1]['sentence']
+                    excerpt = helpful_review[0][sent_id]['sentence']
+                if sent_id < len(helpful_review[0])-1:
+                    excerpt = excerpt+helpful_review[0][sent_id+1]['sentence']
 
-                data['excerpt']=excerpt
+                data['excerpt'] = excerpt
 
                 data['count'] = unique_words[feature]['count']
                 list_keywords.append(data)
@@ -210,11 +211,11 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
                 if stop_count == 3:
                     break
             if keys[index]['sentiment'][0][0] == 'positive':
-                    pos += 1
+                pos += 1
             if keys[index]['sentiment'][0][0] == 'neutral':
-                    neutral += 1
+                neutral += 1
             if keys[index]['sentiment'][0][0] == 'negative':
-                    neg += 1
+                neg += 1
         clusterinfo['keywords'] = list_keywords
         clusterinfo['sentiments'] = {}
         clusterinfo['sentiments']['positive'] = pos
@@ -246,10 +247,10 @@ def make_final(db, cluster):
     curdir = os.getcwd()
 
     #loading credentials from .env file
-    credFilePath = os.path.join(curdir,'..','.env')
+    credFilePath = os.path.join(curdir, '..', '.env')
     config = configparser.ConfigParser()
     config.read(credFilePath)
-    ALCHEMY_KEY = AlchemyLanguageV1(api_key =
+    ALCHEMY_KEY = AlchemyLanguageV1(api_key = \
                     config['ALCHEMY']['ALCHEMY_API_KEY'])
 
     alchemy = AlchemyLanguageV1(api_key=ALCHEMY_KEY)
@@ -278,19 +279,21 @@ def make_final(db, cluster):
                     line = line[0]
                 if type(line) == int:
                     continue
-                if(line["layer1type"] == "Issue"):
+                if line["layer1type"] == "Issue":
                     outputJSON["issues"]["percentage"] = \
                         outputJSON["issues"]["percentage"] + 1
                     outputJSON["issues"]["review_ids"].\
                         append(review[0]["review_id"])
-                if(line["layer1type"] == "Customer Service"):
+                if line["layer1type"] == "Customer Service":
                     sentiment = 'neutral'
                     try:
-                        sentiment = alchemy.sentiment(text=line["sentence"])["docSentiment"]["type"]
+                        sentiment = alchemy.sentiment(text = \
+                        line["sentence"])["docSentiment"]["type"]
                     except:
-                        print "Unable to assess sentiment of: "+ str(line["sentence"])
-                    outputJSON["customer_service"]["sentiment"][sentiment] = \
-                        outputJSON["customer_service"]["sentiment"][sentiment] + 1
+                        print "Unable to assess sentiment of: "+ \
+                        str(line["sentence"])
+                    outputJSON["customer_service"]["sentiment"][sentiment] \
+                    = outputJSON["customer_service"]["sentiment"][sentiment] + 1
     if (total > 0):
         outputJSON["issues"]["percentage"] = \
             round(outputJSON["issues"]["percentage"]/float(total)*100, 2)
@@ -305,8 +308,8 @@ def make_final(db, cluster):
         for sentiment in outputJSON["customer_service"]["sentiment"]:
             if (customer_service_total > 0):
                 outputJSON["customer_service"]["sentiment"][sentiment] =\
-                    round(outputJSON["customer_service"]["sentiment"][sentiment]/\
-                        float(customer_service_total)*100, 2)
+                    round(outputJSON["customer_service"]["sentiment"]\
+                    [sentiment]/float(customer_service_total)*100, 2)
             else:
                 outputJSON["customer_service"]["sentiment"][sentiment] = 0
     featureArray = cluster["features"]
