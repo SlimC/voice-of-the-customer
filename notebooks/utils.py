@@ -1,6 +1,24 @@
-import nltk
+#!/usr/bin/env python
+#
+# Copyright 2016 IBM Corp. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# -*- coding: utf-8 -*-
+
 import re
 import os
+import nltk
 import configparser
 import numpy as np
 from gensim.models import word2vec
@@ -168,17 +186,21 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
             keyword = keys[index]['word']
             if keyword in unique_words:
                 unique_words[keyword]['count'] += 1
-                unique_words[keyword]['review_id'].append(keys[index]['review_id'])
-                unique_words[keyword]['sentence_id'].append(keys[index]['sentence_id'])
+                unique_words[keyword]['review_id'].append\
+                (keys[index]['review_id'])
+                unique_words[keyword]['sentence_id'].append\
+                (keys[index]['sentence_id'])
             else:
                 unique_words[keyword] = {}
                 unique_words[keyword]['count'] = 1
                 unique_words[keyword]['review_id'] = [keys[index]['review_id']]
-                unique_words[keyword]['sentence_id'] = [keys[index]['sentence_id']]
+                unique_words[keyword]['sentence_id'] = \
+                [keys[index]['sentence_id']]
             keyword_count += 1
             list_keywords = []
             stop_count = 0
-            for feature in sorted(unique_words, key=unique_words.get, reverse=True):
+            for feature in sorted(unique_words, key=unique_words.get, \
+            reverse=True):
                 data = {}
                 data['keyword'] = feature
                 if stop_count == 0:
@@ -191,7 +213,7 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
                         helpful_vote = helpful[data['review_id'][index_rev]]
                         helpful_rev = index_rev
                 sent_id = data['sentence_id'][helpful_rev]
-                helpful_review=local_dump[data['review_id'][helpful_rev]]
+                helpful_review = local_dump[data['review_id'][helpful_rev]]
 
                 ##cause of split reviews-to remove
                 sent_id = sent_id-helpful_review[0][0]['seqno']
@@ -250,7 +272,7 @@ def make_final(db, cluster):
     credFilePath = os.path.join(curdir, '..', '.env')
     config = configparser.ConfigParser()
     config.read(credFilePath)
-    ALCHEMY_KEY = AlchemyLanguageV1(api_key = \
+    ALCHEMY_KEY = AlchemyLanguageV1(api_key=\
                     config['ALCHEMY']['ALCHEMY_API_KEY'])
 
     alchemy = AlchemyLanguageV1(api_key=ALCHEMY_KEY)
@@ -294,7 +316,7 @@ def make_final(db, cluster):
                         str(line["sentence"])
                     outputJSON["customer_service"]["sentiment"][sentiment] \
                     = outputJSON["customer_service"]["sentiment"][sentiment] + 1
-    if (total > 0):
+    if total > 0:
         outputJSON["issues"]["percentage"] = \
             round(outputJSON["issues"]["percentage"]/float(total)*100, 2)
     else:
@@ -304,9 +326,9 @@ def make_final(db, cluster):
         customer_service_total = customer_service_total + \
             outputJSON["customer_service"]["sentiment"][sentiment]
 
-    if(customer_service_total > 0):
+    if customer_service_total > 0:
         for sentiment in outputJSON["customer_service"]["sentiment"]:
-            if (customer_service_total > 0):
+            if customer_service_total > 0:
                 outputJSON["customer_service"]["sentiment"][sentiment] =\
                     round(outputJSON["customer_service"]["sentiment"]\
                     [sentiment]/float(customer_service_total)*100, 2)
@@ -331,11 +353,11 @@ def make_final(db, cluster):
             feature["keywords"].append(keyword)
         for sent in feature["sentiments"]:
             feature["sentiments"][sent] = round(feature["sentiments"][sent]/\
-                                            float(item["keyword_count"])*100, 2)
+            float(item["keyword_count"])*100, 2)
         outputJSON["features"].append(feature)
 
     for item in outputJSON["features"]:
-        if (total > 0):
+        if total > 0:
             item["percentage"] = round(item["percentage"]/float(total)*100, 2)
         else:
             item["percentage"] = 0
