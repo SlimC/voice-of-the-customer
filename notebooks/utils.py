@@ -37,7 +37,6 @@ def avg_sentiment(review):
     sentiments = []
     if 'entities' in review:
         entities = review['entities']
-
         for sentence in entities:
             if 'text' in sentence and 'sentiment' in sentence:
                 sentiments.append({'name': sentence['text'], \
@@ -64,7 +63,6 @@ def avg_sentiment(review):
                     most = 'negative'
                 elif neutral == max(pos, neg, neutral):
                     most = 'neutral'
-
                 for entity in entities:
                     if entity['text'] == text:
                         entity['sentiment']['type'] = [most]
@@ -137,35 +135,35 @@ def cluster_try(vecs):
     Input: word vectors.
     Output: dictionary containing cluster information.
     """
-    clusterVec = {}
-    clusterIdx = {}
+    cluster_vec = {}
+    cluster_idx = {}
     no_of_clusters = 1
-    clusterIdx[0] = [0]
-    clusterVec[0] = vecs[0]
+    cluster_idx[0] = [0]
+    cluster_vec[0] = vecs[0]
     max_sim = 0.5
     index = 0
     for i in range(1, len(vecs)):
         flag = 0
         max_sim = 0.5
         for j in range(no_of_clusters):
-            sim = 0
+            sim = 0.0
             try:
-                sim = np.dot(vecs[i], clusterVec[j])/\
-                (np.linalg.norm(clusterVec[j]) * np.linalg.norm(vecs[i]))
-            except:
+                sim = np.dot(vecs[i], cluster_vec[j])/\
+                (np.linalg.norm(cluster_vec[j]) * np.linalg.norm(vecs[i]))
+            except ArithmeticError:
                 print "Error when calculating similarity of vectors."
             if sim > max_sim:
                 flag = 1
                 max_sim = sim
                 index = j
             if flag == 0:
-                clusterIdx[j+1] = [i]
-                clusterVec[j+1] = vecs[i]
+                cluster_idx[j+1] = [i]
+                cluster_vec[j+1] = vecs[i]
                 no_of_clusters += 1
             else:
-                clusterIdx[index].append(i)
-                clusterVec[index] += vecs[i]
-    return clusterIdx
+                cluster_idx[index].append(i)
+                cluster_vec[index] += vecs[i]
+    return cluster_idx
 
 
 def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
@@ -248,7 +246,7 @@ def create_json(clusters, cluster_data, mapping, keys, helpful, local_dump):
     return cluster_data
 
 
-def make_final(db, cluster):
+def make_final(database, cluster):
     """
     Create a final json object compiling cluster information.
     Input: a cluster.
@@ -272,10 +270,10 @@ def make_final(db, cluster):
     credFilePath = os.path.join(curdir, '..', '.env')
     config = configparser.ConfigParser()
     config.read(credFilePath)
-    ALCHEMY_KEY = AlchemyLanguageV1(api_key=\
+    alchemy_key = AlchemyLanguageV1(api_key=\
                     config['ALCHEMY']['ALCHEMY_API_KEY'])
 
-    alchemy = AlchemyLanguageV1(api_key=ALCHEMY_KEY)
+    alchemy = AlchemyLanguageV1(api_key=alchemy_key)
 
     reviewnums = set()
     reviews = []
@@ -287,19 +285,18 @@ def make_final(db, cluster):
     for i in range(0, len(reviewnums)):
         if len(reviewnums) > 0:
             num = reviewnums.pop()
-            q = Query(db, selector={'review_id': num, 'type':'classified'})
-            #for i in q.result:
-            #    if i['type'] == 'classified':
-            reviews.append(q.result[0])
+            query = Query(database, selector=\
+            {'review_id': num, 'type':'classified'})
+            reviews.append(query.result[0])
     reviewnums.clear()
     total = 0
     for review in reviews:
         if review != []:
             for line in review[0]["review"]:
                 total = total + 1
-                if type(line) == list:
+                if isinstance(line) == list:
                     line = line[0]
-                if type(line) == int:
+                if isinstance(line) == int:
                     continue
                 if line["layer1type"] == "Issue":
                     outputJSON["issues"]["percentage"] = \
@@ -309,9 +306,9 @@ def make_final(db, cluster):
                 if line["layer1type"] == "Customer Service":
                     sentiment = 'neutral'
                     try:
-                        sentiment = alchemy.sentiment(text = \
+                        sentiment = alchemy.sentiment(text=\
                         line["sentence"])["docSentiment"]["type"]
-                    except:
+                    except KeyError:
                         print "Unable to assess sentiment of: "+ \
                         str(line["sentence"])
                     outputJSON["customer_service"]["sentiment"][sentiment] \

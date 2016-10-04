@@ -37,7 +37,7 @@ try:
     CREDFILEPATH = os.path.join(CURDIR, '.env')
     CONFIG = configparser.ConfigParser()
     CONFIG.read(CREDFILEPATH)
-except:
+except IOError:
     print 'warning: no .env file loaded'
 
 #Connect to cloudant db
@@ -71,7 +71,7 @@ def get_product_list():
             doc_entry['id'] = doc['_id']
             doc_entry['name'] = doc['product_name']
             products.append(doc_entry)
-        except:
+        except KeyError:
             print 'Error when creating list of products.'
     json_products = {"products":products}
     return jsonify(json_products)

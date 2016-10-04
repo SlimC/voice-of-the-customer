@@ -28,17 +28,20 @@ CURDIR = os.getcwd()
 
 try:
     #loading credentials from .env file
-    CREDFILEPATH = os.path.join(CURDIR, '.env')
+    CRED_FILE_PATH = os.path.join(CURDIR, '.env')
     CONFIG = configparser.ConfigParser()
-    CONFIG.read(CREDFILEPATH)
-except:
+    CONFIG.read(CRED_FILE_PATH)
+except IOError:
     print 'warning: no .env file loaded'
 
-CLOUDANT_USERNAME = config['CLOUDANT']['CLOUDANT_USERNAME']
-CLOUDANT_PASSWORD = config['CLOUDANT']['CLOUDANT_PASSWORD']
-ACCOUNT_NAME = config['CLOUDANT']['CLOUDANT_USERNAME']
+CLOUDANT_USERNAME = CONFIG['CLOUDANT']['CLOUDANT_USERNAME']
+CLOUDANT_PASSWORD = CONFIG['CLOUDANT']['CLOUDANT_PASSWORD']
+ACCOUNT_NAME = CONFIG['CLOUDANT']['CLOUDANT_USERNAME']
 
 def getConnection():
+    """
+    Creates and returns a Cloudant connection.
+    """
     my_client = Cloudant(CLOUDANT_USERNAME, CLOUDANT_PASSWORD, account=ACCOUNT_NAME)
     my_client.connect()
     my_session = my_client.session()
@@ -47,20 +50,32 @@ def getConnection():
     return my_client
 
 def convertToDocument(database, doc_id):
+    """
+    Converts a json object into a Cloudant Document object.
+    """
     return document.Document(database, document_id=doc_id)
 
 def getResultsfromView(view_name, design_document_name, database):
-    design_document = design_document.DesignDocument\
+    """
+    Returns documents based on a Cloudant View.
+    """
+    my_design_document = design_document.DesignDocument\
     (database, document_id=design_document_name)
-    my_view = view.View(design_document, view_name)
+    my_view = view.View(my_design_document, view_name)
     return my_view
 
 def createView(database, view_name, map_func):
-    design_document = design_document.DesignDocument(database, "_design/names")
-    design_document.add_view(view_name, map_func)
-    return view.View(design_document, view_name, map_func)
+    """
+    Creates and returns a Cloudant view.
+    """
+    my_design_document = design_document.DesignDocument(database, "_design/names")
+    my_design_document.add_view(view_name, map_func)
+    return view.View(my_design_document, view_name, map_func)
 
 def create_tracker(database):
+    """
+    Creates a tracker document in Cloudant to track phase status.
+    """
     # Creating document to track status of reviews
     model_tracker = { \
                     '_id': 'tracker', \
@@ -75,7 +90,6 @@ def create_tracker(database):
                     'final': [] \
                     }
 
-    status = {}
     try:
         status = database['tracker']
     except KeyError:
