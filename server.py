@@ -23,32 +23,30 @@
 import os
 import cf_deployment_tracker
 import cloudant
-import json
 import configparser
 from requests.exceptions import HTTPError
-from dotenv import load_dotenv, find_dotenv
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
 #getting current directory
-curdir = os.getcwd()
+CURDIR = os.getcwd()
 
 try:
     #loading credentials from .env file
-    credFilePath = os.path.join(curdir,'.env')
-    config = configparser.ConfigParser()
-    config.read(credFilePath)
+    CREDFILEPATH = os.path.join(CURDIR, '.env')
+    CONFIG = configparser.ConfigParser()
+    CONFIG.read(CREDFILEPATH)
 except Exception:
     print 'warning: no .env file loaded'
 
 #Connect to cloudant db
-client = cloudant.client.Cloudant(config['CLOUDANT']['CLOUDANT_USERNAME'],
-                                  config['CLOUDANT']['CLOUDANT_PASSWORD'],
-                                  account=config['CLOUDANT']['CLOUDANT_USERNAME'])
-client.connect()
+CLIENT = cloudant.client.Cloudant(CONFIG['CLOUDANT']['CLOUDANT_USERNAME'],
+                                  CONFIG['CLOUDANT']['CLOUDANT_PASSWORD'],
+                                  account=CONFIG['CLOUDANT']['CLOUDANT_USERNAME'])
+CLIENT.connect()
 
-reviews_db = client[config['CLOUDANT']['CLOUDANT_DB']]
+REVIEWS_DB = CLIENT[CONFIG['CLOUDANT']['CLOUDANT_DB']]
 
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
@@ -63,7 +61,7 @@ def index():
 def get_product_list():
     """returns the list of products to the client for type ahead"""
     products = []
-    designdocument = cloudant.design_document.DesignDocument(reviews_db,document_id="_design/names")
+    designdocument = cloudant.design_document.DesignDocument(REVIEWS_DB, document_id="_design/names")
     docs = cloudant.view.View(designdocument, "final")
     for result in docs.result:
         try:
@@ -81,7 +79,7 @@ def get_product_list():
 def get_product():
     """retrieves data on a product from the cloudant db and sends to client"""
     print request.args.get('productId')
-    return jsonify(reviews_db[request.args.get('productId')])
+    return jsonify(REVIEWS_DB[request.args.get('productId')])
 
 @app.errorhandler(Exception)
 def handle_error(err):

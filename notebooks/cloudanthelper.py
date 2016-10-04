@@ -9,7 +9,7 @@ from cloudant import document
 curdir = os.getcwd()
 
 #loading credentials from .env file
-credFilePath = os.path.join(curdir,'..','.env')
+credFilePath = os.path.join(curdir, '..', '.env')
 config = configparser.ConfigParser()
 config.read(credFilePath)
 
@@ -29,7 +29,7 @@ def convertToDocument(db, docId):
     return document.Document(db, document_id=docId)
 
 def getResultsfromView(viewName, designDocumentName, db):
-    designdocument = design_document.DesignDocument(db,document_id=designDocumentName)
+    designdocument = design_document.DesignDocument(db, document_id=designDocumentName)
     v = view.View(designdocument, viewName)
     return v
 
@@ -41,16 +41,16 @@ def createView(db, viewName, mapFunc):
 def create_tracker(db):
     # Creating document to track status of reviews
     model_tracker = {
-                    '_id': 'tracker',
-                    'cluster_switch': 0,
-                    'classify_switch': 0,
-                    'replace_switch': 0,
-                    'final_switch': 0,
-                    'finished_switch': 0,
-                    'replaced': [],
-                    'classified': [],
-                    'clustered': [],
-                    'final': []
+                    '_id': 'tracker', \
+                    'cluster_switch': 0, \
+                    'classify_switch': 0, \
+                    'replace_switch': 0, \
+                    'final_switch': 0, \
+                    'finished_switch': 0, \
+                    'replaced': [], \
+                    'classified': [], \
+                    'clustered': [], \
+                    'final': [] \
                     }
 
     status = {}
@@ -58,7 +58,7 @@ def create_tracker(db):
         status = db['tracker']
     except KeyError:
         status = db.create_document(model_tracker)
-        
+
 if __name__ == "__main__":
     client = getConnection()
     getResultsfromView("final", "names")
