@@ -21,7 +21,6 @@ import os
 import nltk
 import configparser
 import numpy as np
-from gensim.models import word2vec
 from cloudant.query import Query
 from watson_developer_cloud import AlchemyLanguageV1
 
@@ -82,17 +81,6 @@ def find_middle(text):
     middle_char = sequences[mid_sentence][1]
     middle_char = int(middle_char) + 1
     return middle_char
-
-
-def train(sentences, modelname):
-    """
-    Train a word2vec model based on the domain data.
-    Input: sentences from reviews and model name.
-    Output: model saved to file system.
-    """
-    model = word2vec.Word2Vec(sentences, size=200)
-    model.save(modelname)
-    model.save_word2vec_format(modelname+'.bin', binary=True)
 
 
 def generate_vectors(features, model):
