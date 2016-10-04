@@ -33,6 +33,9 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 
       ```yaml
       declared-services:
+        alchemy-language-service:
+          label: alchemy
+          plan: free
         natural-language-classifier-service:
           label: natural_language_classifier
           plan: standard
@@ -41,6 +44,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
           plan: Shared
       applications:
       - services:
+         - alchemy-service
          - natural-language-classifier-service
          - cloudantNoSQLDB-service
         name: product-intel-demo
@@ -138,9 +142,10 @@ Push the updated application live by running the following command:
     ```bash
     cf push
     ```
-    or by pressing the "Deploy to Bluemix" button below.
 
-    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+or by pressing the "Deploy to Bluemix" button below.
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
 
 ## Reference information
 
