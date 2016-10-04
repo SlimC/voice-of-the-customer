@@ -15,14 +15,13 @@ Demo: https://product-intel-demo.mybluemix.net/
  - [Getting Started](#getting-started)
  - [Training an entity detection model](#training)
  - [Processing the data](#processing)
- - [Running the application locally](#running-locally)
  - [Adapting/Extending the Starter Kit](#adaptingextending-the-starter-kit)
  - [Best Practices](#best-practices)
  - [Troubleshooting](#troubleshooting)
 
-## Getting Started
+## <a name="getting-started"></a>Getting Started
 
-The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing and configuring the dependencies needed for the application.
+The application is written in [Python](https://www.python.org/doc/). The following instructions including directions for downloading, installing, and configuring the dependencies needed for the application.
 
 1. Log into GitHub and clone the repository for the application. Change to the directory that contains your clone of the repository.
 
@@ -32,28 +31,29 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 
 4. Edit the `manifest.yml` file in the folder that contains your clone of the repository and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
-      ```yaml
-      declared-services:
-  		alchemy-language-service:
-    	  label: alchemy
-    	  plan: standard
-        natural-language-classifier-service:
-          label: natural_language_classifier
-          plan: standard
-        cloudantNoSQLDB-service:
-          label: cloudantNoSQLDB
-          plan: Shared
-      applications:
-      - services:
-         - natural-language-classifier-service
-         - cloudantNoSQLDB-service
-        name: product-intel-demo
-        command: python server.py
-        path: .
-        memory: 512M
-      ```
+    ```yaml
+    declared-services:
+      alchemy-language-service:
+        label: alchemy
+        plan: free
+      natural-language-classifier-service:
+        label: natural_language_classifier
+        plan: standard
+      cloudantNoSQLDB-service:
+        label: cloudantNoSQLDB
+        plan: Free
+    applications:
+    - services:
+       - alchemy-service
+       - natural-language-classifier-service
+       - cloudantNoSQLDB-service
+    - name: product-intel-demo
+      command: python server.py
+      path: .
+      memory: 512M
+    ```
 
-5. Install the python dependencies with `pip`
+5. Install the python dependencies with `pip`:
 
     ```sh
     pip install -r requirements.txt
@@ -127,7 +127,7 @@ The application is written in [Python](https://www.python.org/doc/). The followi
 
     [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
 
-## Training an entity detection model
+## <a name="training"></a>Training an entity detection model
 
 The Training phase is responsible for creating a customized model that detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
@@ -141,14 +141,14 @@ The WKS tool exports an Alchemy customized model that is then able to extract en
 6. Doing the hand classification on the replaced training and testing set
 7. Training the classifiers
 
-## Processing the data (What the `src/Processing/controller.py` script does)
+## <a name="processing"></a>Processing the data (What the `src/Processing/controller.py` script does)
 
 1. Take a review or reviews and run the data through entity extraction.
 2. Classify the data.
 3. Cluster the data.
 4. Generate final JSON that a front end can use.
 
-## Adapting/Extending the Starter Kit
+## <a name="adaptingextending-the-starter-kit"></a>Adapting/Extending the Starter Kit
 
 <a>
 # Architecture Diagram
@@ -176,7 +176,7 @@ The following links provide more information about the Natural Language Classifi
   * [API documentation](http://www.alchemyapi.com/api): Get an in-depth understanding of the AlchemyAPI services
   * [AlchemyData News reference](http://docs.alchemyapi.com/): API and query gallery
 
-## Best Practices
+## <a name="best-practices"></a>Best Practices
 
 ### Intents for the NLC service instance
   * When defining intents, follow naming conventions to create consistent intents.
@@ -186,7 +186,7 @@ The following links provide more information about the Natural Language Classifi
   * Avoid overlapping intents across examples. (Example : benefits_eligibility and benefits_elgibility_employee). To avoid this, group examples into a single intent and use entities to deal with subtle variations.
   * Examples for intents should be representative of end user input
 
-## Troubleshooting
+## <a name="troubleshooting"></a>Troubleshooting
 
 To troubleshoot your Bluemix application, use the logs. To see the logs, run:
 
