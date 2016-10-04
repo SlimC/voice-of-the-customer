@@ -4,8 +4,6 @@ notifications:
   email: false
 python:
 - '2.7'
-virtualenv:
-    system_site_packages: true
 install:
 - pip install -r requirements.txt
 - pip install pylint
