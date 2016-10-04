@@ -22,60 +22,71 @@
 """
 import os
 import cf_deployment_tracker
-from cloudant.client import Cloudant
+import cloudant
+import configparser
 from requests.exceptions import HTTPError
-from dotenv import load_dotenv, find_dotenv
 from flask import Flask, render_template, request, jsonify
+
 app = Flask(__name__)
 
+#getting current directory
+CURDIR = os.getcwd()
+
 try:
-    load_dotenv(find_dotenv())
-except Exception:
+    #loading credentials from .env file
+    CREDFILEPATH = os.path.join(CURDIR, '.env')
+    CONFIG = configparser.ConfigParser()
+    CONFIG.read(CREDFILEPATH)
+except IOError:
     print 'warning: no .env file loaded'
+
+#Connect to cloudant db
+CLIENT = cloudant.client.Cloudant(CONFIG['CLOUDANT']['CLOUDANT_USERNAME'],
+                                  CONFIG['CLOUDANT']['CLOUDANT_PASSWORD'],
+                                  account=CONFIG['CLOUDANT']['CLOUDANT_USERNAME'])
+CLIENT.connect()
+
+REVIEWS_DB = CLIENT[CONFIG['CLOUDANT']['CLOUDANT_DB']]
 
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
 
-#Connect to cloudant db
-dbClient = Cloudant(os.environ['CLOUDANT_USER'], os.environ['CLOUDANT_PW'], url=os.environ['CLOUDANT_URL'])
-dbClient.connect()
-cloundantDB = dbClient[os.environ['CLOUDANT_DB']]
-
 # Application routes
-
 @app.route('/', methods=['GET'])
 def index():
     """returns the html to the client"""
     return render_template('index.html')
 
-#Temporary for until I change this to load from cloudant, a file, or something less ugly
 @app.route('/api/product-list', methods=['GET'])
 def get_product_list():
-    """returns a list of known products to the client for type ahead"""
-    return jsonify([{"id":"22e6343bf6748a6c408fac1e0c69f3c3", "name":"Microsoft Comfort Mouse 4500 - Poppy Red"},
-                    {"id":"56644a772c2ec9e89f6ce785b1c1528e", "name": "Microsoft Comfort Mouse 4500"},
-                    {"id":"6666526730953249e153fb108eee5fa1", "name" : "Garmin n&uuml;vi 65LM GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"},
-                    {"id":"9dcef3aea4f4827c8d26dd834387f73a", "name":"Bose QuietComfort 15 Acoustic Noise Cancelling Headphones"},
-                    {"id":"f9204a0a8eaf8e5e7c4cb935138f8f4c", "name":"Kidz Gear Wired Headphones For Kids - Gray"},
-                    {"id":"9dcef3aea4f4827c8d26dd8343bace76", "name":"Seiki SE22FR01 22-Inch 1080p 60Hz LED HDTV"},
-                    {"id":"c8b860c1d45364dde8e127959a86733b", "name":"Samsung UN19F4000 19-Inch 720p 60Hz Slim LED HDTV"},
-                    {"id":"c8b860c1d45364dde8e127959a9ec566", "name":"Garmin n&uuml;vi 55LMT GPS Navigators System with Spoken Turn-By-Turn Directions, Preloaded Maps and Speed Limit Displays (Lower 49 U.S. States)"},
-                    {"id":"d045f1b39d53302d09ed5a5e4d82c5a0", "name":"VIZIO M651d-A2R 65-Inch 1080p 240Hz 3D Smart LED HDTV (2013 Model)"},
-                    {"id":"100", "name" : "Samsung Galaxy S7"},
-                    {"id":"101", "name" : "iPhone 6s"}])
+    """returns the list of products to the client for type ahead"""
+    products = []
+    designdocument = cloudant.design_document.DesignDocument\
+    (REVIEWS_DB, document_id="_design/names")
+    docs = cloudant.view.View(designdocument, "final")
+    for result in docs.result:
+        try:
+            doc = result['value']
+            doc_entry = {}
+            doc_entry['id'] = doc['_id']
+            doc_entry['name'] = doc['product_name']
+            products.append(doc_entry)
+        except KeyError:
+            print 'Error when creating list of products.'
+    json_products = {"products":products}
+    return jsonify(json_products)
 
 @app.route('/api/product', methods=['GET'])
 def get_product():
     """retrieves data on a product from the cloudant db and sends to client"""
     print request.args.get('productId')
-    return jsonify(cloundantDB[request.args.get('productId')])
+    return jsonify(REVIEWS_DB[request.args.get('productId')])
 
 @app.errorhandler(Exception)
 def handle_error(err):
-    """Catces errors with processing client requests and returns message"""
+    """Catches errors with processing client requests and returns message"""
     code = 500
     error = 'Error processing the request'
-    app.logger.error('Exception : %r' % err)
     if isinstance(err, HTTPError):
         code = err.code
         error = str(err.message)

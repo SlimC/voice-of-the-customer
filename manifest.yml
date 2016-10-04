@@ -1,5 +1,19 @@
+declared-services:
+  alchemy-language-service:
+    label: alchemy
+    plan: free
+  natural-language-classifier-service:
+    label: natural_language_classifier
+    plan: standard
+  cloudantNoSQLDB-service:
+    label: cloudantNoSQLDB
+    plan: Free
 applications:
+- services:
+   - alchemy-service
+   - natural-language-classifier-service
+   - cloudantNoSQLDB-service
 - name: product-intel-demo
-  command: npm start
+  command: python server.py
   path: .
   memory: 512M
