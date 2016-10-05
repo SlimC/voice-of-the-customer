@@ -28,7 +28,7 @@ CURDIR = os.getcwd()
 
 try:
     #loading credentials from .env file
-    CRED_FILE_PATH = os.path.join(CURDIR, '.env')
+    CRED_FILE_PATH = os.path.join(CURDIR, '..', '.env')
     CONFIG = configparser.ConfigParser()
     CONFIG.read(CRED_FILE_PATH)
 except IOError:
