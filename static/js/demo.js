@@ -132,12 +132,22 @@ function updateProduct(prodId) {
 }
 
 function doAutocomplete() {
+<<<<<<< HEAD
+
+    //return "Samsung UN19F4000 19-Inch 720p 60Hz Slim LED HDTV";
+=======
+>>>>>>> 8a926bf3cf87fb485ddecb826fad4ac1cbd477a4
     var maxLen = 3;
     var len = 0;
     var query = $("#query").val();
     var filteredProdList = [];
     if(query != "") {
+<<<<<<< HEAD
+      //filteredProdList = prodList.filter(function(val) {
+      filteredProdList = prodList.products.filter(function(val) {
+=======
       filteredProdList = prodList.filter(function(val) {
+>>>>>>> 8a926bf3cf87fb485ddecb826fad4ac1cbd477a4
         if(len < maxLen && val.name.toUpperCase().indexOf(query.toUpperCase()) > -1) {
           len += 1;
           return val;
@@ -148,6 +158,10 @@ function doAutocomplete() {
     $('.result--autocomplete').html(_.template(autocompleteTemp, {
       items: filteredProdList
     }));
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8a926bf3cf87fb485ddecb826fad4ac1cbd477a4
 }
 
 function normalizePercents(data) {

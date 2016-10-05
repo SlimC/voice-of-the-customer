@@ -13,7 +13,7 @@ applications:
    - alchemy-service
    - natural-language-classifier-service
    - cloudantNoSQLDB-service
-- name: tayloras-product-intel-demo
+- name: product-intel-demo
   command: python server.py
   path: .
   memory: 512M

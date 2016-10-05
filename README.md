@@ -48,9 +48,9 @@ You need the following to use this SK:
 
 ## <a name="installation"></a>Installation
 1. Log into GitHub and fork the project repository. Clone your fork to a folder on your local system and change to that folder.
-2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
+2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta and Experimental Services are free to use.
 3. If it is not already installed on your system, download and install the [Cloud Foundry CLI][cloud_foundry] tool.
-4. Edit the `manifest.yml` file in the folder that contains your fork and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
+4. Edit the `manifest.yml` file in the folder that contains your fork and, under `applications:`, replace the value of `- name:` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
     ```yaml
     declared-services:
