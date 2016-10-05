@@ -5,7 +5,7 @@ This is a Starter Kit (SK), which is designed to get you up and running quickly 
 Demo: https://product-intel-demo.mybluemix.net/
 
 **IMPORTANT NOTES:**
-1. You must sign up to use the Watson Knowledge Studio tool. A 30-day free trial is available. Go to [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) to learn more.
+1. You must sign up to use the Watson Knowledge Studio tool. A 30-day free trial is available. Go to the [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) link to learn more.
 
 2. The application requires an AlchemyAPI key with high transaction limits. The free AlchemyAPI key that you request has a limit of 1000 transactions per day, which is insufficient for significant use of this sample application.  You can upgrade to the Standard or Advanced Plan of the AlchemyAPI service to obtain a key that supports more than 1000 transactions per day. Go [here](https://console.ng.bluemix.net/catalog/services/alchemyapi/).
 
@@ -90,7 +90,7 @@ You need the following to use this SK:
 7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```bash
   cf create-service natural_language_classifier standard natural-language-classifier-service
-  cf service-key natural-language-classifier-service <your-NLC-key>
+  cf create-service-key natural-language-classifier-service <your-NLC-key>
   ```
   In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-NLC-key>` is `Credentials-1`.
   
@@ -145,8 +145,6 @@ First, make sure that you followed steps 1 through 10 in [Getting Started](#gett
 Start the application:
 
      python server.py
-
-
 
 ## <a name="running-notebooks"></a>Running the notebooks
 The Jupyter notebooks show you step-by-step instructions, automatically executing specified sections of Python code. We used Jupyter notebooks because they encourage experimentation, which is an important part of developing any machine learning system.
