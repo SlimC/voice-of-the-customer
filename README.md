@@ -26,7 +26,7 @@ Demo: https://product-intel-demo.mybluemix.net/
  - [Troubleshooting](#troubleshooting)
 
 ## <a name="how-this-app-works"></a>How this app works
-This starter kit uses Jupyter Notebook(s), a web application that allows you to create and share documents that contain code, visualizations, and explanatory text. (Jupyter Notebook was formerly known as iPython Notebook.) Jupyter Notebook automatically executes specific sections of Python code that are embedded in a notebook, displaying the results of those commands in a highlighted section below each block code block. The Jupyter notebooks in this SK show you how to creating an entity model, classifying and clustering the data.
+This starter kit uses Jupyter Notebook, a web application that enables you to create and share documents that contain code, visualizations, and explanatory text. (Jupyter Notebook was formerly known as iPython Notebook.) Jupyter Notebook automatically executes specific sections of Python code that are embedded in a notebook, displaying the results of those commands in a highlighted section below each block code block. The Jupyter notebooks in this SK show you how to creating an entity model, classifying and clustering the data.
 
 This SK has 2 primary Jupyter notebooks:
    * `Training`, which shows how to take a data set, import it into Cloudant, create Ground Truth, and use WKS to create an entity model, and then train a classifier.
@@ -112,7 +112,6 @@ You need the following to use this SK:
     cf create-service cloudantNoSQLDB standard cloudantNoSQLDB-service
     cf create-service-key cloudantNoSQLDB-service <your-Cloudant-key>
     cf service-key cloudantNoSQLDB-service <your-Cloudant-key>
-
     ```
 **Note:** The commands return a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
@@ -157,11 +156,11 @@ To start the notebooks, make sure you are in the root directory of your git chec
 
 ## <a name="training"></a>Training an entity detection model
 
-The Training phase is responsible for creating a customized model that detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
+The training phase is responsible for creating a customized model that detects entities related to the topic of the reviews. This model can be created by using Watson Knowledge Studio (WKS) for annotating the data (product reviews) to detect entities and their relationships.
 
-The WKS tool exports an Alchemy customized model that is then able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the iPython notebooks under the `notebooks` folder of this repo.
+The WKS tool exports a customized Alchemy model that is able to extract entities and relationships from unseen data. The steps to preprocess the data and create the models are detailed in the Jupyter notebooks under the `notebooks` folder of this repo.
 
-To create your WKS model and export it to your Alchemy API key, follow the instructions on the `WKS` notebook.
+To create your WKS model and export it to your Alchemy API key, follow the instructions in the `WKS` notebook.
 
 After you have created your customized model, follow the instructions to train your classifier in the `Training` notebook.
 
@@ -173,13 +172,15 @@ This step uses the models trained in the previous step. Follow the instructions 
 
 ## <a name="adaptingextending-the-starter-kit"></a>Adapting/Extending the Starter Kit
 
+<!--
 <a>
 # Architecture Diagram
 </a>
+-->
 
 ![](readme_images/VoC-ArchitectureFlow.jpg)
 
-This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to a use case other than electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
+This Starter Kit works off of product reviews data gathered from Amazon product reviews (http://jmcauley.ucsd.edu/data/amazon/). However, the concepts used here are platform independent and can be applied to use cases other than electronic products reviews. Just define your use case and make sure you train your Natural Language Classifier accordingly by using the tool provided on the service page. Additionally, you can create your own customized models for entity extraction by using Watson Knowledge Studio and Alchemy.
 
 ## <a name="deploying"></a>Deploying the application to Bluemix
 
