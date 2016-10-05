@@ -69,6 +69,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 7. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```
   cf create-service natural_language_classifier standard natural-language-classifier-service
+  cf create-service-key natural_language_classifier myKey
   cf service-key natural-language-classifier-service myKey
   ```
   **Note:** You will see a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error.". The first Natural Language Classifier instance that you create is free under the standard plan, so there will be no change if you only create a single classifier instance for use by this application.
@@ -77,6 +78,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 8. Create and retrieve service keys for the Alchemy Language service. If you are using an existing alchemy service, use those credentials instead.
 
     ```bash
+    cf create-service alchemy-language standard alchemy-language-service
     cf create-service-key alchemy-language-service myKey
     cf service-key alchemy-language-service myKey
     ```
@@ -84,6 +86,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 9. Create and retrieve service keys for the Cloudant service. If you are using an existing alchemy service, use those credentials instead.
 
     ```bash
+    cf create-service cloudantNoSQLDB standard cloudantNoSQLDB-service
     cf create-service-key cloudantNoSQLDB-service myKey
     cf service-key cloudantNoSQLDB-service myKey
     ```
