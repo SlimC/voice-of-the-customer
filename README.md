@@ -132,15 +132,11 @@ This step uses the models  trained on the previous step. Follow the instructions
 
 To deploy the application locally, run the command
 
-    ```bash
-    python server.py
-    ```
+    ``python server.py``
 
 The app will be listening on port 3000. Open a web browser and type
 
-    ```bash
-    localhost:3000
-    ```
+    ``localhost:3000``
 
 ## Adapting/Extending the Starter Kit
 
