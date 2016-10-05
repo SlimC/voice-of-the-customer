@@ -128,6 +128,20 @@ After you have created your customized model, follow the instructions to train y
 
 This step uses the models  trained on the previous step. Follow the instructions on the `Processing` notebook to allow the data to be in a format that can be consumed by the UI.
 
+## Running the application locally
+
+To deploy the application locally, run the command
+
+    ```bash
+    python server.py
+    ```
+
+The app will be listening on port 3000. Open a web browser and type
+
+    ```bash
+    localhost:3000
+    ```
+
 ## Adapting/Extending the Starter Kit
 
 <a>
