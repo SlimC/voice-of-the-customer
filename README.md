@@ -48,6 +48,7 @@ You need the following to use this SK:
 
 ## <a name="installation"></a>Installation
 1. Log into GitHub and fork the project repository. Clone your fork to a folder on your local system and change to that folder.
+<<<<<<< HEAD
 2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta and Experimental Services are free to use.
 3. If it is not already installed on your system, download and install the [Cloud Foundry CLI][cloud_foundry] tool.
 4. Edit the `manifest.yml` file in the folder that contains your fork and, under `applications:`, replace the value of `- name:` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
@@ -75,6 +76,35 @@ You need the following to use this SK:
     ```
 
 5. Install the python dependencies by using `pip`:
+=======
+2. Create a Bluemix Account. [Sign up][sign_up] in Bluemix, or use an existing account. Watson Beta or Experimental Services are free to use.
+3. If it is not already installed on your system, download and install the [Cloud-foundry CLI][cloud_foundry] tool.
+4. Edit the `manifest.yml` file in the folder that contains your fork and replace `application-name` with a unique name for your copy of the application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
+
+      ```yaml
+      declared-services:
+        alchemy-language-service:
+          label: alchemy
+          plan: free
+        natural-language-classifier-service:
+          label: natural_language_classifier
+          plan: standard
+        cloudantNoSQLDB-service:
+          label: cloudantNoSQLDB
+          plan: Shared
+      applications:
+      - services:
+         - alchemy-service
+         - natural-language-classifier-service
+         - cloudantNoSQLDB-service
+        name: product-intel-demo
+        command: python server.py
+        path: .
+        memory: 512M
+      ```
+
+5. Install the python dependencies with `pip`
+>>>>>>> 9be1cea067af35ff75a7dbf9bdeadcb2ddee83b3
 
     ```sh
     pip install -r requirements.txt
@@ -90,7 +120,12 @@ You need the following to use this SK:
 7. Create instances of the services that are used by the application. Create and retrieve service keys to access the [Natural Language Classifier][natural-language-classifier] service by running the following commands:
   ```bash
   cf create-service natural_language_classifier standard natural-language-classifier-service
+<<<<<<< HEAD
   cf create-service-key natural-language-classifier-service <your-NLC-key>
+=======
+  cf create-service-key natural_language_classifier myKey
+  cf service-key natural-language-classifier-service myKey
+>>>>>>> 9be1cea067af35ff75a7dbf9bdeadcb2ddee83b3
   ```
   In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-NLC-key>` is `Credentials-1`.
   
@@ -100,15 +135,27 @@ You need the following to use this SK:
 8. Create and retrieve service keys for the Alchemy Language service. If you already have an instance of the Alchemy Language Service, you can use that instance and its API key.
 
     ```bash
+<<<<<<< HEAD
     cf create-service-key alchemy-language-service <your-AlchemyAPI-key>
     cf service-key alchemy-language-service <your-AlchemyAPI-key>
+=======
+    cf create-service alchemy-language standard alchemy-language-service
+    cf create-service-key alchemy-language-service myKey
+    cf service-key alchemy-language-service myKey
+>>>>>>> 9be1cea067af35ff75a7dbf9bdeadcb2ddee83b3
     ```
 
 9. Create and retrieve service keys for the Cloudant service. If you are using an existing Cloudant service, use those credentials instead.
 
     ```bash
+<<<<<<< HEAD
     cf create-service cloudantNoSQLDB Shared cloudantNoSQLDB-service
     cf service-key cloudantNoSQLDB-service <your-Cloudant-key>
+=======
+    cf create-service cloudantNoSQLDB standard cloudantNoSQLDB-service
+    cf create-service-key cloudantNoSQLDB-service myKey
+    cf service-key cloudantNoSQLDB-service myKey
+>>>>>>> 9be1cea067af35ff75a7dbf9bdeadcb2ddee83b3
     ```
 **Note:** The commands return a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
@@ -182,6 +229,10 @@ This Starter Kit works off of product reviews data gathered from Amazon product 
 Push the updated application live by running the following command:
 
     cf push
+<<<<<<< HEAD
+=======
+    ```
+>>>>>>> 9be1cea067af35ff75a7dbf9bdeadcb2ddee83b3
 
 or by pressing the "Deploy to Bluemix" button below.
 
