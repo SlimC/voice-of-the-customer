@@ -115,7 +115,7 @@ You need the following to use this SK:
     ```
 **Note:** The commands return a message that warns you that the Shared plan for the Cloudant NoSQLDB service is not free.
 
-10. A file named `.env` file is used to provide the service keys for your service instances to the application.  Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file by using the following command:
+10. A file named `.env` file is used to list the service keys for your service instances to the application. Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file by using the following command:
 
 	```bash
 	cp .env.example .env
@@ -141,18 +141,13 @@ You need the following to use this SK:
 	[WKS]
 	WKS_MODEL_ID=    
 	```
-
-## <a name="running-locally"></a>Running locally
-First, make sure that you followed steps 1 through 10 in [Getting Started](#getting-started).
-
-Start the application:
-
-     python server.py
+	
+**Note:** You must perform the procedure in the `WKS` Jupyter notebook to generate the value for the `WKS_MODEL_ID` environment variable. Add the value to the `.env` file after you have created the WKS model as described in [Training an entity detection model](#training).
 
 ## <a name="running-notebooks"></a>Running the notebooks
 The Jupyter notebooks show you step-by-step instructions, automatically executing specified sections of Python code. We used Jupyter notebooks because they encourage experimentation, which is an important part of developing any machine learning system.
 
-To start the notebooks, make sure you are in the root directory of your git checkout of the SK repository, and run the command `jupyter notebook`. This  starts the Jupyter notebook server and opens a browser window. With the browser window open, click on notebooks, and then open the notebook labeled `training`. Follow the instructions.
+To start the notebooks, make sure you are in the root directory of your git checkout of the SK repository, and run the command `jupyter notebook`. This  starts the Jupyter notebook server and opens a browser window. With the browser window open, click on notebooks, and then open the notebook labeled `Training`. Follow the instructions.
 
 ## <a name="training"></a>Training an entity detection model
 
