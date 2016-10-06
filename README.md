@@ -169,6 +169,15 @@ After you have created your customized model, follow the instructions to train y
 
 This step uses the models trained in the previous step. Follow the instructions in the `WKS` notebook to format the data so that it can be consumed by the UI.
 
+## Running the application locally
+
+To deploy the application locally, run the command
+
+    python server.py
+
+The app will be listening on port 3000. Open a web browser and type
+
+    localhost:3000
 
 ## <a name="adaptingextending-the-starter-kit"></a>Adapting/Extending the Starter Kit
 
