@@ -42,7 +42,7 @@ The application is written in [Python](https://www.python.org/doc/). Instruction
 You need the following to use this SK:
 * A UNIX-based OS (or Cygwin)
 * Git
-* Python
+* Python 2.7.x (**Note**: Python 3.x is not supported for this SK)
 * Anaconda&mdash;installing this package also installs the Jupyter notebook package, which includes iPython (now referred to as Jupyter)
 * A Bluemix account
 
