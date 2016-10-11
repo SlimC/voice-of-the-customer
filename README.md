@@ -194,7 +194,7 @@ Push the updated application live by running the following command:
 
 or by pressing the "Deploy to Bluemix" button below.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/voice-of-the-customer.git)
 
 ## <a name="best-practices"></a>Best Practices
 
