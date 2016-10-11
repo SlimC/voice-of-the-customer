@@ -17,13 +17,13 @@ Demo: https://product-intel-demo.mybluemix.net/
  - [Installation](#installation)
  - [Running locally](#running-locally)
  - [Running the notebooks](#running-notebooks)
- - [Training an entity detection model](#training)
- - [Processing the data](#processing)
+    - [Training an entity detection model](#training)
+    - [Processing the data](#processing)
  - [Adapting/Extending the Starter Kit](#adaptingextending-the-starter-kit)
  - [Deploying the application to Bluemix](#deploying)
- - [Reference information](#ref)
  - [Best Practices](#best-practices)
  - [Troubleshooting](#troubleshooting)
+ - [Reference information](#ref)
 
 ## <a name="how-this-app-works"></a>How this app works
 This starter kit uses Jupyter Notebook, a web application that enables you to create and share documents that contain code, visualizations, and explanatory text. (Jupyter Notebook was formerly known as iPython Notebook.) Jupyter Notebook automatically executes specific sections of Python code that are embedded in a notebook, displaying the results of those commands in a highlighted section below each block code block. The Jupyter notebooks in this SK show you how to creating an entity model, classifying and clustering the data.
@@ -94,7 +94,7 @@ You need the following to use this SK:
   cf service-key natural-language-classifier-service <your-NLC-key>
   ```
   In this command, `<your-NLC-key>` is the credentials file found on the `natural-language-classifier-service` tile on your Bluemix Dashboard. Unless you have credentials for other services already defined, the default name for `<your-NLC-key>` is `Credentials-1`.
-  
+
   **Note:** The commands return a message that states "Attention: The plan standard of `service natural_language_classifier` is not free. The instance classifier-service will incur a cost. Contact your administrator if you think this is in error." The first Natural Language Classifier instance that you create is free under the standard plan, so there is no charge if you create only a single classifier instance for use by this application.
 
 
@@ -141,7 +141,7 @@ You need the following to use this SK:
 	[WKS]
 	WKS_MODEL_ID=    
 	```
-	
+
 **Note:** You must perform the procedure in the `WKS` Jupyter notebook to generate the value for the `WKS_MODEL_ID` environment variable. Add the value to the `.env` file after you have created the WKS model as described in [Training an entity detection model](#training).
 
 ## <a name="running-notebooks"></a>Running the notebooks
@@ -162,7 +162,7 @@ After you have created your customized model, follow the instructions to train y
 
 ## <a name="processing"></a>Processing the data
 
-This step uses the models trained in the previous step. Follow the instructions in the `WKS` notebook to format the data so that it can be consumed by the UI.
+This step uses the models trained in the previous step by the `WKS` and `Training` notebooks and it can be achieved by following the `Processing` notebook. This is optional and you should only run it if you want to deploy the application locally using the UI provided in the repo using Cloudant in the persistence layer.
 
 ## Running the application locally
 
@@ -196,24 +196,6 @@ or by pressing the "Deploy to Bluemix" button below.
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
 
-## <a name="ref"></a>Reference information
-
-The following links provide more information about the Natural Language Classifier, Cloudant, and Alchemy Language services.
-
-### Natural Language Classifier service
-  * [API documentation](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/nl-classifier/): Get an in-depth knowledge of the Natural Language Classifier service
-  * [API reference](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/natural-language-classifier/api/v1/): SDK code examples and reference
-  * [API Explorer](https://watson-api-explorer.mybluemix.net/apis/natural-language-classifier-v1): Try out the API
-  * [Creating your own classifier](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/nl-classifier/get_start.shtml): How to use the API to create and use your own classifier
-
-### Cloudant service
-  * [API documentation](https://console.ng.bluemix.net/docs/services/Cloudant/index.html#Cloudant): Get an in-depth understanding of the Cloudant services
-  * [API reference](https://docs.cloudant.com/api.html#-api-reference): Code examples and reference
-
-### AlchemyAPI
-  * [API documentation](http://www.alchemyapi.com/api): Get an in-depth understanding of the AlchemyAPI services
-  * [AlchemyData News reference](http://docs.alchemyapi.com/): API and query gallery
-
 ## <a name="best-practices"></a>Best Practices
 
 ### Intents for the NLC service instance
@@ -241,6 +223,24 @@ To troubleshoot your Bluemix application, use the logs. To see the logs, run:
   ```bash
   cf logs <application-name> --recent
   ```
+
+## <a name="ref"></a>Reference information
+
+The following links provide more information about the Natural Language Classifier, Cloudant, and Alchemy Language services.
+
+### Natural Language Classifier service
+  * [API documentation](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/nl-classifier/): Get an in-depth knowledge of the Natural Language Classifier service
+  * [API reference](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/natural-language-classifier/api/v1/): SDK code examples and reference
+  * [API Explorer](https://watson-api-explorer.mybluemix.net/apis/natural-language-classifier-v1): Try out the API
+  * [Creating your own classifier](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/nl-classifier/get_start.shtml): How to use the API to create and use your own classifier
+
+### Cloudant service
+  * [API documentation](https://console.ng.bluemix.net/docs/services/Cloudant/index.html#Cloudant): Get an in-depth understanding of the Cloudant services
+  * [API reference](https://docs.cloudant.com/api.html#-api-reference): Code examples and reference
+
+### AlchemyAPI
+  * [API documentation](http://www.alchemyapi.com/api): Get an in-depth understanding of the AlchemyAPI services
+  * [AlchemyData News reference](http://docs.alchemyapi.com/): API and query gallery
 
 ## License
 
