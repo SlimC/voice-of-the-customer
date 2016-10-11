@@ -1,4 +1,4 @@
-# Voice of the Customer [![Build Status](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer/)
+# Voice of the Customer [![Build Status](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer/)
 
 This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews of electronics products on Amazon.
 
