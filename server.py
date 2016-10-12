@@ -61,8 +61,7 @@ def index():
 def get_product_list():
     """returns the list of products to the client for type ahead"""
     products = []
-    designdocument = cloudant.design_document.DesignDocument\
-    (REVIEWS_DB, document_id="_design/names")
+    designdocument = cloudant.design_document.DesignDocument(REVIEWS_DB, document_id="_design/names")
     docs = cloudant.view.View(designdocument, "final")
     for result in docs.result:
         try:

@@ -1,8 +1,8 @@
-# Voice of the Customer [![Build Status](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer/)
+# Voice of the Customer [![Build Status](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/voice-of-the-customer/)
 
 This is a Starter Kit (SK), which is designed to get you up and running quickly with a common industry pattern, and to provide information and best practices around Watson services. This application was created to demonstrate how the services can be used to detect sentiment and customer's satisfaction based on different product reviews. This demo for this SK uses reviews of electronics products on Amazon.
 
-For a demo click [here](https://product-intel-demo.mybluemix.net/)
+For a demo click [here](https://voice-of-the-customer.mybluemix.net/)
 
 **IMPORTANT NOTES:**
 1. You must sign up to use the Watson Knowledge Studio tool. A 30-day free trial is available. Go to the [WKS](https://www.ibm.com/marketplace/cloud/supervised-machine-learning/us/en-us) link to learn more.
@@ -194,7 +194,7 @@ Push the updated application live by running the following command:
 
 or by pressing the "Deploy to Bluemix" button below.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/product-intelligence.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/voice-of-the-customer.git)
 
 ## <a name="best-practices"></a>Best Practices
 
