@@ -1,28 +1,26 @@
-import os
 import unittest
-from flask import Flask, jsonify
-import urllib2
-import voc
-from flask_testing import TestCase
-from flask_testing import LiveServerTestCase
+import json
+import requests
 
-class VoCTest(LiveServerTestCase, TestCase):
+class VoCTest(unittest.TestCase):
 
-    def create_app(self):
-        app = Flask(__name__)
-        app.config['TESTING'] = True
-        app.config['LIVESERVER_PORT'] = 3000
-
-        return app
-
-    def test_server_is_up_and_running(self):
-        response = urllib2.urlopen(self.get_server_url())
-        self.assertEqual(response.code, 200)
+    def test_main_page(self):
+        url = "http://localhost:3000/"
+        response = requests.get(url)
+        self.assertEqual(response.status_code, 200)
 
     def test_product_list(self):
-        response = voc.get_product_list()
-        self.assertTrue(len(response.json) > 0)
+        url = "http://localhost:3000/"
+        response = requests.get(url+'api/product-list')
+        self.assertTrue('products' in response.json())
 
+    def test_get_product(self):
+        url = "http://localhost:3000/"
+        response = requests.get(url+'api/product-list')
+        products_list = response.json()['products']
+        product_id = products_list[0]['id']
+        response_prod = requests.get(url+'api/product?productId=' + product_id)
+        self.assertTrue('features' in response_prod.json())
 
 if __name__ == '__main__':
     unittest.main()
